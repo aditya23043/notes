@@ -1,0 +1,1377 @@
+#+title: College Stuff
+#+description: college stuff
+#+author: Aditya Gautam
+#+STARTUP: fold
+
+* TABLE OF CONTENTS :toc:
+- [[#time-table][TIME TABLE]]
+- [[#1st-sem-links][1st SEM LINKS]]
+  - [[#sem-wise-resources][Sem wise resources]]
+  - [[#sem-1-resource][Sem 1 resource]]
+  - [[#goog][goog]]
+  - [[#ihci-classroom-link][IHCI CLASSROOM LINK]]
+- [[#7th-august-2023-monday][7th August, 2023 (Monday)]]
+  - [[#introduction-to-programming][INTRODUCTION TO PROGRAMMING]]
+  - [[#maths][MATHS]]
+- [[#8th-august-2023-tuesday][8th August, 2023 (Tuesday)]]
+  - [[#introduction-to-human-computer-interaction][INTRODUCTION TO HUMAN COMPUTER INTERACTION]]
+  - [[#digital-circuits][DIGITAL CIRCUITS]]
+- [[#9th-august-2023-wednesday][9th August, 2023 (Wednesday)]]
+  - [[#introduction-to-programming-1][INTRODUCTION TO PROGRAMMING]]
+  - [[#maths-1][MATHS]]
+- [[#10th-august-2023-thursday][10th August, 2023 (Thursday)]]
+  - [[#introduction-to-human-computer-interaction-1][INTRODUCTION TO HUMAN COMPUTER INTERACTION]]
+  - [[#tutorial-introduction-to-human-computer-interaction][Tutorial Introduction To Human Computer Interaction]]
+  - [[#communication-com101][COMMUNICATION (COM101)]]
+- [[#11-august-friday][11 August (Friday)]]
+  - [[#maths-2][Maths]]
+  - [[#digital-circuits-1][Digital Circuits]]
+- [[#14th-august-monday][14th August (Monday)]]
+  - [[#tut-ip][Tut: IP]]
+  - [[#lecture-ip][Lecture: IP]]
+- [[#16th-august-2023-wednesday][16th August, 2023 (Wednesday)]]
+  - [[#tut-digital-circuits][Tut: Digital Circuits]]
+  - [[#lecture-introduction-to-programming][Lecture: Introduction to Programming]]
+  - [[#ieee-rm--rf----no-preserve-root-session][IEEE rm -rf * --no-preserve-root session]]
+- [[#17th-august-2023-thursday][17th August, 2023 (Thursday)]]
+  - [[#lecture-3-introduction-to-human-computer-integration][Lecture 3: Introduction to Human Computer Integration]]
+  - [[#tut-introduction-to-human-computer-interaction][TUT: Introduction To Human Computer Interaction]]
+- [[#18th-august-2023friday][18th August, 2023(Friday)]]
+  - [[#lecture-maths][Lecture: Maths]]
+  - [[#lecture-dc][Lecture: DC]]
+  - [[#lecture-ip-extra-130-3][Lecture: IP (Extra 1:30-3)]]
+- [[#21st-august-2023-monday][21st August, 2023 (Monday)]]
+  - [[#tut-ip-21-08][Tut: IP 21-08]]
+  - [[#lecture-ip-21-08][Lecture: IP 21-08]]
+  - [[#lecture-maths-21-08][Lecture: Maths 21-08]]
+- [[#22nd-august-2023-tuesday][22nd August, 2023 (Tuesday)]]
+  - [[#lecture-ihci-22-08][Lecture: IHCI (22-08)]]
+  - [[#lecture-dc-22-08][Lecture: DC (22-08)]]
+- [[#23rd-august-2023-wednesday][23rd August, 2023 (Wednesday)]]
+  - [[#tut-dc-23-08][Tut: DC (23-08)]]
+  - [[#lecture-ip-23-08][Lecture: IP (23-08)]]
+  -  [[#lecture-maths-23-08][Lecture: Maths (23-08)]]
+- [[#24th-august-2023-thursday][24th August, 2023 (Thursday)]]
+  - [[#lecture-ihci-24-08][Lecture: IHCI (24-08)]]
+- [[#25th-26th-august-2023---esya][25th, 26th August, 2023 -> ESYA]]
+- [[#28th-august-2023][28th August, 2023]]
+  - [[#tut-ip-28-08-c24][Tut: IP 28-08 (C24)]]
+  - [[#lecture-ip-28-08][Lecture: IP 28-08]]
+  - [[#lecture-maths-28-08][Lecture: Maths 28-08]]
+- [[#29th-august-2023-tuesday][29th August, 2023 (Tuesday)]]
+- [[#31st-august-2023-thursday][31st August, 2023 (Thursday)]]
+  - [[#lecture-ihci-31-08][Lecture: IHCI 31-08]]
+  - [[#lecture-dc-31-08][Lecture: DC 31-08]]
+  - [[#tut-ihci-31-08][Tut: IHCI 31-08]]
+  - [[#lecture-com-31-08][Lecture: COM 31-08]]
+- [[#1st-september-2023-friday][1st September, 2023 (Friday)]]
+  - [[#lecture-maths-1-09][Lecture: Maths 1-09]]
+  - [[#lecture-dc-1-09][Lecture: DC 1-09]]
+  - [[#extra-tut-dc-1-09][Extra Tut: DC 1-09]]
+  - [[#extra-lecture-ip-1-09][Extra Lecture: IP 1-09]]
+- [[#4th-september-2023-monday][4th September, 2023 (Monday)]]
+  - [[#tut-ip-4-09][Tut: IP 4-09]]
+  - [[#lecture-ip-4-09][Lecture: IP 4-09]]
+  - [[#lecture-maths-4-09][Lecture: Maths 4-09]]
+  - [[#lab-ip-4-09][Lab: IP 4-09]]
+- [[#5th-september-2023-tuesday][5th September, 2023 (Tuesday)]]
+  - [[#lecture-ihci-5-09][Lecture: IHCI 5-09]]
+  - [[#lecture-dc-5-09][Lecture: DC 5-09]]
+  - [[#tut-maths-5-09][Tut: Maths 5-09]]
+- [[#6th-september-2023-wednesday][6th September, 2023 (Wednesday)]]
+  - [[#tut-dc-6-09][Tut: DC 6-09]]
+  - [[#lecture-ip-6-09][Lecture: IP 6-09]]
+  - [[#lecture-maths-6-09][Lecture: Maths 6-09]]
+- [[#11th-september-2023-monday][11th September, 2023 (Monday)]]
+- [[#13th-september-2023-wednesday][13th September, 2023 (Wednesday)]]
+  - [[#tut-dc-13-09][TUT: DC 13-09]]
+  - [[#lecture-ip-13-09][LECTURE: IP 13-09]]
+  - [[#lecture-maths-13-09][Lecture: Maths 13-09]]
+  - [[#lab-dc-13-09][LAB: DC 13-09]]
+- [[#14th-september-2023][14th September, 2023]]
+  - [[#lecture-ihci-14-09][Lecture: IHCI 14-09]]
+  - [[#lecture-dc-14-09][Lecture: DC 14-09]]
+  - [[#tut-ihci-14-09][Tut: IHCI 14-09]]
+- [[#19th-september-2023-tuesday][19th September, 2023 (Tuesday)]]
+  - [[#ihci-project-stuff][IHCI Project Stuff]]
+- [[#30th-october-2023-monday][30th October, 2023 (Monday)]]
+  - [[#lecture-ip-30-10-23][Lecture: IP 30-10-23]]
+- [[#6th-november-2023-monday][6th November, 2023 (Monday)]]
+- [[#13th-november-2023-monday][13th November, 2023 (Monday)]]
+  - [[#what-is-cache-memory][What is cache memory?]]
+  - [[#file][File]]
+  - [[#directory][Directory]]
+
+* TIME TABLE
+
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+|    <c>    |    <c>    |      <c>       |      <c>      |      <c>       |    <c>     |    <c>     |    <c>     |    <c>    |    <c>    |
+|    Day    | 8:30-9:30 |   9:30-10:30   |  10:30-11:00  |  11:00-12:00   | 12:00-1:00 | 1:00-2:00  | 2:00-2:30  | 2:30-3:00 | 3:00-6:00 |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+|  Monday   |  Tut: IP  |  Lecture: IP   |  Lecture: IP  | Lecture: Maths |            |  Lab: IP   |  Lab: IP   |  Lab: IP  |           |
+|           |    C24    |      C101      |     C101      |      C101      |            |    C320    |    C320    |   C320    |           |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+|  Tuesday  |           | Lecture: IHCI  | Lecture: IHCI |  Lecture: DC   |            | Tut: Maths | Tut: Maths |           |           |
+|           |           |      C101      |     C101      |      C101      |            |    C208    |    C208    |           |           |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+| Wednesday |  Tut: DC  |  Lecture: IP   |  Lecture: IP  | Lecture: Maths |            |  Lab: DC   |  Lab: DC   |  Lab: DC  |           |
+|           |   C208    |      C101      |     C101      |      C101      |            |  C302-24   |  C302-24   |  C302-24  |           |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+| Thursday  |           | Lecture: IHCI  |  Lecture: DC  |                |            |  Tut: HCI  |            |           |    COM    |
+|           |           |      C101      |     C101      |                |            |    C12     |            |           |   C101    |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+|  Friday   |           | Lecture: Maths |               |  Lecture: DC   |            |            |            |           |           |
+|           |           |      C101      |               |      C101      |            |            |            |           |           |
+|-----------+-----------+----------------+---------------+----------------+------------+------------+------------+-----------+-----------|
+
++ [[https://classroom.google.com/u/1/w/NjE3MjcxMDQwMTQ3/t/all][IP]]
+  * Tut: C24
+  * Lab: C214 -> Nitesh Kumar Chaurasia
++ [[https://classroom.google.com/u/1/w/NTIzMjc3NzI4ODM0/t/all][MATHS]]
+  * Tut: C208
++ [[https://classroom.google.com/u/1/w/NjE3NDY3NzEwNDEx/t/all][IHCI]]
+  * Tut: C12
++ [[https://classroom.google.com/u/1/w/NjE3NzI0NzkwNjM1/t/all][DC]]
+  * Tut: C208
+  * Lab: C302-24
+
+* 1st SEM LINKS
+** Sem wise resources
+https://github.com/aflah02/SemWiseResourcesIIIT/blob/main/README.md
+** Sem 1 resource
+https://drive.google.com/drive/u/2/folders/1yB-hmAW6EBXYGbXkhoeLeJxbdIZwgfIF
+** goog
+https://docs.google.com/document/d/1IoZO7jGkxj-Rhm3Pl3XSSr6S3gUGqCJsQjUr-7GXpOg/edit
+** IHCI CLASSROOM LINK
+[[https://classroom.google.com/c/NjE3NDY3NzEwNDEx?cjc=qzrt54j][CLsssroom Link]]
+
+* 7th August, 2023 (Monday)
+** INTRODUCTION TO PROGRAMMING
+*** Dr. Bijendra Nath Jain
+*** tinyurl.com/2azvs568
+*** code
+**** Section A: iklfklg
+**** Section B: icmoo6i
+
+** MATHS
+*** Linear Algebra
+**** Algorithms:
+***** A finite sequence of valid steps to produce an output (solutions of a problem) from given inputs.
+**** Proof:
+***** A finite sequence of logical steps to obtain a TRUE statement from given true statements.
+**** Informal Answer:
+***** It is the branch of maths which deals with vector spaces, vectors, linear transformations and operators, matrices and related concepts.
+**** Remark:
+***** A more formal abstract is include in the official outline, which you may refer to if desired.
+**** Pointers:
+***** A good transition course: some proofs but a lot of algorithms/procedure
+***** We can prove most of what we need to use
+***** Doesn't require much prior knowledge
+**** Requirements:
+***** Sets
+***** Operations with complex and real numbers
+***** Matrix
+***** Determinants
+
+* 8th August, 2023 (Tuesday)
+
+** INTRODUCTION TO HUMAN COMPUTER INTERACTION
+*** Subject Code: DES102 (DES = design)
+*** Rajiv Ratn Shah
+*** rajivratn@iiitd.ac.in
+*** Class code: qzrt54j
+*** books: Helen Sharp, Yvonne Rogers and Jenny Preece (2019) 5th edition
+https://drive.google.com/file/d/1PZxlX5c0JXe2ZSUtzHRlVCtu07nf5fLe/view?pli=1
+
+*** Steps to solve an issue regarding design
+**** Establish Requirements
+**** Design Alternatives
+**** Prototyping
+**** Evaluating
+*** Tips
+**** Come up with a simpler solution
+**** Make it accessible
+
+** DIGITAL CIRCUITS
+*** Subject code:
+
+* 9th August, 2023 (Wednesday)
+
+** INTRODUCTION TO PROGRAMMING
+*** Lecture 1: Part 1
+**** Introduction To Computing -- Problem Solving and Data Manipulation
+https://classroom.google.com/u/2/c/NjE3MjcxMDQwMTQ3/m/NTIzMzA4Njk1NTcy/details?pli=1
+**** discrete-event simulation
+**** In class excercise 1.1
++ [[https://tinyurl.com/y6j8b4de][In Class excercise 1.1]]
+***** https://tinyurl.com/y6j8b4de
+****** in order to change gmail account when opening a form,
+change https://docs.google.com/forms/d/...
+to https://docs.google.com/forms/u/2/d/...
+
+** MATHS
+*** Linear Algebra
+**** Systems of linear equations (Notes in register)
+***** Normal Way to define a system of linear eq
+***** Matrix way
+****** Echelon
+****** RREF
+******* Row-reduced echelon form
+***** Vector way
+
+* 10th August, 2023 (Thursday)
+
+** INTRODUCTION TO HUMAN COMPUTER INTERACTION
+*** rajivratn@iiitd.ac.in
+
+*** TOPICS COVERED
++ Intro
++ Good and Poor Design
++ What is Interaction Design
++ User Experience UX
+  + Eg: Amazon's One click experience
++ Optimize User Interaction with a system, environment or product so that they support the user's activities in effective and useful ways
++ ID = interaction designs
++ UX and ID are concerned with the development
++ HCI is about how to doesign for these experiences in a human-centered way
++ Designing Interactive Systems = UX + ID + HCI
++ Designing Different Interactive Systems
++ Sample project on E-Waste
+  + Low and High Fidelity Prototype (Lofi, Hifi) and Evolution
+
+** Tutorial Introduction To Human Computer Interaction
+*** C12 Old Acad Building
+*** Saturday afternoon deadline assignment
+*** submit in doc file ONLY
+*** saksham21486@iiitd.ac.in
+*** email subject necessary
+*** 3rd year CSE
+
+** COMMUNICATION (COM101)
+*** Dr. Payal
+
+*** pointers for the first two clips:
++ Cognition
++ Deception
++ Criticality
+  
+*** Steps important in Communication
++ Context
++ Cognition
++ Critical
+
+*** pointers for the movie
++ What co-relation can you draw between the three videos you have seen today?
++ How would you relate the story "The Open Window" to the aspects discussed about communication?
++ What is your perspective based on the dicussions about communication in class today?
++ If you were to add something more, apart from the three words of communication, what would that be?
+
+* 11 August (Friday)
+
+** Maths
+*** Gauss Jordan Elimination
+**** Any Matrix -> Echelon (4 steps) -> RREF (2 steps)
++ Appliying the Gauss-Jordan elimination algorithm to A, we must terminate after a finite number of steps, and when termminates, we have an RREF matrix row-equivalent to A.
+**** Row Equivalnce
++ Is an equivalence relation on the set R^(m x n) matrices with entries from the field R of real numbers (for all m,n E Z+)
++ NB: Later on we will occasionally work with field of complex numbers C, i.e. we will take matrices with complex entries. Proposition 2 will continue to hold with R replaced by C.
++ Proof: You should be able to verify (proof) the above proposition (left as an excercise)
++ Remark 1: Recall that every equivalence relation induces a partition of the underlying set, the parts of the partition being the equivalence classes, i.e. the equivalence classes are pair-wise disjoint subsets whose union is the whole set.
++ Remark 2: In fact, the RREF matrix of any given matrix is unique i.e., a matrix cannot be row equivalent to two distinct RREF matrices. Alternatively,  two distinct RRRED matrices cannot be req-equivalent to each other
+** Digital Circuits
+
+* 14th August (Monday)
+
+** Tut: IP
++ min(t1,t2,t3,t4)
+
+** Lecture: IP
++ [[https://tinyurl.com/3fhkje4u][min program in pythontutor]]
+
+*** Problem Solving
++ Problem statement, algorithm design, programming, testing, debugging
+
+|------------|
+| DATA TYPES |
+|------------|
+| Scalar     |
+|------------|
+| Structured |
+|------------|
+
+*** Data types
+**** Scalar
++ None
++ Natural Number: (0,1,2,3...)
++ (Signed) Integer
++ +(Signed) Real Number+ (mostly dealing with floating points)
++ (Signed) Floating Point Number
++ Boolean
++ Characters
+**** Structured
++ String
++ Tuple
++ List
++ Dictionary
++ Array
++ Files
+
+# + NOTE: The best we can do to store faction 0.1 using 16 bits is to save it as e.g. 0.98776235
+*** Operations On scalar data types
++ Arithmetic
+  + op int -> int e.g. - 7 = -7
+  + int op int -> int
+  + op float -> float
+  + float op float -> float
++ Relational
+  + int op int -> boolean e.g. 4>=5
+  + float op float -> boolean
++ Logical
+  + op boolean -> boolean e.g. "not P"
+  + boolean op boolean -> boolean
+
++ Unary
+  + e.g. - 7 = -7, or not P
++ Binary
+  + e.g. 4 * -6 = -24, or P and Q
++ Expressions
+  + e.g. 6 + 5 * 3 = 21 or (a >= 5 * 3 and a < 5^{2})
+
+*** Operations On Integers
++ add
++ substract
++ multiply
++ exponentiate
++ divide
++ mod
+**** Relational
+  + <
+  + <=
+  + >
+  + >=
+  + =
+  + !=
+
+*** Operations On Floating
++ Add
++ Substract
++ Multiply
++ Exponentiate
++ Division
++ Division of integers
+**** Relational
+  + <
+  + <=
+  + >
+  + >=
+  + =
+  + !=
+
+*** Operations On Boolean
++ Unary
+  + not
++ Binary
+  + and
+  + or
+
+|-----+-----+-------+---------+--------|
+| <c> | <c> |  <c>  |   <c>   |  <c>   |
+|  P  |  Q  | not P | P and Q | P or Q |
+|-----+-----+-------+---------+--------|
+|  F  |  F  |   T   |    F    |   F    |
+|  F  |  T  |   T   |    F    |   T    |
+|  T  |  F  |   F   |    F    |   T    |
+|  T  |  T  |   F   |    T    |   T    |
+|-----+-----+-------+---------+--------|
+
+* 16th August, 2023 (Wednesday)
+
+** Tut: Digital Circuits
++ Solved the first tutorial sheet
+  + Tasks Answers:
+    1. 3
+    2. 4
+    3. 6
+    4. 2
+    5. 00001101, 00010001, 01110001
+    6. 3, 9, 12, 14
+
+** Lecture: Introduction to Programming
+
++ Structured Data types: strings, tuples, dictionary, array etc.
++ note: in example-> 'Intro to programming', '' are not considered as a part of the string
+
+  1) String, an ordered sequence of characters (letters, special characters, etc.),
+  2) Tuple, an ordered sequence of scalar or structured data items (including strings)
+  3) List, an ordered sequence of scalar or structured data items
+  4) Dictionary, an ordered +sequence+ of (key : value) pairs
+
++ Representation of numbers
+  1) Natural numbers
+     + Can only work with natural nos. limited to {0, 1, ..., 2^{32} -1} or {0, 1, ..., 2^{64} – 1}, depending upon whether we have 32 bit or 64 bit memory
+
+  2) Signed Integers
+     + With 32 bit representation, signed integer is best written in “2’s complement” notation
+     + The first bit represents the sign: 1 -> - and 0 -> +
+     e.g.:
+
+          |---------+----------|
+          |   <c>   |   <c>    |
+          | Decimal |  Binary  |
+          |---------+----------|
+          |  +127   | 01111111 |
+          |  -128   | 01111111 |
+          |    0    | 00000000 |
+          |   -1    | 11111111 |
+          |         |          |
+          |    1    | 00000001 |
+          |   -2    | 11111110 |
+          |         |          |
+          |    2    | 00000010 |
+          |   -3    | 11111101 |
+          |---------+----------|
+
+       + We can also do like this->
+         6 : 00000110
+         for -6: invert it and 1
+           |----------|
+           | 11111001 |
+           |       +1 |
+           |----------|
+           | 11111010 |
+           |----------|
+         + therefore, -6 is 11111010
+
+  3) Floating Point Numbers
+     + Constraints
+       * Range: Or how large can the no. be?
+       * Accuracy: Or how accurately can the no. be represented?:
+     + 32-bit single precision vs. 64-bit double precision (how is range, accuracy impacted?)
+     + Even a 64-bit double precision representation is an approximation
+       therefore, we cannot work with irrational numbers and "some" rational e.g. 1/3
+
+
++ NOTE: ceil(log_base(no. of digits/sequence))
+  e.g.: to represent number of days in a year, ceil(log_2(365)) = ceil(8.51) = 9 bits
+
+** IEEE rm -rf * --no-preserve-root session
++ diff -> to compare files
++ #0 name of script
++ $# number of arguments
++ $? return code of the previous command
++ $$ pid of the current script
++ <(command) executes the command and stores the output in a temp file replacing itself with the path of the file
+
+* 17th August, 2023 (Thursday)
+** Lecture 3: Introduction to Human Computer Integration
+
+** TUT: Introduction To Human Computer Interaction
++ ayush20042@iiitd.ac.in
+
++ Accessibility
++ User Experience
++ Design Principles
+  + Visibility
+    + Particular functioning of the product is clearly visible to the users
+  + Feedback
+    + Includes sound, highlighting, animations etc to show that the user did "something"
+  + Consistency
+    + same font/color etc in different parts of the same application
+  + Constraints
+    e.g. pubg not allowing minors to play a game which could be violent for some
+  + Affordance
+    + Stating the use case of a product without using a "proper" manual
+    + able to figure out how a product works
+    e.g. Handle available on a pull door whereas no handle on a push door
+    e.g. A pen can afford: writing, gripping, throwing, poking, swirling
+    e.g. a knob afford turning
+    e.g. a button affords pushing
+
+* 18th August, 2023(Friday)
+** Lecture: Maths
++ Notes in Register
+** Lecture: DC
++ Notes in Register
+** Lecture: IP (Extra 1:30-3)
++ [[https://docs.google.com/forms/u/2/d/e/1FAIpQLScs0aC_TCJkBH3rGDQxVPheOC-Ux6vZ58kWpLbHYKpV-Nkwaw/formResponse][Test Link]]
+
+* 21st August, 2023 (Monday)
+** Tut: IP 21-08
+
+Shrishti Ma'am
+*** Operators
++ Arithmetic -> + - / % //
++ Relational -> == != > < >= <=
++ Conditional -> if else
++ Logical -> And Or Not
+
+*** Ternary Operator in python
+#+begin_src python
+    c = a if a>b else b
+#+end_src
+
+** Lecture: IP 21-08
+
++ Conditional statements
+  * Compounding of Multiple Statements:
+    e.g. if x <= 1000 then [n=n+1; x=2*x] else [ ]
+    here [] are used to execute multiple statements separated by ;
+    and [ ] is NULL statement
+    simply force an interpretation
+
++ if C1 then if C2 then S1 else S2
+  * if C1 then [if C2 then S1 else S2] or ...
+  * if C1 then [if C2 then S1] else S2
+both are valid since its not clear in the original statement
+
++ Nested if-then-else statements
+
+    case [
+    <C1>: S1;
+    <C2>: S2;
+    <C3>: S3;
+    <C4>: S4;
+    <C5>: S5;
+    ]
+
++ While-Do Statements: while C do S
+  e.g.
+    n = 1; x = 2^{n}
+    while x < 1000 do [n+=1; x=2^{n}]
+
++ Iteration statements using for loop
+  - for k in <sequence> do S
+  - <sequence> is an ordered set of objects, typically integers
+
+*** PYTHON
+
++ =General Purpose Language=
+
+  - Used to solve problems in multiple domains (scientific, industrial control, information storage and retrieval, etc.)
+  - Not meant to solve problems in specific domains, such as processing "strings"
+  - e.g.: C, Python, Java, etc.
+
++ =Special Purpose Language=
+
+  - Created for specific domains/applications, e.g.: databases, concurrent programming, system simulation
+  - Efficient to solve problems in the particular domains
+  - Eg: Fortran, SQL, ADA, Lisp, Emacs-lisp
+
++ =High Level Language=
+
+  - Abstract operations, but human readable code
+  - eg statement: print ("Hello World")
+  - eg languages: python, java, c, etc.
+
++ =Assembly Language program= (specific to given processor)
+
+  - An example instruction to exchange data stored in register "rega" and memory "mem1"
+
+    move regb rega (move data from registry 'rega' to register 'regb')
+    move regb mem1 (move data from registry 'mem1 to register 'regb')
+    move mem1 regb (move data from registry 'regb' to register 'mem1)
+
++ =Machine Language program=
+
+  - Literal translation of above into instructions that are specific to the processor
+
+    5A_{H} 2_{H} 1_{H}
+    5B_{H} 1_{H} 0012AB60_{H}
+    5C_{H} 0012AB60_{H} 2_{H}
+
++ =Compiled Programming Languages=
+
+  - Entire high-level language program is converted into machine code
+  - Executes faster then code in interpreted languages since machine code can be loaded and immediately executed without further processing
+  - Allocate memory to store literals, variables (implies strong type checking)
+  - e.g.: C, C++, Fortran
+  - Source code -> compiler -> machine code -> output
+
++ =Interpreted Programming Language=
+
+  - High level language program is converted into an intermediate representation, "byte code", which is platform independent
+  - Byte code can run on linux, Windows, Mac OS machine
+  - E.g.: Python, Java, etc.
+  - Source code -> interpreter -> output
+
++ =Each programming language specifies=
+  - *Primitive constructs*, such as literals and unary or binary
+  - *Syntax*, or what strings of chars is admissible in that language
+  - *Static semantics*, which defines whether a given syntactically constructed string has meaning. Eg: a < 2.00 is meaningful if a is int or float
+  - *Semantics*, which associates a meaning with 'a < 2.00', viz. expression involving a relational operator
+
++ =Programming Errors=
+  1) Syntax
+     * error in '1.2 2.00 >' is easily identified and located
+     * these are least dangerous, and easily detected
+  2) Static semantic
+     * whether 'a < 2.00' is correct or not depends upon the data type of 'a'
+     * Python and C does a poor job of detecting this error since it is weak with 'type-checking'
+     * java does an exhaustive type-checking (helped by java compiler)
+  3) Semantic
+     * as such there are no semantic errors once static semantic errors have been corrected
+     * but, the program may still generate erroneous results if the program logic is incorrect
+
+** Lecture: Maths 21-08
+
++ Invertible Matrix
+  - B is said to be inverse of A if BA = AB = I_{n}
+
+  - Also called =non-singular= matrix
+  - Non-Invertible Matrices are called singular matrices
+
+  - =Observation-1= The inverse of A if it exists is unique, notation A^{-1}
+  - =Observation-2= If A is invertible, then so is its inverse. (A^{-1})^{-1} = A
+  - =Observation-3= If A and B are invertible, so is AB. (AB)^{-1} = B^{-1}A^{-1}
+
++ Short intro to proofs
+  - A finite logical sequence of TRUE statements ending with the desired true statement (proposition)
+
+    + Types of statements which can appear in proofs:
+      1. Hypothesis / Assumptions
+      2. Definitions
+      3. Provisional Results
+      4. A statement which logically follows from earlier statements
+
+    + Nature of Propositions
+
+      1. Implication: p implies q, OR If p, then q
+         =Symbolically=: p -> q
+
+      2. Biconditional or if and only if or equivalent
+         =Symbolically=: p <-> q
+         same as: p -> q and p <- q i.e. two implications (converse)
+
+    + 3 Forms of proofs for an implication
+      p -> q
+
+      1. =Direct Proof=
+            p : assumption
+            .
+            .
+            .
+            .
+            q : TRUE
+
+      2. =Contra-Positive=
+            of p -> q
+            not p -> not q
+
+            not q : assumption
+            .
+            .
+            .
+            .
+            not p : TRUE
+
+         + NOTE: we start with "not q" and not "not p"
+
+      3. =Proof by way of contradiction= (BWOC)
+            p -> q
+            (p and not q) -> r (not in the original proposition)
+
+            p : assumption
+            not q : assumption
+            .
+            .
+            .
+            .
+            r : FALSE
+
+* 22nd August, 2023 (Tuesday)
+
+** Lecture: IHCI (22-08)
++ Refer to lecture ppt
+** Lecture: DC (22-08)
++ Refer to notes in register
+
+* 23rd August, 2023 (Wednesday)
+
+** Tut: DC (23-08)
++ Refer to notes in register
+
+** Lecture: IP (23-08)
++ Refer to lecture ppt
+
+**  Lecture: Maths (23-08)
++ Refer to notes in register
+
+* 24th August, 2023 (Thursday)
+
+** Lecture: IHCI (24-08)
++ What is involved in interaction design
+  1. Understanding the problem space
+  2. Importance of involving users
+  3. Degrees of user involvement
+  4. What is a user-centered approach?
+  5. Four basic activities of interaction design
+     * Discover the objective/problem
+     * Define what ur gonna do
+     * Implement that idea
+     * Delivering the solution
+  6. A simple lifecycle model for interaction design
+
++ Some practical issues
+  1. Who are the users
+  2. What are the users' needs
+  3. How to generate alternative designs
+  4. How to choose among alt designs
+  5. How to integrate interaction design activities within other lifecycle models
+
++ What is involved in interaction design
+  1. It is a process:
+     * Focused on discovering requirements, designing to fulfill requirements, producing prototypes and evaluating them
+     * Focused on users and their goals
+     * Involves trade-offs to balance conflicting requirements
+  2. Generating alternatives and choosing between them is key
+  3. Four approaches:
+     * User-centered design
+     * Activity-centered design
+     * Systems design
+     * Genius design
+
++ Double Diamond of design
+  1. Discover: insight into the problem
+  2. Define: the area to focus upon
+  3. Develop: potential solutions
+  4. Deliver: solutions that work
+
++ Activity 2.1
+
++ =Understanding the problem space=
+  1. Explore:
+     * What is the current user experience
+     * Why is a change needed
+     * How will this change improve the situation
+  2. Articulating the problem
+     * Team effort
+     * Explore different perspectives
+     * Avoid incorrect assumptions and unsupported claims
+
++ =Importance of involving users=
+  1. Expectation management
+     * Realistic expectations
+     * No Surprises, no disappointments
+     * Timely training
+     * Communication, but no hype
+  2. Ownership
+     * Make the users active stakeholders
+     * More likely to forgive or accept problems
+     * Can make a big difference in acceptance and success of product
+
++ =Degrees of user involvement=
+  1. Member of the design team
+     * Full time: constant input, but lose touch with users
+     * Part time: patchy input, and very stressful
+     * Short term: inconsistent across project file
+     * Long term: consistent, but lose touch with users
+  2. Face-to-face group or individual activities
+  3. Online contributions from thousands of users
+     * Online feedback exchange (OFE) systems
+     * Crowdsourcing design ideas
+  4. User involvement after product release
+
++ =What is a user-centered approach=
+  1. User-centered approach is based on:
+     * Early focus on users and tasks: directly studying cognitive, behavioral, anthropomorphic, and attitudinal characteristics
+     * Empirical measurement: users' reactions and performance to scenarios, manuals, simulations and prototypes
+
++ =Four basic activities of interaction design=
+  1. Discover the objective/problem
+  2. Define what ur gonna do
+  3. Implement that idea
+  4. Delivering the solution
+
++ =Life cycle model=
+  a) Google design sprints
+     1. Unpack the problems
+     2. Provide sketch of the ideas
+     3. Decide/Identify which sketch is the best
+     4. Prototype
+     5. Testing/Evaluating
+
+  b) Research in the wild
+     1. Theory
+     2. In situ studies (in-situ = in the natural or original position)
+     3. Design
+     4. Technology
+
++ Who are the users/stakeholders?
+  1. Not Obvious
+     * 382 distinct types of users for smartphone apps
+     * Many products are intended for use by large sections of the populations so user is "everybody"
+     * More targeted products are associated with specific roles
+  2. Stakeholders
+     * Larger than the group of direct users
+     * Identifying stakeholders helps identify groups to include in interaction design activities
+
++ What are the users' needs?
+  1. Users rarely know what is possible
+  2. Instead:
+     * Explore the problem space
+     * Investigate who are the users
+     * Investigate user activities to see what can be improved
+     * Try out ideas with potential users
+  3. Focus on peoples' goals, usability, and user experience goals, rather than expect stakeholders to articulate requirements
+
++ How to generate alternatives
+  1. Humans tend to stick with something that works
+  2. Considering alternatives helps identifying better designs
+  3. Where do alt designs come from?
+     * 'Flair and creativity': research and synthesis
+     * Cross-fertilization of ideas from different perspectives
+     * Users can generate different designs
+     * Product evolution based on changing use
+     * Seek inspiration: similar products and domain or different products and domain
+  4. Balancing constraints and trade-offs
+
++ How to choose among alternatives
+  1. Interaction design focuses on externally-visible and measurable behavior
+  2. Technical feasibility
+  3. Evaluation with users or peers
+     * Prototypes not static documentation because behavior is key
+  4. A/B Testing
+     * Online method to inform choice between alternatives
+     * Non-trivial to set appropriate metrics and choose user group sets
+
++ How to integrate interaction design activities within other models
+
+* 25th, 26th August, 2023 -> ESYA
+
+* 28th August, 2023
+
+** Tut: IP 28-08 (C24)
++ TA didnt come
+
+** Lecture: IP 28-08
++ Input multiple variables using .split() method of <type:str>
++ if, elif, else conditional statements
++ [[https://tinyurl.com/29am2m64][Test Link]]
+
++ Square root algorithm
+#+begin_src python
+x, epsilon = float(input()), 0.0001
+print('x= ', x, 'epsilon= ', epsilon)
+g = x/2
+while abs(g*g-x) >= epsilon:
+    g = (g+x/g)/2
+    print("g = ", g)
+#+end_src
+
++ Bisection Method
+
++ Newton-Raphson Method
+  * we try to solve for g such that equation g*g-b=0
+#+begin_src python
+#computing sqrt(b)
+b = float(input())
+epsilon = 0.0001
+g = b/2
+while abs(g*g-b) >= epsilon:
+    g = g - ((g*g-b)/(2*g))
+    print (g)
+print (g)
+#+end_src
+
+** Lecture: Maths 28-08
+
++ =Corollary= 1.1
+  * The same sequence of row operations that reduces A to I also reduces I to A^{-1}
+  * Method: Form the augmented matrix [A:I] (i.e. enlarged matrix of A) and carry out elementary row operations till the A part becomes I. The final result has the form [I:A^{-1}]
++ =Corollary= 1.2
+  * If A has a left inverse or a right inverse, then it has an inverse.
+  * e.g. B is left inverse of A if -> BA = I
+  * B is right inverse of A if -> AB = I
++ =Corollary= 1.3
+  * Suppose a square matrix A is factored as a product of square matrices i.e. A = A_{1} A_{2} ... A_{n} (all square matrices) with n>=2. Then A is invertible if and only if each A_{i} is invertible
++ =Corollary= 1.4
+  * Alt version of last equivalence in VIT
+  * The matrix A is invertible iff the system of equations Ax=b has a unique solution for each and every vector b in R^{m}
+
+=NOTE= THe above Corollary 1.3 applies only if the matrices A_{i} are square. We had earlier seen that if each A_{i} is invertible, then so is A. So, we only need to show that if A is invertile, then so is each A_{i}.
+
+* 29th August, 2023 (Tuesday)
+
+* 31st August, 2023 (Thursday)
+** Lecture: IHCI 31-08
++ PPT
+** Lecture: DC 31-08
++ Refer register for notes
+** Tut: IHCI 31-08
++ =User Experience=
+  * Consistent Design
+  * Functionality
+  * Cognition : Reduce cognitive load/ mental pressure to understand the application
+  * Engagement : Design interavtively such that it keeps the users' attention
+
+  * User Control
+  * Perceivability
+  * Learnability
+  * Error Handling
+  * Affordability
+
++ =Four basic activities=
+  1) Identifying target users' needs, behaviours, preferences and pain points and using them for establishing requirements
+     * Observe people and their problems
+     * Interview/Survey them regarding theeir problem
+     * Examine existing solutions for that problem
+  2) Conceptualization and ideation
+     * Develop various designs and analyze your solutions
+     * sort and order your findings
+     * find a user narrative (users' goals, actions and reactions)
+     * Do task analysis, breakdown user flow into sub-steps
+  3) Building interactive versions of the designs (functional prototypes)
+     * Design solutions according to design guidelines and principles
+     * Consider best techniques to enhance and ease user interactions and by including fuctional elements and establishing user flow
+  4) Evaluating Designs
+     * Present the prototype to users for testing and collection user feedbacks to improvise.
+
++ =Three Key Characteristics=
+  1. User centric focus
+  2. Specific usability and user experience goals
+  3. Iteration
+
+Note: Stakeholders = Targeted users
+
+*** FIGMA
+
+** Lecture: COM 31-08
++ =Today's Stuff=:
+  * Annotation
+  * Trying to find out Linear note
+  * Pattern Note
+  * Mind-Maps
+  * Summarizing
+
++ Information
+  * Surface
+
++ Intro/Literature Review -> =WTD: What they do?= (they=author)
+  * CLAIM
+  * what the author(s) purpose to do in a paper/book
+  * this code captures the main research questions that the author is posing in the text
+  * Main research question that the author is asked or deal with it
++ Literature Review -> =SPL: Summary of previous literature=
+  * this sentence, para, or page desribes a simple summary of the results from prior studies. This process entails a tremendous amount of condensation, taking complex ideas and reducing them into para sentences and if author is brilliant, one word
++ Literature Review -> =CPL: Critique of previous literature=
+  * the author is providing a critique and a limit of the previous existing, scholarly works. CPL is conceptually related to POC, and SPL since the deficiencies in the existing works provide a theoretical, methodological, and analytical justification as to why the current work is warranted.
++ Literature Review -> =GAP: Gap=
+  * the author is (probably in some systematic way) pointing out the missing element in current literature. When GAP and CPL are done properly, a reader should be able to anticipate the RAT even before the author describes it.
+  * something that is crucial but is MISSING
++ Literature Review -> =RAT: Rationale=
+  * EVIDENCE
+  * Perspective, that you are made to arrive at
++ Result/Discussion -> =ROF: Result of Findings=
++ Discussion -> =RCL: Result consistent with literature=
++ Discussion -> =RTC: Result in the contrary=
++ Conclusion -> =WTDD: What they did=
+  * was the "CLAIM" accomplished?
+  * was it really achieved
++ Conclusion -> =RFW: Recommendations for future work=
+  * the current work is not complete
+  * the author is providing a map of what is still lacking (GAP) in the lit and recommending that others do in future work
+
+*NOTE: claim -> evidences -> arguments -> leading to a suitable conclusions*
+
+*** READING STRATEGIES
++ =PC=: Pint of Critique
++ =MOP=: Missed Obvious Point
++ =RPP=: Relevent Point to pursue
++ =WIL=: Will...this theoretical and conceptual connection be logically teased out to its conclusion to reconcile a text that is fraught with tension and needs resolving
+
+*** Linear Note
++ =Chronology= -> sequence of the content is strictly followed
+  1. Description of the place i.e. in this example, Niyamgiri
+  2. Ecosystem
+  3. Details -> harvest, heir loom seeds
+  4. Crisis -> transition
+  5. Rice Mono culture
+
++ Concise
++ Sequential
++ Perspective that is evolved
++ Chronology is not disrupted
++ You cannot have your own point of view
+
+*** Pattern Note
++ Sequence is broken
++ =Priorities= come first
++ *In linear note, the author decides the nodal point of argument whereas for pattern note, you decide*
+  1. Bejuni's significance in DK
+  2. Foundation
+  3. Heirlooms
+  4. Value
+  5. Wealth and Well-Being
+
+=NOTE: Pattern Note important for Mind Map whereas Linear Note important for summary=
+
++ Reading
+  1. Intensive
+  2. Contextual
+  3. Annotative
+  4. Pattern
+     + Sequence
+       * Linear Note -> can develop =SUMMARY=
+     + Non Sequence
+       * Pattern Note -> can develop =MIND-MAP=
+
+COURSE: What to find if asked? Interpret, Analyse, Questions
+
+*** SUMMARY
++ Linear Note
+  * Concise
+  * Sequential
+  * Perspective that is evolved
+  * Chronology is not disrupted
+  * You cannot have your own point of view
+
+=SUMMARY= = 1/3rd or 1/4th of an essay
+
+(for now, ~150 words)
+
+"Back to Their Roots" by Sonali Prasad highlights the re-orientation of the adivasi community of Dongrikones (Dongrias) back to their indigenous farming after a short stinch with induced riced mono culture. The Dongricones of the Niyamgiri Hills survived with their rituals and values with functional heirarchies led by the Bejuni in the preservation of the heir-loom seed. However, with low subsidised rice becoming a part of their diet in a subsequent change of their mentalities from _ to mercenary _ brought in the ill effects of malnutrition and challenges of climate change. This insecured state was recovered by the women of the community through their performative rituals, which eventually led to a more climate resilient, sustainable mode of     agriculture defining their unique philosophy of wealth and well-being. The transition from their roots to a commercial culture and back was also the emphasis on their definition of life and the choices they make to enjoy the gifts of Niyamraja, their nature.
+
+=you HAVE to chip out extra words and bring it to 150 words=
+
+* 1st September, 2023 (Friday)
+
+** Lecture: Maths 1-09
++ Refer to notes
+** Lecture: DC 1-09
++ Refer to notes
+** Extra Tut: DC 1-09
++ Tut sheet 3 discussed
+** Extra Lecture: IP 1-09
+
++ FUNCTIONS
+
+#+begin_src python
+
+def func1(formal_parameters):
+    body_of_func
+
+#+end_src
+
++ When function is executed, 'actual' parameters replace formal parameters, viz. bound to fomal paramters
+
+#+begin_src python
+func1(actual_parameters) # this is a function. =function called=
+print(func1(actual_parameters)) # this is an expression. =function returned=
+#+end_src
+
++ Def is a reserved word just like "break", "for", etc.
+
++ Parameter Binding
+  * Positional Binding: the first formal parameter is bound to the first actual parameter and so on...
+  * Binding using name: the name of the formal parameter is used to do the binding
+
+#+begin_src python
+
+printName("Jack", "Sparrow", False)
+printName("Jack", "Sparrow", reverse=False)
+printName("Jack", last = "Sparrow", reverse = False)
+printName(last = "Sparrow", first = "Jack", reverse = False)
+
+#+end_src
+
+=NOTE : Default arguments always come before positional argument=
+
+* 4th September, 2023 (Monday)
+
+** Tut: IP 4-09
++ Functions
+** Lecture: IP 4-09
++ Scope of variable
+** Lecture: Maths 4-09
++ Refer to notes
+** Lab: IP 4-09
++ 2 questions
+  * Taylor Series
+  * Pyramid
+
+* 5th September, 2023 (Tuesday)
+
+** Lecture: IHCI 5-09
++ Conceptualizing Design
+    eg: Steve Jobs got ideas of GUI of MAC from XEROX
+** Lecture: DC 5-09
++ Refer to notes
+** Tut: Maths 5-09
++ Quiz
+
+* 6th September, 2023 (Wednesday)
+
+** Tut: DC 6-09
++ Submission of Q1,2 of tut-4 sheet
+
+** Lecture: IP 6-09
++ Scope of variables
+
+eg:
+#+begin_src python
+def f():
+    print(x)
+def g():
+    print(x)
+    x = 1
+x = 3
+f()
+x = 3
+g()
+#+end_src
+for main function -> x, f() and g() are local variables and objects
+for f() function -> x is global variables and objects
+
+in g() -> it will give error because x is being defined in g() i.e. x is local for g() and the error is -> UnboundLocalError: cannot access local variable 'x' where it is not associated with a value
+
++ RECURSION
+
+e.g.: Factorial
+#+begin_src python
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+
+print(factorial(4))
+#output -> 24
+#+end_src
+
+e.g.: GCD
+#+begin_src python
+def gcd(a, b):
+    if a % b == 0:
+        return b
+    else:
+        return gcd(b, a % b)
+
+
+print(gcd(15, 6))
+#output -> 3
+
+# it can also be represented as gcd(a-b, b)
+#+end_src
+
+#+RESULTS:
+: None
+
+e.g.: Fibonacci
+#+begin_src python
+def f(n):
+    if n == 0 or n == 1:
+        return 1
+    elif n >= 2:
+        return f(n-1)+f(n-2)
+
+
+print(f(5))
+# output -> 8
+#+end_src
+
+#+RESULTS:
+: None
+
++ Golden Ratio: 1.61...
+  Solution to equation : x^{2} = x + 1
+
+e.g.: Palindrome
+#+begin_src python
+def palindrome(s):
+
+    if len(s) == 0 or len(s) == 1:
+        return True
+    elif s[0] == s[-1] and palindrome(s[1:-1]):
+        return True
+    else:
+        return False
+
+
+print(palindrome(""))
+print(palindrome("$"))
+print(palindrome("anna"))
+print(palindrome("aditya"))
+
+#output ->
+# True
+# True
+# True
+# False
+
+#+end_src
+
+** Lecture: Maths 6-09
+
+* 11th September, 2023 (Monday)
+
+* 13th September, 2023 (Wednesday)
+=BRO KA BDAY YOO=
+
+** TUT: DC 13-09
++ Refer to notes
+
+** LECTURE: IP 13-09
++ https://tinyurl.com/czv4wd4j using global variable to define a counter
+#+begin_src python
+def fib(x):
+    global numFibCalls
+    numFibCalls = numFibCalls + 1
+    if x == 0 or x == 1:
+        return(1)
+    else:
+        return(fib(x-1) + fib(x-2))
+
+global numFibCalls
+for k in range(5):
+    numFibCalls = 0
+    print('fib of', k, '=', fib(k))
+    print('fib called', numFibCalls, 'times')
+#+end_src
++ We can also put the counter in the function parameter instead of defining as global var if its only required in the function since defining a global variable is a bad practice
++ The downside is that the counter can only be used outside the function
+
++ Order comes in to consideration in comparing two lists even if the elements are the same
++ Binary search only works with sorted lists
+
++ https://tinyurl.com/2rar95ns binary search
+
+MY VERSION
+#+begin_src python
+l = [1,3,4,6,7,8,10,13,14,18,19,21,24,37,40,45,71]
+a = 45
+def search(l):
+    if (l[len(l)//2]) == a:
+        print (a)
+        print (f"Index: {l.index(a)}")
+        exit()
+    elif (l[len(l)//2]) > a:
+        l = l[:len(l)//2]
+    elif (l[len(l)//2]) < a:
+        l = l[(len(l)//2)+1:]
+    search(l)
+
+search(l)
+#+end_src
+
+#+begin_src python
+# Use recursion to locate of data, T, in list A indexed L through R
+def binary_search(A, L, R, T):
+    if L > R:
+        return(-1)
+    m = int(((L + R) / 2))
+    if T == A[m]:
+        return(m)
+    if T < A[m]:
+        R = m - 1
+    else:
+        L = m + 1
+    return(binary_search(A, L, R, T))
+#
+A = [1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71]
+n = len(A)                          # indexed A[0] through A[16]
+print(binary_search(A, 0, 16, 7))   # list, low, high, data
+print(binary_search(A, 0, 16, 9))
+#+end_src
+
+** Lecture: Maths 13-09
++ Refer to notes
+
+** LAB: DC 13-09
++ Lab 4
+
+* 14th September, 2023
+
+** Lecture: IHCI 14-09
++ Refer to lecture PPT
+** Lecture: DC 14-09
++ Refer to notes
+** Tut: IHCI 14-09
+
++ =PERSONAS=
+  * User personars are idealised individuals with the aims and characteristics of a wider set of users. A persona is often given in a one or two page paper. Behaviour patterns, objectives, talents, attitudes,adnd background information.
+
++ Importance of Persona : helps in creating a more intuitive and user-centerd application
+
++ Steps involved in designing a persona
+  1. Find the users: Study a lot of users to get a sense of who they are
+  2. Build a hypothesis: What is the context of that matters
+  3. Verification
+  4. Finding patterns
+  5. Construct Persona
+
++ How to create a persona?
+  1. Persona name
+  2. Picture
+  3. Demographic
+  4. Goals and needs
+  5. Pain points (frustations)
+  6. Behaviours
+  7. Bits of personality
+
+* 19th September, 2023 (Tuesday)
+
+** IHCI Project Stuff
+*** Sample Projects
+- A mobile or web app that allows the users to co-create furniture of their choice and place and track orders for the sam
+- Non contact food delivery system
+*** Marks (25 Marks)
+1. Project Proposal (3 marks)
+    - Motivation, Introduction, literature survey etc
+2. Mid Term Project (7 marks)
+    - Low fi prototypes, alternative design, iterations
+3. Final Project (15 marks)
+    - High fi prototype, evaluation, video, etc.
+
+* 30th October, 2023 (Monday)
+** Lecture: IP 30-10-23
+*** Testing and Debugging
+1. Black Box Testing
+2. Glass Box Testing
+3. Unit Testing
+   - Parts of the program (functions) should be tested as and when they are developed
+4. Integration Testing
+   - The program as a whole should also be teste
+5. Regressting Testing
+   - Test the overall program every time a change is made
+
+* 6th November, 2023 (Monday)
++ Lecture: IP 4_11_23
+
+* 13th November, 2023 (Monday)
+
+|-----------------------------|
+| Registers                   |
+| Cache                       |
+| Main Memory - RAM           |
+| Secondary Memory - HDD, etc |
+|-----------------------------|
+
++ We have so much RAM but we have so litte cache because it is very =expensive=
+
+** What is cache memory?
+Cache Memory is a type of memory that is very fast and unique. It is used to speed up and get in sync with a fast CPU. Cache memory costs more than main memory, disk memory, and CPU registers, but less than main memory or disc memory.
+
+Cache memory is a type of memory that acts as a buffer between the processor and the main memory. It works very quickly. It stores frequently used data and instructions so that the CPU can use them right away when it needs to. Cache memory speeds up access to Main memory. The cache retains copies of frequently used material from main memory. Many independent CPU caches store data and instructions.
+
+The CPU checks the cache before reading or writing to main memory. If the CPU finds the memory location in the cache, it reads the data. A "cache miss" occurs when the CPU can't find the cached memory. The cache creates a new entry and copies data from main memory when a request is missed. Cache fills the request.
+
+** File
+A file generally consists of:
+1. Header : Gives info about the file
+2. Data : Contents of the file
+   - Conceptually contiguous - a sequence of bytes
+3. EOF : special character that indicated the end of file
+
+** Directory
+- Root : /
+- Following / represents nested levels
+
+Files can store text, audio, image, video
+Encoding schemes decides how bytes are mapped to human readable characters
+- ASCII (older - 128 chars) only roman numeral characters
+
+f.read() - reads the entire file and returns a string
+f.read(size) - reads size bytes
+f.readline() - reads one line and returns a string
+f.readlines() - reads a list of strings, each item being a line

@@ -1,0 +1,333 @@
+#+title: college_notes
+#+author: Aditya Gautam
+#+email: aditya23043@iiitd.ac.in
+#+language: en
+#+creator: Emacs 29.1 (Org mode 9.7)
+#+STARTUP: fold
+
+
+* TABLE OF CONTENTS :toc:
+- [[#links][LINKS]]
+  - [[#semester-1][SEMESTER 1]]
+- [[#math-1][Math 1]]
+  - [[#1st-lecture][1st LECTURE]]
+  - [[#2nd-lecture][2nd LECTURE]]
+  - [[#3rd-lecture][3rd LECTURE]]
+  - [[#4th-lecture][4th LECTURE]]
+  - [[#5th-lecture][5th LECTURE]]
+  - [[#6th-lecture][6th LECTURE]]
+- [[#introduction-to-human-computer-interaction][Introduction To Human-Computer Interaction]]
+
+* LINKS
++ [[https://fresources.tech][Fresources]]
+
+** SEMESTER 1
+
+*** Digital Circuits (DC)
+[[https://drive.google.com/file/d/1vhZBgJBocq8y26on-0hRwgzmRa6NWdAR/view?usp=sharing][Book: Digital Design: M. Morris Mano]]
+[[https://www.youtube.com/watch?v=M0mx8S05v60&list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm][YT Playlist]]
+[[https://www.youtube.com/watch?v=gXTpOP9AtQ8&list=PLir19lgiavA0EKRRN3xdARy_z44hKhNQc][YT Playlist]]
+[[http://techtree.iiitd.edu.in/viewDescription/filename?=ECE111][Syllabus and Schedule Link]]
+
+*** Linear Algebra (LA)
+[[https://drive.google.com/file/d/1UPeIzQjAlPosnKSFv3AB_DujBiBed-_O/view?usp=sharing][David Lay: Linear Algebra and Its Applications, 5th (Indian Edition), Pearson.]]
+[[https://www.youtube.com/watch?v=QVKj3LADCnA&list=PL49CF3715CB9EF31D][YT Playlist]]
+[[https://www.youtube.com/playlist?list=PLW3u28VuDAHJNrf3JCgT0GG_rjFVz0-j9][YT Playlist]]
+[[https://www.youtube.com/watch?v=3HoSPQmpzKc&list=PLdM-WZokR4taLvoJPvfHwF8m0Q1K6Qvmz][YT Playlist]]
+[[https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab][Virtual Tut of Algebra]]
+[[http://techtree.iiitd.edu.in/viewDescription/filename?=MTH100][Syllabus and Schedule Link]]
+
+
+*** Introduction Human-Computer Interaction (IHCI)
+[[https://drive.google.com/file/d/1PZxlX5c0JXe2ZSUtzHRlVCtu07nf5fLe/view?usp=sharing][Interaction Design: Beyond Human-Computer Interaction. 2019. (5th Edition) by Jenny Preece, Helen Sharp, Yvonne Rogers (Wiley)]]
+[[https://youtube.com/playlist?list=PL9rvax0EIUA7KMhdCpjvAFroczbd_s7Z-][YT Playlist]]
+[[https://www.youtube.com/watch?v=SWafYeoCVYc&list=PL9rvax0EIUA7KMhdCpjvAFroczbd_s7Z-][YT Playlist]]
+[[http://techtree.iiitd.edu.in/viewDescription/filename?=DES102][Syllabus and Schedule Link]]
+
+*** Introduction To Programming (IP)
+Wesley J. Chun: Core Python Programming: Prentice-Hall, 2006 (2nd Ed.)
+[[https://drive.google.com/file/d/1ACVK9Cj6n4IQXe4l5JqIOMKzA1RJMG73/view?usp=sharing][Book]]
+[[https://drive.google.com/file/d/13sjPY9n_kL99gfkqUZ9DV1B1ybiONexx/view?usp=sharing][Book]]
+[[https://www.youtube.com/watch?v=gfDE2a7MKjA&t=7216s][YT Playlist]]
+[[https://www.youtube.com/watch?v=QXeEoD0pB3E&list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3][YT Playlist]] (Till 60th Video)
+[[https://www.programiz.com/python-programming][Other Source]]
+[[http://techtree.iiitd.edu.in/viewDescription/filename?=CSE101][Syllabus and Schedule Link]]
+
+*** Coding Resources
+- https://codingbat.com/python
+- https://www.hackerrank.com/domains/python
+- https://www.w3schools.com/python/default.asp
+- https://www.programiz.com/python-programming
+- python mind-map -> https://www.geeksforgeeks.org/python-programming-language/
+- python visualizer to understand the code flow -> https://pythontutor.com/visualize.html (Very Useful)
+
+
+* Math 1
++ [[https://classroom.google.com/u/2/w/NTIzMjc3NzI4ODM0/t/all][Google Classrom]]
++ [[https://drive.google.com/file/d/1UjJ8oR82YGYPkK6jxwJ-I7w7S8QZcG_S/view?usp=drive_link][book]]
+
+** 1st LECTURE
++ 7th August 2023
++ Monday
++ General Information
+
+*** Link:
+[[https://drive.google.com/file/d/1T9IZMp_ND1xn7Man8X_s6RhH2n7QMIVO/view?usp=drive_link][PDF]]
+
+*** Tips:
++ Course: MTH100
++ Instructor: Samaresh Chatterji
++ Mail Id: samaresh@iiitd.ac.in
++ Office: B303 Academic Building, Extension: 487
+
+*** Time Table:
++ Monday: 11:00 - 12:00
++ Wednesday: 11:00 - 12:00
++ Friday: 9:30 - 10:30
+
+*** Content (week-wise)
+
+**** Weeks 1/2:
++ Systems of linear equations, row reduction and echelon forms, matrix equation of the form Ax = b, invertibility of matrices
+
+**** Weeks 3/4/5:
++ Vector spaces and subspaces, linear dependence/independence, dimension, span, applications. Fundamental subspaces.
+
+**** Weeks 6/7/8:
++ Linear transformation, rank. Matrix of linear transformation, effect of change of basis, similarity transformation. Algebra of linear transformations. Determinants, properties of determinants, Cramers rule, volume. .
+
+**** Weeks 9/10:
++ Eigenvalues and eigenvectors, diagonalization of a matrix, eigenvectors and linear transformations, complex eigenvalues.
+
+**** Weeks 11/12/13:
++ Orthogonality and least squares, inner product, length, orthogonal projections, Gram-Schmidt orthogonalization, QR decomposition. Symmetric matrices and Quadratic forms, diagonalization of symmetric matrices, positive definite matrices, SVD, application to image processing.
+
+*** Marking System
++ class test: 10%
++ Mid Sem: 20%
++ Weekly Tutorial Submissions: 30%
++ End Sem: 40%
+
+*** Grading
++ A: 75%
++ B: 60%
++ C: 45%
++ D: 30%
+
+*** Books
++ David Lay: Linear Algebra and Its Applications, 3rd (Indian Edition), Pearson.
+
+** 2nd LECTURE
++ 9th August 2023
++ Wednesday
++ Introduction
+
+*** Link
+[[https://drive.google.com/file/d/1DO_vyfzEKDYvFWB1zyNatiBIltV_Wazx/view?usp=drive_link][PDF]]
+
+*** Types to Represent a Linear Equations
+
+**** Equation Form
+a_{11}x_{1} + a_{12}x_{2} + ... a_{1n}x_{n} = b_{1}
+a_{21}x_{1} + a_{22}x_{2} + ... a_{2n}x_{n} = b_{2}
+.   .   .   .   .   .   .
+.   .   .   .   .   .   .
+a_{m1}x_{1} + a_{m2}x_{2} + ... a_{mn}x_{n} = b_{m}
+
+
+    5x_{2} + 10x_{3} + 8x_{4} = 23
+    x_{1} + 2x_{2} + 6x_{3} + 7x_{4} = 16
+    2x_{1} + 4x_{2} + 12x_{3} + 6x_{4} = 24
+
+**** Marix Form (our preference)
+***** Ax = B
+
+  [0,5,10,8]     [x_{1}]       [23]
+  [1,2,6 ,7]  x  [x_{2}]  =    [16]
+  [2,4,12,6]     [x_{3}]       [24]
+                 [x_{4}]
+
+**** Vector Form
+***** x_{1}v_{1} + x_{2}v_{2} + ... + x_{n}v_{n} = b
+
+where, x_{i} are scalar unknowns
+v_{i} are column vectors formed from the coefficients of the original linear system
+
+    v_{1 }= [0],   v_{2} = [5],   v_{3} = [10],   v_{4} = [8]
+        [1]         [2]         [6]          [7]
+        [2]         [4]         [12]         [6]
+
+**** Notation
++ N: Natural
++ Z: Integer
++ R: Real
++ Q: Rational (p/q)
++ C: Complex
++ For any set X, P(X) = power set of X = 2^{x}
++ A =power set= is a set that contains all subsets of a given set, including the original set and the null or empty set.
++ R^{n}: Cartesian Product of R with itself n times
+  + It is also the set of all n-vectors with real entries (or coefficients or coordinates)
+  + also referred to as "Euclidean n-space"
+  + Notation for the set of all n-vectors with complex entries is C^{n}
+  + In a linear system of type, Ax=B, any solution is an n-vector with real entries. Therefore, the solution set is a subset of R^{n}
+
+**** Solving Linear System
++ Small linear systems (2/3 vars) can be solved by substitution or elimination
++ but we need a more mechanical and systematic way, so we will be using matrix algorithms
+
+**** Elementary Row Operations
+***** Scale
++ Multiplication of one row of A by a non-zero scalar c
+***** Replace
++ Replacement of one row of A by the sum of the row and a scalar multiple of a different row
+***** Interchange
++ Interchange of two rows of A
+
+NOTE: Elementary Row Operations are reversible
+
+**** ECHELON FORM MATRIX
++ All non-zero rows are above any all-zero rows
++ Each leading entry (i.e. first non-zero entry) of a row is to the right of the leading entry of the row above it
++ All entries in a column below a leading entry are zero
+
+**** ROW-REDUCED ECHELON FORM MATRIX (RREF)
++ All non-zero rows are above all zero rows
++ Each leading entry (i.e. the first non-zero entry) of a row is to the right of the leading entry of the row above it
++ The leading entry (note again: first non-zero entry) in each non-zero row is 1
++ Each column which contains such a leading entry (necessarily 1) has all its other entries as 0
+
+** 3rd LECTURE
++ 11th August 2023
++ Friday
++ Gauss-Jordan Elimination
+
+*** Link
+[[https://drive.google.com/file/d/1YwX9C2Wa3xXLGZFivyTXgSiC7lvcjxHY/view?usp=drive_link][PDF]]
+
+*** GAUSS-JORDAN Elimination
+**** Forward Phase
++ Any m x n matrix -> Echelon matrix
++ Referred to Gaussian Reduction or Gaussian Elimination
+  - =Step 0:= Move any all-zero rows to the bottom of the matrix using interchange operations
+  - =Step 1:= Start with the left-most non-zero column; it will be the pivot column.
+  - =Step 2:= Use an interchange to make the top element of the pivot column non-zero (this will be the pivot position).
+  - =Step 3:= Use replacement operations to make all entries in the pivot column below the pivot position as 0’s.
+  - =Step 4:= Cover the row containing the pivot position and all rows above it. Repeat Steps 1 to 4 for the uncovered sub-matrix. Iterate until all the non-zero rows have been processed.
+**** Backward Phase
++ Echelon -> Row Reduced Echelon
+  - =Step 5:= Use scaling operations to make all the pivot elements 1. (This step is referred to as normalization of the pivot elements.)
+  - =Step 6:= Starting with the right-most pivot, create zeroes in the entire column above it by using replacement operations with the pivot row. Repeat this step moving leftward and upward.
+
+**** Pointers
++ =Definition= A mxn matrix, B is said to be row equivalent to another mxn matrix A, if B can be obtained from A by a finite sequence of row operations
++ =Proposition-1= Gauss-Jordan Elimination row-reduces any mxn matrix A to an RREF matrix
++ =Alt-Proposition-1= Given any mxn matrix A, there exists an RREF matrix which is row equivalent to A.
++ =Justification (Proof)= Applying the gauss jordan elimination to A, we must terminate after a finite number of steps and when it terminates, we receive a RREF matrix row-equivalent to A
+
+*** Row Equivalence
++ =Proposition-2= Row equivalence is an equivalence relation on the set R^{m×n} of m×n matrices with entries from the set R of real numbers (for all m,n ∈ Z^{+}).
++ =Proof=
+    #+begin_example
+    Row equivalence is indeed an equivalence relation on the set of \(m \times n\) matrices with entries from the set of real numbers \(\mathbb{R}\). An equivalence relation is a relation that
+    satisfies three properties: reflexivity, symmetry, and transitivity. Row equivalence meets these criteria.
+
+    Here's how row equivalence works for \(m \times n\) matrices:
+
+    1. **Reflexivity**: Any matrix is row equivalent to itself. This property states that for any \(m \times n\) matrix \(A\), \(A\) is row equivalent to \(A\).
+
+    2. **Symmetry**: If matrix \(A\) is row equivalent to matrix \(B\), then \(B\) is row equivalent to \(A\). This means that if you can obtain matrix \(B\) from matrix \(A\) using a sequence of
+    elementary row operations, you can also obtain matrix \(A\) from matrix \(B\) using the same operations.
+
+    3. **Transitivity**: If matrix \(A\) is row equivalent to matrix \(B\), and matrix \(B\) is row equivalent to matrix \(C\), then matrix \(A\) is row equivalent to matrix \(C\). This property
+    ensures that if two matrices are row equivalent and a third matrix is row equivalent to the second matrix, then the first and third matrices are also row equivalent.
+
+    Row equivalence is established through the use of elementary row operations, which are three fundamental operations that can be performed on the rows of a matrix without changing its column
+    space:
+
+    1. **Interchanging two rows**: Swap the positions of two rows.
+    2. **Multiplying a row by a non-zero scalar**: Multiply all elements in a row by a non-zero scalar.
+    3. **Adding a multiple of one row to another row**: Replace one row with the sum of that row and a multiple of another row.
+
+    Two matrices are row equivalent if one can be transformed into the other using a sequence of these elementary row operations. Row equivalence preserves certain properties of matrices, such as
+    their rank and solutions to systems of linear equations.
+
+    This equivalence relation is widely used in linear algebra, particularly in the context of solving systems of linear equations, finding matrix inverses, and understanding the structure of
+    matrices.
+    #+end_example
++ =Remark= RREF matrix of any given matrix is unique, i.e. a matrix cannot be row-equivalent to two distinct RREF matrices. Alternatively, two distinct RREF matrices cannot be row-equivalent to each other.
+
+** 4th LECTURE
++ 14th August 2023
++ Monday
++ Homogenous Systems
+
+*** Link
+[[https://drive.google.com/file/d/1gWPMhQjUtzZzEUTtepiHHui3ZeIYb343/view?usp=drive_link][PDF]]
+
+*** Application To Determinants
++ If A is an n×n and B is echelon form matrix obtained from A by Gaussian Reduction, without applying any scaling, then det(A) = (-1)^{k} det(B) = (-1)^{k} b_{11} b_{22} ... b_{nn}
+  =Preferred algorithm to calculate the determinant=
+
+*** Application To Solving Linear Systems
++ Homogenous system = Linear system in matrix form Ax = b, where b = 0
+  - It always has the trivial solution consisting of all zeroes i.e. the zero vector 0 (=might be wrong because in m<n case, we get non-trivial solution=)
+  - System always consistent
+
++ Non-Homogenous system = Linear system in matrix form Ax = b, where b != 0
+  - It may or may not have any solution
+
++ A solution which has at least one solution is called consistent, otherwise it is inconsistent
+
++ We will work with
+  - =Coefficient= Matrix, A in Ax=b for =homogeneous systems=
+  - =Augmented= Matrix, [A:b] for =non-homogeneous systems=
+
++ =Observation-1= If we obtain a row equivalent matrix to either the coefficient matrix (in the case of a homogeneous system) or the augmented matrix (in the non-homogeneous case), then the solution sets of the two linear systems are the same.
+
++ =Basic Variables= Variables corresponding to pivot columns
++ =Free Variables= Variables corresponding to non-pivot columns
+
++ If we write the matrix equation Rx = 0 as a linear system, we can obtain the general solution of the system
++ The general solution is best expressed in column vector form.
+
+** 5th LECTURE
++ 16th August 2023
++ Wednesday
++ Homogenous Systems and Introduction to non-homogeneous systems
+
+*** Link
+[[https://drive.google.com/file/d/1VgctvXuKFfoaWugrCpGn4rqwHSWFUI_3/view?usp=drive_link][PDF]]
+
+*** Homogeneous Systems
+
+=Observation= if the number of non-zero rows 'r' of R < number of variables 'n' -> system has a =non-trivial= solution
+  1. Express basic variables in terms of free variables. When expressed in vector form, the number of distinct vectors on the RHS is equal to the number of free variables.
+  2. Free variables behave like parameters - i.e. we can choose any values for them, and each such choice gives a solution. So we get infinitely many solutions.
+
+=Observation= (Special case of above) If A is an m×n matrix with m < n, then the homogeneous system Ax = 0 must have a non-trivial solution (in fact, infinitely many solutions, one of which is the trivial solution). This is because in this case, there have to be free variables.
+
+=Observation= If the number of non-zero rows of R is equal to the number of variables (i.e. number of columns), then there are no free variables, and the system has a unique solution (only the trivial solution of all zeros).
+=Proposition= If A is a square matrix, then A is row equivalent to the identity matrix if and only if the homogeneous system Ax = 0 has only the trivial solution.
+
+*** Non-Homogeneous Systems
+
++ In this case, we will work with augmented matrix and reduce it to RREF form, R
+
+=Proposition= System is consistent iff rightmost column of R is =not a pivot column=
+i.e. there is no row of the form -> [0 ... 0 b] where b!=0
+
+If System is =consistent= then it has either ->
+    - a unique solution if there are no free variables or ...
+    - infinitely many solutions when there is at least one free variable
+
+=Observation= The non-homogeneous system Ax = b can be inconsistent in either of the two cases of the associated homogenous system Ax = 0 having unique solution or infinitely many solutions.
+
+** 6th LECTURE
++ 18th August 2023
++ Friday
++ Vector Interpretation of Solutions
+
+*** Link
+[[https://drive.google.com/file/d/1I9ClLqj9FeOgXAWBQ4ufWqzduUKVtFw7/view?usp=drive_link][PDF]]
+
+* Introduction To Human-Computer Interaction

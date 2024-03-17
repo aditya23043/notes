@@ -1,0 +1,40 @@
+* 30th October, 2023 (Monday)
+
+** Lecture: IP 30-10-23
+*** Testing
+
+    $ Black Box Testing
+    Explore paths through the program specification
+    No knowledge about the internal structure or the code or the program of the software
+    Implementation of code is not necessary
+    Outer / External Testing
+
+    $ Glass Box Testing
+    Explore paths through the code 
+    he tester has knowledge about the internal structure or the code or the program of the software.
+    Implementation of code is crucial
+    Inner / Internal Testing
+
+    $ Unit Testing
+    Parts of the program (functions) should be tested as and when they are developed
+
+    $ Integration Testing
+    The program as a whole should be tested
+    Designed to ascertain whether the program as a whole behaves as intended
+
+    $ Regression Testing
+		Test the whole program every time a change is made
+
+*** Stubs and Drivers
+    - The Stubs and Drivers are considered as elements which are equivalent to to-do modules that could be replaced if modules are in their developing stage, missing or not developed yet, so that necessity of such modules could be met. Drivers and stubs simulate features and functionalities, and have ability to serve features that a module can provide. This reduces useless delay in testing and makes the testing process faster. 
+* 13th November, 2023 (Monday)
+
+** FILES
+
+  @code python
+  with open("something", "r") as f:
+    f.read()
+    f.read(size)
+    f.readline()
+    f.readlines()
+   @end
