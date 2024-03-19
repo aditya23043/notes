@@ -1,6 +1,6 @@
 <style>
 *{
-font-family: "Fira Sans Condensed";
+font-family: "Ubuntu";
 }
 </style>
 
@@ -511,7 +511,7 @@ $$1*2^{-126}$$
 - So, for 32 bit system, we do PC = PC + 4 for every instruction
 - Because $8*4=32$
 
-### 0-Address Instructions
+### 0-Address Instructions ( nop, ret )
 - `nop` and `ret` instructions
 - only opcode is passed and nothing else
 - no operand
@@ -521,7 +521,7 @@ $$1*2^{-126}$$
 | opcode |         |
 | 5 bits |         |
 
-### 1-Address Instructions
+### 1-Address Instructions ( call, b, beq, bgt )
 - `call`, `b`, `beq` and `bgt`
 - Fields:
     - 5 bit opcode
@@ -546,7 +546,7 @@ $$1*2^{-126}$$
 - Therefore, we can store $29$bit labels since we have 27 bits + we can add those last two (00) bits at the time of computation
 - Now, the farthest we can go is $PC + 2^{29}$
 
-### 2-Address Instructions
+### 2-Address Instructions ( cmp, not, mov )
 - cmp, not and mov
 - Use the 3-address instruction format - reg/imm
 - remove one field
@@ -566,7 +566,7 @@ $$1*2^{-126}$$
 |--------|---|----|---------|---------|
 | 5      | 1 | 4  | 4 (X)   | 18      |
 
-### 3-Address Instructions
+### 3-Address Instructions ( add, sub, mul, div, mod, and, or, lsl, lsr, asr )
 - 1 Destination and 2 Source registers
 - Instructions : add, sub, mul, div, mod, and, or, lsl, lsr, asr
 - <opcode> rd, rd1, <rs2/imm>
@@ -574,7 +574,6 @@ $$1*2^{-126}$$
 - For that, we use one bit I
 - I = 0 > second operand is a register
 - I = 1 > second operand is an immediate
-
 - Register Format
 
 | total : | 32 bits |          |          |          |  |
@@ -583,7 +582,6 @@ $$1*2^{-126}$$
 | op      | I       | rd       | rs1      | rs2      |  |
 | 5       | 1       | 4        | 4        | 4        |  |
 - Rest 14 bits are unused
-
 - Immediate Format
 
 | total : | 32 bits |          |          |              |              |           |
@@ -602,7 +600,7 @@ $$1*2^{-126}$$
 - `u` modifier = unsigned : fill the left of the bits with zero
 - `h` modifier = the 16 bit imm number we are dealing with are not the right part but the left part so put the 16 bits as MSB and fill the right parts with zero
 
-### Encoding Instructions
+### Special Encoding Instructions
 - ld rd, imm[rs1]
 - st rd, imm[rs1]
 
@@ -617,22 +615,24 @@ $$1*2^{-126}$$
 - Instructions are stored in instruction memory not in any register
 - Note that RV32I is very strict in context that dest and src1 will always be registers (whereas src2 can be register or immediate)
     - Advantage : Hardware is streamlined
-- Out of the 21 instructions, the instruction which creates a problem is `store`
-    - I bit will be high(1) because we are using imm
-    - The problem is that there is no dest register and it needs 2 src AND an immediate
-    - `st rd, imm[rs1]`
-    - two source registers and one immediate
-    - st [src reg], imm[reg]
-    - 2nd argument defines where to store, i.e. address = imm + addr(reg)
-    - where to store? address of register rs1 offset by imm
-    - 1st arg defines the value to be stored
-    - `rd` is not a dest reg
-    - it is the value which needs to be stored
-    - Store:
 
-    | opcode | I | rd | rs1 | imm |
-    |--------|---|----|-----|-----|
-    | 5      | 1 | 4  | 4   | 18  |
+### Store instruction
+- Out of the 21 instructions, the instruction which creates a problem is `store`
+- I bit will be high(1) because we are using imm
+- The problem is that there is no dest register and it needs 2 src AND an immediate
+- `st rd, imm[rs1]`
+- two source registers and one immediate
+- st [src reg], imm[reg]
+- 2nd argument defines where to store, i.e. address = imm + addr(reg)
+- where to store? address of register rs1 offset by imm
+- 1st arg defines the value to be stored
+- `rd` is not a dest reg
+- it is the value which needs to be stored
+- Store:
+
+| opcode | I | rd | rs1 | imm |
+|--------|---|----|-----|-----|
+| 5      | 1 | 4  | 4   | 18  |
 - General Format of RV32I
 
 | Opcode | I     | rd     | rs1    | rs2/imm  |
@@ -653,6 +653,93 @@ $$1*2^{-126}$$
 | 28-32 | 27 | 23-26 | 19-22 | 15-18 |
 - Immediate format : ALU, ld/st instructions
 
-| op    | I  | rd    | rs1   | imm   |
-|-------|----|-------|-------|-------|
+| op    | I  | rd    | rs1   | imm  |
+|-------|----|-------|-------|------|
 | 28-32 | 27 | 23-26 | 19-22 | 1-18 |
+
+# $19/03/2024$
+## SimpleRisc
+- Top 5 bits are always fixed for opcode
+- In our assignment, we have JAL (jump and link)
+
+## Functions
+- Used to prevent repition of similar functionality (increases reusability)
+- If a function MUL exists, what to do to call it?
+    - Using Program counter
+- main function contains a `call` for the function
+- after finishing the function, the function has a `ret`
+- The function you are calling is called the `callee`
+
+| Caller         | Address |  | Callee | Address to go to |
+|----------------|---------|--|--------|------------------|
+| Function Call  | P       |  | ...    |                  |
+| Return address | P + 4   |  | return | P + 4            |
+
+- Sample code:
+```asm
+a2:
+    add r3, r1, r2
+    ret
+
+main:
+    mov r1, 3
+    mov r2, 5
+    store r3, 100[r4]
+    call a2
+```
+- At the `call a2`, the PC is updated with the current address and PC + 4 has been stored in return address register (ra)
+- Then we go and do the instructions in the function and once the `ret` is called, the cursor goes to `PC + 4` address to continue the main program
+- Note: In the actual RISC-V, we have do not have call because of its simplicity but there is jump and link
+- We are using SimpleRisc because of simplicity
+
+## Problems
+- How to pass arguments to functions now?
+- When i call another instruction like `sub r8, r7, r3` I might not know that the value of r3 has been modified in the function above
+- Space Problem <- Use Memory
+- Overwrite Problem <- Register Spilling
+    - Caller saves the set of registers and then calls the function
+
+## How to handle register spilling
+- Caller Saved Function
+
+| Caller            |
+|-------------------|
+| Saves register    |
+| Calls Callee      |
+| Restores register |
+
+- Main Function will first store the registers and then calls the function
+
+- Callee Saved Function
+
+| Callee             |
+|--------------------|
+| Calls Callee       |
+| Stores registers   |
+| Restores registers |
+
+- Note that the storing and restoring takes place inside the callee function
+- When calling the callee, the function will first store the register and then run the callee function
+- Main function will not do anything in this case
+
+## Activation Block
+- Contains all your arguments
+- Kind of a package for each of the function that needs to be stored in the memory
+- Everytime we call a function, we have to store this in the memory
+- This memory needs to be de-allocated every time we exit the function to prevent memory being fully occupied in complex programs
+- Best way to implement this is stack
+
+| Activation Block    |
+|---------------------|
+| Arguments           |
+| Return Address      |
+| Register Spill Area |
+| Local Variables     |
+
+- Stack pointer will start from the top (i.e. 1000 here) and goes down
+
+| Stack | Points |
+|-------|--------|
+| 1000  | <----  |
+| ...   |        |
+| 0     |        |
