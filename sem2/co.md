@@ -743,3 +743,36 @@ main:
 | 1000  | <----  |
 | ...   |        |
 | 0     |        |
+
+# $20/03/2024$ (Tut)
+```asm
+bar:
+    movi r3 #1
+    movi r4 #2
+    jal baz
+    mov r5 #3
+    mul r0 r2 r5
+baz:
+    add r2 r3 r4
+    mov r15 r1
+```
+- Cannot use same registers in both callee and caller
+- Link register is used to strore return address
+- i.e. `d = c*3` address is stored in r1 here
+- Registers used in caller function are caller saved
+- Registers used in callee function are callee function
+- By default address are divided in two for each caller and callee
+- Link the return address before branching with jal (jump and link)
+- Address of the Instructions of the callee are stored in stack
+- Downward growth
+- After the callee is done with, the stack is collapsed (i.e. memory is de-allocated)
+
+| Stack        |
+|--------------|
+| mov r15 r1   |
+| add r2 r3 r4 |
+
+- Given
+    - r15 : PC
+    - r1 : Link register (stores the address of the instruction to jump to after return is called in the callee)
+    - r2 : stores the return value of the callee
