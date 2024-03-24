@@ -1110,5 +1110,28 @@ struct Node{
     Node *P;
 }
 ```
-
 ### Querying a BST
+
+# $20/03/2024$
+## Insertion in BST
+- Causes the dynamic set to be modified
+- The tree needs to be modified such that the BST property continues to hold true
+- Input: a BST Node `Z` for which Z key has been set and `Z.left = NIL`, `Z.right = NIL`
+```cpp
+Tree-Insert(T,z):
+    x = T.root // node being compared with z.key
+    y = NIL // parent of z
+    while x != NIL:
+        y = x
+        z.key < x.key ? x = x.left : x = x.right
+    z.p = y // p is the parent
+    if y == NIL: // when tree is empty
+        T.root = z
+    else if z.key < y.key:
+        y.left = z
+    else:
+        y.right = z
+```
+- Time complexity : O(h)
+    - Where h is the height of the tree
+    - i.e. o($n \log_{}n$)

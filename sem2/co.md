@@ -727,7 +727,7 @@ main:
 - Kind of a package for each of the function that needs to be stored in the memory
 - Everytime we call a function, we have to store this in the memory
 - This memory needs to be de-allocated every time we exit the function to prevent memory being fully occupied in complex programs
-- Best way to implement this is stack
+- Best way to implement this is stack because it can be easily de-allocated
 
 | Activation Block    |
 |---------------------|
@@ -776,3 +776,36 @@ baz:
     - r15 : PC
     - r1 : Link register (stores the address of the instruction to jump to after return is called in the callee)
     - r2 : stores the return value of the callee
+
+# $21/03/2024$
+
+| main |  | f_1 |  | f_2 |
+|------|---|-----|---|-----|
+- In this nested function call, inside f_2, return address register (ra) will have the value : PC' + 4 where PC' is the program counter inside f_1
+- In f_1, ra = PC + 4, where PC is the original program counter of `main`
+
+| Activation Block    |
+|---------------------|
+| Arguments           |
+| Return Address      |
+| Register Spill Area |
+| Local Variables     |
+
+- In terms of activation block in context of nested functions,
+    - Activation blocks will be defined like this : main -> f_1 -> t_2
+    - It will be de-allocated like this : t_2 -> f_1 -> main
+    - because of concept of Stack
+
+## Activation Block
+- Solved the space problem
+    - Activation block for passing as many parameters
+- Overwrite problem
+- Management of activation block
+    - By stack
+- Processor Design
+    - Fetch
+    - Decode
+    - Execute
+    - Memory Address
+    - Write Back
+- All instructions have same pattern of execution in RISC V
