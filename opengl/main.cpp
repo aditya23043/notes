@@ -5,6 +5,8 @@
 const int SHADER = 0;
 const int PROGRAM = 0;
 
+// ---------------------------------FUNCTIONS-------------------------------------
+
 void checkForCompilationError(GLuint shaderOrProgram, int type){
 
   int success;
@@ -38,9 +40,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height){
   glViewport(0, 0, width, height);
 }  
 
+//---------------------------------BASIC CONFIG AND CREATING WINDOW---------------------------
 int main(){
-
-  //------------------------------------BASIC CONFIG AND CREATING WINDOW---------------------------
 
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -66,10 +67,10 @@ int main(){
   // 3rd and 4th params is the width and height of the rendering window in px
   glViewport(0, 0, 800, 600);
 
-  // However, the moment a user resizes the window the viewport should be adjusted as well
+  // However, the moment a user resizes the window, the viewport should be adjusted as well
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  
 
-  //-----------------------------------SHADER STUFF------------------------------------------------
+  //---------------------------------SHADER STUFF------------------------------------------------
 
   /*
   * A vector in GLSL (OpenGL Shading Language) has size from 1 to 4 hence, vec1...vec4
@@ -77,12 +78,16 @@ int main(){
   * w in vec.w is perspective division
   */
 
-  const char *vertexShaderSource = 
-    "#version 460 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main(){\n"
-    " gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
+  const char *vertexShaderSource = R"(
+
+    #version 460 core
+    layout (location = 0) in vec3 aPos;
+
+    void main(){
+      gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    }
+
+  )";
 
   // Took in x, y and z coords in a vec3 type data aPos using the "in" keyword 
   // and output gl_Position which is a vec4 type data i.e. 4 data
@@ -105,12 +110,16 @@ int main(){
   we can declare the output values with the "out" keyword
   */
 
-  const char *fragmentShaderSource =
-    "#version 460 core\n"
-    "out vec4 FragColor;\n"
-    "void main(){\n"
-    " FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\0";
+  const char *fragmentShaderSource = R"(
+
+    #version 460 core
+    out vec4 FragColor;
+
+    void main(){
+      FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+    }
+
+  )";
 
   GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
@@ -262,7 +271,7 @@ int main(){
   
   // By default it is set to GL_FILL
   // Configures how OpenGL draws its primitives
-  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+  glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
   //---------------------------------MAIN / RENDER LOOP--------------------------------------------
 
@@ -270,7 +279,7 @@ int main(){
   while(!glfwWindowShouldClose(window)){
     processInput(window); // input
 
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // state setting function
+    glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // state setting function
     glClear(GL_COLOR_BUFFER_BIT); // state using function
 
     // Main STUFF
@@ -296,7 +305,7 @@ int main(){
     glfwPollEvents(); // checks and calls events (like resize and move)
     glfwSwapBuffers(window); // swap buffers
   }
-
+// ---------------------------------END PART------------------------------------------------------------
   /* 
   The glfwWindowShouldClose func checks at the start of each loop if GLFW
   has been instructed to close. Returns true if so and render loop stops
