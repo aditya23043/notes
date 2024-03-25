@@ -1,5 +1,6 @@
+#include <cmath>
 #include <iostream>
-#include "libs/glad.c"
+#include <glad/glad.c>
 #include <GLFW/glfw3.h>
 
 const int SHADER = 0;
@@ -82,9 +83,13 @@ int main(){
 
     #version 460 core
     layout (location = 0) in vec3 aPos;
+    layout (location = 1) in vec3 aCol;
+
+    out vec3 ourColor;
 
     void main(){
       gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+      ourColor = aCol;
     }
 
   )";
@@ -114,9 +119,10 @@ int main(){
 
     #version 460 core
     out vec4 FragColor;
+    in vec3 ourColor;
 
     void main(){
-      FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+      FragColor = vec4(ourColor, 1.0f);
     }
 
   )";
@@ -206,10 +212,10 @@ int main(){
 
   // vertex input
   GLfloat vertices[] = {
-     0.5f, 0.5f, 0.0f,
-     0.5f,-0.5f, 0.0f,
-    -0.5f, 0.5f, 0.0f,
-    -0.5f,-0.5f, 0.0f
+     0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
+     0.5f,-0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
+    -0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
+    -0.5f,-0.5f, 0.0f, 1.0f, 1.0f, 1.0f,
   };
 
   // For EBO
@@ -245,8 +251,11 @@ int main(){
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-  glEnableVertexAttribArray(0); // 0 is the starting index of the VAO here
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+  glEnableVertexAttribArray(0); // 0 is the starting index of the VBO here
+
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+  glEnableVertexAttribArray(1); // 1 is the starting index of the VBO here
 
   // unbinding VBO
   glBindBuffer(GL_ARRAY_BUFFER, 0); 
@@ -283,14 +292,20 @@ int main(){
     glClear(GL_COLOR_BUFFER_BIT); // state using function
 
     // Main STUFF
+
     glUseProgram(shaderProgram);
-    glBindVertexArray(VAO);
+
+    GLfloat timeValue = glfwGetTime();
+    GLfloat colValue = (std::sin(timeValue) / 2.0f) + 0.5f;
+    int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+    glUniform4f(vertexColorLocation, 0.0f, colValue, colValue, 1.0f);
 
     // glDrawArrays(GL_TRIANGLES, 0, 3);
     // first arg : OpenGL primitive type i.e. triangles in this case
     // second arg : starting index of the vertex array
     // third arg : number of vertices to draw
 
+    glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     // Now instead of using glDrawArrays to draw a single triangle with the given vertices
     // We use glDrawElements to draw multiple triangles with the given vertices AND indices
