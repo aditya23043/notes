@@ -46,11 +46,9 @@ int main(){
   // However, the moment a user resizes the window, the viewport should be adjusted as well
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  
 
-  //---------------------------------SHADER STUFF------------------------------------------------
+  //---------------------------------VERTEX ARRAY OBJECT (VAO)-------------------------------------------
 
   Shader myShader("shader.vert", "shader.frag");
-  
-  //---------------------------------VERTEX ARRAY OBJECT (VAO)-------------------------------------------
 
   // vertex input
   GLfloat vertices[] = {
@@ -60,10 +58,18 @@ int main(){
     -0.5f,-0.5f, 0.0f, 1.0f, 1.0f, 1.0f,
   };
 
-  // For EBO
+  // EBO
   GLuint indices[] = {
     0, 1, 2, // top right
     1, 2, 3  // bottom left
+  };
+
+  // Texture
+  GLfloat textureCoords[] = {
+    1.0f, 1.0f,
+    1.0f,-1.0f,
+    0.0f, 1.0f,
+    0.0f,-1.0f
   };
 
   GLuint VBO, VAO, EBO;
@@ -160,8 +166,6 @@ int main(){
     glfwPollEvents();
     glfwSwapBuffers(window);
   }
-
-// ---------------------------------END PART------------------------------------------------------------
 
   glDeleteVertexArrays(1, &VAO);
   glDeleteBuffers(1, &VBO);
