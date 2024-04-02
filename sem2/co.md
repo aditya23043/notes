@@ -809,3 +809,11 @@ baz:
     - Memory Address
     - Write Back
 - All instructions have same pattern of execution in RISC V
+
+# $02/04/2024$
+## Lecture 25
+- Steps in SimpleRisc V
+    - Fetching the instruction from memory
+    - Updating the Program Counter
+- Register file read
+:
