@@ -450,3 +450,213 @@ ___
 - Sometimes, younger siblings are adopted by their elder siblings
 - The gift giving dynamics changes
 - Read yourself
+
+# $26/03/2024$
+
+Cultural differences make relatedness actually different
+
+Cultural Differences:
+
+
+Young people in Nepal in the 90s wrote love letters. (Story)
+90s: Econonmic liberalization took place
+     this lead to acceptance of western cultural practices:
+        not only are we wearing clothes of western brands, we are also following famous people like Michael Jackson, 
+        Britney Spears, etc.
+
+Story: 
+Vajra and Sheela meet during the construction of a Youth club. 
+Youth club: place where poeple connect with other people. 
+    can also put this on the CV
+Many things were built when the new Democratic Government was focusing on "Development":
+    1. youth club
+    2. health clinic
+    3. tea shops
+    4. primary school
+    5. building for village development council meetings
+
+Importance of Development:
+    Just like a sapling needs water, sunlight, etc to grow into a tree, a country needs the right infrastructure to 
+    develop.
+
+
+
+
+FORMAT THIS:
+Due to cultural differences, the relatatdness and idea of kinship changes.
+
+People in nepal started writing love letters to express their feelings- usually young people.
+In the 90’s
+In the 90’s globalization and libralisation happened.
+With globalisation, westernisation happened too. So the artifacts of west cultures also enter inside Nepal
+
+Junigaon-
+Vajra and shila were friends since kids  got closer due to construction of youth club.
+Youth club → where young people gather. Forming a sense of community of like-minded people. It is also considered to be good to be a part of such clubs adds to the social value.
+
+Developed roads, schools, shops, clinics- they wanted “Devlopement’ for Nepal.
+Devlopement happens in time- seed growing into tree
+But for nepal, development means forming a forest not a single tree.
+
+And rn nepal is damaged with its soil.
+
+We need a basic infrastructure to develop a seed to tree(water, sunlight)
+Similiart we need some basic infrastructure to develop nepal
+Govt has to think like farmers to develop nepal
+
+If the country is developing- it has: high literacy rates, 
+
+Determinists → everything happens as it does and couldnt happen any other way.
+Strong linear correspondence between cause and effect.
+—
+
+Under the shadow of developing nepal, getting woman literate developed a stroy of love letters
+a. Even though they lived within shouting distance of each other, there was no culturally
+sanctioned way for them to ‘date.’ Although they occasionally had the opportunity
+to sneak away together while working in the fields or going to the village tap to get
+water, most of their courting took place through letters.
+
+Comparing love in nepal and America →
+In america it was more direct.
+‘Fall in love’ - consciously happens.
+(thats why consent comes from)
+‘Love happens’ - not in my control, and cant be helped that i fall in love
+(even before marriage or after marriage, it happens)                           
+
+If you are in love→ you can do anything
+The main meaning of love is life success.
+ Life success → money, car, house(materialistic)--> economic success
+For the lovers→ if you are in love, you can have this economic development.
+
+–
+The love letters had a flowery language→ symbolism of something beautiful.
+And ellipses(...) → it doesnt have to be said
+
+–
+Love is also like a counter relationship.( daughter in law, mother in law)
+
+
+— — — — — 
+
+While the country was developing, the idea of love was developing and so does the family hierarchy
+# $28/03/2024$
+
+Hows  punjabi kinship diff from dravidian kinship
+
+Tamils marry their cousins and call their "bua"-> "athai" (mother in law) 
+Mothers younger sister is like small mother and similarly for the fathers side 
+
+"Sondam" -> relatives and this same word is used to refer to ones belongings/possessions 
+
+
+Kinship means "mine" in the dravidian kinship
+
+In punjabi kinship the bride is an outsider where in this dravidian kinship shes treated as a relatives
+
+#iit riz-jee banerji
+
+
+for the point about contam its that it allows you to make claims , gives you rights 
+
+"urimai" means rights, that you can basically assert over a thing/ person
+
+---
+
+"Suppose my daughter is married to my sister’s son and I pay a visit to her. I
+reach their house but there is nobody home; the door is locked. But since it is
+my own sister’s house, I can go in, take some food and feel at home. On the
+other hand, if my daughter is married to a stranger, in the same situation, I
+have to wait outside their house for their return. I cannot go in, otherwise my
+daughter would be insulted by her in-laws. They would say that her father only
+came here to steal food, that he wants to spoil them, that he does not respect
+them etc. For this reason, it is better to marry close-relatives."
+
+
+---
+
+The guy means to say that its more convinient to marry a contam cuz therell be less "formalities"(which otherwise hell have to do if hes marrying his daughter to a stranger) in the realtionship  
+
+Contam --> "mine is yours, and yours is mine" entitlement
+Murai --> "code of conduct" and is often used with the word ceythal(means to do something) which afterall means following the code of conduct
+
+"Murai ceythal" --> to do the right thing / follow the code of conduct
+
+in tamil lifestyle one hase to do murai ceythal once in their life
+
+
+Murai also means to specify an order or seqeunce in series(implies heirarchy too)--> everyone get their things in order 
+
+---
+
+So till now weve three meaning of murai --> code of conduct, to do the right thing thats when its used with the word ceythal, and the last thing is to to stuff in series
+
+---
+
+Doing the Right Thing at a
+Woman’s Puberty Ceremony(Pg 28)
+or 
+Doin the right thing at the time of harvest(Pg 27)
+
+
+What do these two things share?
+Celebrating the idea of new life (new harvest is equivalent to the idea of women giving birth to children)
+
+# $02/04/2024$
+- Parallel Cousins vs Cross Cousins
+- Cross cousins are children of siblings of different genders
+    - e.g. Son of someone's sister can marry your daughter if you are a male and vice versa
+- Parallel Cousins are children of siblings of same gender
+- Parallel cousins cannot marry each other but parallel cousins can, according to dravidian kinship
+> "Anyone here has a spare AA battery?" - Deepak Prince Sir, 2024
+- Murai in Tamil means "right" in English
+- In punjabi kinship the bride is an outsider where in this dravidian kinship shes treated as a relatives
+    - The whole idea of punjabi kinship is to repress animal (natural) instincts
+    - To maintain the honour of the family, the members carry out a performance to suppress their animal instincts
+- In tamil kinship, in a relationship, people are more related (familiar)
+    - Tamils marry within their own
+    - "My Own" (sontham) : Claims, Entitlement
+    - Murai --> "code of conduct" and is often used with the word ceythal(means to do something) which afterall means following the code of conduct
+    - "claim" is something that you can assert / ask for, "entitlement" is something you have 
+    - one of them is given to you before you exist : "entitlement" as citizens of this country
+    - but when you have to apply for driving license, you have to make a claim
+    - even if you are entitled to stuff, you have to make a claim
+    - Relatives are something you can make a claim on
+    - "Right Spouse"
+
+## Kallar Right Spouse (MBD)
+- Mother's brother's daugther : Matrilinial
+- Eldest son of the eldest daughter and eldest daughter of the eldest son have the obligation to marry
+- The obligation "to do the right thing" falls only on the eldest children
+    - Therefore in a family with four siblings, and their children have to marry, their are at most 2 murai marriages
+    > "If you want to see the whole madness in action of this tamil kinship watch 'In the Eastern Province'"
+    - In the north, honour killing is done to preserve the honour of the family whereas here, it is to take revenge
+- "Mayandi" : Interviewee (Eldest sister's son)
+    - Married to his sister's daughter
+    > "Mama hi toh hai" - Unknown, 2024
+    - But why does he not marry his mother's brother's daughter?
+        - Because Mayandi's mother's brother has gone to jail because he has killed someone
+        - After mayandi's uncle goes to jail, his uncle's wife and daughter left to the village and moved in to the city and cut off all connections
+        - In tamil nadu, even teens are insisted to express love who are murai couples
+        - Mayandi, being in love with her uncle's daughter is now coffee espresso depresso
+        - Been 20 years, and now mayandi's real sister offers her daughter to marry mayandi and now they marry and have 2 kids, a son and a daugther
+        - Now, mayandi wants to do the right thing and make his daughter marry his elder sister's son but that son elopes with someone else and Mayandi now angry
+        - Mayandi's younger sister offers her daughter to mayandi's son but Mayandi still angry refuses because the elder sister and younger sister are allies and mayandi doesn't want trouble after marriage
+        - Popular game : Ram Fighting
+        - Used to decide who marries who
+            - Eg: elder son has already done the right thing so, now younger son can either marry his father's sister's daughter or mother's brother's daughter
+- Neelam is the son of the fifth wife of a sarpanch
+    - Bro says bro ain't got no respect
+    - Bro's siblings get a full cup of coffee whereas he gets a half cup
+    > "What is it about these tamils and going to jail" - Deepak Prince Sir, 2024
+    - Neelam's father's 3rd wife's daughter's daughter is the right choice for neelam. but will they marry?
+        - But now, bro goes to Jail lmao because of some past stuff with counterfeit notes
+        - Gets out of jail at 20
+        - But the sarpanch's 3rd wife's daughter i.e. neelam's sister refuses because he had went to jail
+    - Neelam coffee espresso depresso
+    - Heart broken rip
+    - Friend offers a girl
+    - Marries
+    - Have two children, son and daughter
+    - Neelam's wife dies due to some disease
+        - Neelam's son fears his father might marry someone else and might feel opposition due to social inferiority and he might feel pressure from step mother 
+- Next time: what prisons do to families
