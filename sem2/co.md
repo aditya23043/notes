@@ -816,4 +816,55 @@ baz:
     - Fetching the instruction from memory
     - Updating the Program Counter
 - Register file read
-:
+
+# $03/04/2024$ Tutorial
+
+- Macro : like aliases
+- Data path : in which data is flowing e.g. through PC, memory, Instruction register, ALU etc
+- Control path : controlling the enable switch or controlling select lines in a mux is used through control signal
+## Question 2
+- part 1 
+    1. `Sub R15, #1`
+    2. `St Rx, [R15]`
+- part 2
+    1. `Ld Rx, [R15]`
+    2. `add R15, #1` 
+- part 3
+    1. `mov R2, PC`
+    2. `add R2, #1`
+    3. `Push R2`
+    4. `br[Rx]`
+- part 4
+    1. `Pop R1`
+    2. `br[R1]`
+
+# $05/04/2024$ 
+
+## RV32I ( not same as simple risc )
+
+### LW
+- I type instruction
+- Datapath : start with `lw` instruction
+- lw rd, imm(rs1)
+- eg: lw x6, -4(x9)
+    - in hex : FFC4A303
+    - offset value ; -4
+- also, we need to convert our 12 bit imm to 32 bit
+
+| 31:20      | 19:15 | 14:12  | 11:7 | 6:0 |
+|------------|-------|--------|------|-----|
+| imm [11:0] | rs1   | funct3 | rd   | op  |
+| 12         | 5     | 3      | 5    | 7   |
+
+- note: `slt` : set if less than
+
+### SW
+- Store
+- used the destination field to store part of immediate
+- sw x6, 8(x9)
+- used the `rd` field for storing the rest of the immediate
+
+| imm[11:5] | rs2 | rs1 | f3 | imm[4:0] | op |
+|-----------|-----|-----|----|----------|----|
+| 7         | 5   | 5   | 3  | 5        | 7  |
+

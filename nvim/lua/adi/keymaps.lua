@@ -63,13 +63,13 @@ keymap("n", "H", "10zh")
 keymap("t", "<esc>", "<C-\\><C-n>")
 keymap("n", "<C-t>", ":split | terminal<CR>15<C-w>-")
 
-vim.api.nvim_create_autocmd({"BufWinLeave"}, {
-  pattern = {"*.*"},
-  desc = "save view (folds), when closing file",
-  command = "mkview",
-})
-vim.api.nvim_create_autocmd({"BufWinEnter"}, {
-  pattern = {"*.*"},
-  desc = "load view (folds), when opening file",
-  command = "silent! loadview"
-})
+-- vim.api.nvim_create_autocmd({"BufWinLeave"}, {
+--   pattern = {"*.*"},
+--   desc = "save view (folds), when closing file",
+--   command = "mkview",
+-- })
+-- vim.api.nvim_create_autocmd({"BufWinEnter"}, {
+--   pattern = {"*.*"},
+--   desc = "load view (folds), when opening file",
+--   command = "silent! loadview"
+-- })

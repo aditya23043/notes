@@ -1,6 +1,6 @@
 <style>
 *{
-font-family: JuliaMono Light;
+font-family: Ubuntu;
 }
 </style>
 
@@ -1135,3 +1135,28 @@ Tree-Insert(T,z):
 - Time complexity : O(h)
     - Where h is the height of the tree
     - i.e. o($n \log_{}n$)
+
+# $03/04/2024$
+## AVL Tree
+- An AVL tree is a BST with the following:
+- The subtrees of every node differ in height by at most one
+- Every subtree is an AVL Tree
+- BF(X) = Height(X.right) - Height(X.left)
+- BF(X) E {-1,0,1}
+- A node is 
+    - Left Heavy if BF(X) > 0
+    - Right Heavy if BF(X) < 0
+    - Balanced if BF(X) = 0
+- Rotations
+    - Local operations that preserves the binary-search-tree property
+    -  Right-rotate (T,y) ------->>>
+    - <<-------- Left-Rotate (T,y)
+
+```
+        |                   |
+        y                   x
+      /   \               /   \
+    x       z   ---->   a       y 
+  /   \                       /   \
+a       b                   b       z
+```
