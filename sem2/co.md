@@ -868,3 +868,60 @@ baz:
 |-----------|-----|-----|----|----------|----|
 | 7         | 5   | 5   | 3  | 5        | 7  |
 
+# $06/04/2024$
+## D Flip Flop
+- Use D Flip Flops in the micro-architecture circuit to control when the instructions pass through different stages
+### Hold Time
+- The time in which the transistor shuts off to prevent next instruction to pass through when the current instruction is still processing
+- And so that the current data remains constant some time even after passing through D input so that next instruction is not sent before needed
+- IMP : `HOLD TIME VIOLATION`
+### Setup Time
+- When we send some data to the D Flip Flop, we need to make it remain there for some `time`, so that we can capture the correctly and so that the data does not go incorrectly due to fluctuation.
+
+| F   | D    | X   | M    | W    |
+|-----|------|-----|------|------|
+| 8ns | 10ns | 8ns | 12ns | 10ns |
+
+- here, the time between consecutive rising edges of the clock should be 12ns + setup time i.e. max{time taken by each stage} + setup time 
+- Memory stage is the critical path here because it takes the longest to complete
+
+## RTL
+- Register transfer logic
+- Put registers in between micro-architectures to achieve pipelining using RTL for higher performance and efficiency
+
+## Ideal Pipeline
+1. All objects should go through the same stages
+2. No sharing of resources between any two stages. Otherwise, we cannot make them independent
+3. Propagation delay through all the pipeline stages is equal
+4. Scheduling of transaction entering the pipeline is not affected by the transactions in other stages
+    - true for ideal pipeline
+    - however not true for our micro architecture
+        - eg: for B <- A + E, we need value from some A <- C + D
+        - This is called `data hazard` because of data dependency
+## Pipelined processor
+- Eg: 
+    - IBEX : Implements RV32I with 3 stage pipeline
+    - CVA6 : Implements RV32I with 6 stage pipeline
+- For our pipeline, we have 5 stages
+    1. Fetch
+    2. Decode
+    3. Execute
+    4. Memory
+    5. Write-back
+
+| `F`     | `D`     | `X`     | `M`     | `W`     |
+|-------|-------|-------|-------|-------|
+| ins 5 | ins 4 | ins 3 | ins 2 | ins 1 |
+
+| Clock cycle -> | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|----------------|---|---|---|---|---|---|---|---|---|
+| ins 1          | F | D | X | M | W |   |   |   |   |
+| ins 2          |   | F | D | X | M | W |   |   |   |
+| ins 3          |   |   | F | D | X | M | W |   |   |
+| ins 4          |   |   |   | F | D | X | M | W |   |
+| ins 5          |   |   |   |   | F | D | X | M | W
+
+## Hazards
+- Structural hazards : sharing resources
+- Data Hazards : data dependency
+- Control Hazards
