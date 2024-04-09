@@ -1,0 +1,145 @@
+From 83e3bc56d59ac38ce50df1563fcaa1025c1f688a Mon Sep 17 00:00:00 2001
+From: Dhruva Sambrani <44899822+DhruvaSambrani@users.noreply.github.com>
+Date: Mon, 8 Jan 2024 15:00:21 +0100
+Subject: [PATCH] first dim-unfocused commit
+
+---
+ client.h     |  6 ++++++
+ config.def.h |  7 ++++---
+ dwl.c        | 19 +++++++++++++++----
+ 3 files changed, 25 insertions(+), 7 deletions(-)
+
+diff --git a/client.h b/client.h
+index 1dae434..7e4619c 100644
+--- a/client.h
++++ b/client.h
+@@ -317,6 +317,12 @@ client_set_border_color(Client *c, const float color[static 4])
+ 		wlr_scene_rect_set_color(c->border[i], color);
+ }
+ 
++static inline void
++client_set_dimmer_state(Client *c, const int dim)
++{
++	wlr_scene_node_set_enabled(&c->dimmer->node, !c->neverdim && dim);
++}
++
+ static inline void
+ client_set_fullscreen(Client *c, int fullscreen)
+ {
+diff --git a/config.def.h b/config.def.h
+index a8ed61d..f53d4a1 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -10,6 +10,7 @@ static const unsigned int borderpx         = 1;  /* border pixel of windows */
+ static const float rootcolor[]             = COLOR(0x222222ff);
+ static const float bordercolor[]           = COLOR(0x444444ff);
+ static const float focuscolor[]            = COLOR(0x005577ff);
++static const float unfocuseddim[]            = COLOR(0x00000088);
+ static const float urgentcolor[]           = COLOR(0xff0000ff);
+ /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
+ static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0}; /* You can also use glsl colors */
+@@ -21,11 +22,11 @@ static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0}; /* You can al
+ static int log_level = WLR_ERROR;
+ 
+ static const Rule rules[] = {
+-	/* app_id     title       tags mask     isfloating   monitor */
++	/* app_id     title       tags mask     isfloating   neverdim      monitor */
+ 	/* examples:
+-	{ "Gimp",     NULL,       0,            1,           -1 },
++	{ "Gimp",     NULL,       0,            1,           0,            -1 },
+ 	*/
+-	{ "firefox",  NULL,       1 << 8,       0,           -1 },
++	{ "firefox",  NULL,       1 << 8,       0,           1,		   -1 },
+ };
+ 
+ /* layout(s) */
+diff --git a/dwl.c b/dwl.c
+index 632dabf..5569d82 100644
+--- a/dwl.c
++++ b/dwl.c
+@@ -104,6 +104,7 @@ typedef struct {
+ 	Monitor *mon;
+ 	struct wlr_scene_tree *scene;
+ 	struct wlr_scene_rect *border[4]; /* top, bottom, left, right */
++	struct wlr_scene_rect *dimmer;
+ 	struct wlr_scene_tree *scene_surface;
+ 	struct wl_list link;
+ 	struct wl_list flink;
+@@ -132,7 +133,7 @@ typedef struct {
+ #endif
+ 	unsigned int bw;
+ 	uint32_t tags;
+-	int isfloating, isurgent, isfullscreen;
++	int isfloating, isurgent, isfullscreen, neverdim;
+ 	uint32_t resize; /* configure serial of a pending resize */
+ } Client;
+ 
+@@ -217,6 +218,7 @@ typedef struct {
+ 	const char *title;
+ 	uint32_t tags;
+ 	int isfloating;
++	int neverdim;
+ 	int monitor;
+ } Rule;
+ 
+@@ -440,6 +442,7 @@ applyrules(Client *c)
+ 		if ((!r->title || strstr(title, r->title))
+ 				&& (!r->id || strstr(appid, r->id))) {
+ 			c->isfloating = r->isfloating;
++			c->neverdim = r-> neverdim;
+ 			newtags |= r->tags;
+ 			i = 0;
+ 			wl_list_for_each(m, &mons, link) {
+@@ -1190,8 +1193,10 @@ focusclient(Client *c, int lift)
+ 
+ 		/* Don't change border color if there is an exclusive focus or we are
+ 		 * handling a drag operation */
+-		if (!exclusive_focus && !seat->drag)
++		if (!exclusive_focus && !seat->drag) {
+ 			client_set_border_color(c, focuscolor);
++			client_set_dimmer_state(c, 0);
++		}
+ 	}
+ 
+ 	/* Deactivate old client if focus is changing */
+@@ -1209,7 +1214,7 @@ focusclient(Client *c, int lift)
+ 		 * and probably other clients */
+ 		} else if (old_c && !client_is_unmanaged(old_c) && (!c || !client_wants_focus(c))) {
+ 			client_set_border_color(old_c, bordercolor);
+-
++			client_set_dimmer_state(old_c, 1);
+ 			client_activate_surface(old, 0);
+ 		}
+ 	}
+@@ -1522,6 +1527,10 @@ mapnotify(struct wl_listener *listener, void *data)
+ 		c->border[i]->node.data = c;
+ 	}
+ 
++	c->dimmer = wlr_scene_rect_create(c->scene, 0, 0, unfocuseddim);
++	c->dimmer->node.data = c;
++	client_set_dimmer_state(c, 0);
++
+ 	/* Initialize client geometry with room for border */
+ 	client_set_tiled(c, WLR_EDGE_TOP | WLR_EDGE_BOTTOM | WLR_EDGE_LEFT | WLR_EDGE_RIGHT);
+ 	c->geom.width += 2 * c->bw;
+@@ -1932,7 +1941,7 @@ resize(Client *c, struct wlr_box geo, int interact)
+ 	c->geom = geo;
+ 	applybounds(c, bbox);
+ 
+-	/* Update scene-graph, including borders */
++	/* Update scene-graph, including borders and dimmer*/
+ 	wlr_scene_node_set_position(&c->scene->node, c->geom.x, c->geom.y);
+ 	wlr_scene_node_set_position(&c->scene_surface->node, c->bw, c->bw);
+ 	wlr_scene_rect_set_size(c->border[0], c->geom.width, c->bw);
+@@ -1942,6 +1951,8 @@ resize(Client *c, struct wlr_box geo, int interact)
+ 	wlr_scene_node_set_position(&c->border[1]->node, 0, c->geom.height - c->bw);
+ 	wlr_scene_node_set_position(&c->border[2]->node, 0, c->bw);
+ 	wlr_scene_node_set_position(&c->border[3]->node, c->geom.width - c->bw, c->bw);
++	wlr_scene_rect_set_size(c->dimmer, c->geom.width, c-> geom.height);
++	wlr_scene_node_set_position(&c->dimmer->node, 0, 0);
+ 
+ 	/* this is a no-op if size hasn't changed */
+ 	c->resize = client_set_size(c, c->geom.width - 2 * c->bw,
+-- 
+2.43.0
+

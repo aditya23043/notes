@@ -60,7 +60,7 @@ volume(){
 }
 
 brightness(){
-  cmd="$(sudo ybacklight -get | cut -d. -f1)"
+  cmd="$(sudo xbacklight -get | cut -d. -f1)"
   a=$(( cmd/10 ))
   b=$(( 10 - $a ))
   cmd="$cmd%%"
@@ -89,4 +89,4 @@ cpu(){
   printf "$cmd%%"
 }
 
-xsetroot -name "$(volume);$(ram)$(cpu);$(battery)"
+xsetroot -name "$(volume);$(ram)$(cpu);"
