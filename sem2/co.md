@@ -925,3 +925,9 @@ baz:
 - Structural hazards : sharing resources
 - Data Hazards : data dependency
 - Control Hazards
+
+# $12/04/2024$
+## Pipeline Hazards
+### Structural Hazard
+- An instruction in the pipeline needs a resource being used by another instruciton in the pipeline
+- Can happen in unified memory 
