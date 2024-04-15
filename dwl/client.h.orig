@@ -333,6 +333,12 @@ client_set_border_color(Client *c, const float color[static 4])
 }
 
 static inline void
+client_set_dimmer_state(Client *c, const int dim)
+{
+	wlr_scene_node_set_enabled(&c->dimmer->node, !c->neverdim && dim);
+}
+
+static inline void
 client_set_fullscreen(Client *c, int fullscreen)
 {
 #ifdef XWAYLAND

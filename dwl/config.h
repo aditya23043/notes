@@ -7,9 +7,10 @@
 static const int sloppyfocus               = 1;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const unsigned int borderpx         = 2;  /* border pixel of windows */
+static const int draw_minimal_borders      = 1; /* merge adjacent borders */
 static const float rootcolor[]             = COLOR(0x121212ff);
 static const float bordercolor[]           = COLOR(0x121212ff);
-static const float focuscolor[]            = COLOR(0x373d48ff);
+static const float focuscolor[]            = COLOR(0xcd0245ff);
 static const float unfocuseddim[]            = COLOR(0x00000033);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
@@ -21,11 +22,19 @@ static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You ca
 /* logging */
 static int log_level = WLR_ERROR;
 
+/* Autostart */
+static const char *const autostart[] = {
+  "mako", NULL,
+  "foot", "--server", NULL,
+  NULL /* terminate */
+};
+
+
 static const Rule rules[] = {
-	/* app_id     title       tags mask     isfloating   neverdim      monitor */
+	/* app_id     title       tags mask     isfloating   monitor */
 	/* examples: */
-	{ "Gimp",     NULL,       0,            0,           1,            -1 },
-	{ "firefox",  NULL,       1 << 1,       0,           0,		         -1 },
+	{ "Gimp",     NULL,       0,            0,           -1 },
+	{ "firefox",  NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
@@ -115,13 +124,13 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "foot", NULL };
+static const char *termcmd[] = { "footclient", NULL };
 static const char *menucmd[] = { "dmenu-wl_run", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
-	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
+	{ MODKEY,                    XKB_KEY_p,          spawn,          SHCMD("/home/adi/.config/dwl/dmenu.sh") },
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },

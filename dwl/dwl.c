@@ -105,11 +105,11 @@ typedef struct Monitor Monitor;
 typedef struct {
 	/* Must keep these three elements in this order */
 	unsigned int type; /* XDGShell or X11* */
+	int interact;
 	struct wlr_box geom; /* layout-relative, includes border */
 	Monitor *mon;
 	struct wlr_scene_tree *scene;
 	struct wlr_scene_rect *border[4]; /* top, bottom, left, right */
-	struct wlr_scene_rect *dimmer;
 	struct wlr_scene_tree *scene_surface;
 	struct wl_list link;
 	struct wl_list flink;
@@ -138,7 +138,7 @@ typedef struct {
 #endif
 	unsigned int bw;
 	uint32_t tags;
-	int isfloating, isurgent, isfullscreen, neverdim;
+	int isfloating, isurgent, isfullscreen;
 	uint32_t resize; /* configure serial of a pending resize */
 } Client;
 
@@ -228,7 +228,6 @@ typedef struct {
 	const char *title;
 	uint32_t tags;
 	int isfloating;
-	int neverdim;
 	int monitor;
 } Rule;
 
@@ -248,6 +247,7 @@ static void arrange(Monitor *m);
 static void arrangelayer(Monitor *m, struct wl_list *list,
 		struct wlr_box *usable_area, int exclusive);
 static void arrangelayers(Monitor *m);
+static void autostartexec(void);
 static void axisnotify(struct wl_listener *listener, void *data);
 static void buttonpress(struct wl_listener *listener, void *data);
 static void chvt(const Arg *arg);
@@ -314,7 +314,8 @@ static void rendermon(struct wl_listener *listener, void *data);
 static void requestdecorationmode(struct wl_listener *listener, void *data);
 static void requeststartdrag(struct wl_listener *listener, void *data);
 static void requestmonstate(struct wl_listener *listener, void *data);
-static void resize(Client *c, struct wlr_box geo, int interact);
+static void resizeapply(Client *c, struct wlr_box geo, int interact);
+static void resizenoapply(Client *c, struct wlr_box geo, int interact);
 static void run(char *startup_cmd);
 static void setcursor(struct wl_listener *listener, void *data);
 static void setcursorshape(struct wl_listener *listener, void *data);
@@ -407,6 +408,8 @@ static struct wlr_box sgeom;
 static struct wl_list mons;
 static Monitor *selmon;
 
+static void (*resize)(Client *c, struct wlr_box geo, int interact) = resizeapply;
+
 #ifdef XWAYLAND
 static void activatex11(struct wl_listener *listener, void *data);
 static void associatex11(struct wl_listener *listener, void *data);
@@ -425,6 +428,9 @@ static xcb_atom_t netatom[NetLast];
 
 /* attempt to encapsulate suck into one file */
 #include "client.h"
+
+static pid_t *autostart_pids;
+static size_t autostart_len;
 
 /* function implementations */
 void
@@ -464,7 +470,6 @@ applyrules(Client *c)
 		if ((!r->title || strstr(title, r->title))
 				&& (!r->id || strstr(appid, r->id))) {
 			c->isfloating = r->isfloating;
-			c->neverdim = r-> neverdim;
 			newtags |= r->tags;
 			i = 0;
 			wl_list_for_each(m, &mons, link) {
@@ -474,6 +479,35 @@ applyrules(Client *c)
 		}
 	}
 	setmon(c, mon, newtags);
+}
+
+void
+applyminimalborders(Client *c, Monitor *m)
+{
+	struct wlr_box geom = c->geom;
+
+	geom.x -= borderpx;
+	geom.width += borderpx;
+	geom.y -= borderpx;
+	geom.height += borderpx;
+
+	if (geom.x < m->w.x) {
+		geom.x += borderpx;
+		geom.width -= borderpx;
+	}
+	if (geom.x + geom.width > m->w.width - (int)borderpx) {
+		geom.width -= borderpx;
+	}
+
+	if (geom.y < m->w.y) {
+		geom.y += borderpx;
+		geom.height -= borderpx;
+	}
+	if (geom.y + geom.height > m->w.height - (int)borderpx) {
+		geom.height -= borderpx;
+	}
+
+	resize(c, geom, 0);
 }
 
 void
@@ -496,8 +530,28 @@ arrange(Monitor *m)
 
 	strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, LENGTH(m->ltsymbol));
 
-	if (m->lt[m->sellt]->arrange)
-		m->lt[m->sellt]->arrange(m);
+	if (m->lt[m->sellt]->arrange) {
+		if (draw_minimal_borders) {
+			int save_width = m->w.width;
+			int save_height = m->w.height;
+			m->w.width += borderpx;
+			m->w.height += borderpx;
+			resize = resizenoapply;
+			m->lt[m->sellt]->arrange(m);
+			wl_list_for_each(c, &clients, link) {
+				if (!VISIBLEON(c, m) || c->isfloating || c->isfullscreen)
+					continue;
+				if (draw_minimal_borders)
+					applyminimalborders(c, m);
+				resizeapply(c, c->geom, c->interact);
+			}
+			m->w.width = save_width;
+			m->w.height = save_height;
+			resize = resizeapply;
+		} else {
+			m->lt[m->sellt]->arrange(m);
+		}
+	}
 	motionnotify(0, NULL, 0, 0, 0, 0);
 	checkidleinhibitor(NULL);
 }
@@ -558,6 +612,27 @@ arrangelayers(Monitor *m)
 			client_notify_enter(l->layer_surface->surface, wlr_seat_get_keyboard(seat));
 			return;
 		}
+	}
+}
+
+void
+autostartexec(void) {
+	const char *const *p;
+	size_t i = 0;
+
+	/* count entries */
+	for (p = autostart; *p; autostart_len++, p++)
+		while (*++p);
+
+	autostart_pids = calloc(autostart_len, sizeof(pid_t));
+	for (p = autostart; *p; i++, p++) {
+		if ((autostart_pids[i] = fork()) == 0) {
+			setsid();
+			execvp(*p, (char *const *)p);
+			die("dwl: execvp %s:", *p);
+		}
+		/* skip arguments */
+		while (*++p);
 	}
 }
 
@@ -658,11 +733,21 @@ checkidleinhibitor(struct wlr_surface *exclude)
 void
 cleanup(void)
 {
+	size_t i;
 #ifdef XWAYLAND
 	wlr_xwayland_destroy(xwayland);
 	xwayland = NULL;
 #endif
 	wl_display_destroy_clients(dpy);
+
+	/* kill child processes */
+	for (i = 0; i < autostart_len; i++) {
+		if (0 < autostart_pids[i]) {
+			kill(autostart_pids[i], SIGTERM);
+			waitpid(autostart_pids[i], NULL, 0);
+		}
+	}
+
 	if (child_pid > 0) {
 		kill(child_pid, SIGTERM);
 		waitpid(child_pid, NULL, 0);
@@ -1270,10 +1355,8 @@ focusclient(Client *c, int lift)
 
 		/* Don't change border color if there is an exclusive focus or we are
 		 * handling a drag operation */
-		if (!exclusive_focus && !seat->drag) {
+		if (!exclusive_focus && !seat->drag)
 			client_set_border_color(c, focuscolor);
-			client_set_dimmer_state(c, 0);
-		}
 	}
 
 	/* Deactivate old client if focus is changing */
@@ -1291,7 +1374,7 @@ focusclient(Client *c, int lift)
 		 * and probably other clients */
 		} else if (old_c && !client_is_unmanaged(old_c) && (!c || !client_wants_focus(c))) {
 			client_set_border_color(old_c, bordercolor);
-			client_set_dimmer_state(old_c, 1);
+
 			client_activate_surface(old, 0);
 		}
 	}
@@ -1376,18 +1459,31 @@ void
 handlesig(int signo)
 {
 	if (signo == SIGCHLD) {
-#ifdef XWAYLAND
 		siginfo_t in;
 		/* wlroots expects to reap the XWayland process itself, so we
 		 * use WNOWAIT to keep the child waitable until we know it's not
 		 * XWayland.
 		 */
 		while (!waitid(P_ALL, 0, &in, WEXITED|WNOHANG|WNOWAIT) && in.si_pid
-				&& (!xwayland || in.si_pid != xwayland->server->pid))
-			waitpid(in.si_pid, NULL, 0);
-#else
-		while (waitpid(-1, NULL, WNOHANG) > 0);
+#ifdef XWAYLAND
+			   && (!xwayland || in.si_pid != xwayland->server->pid)
 #endif
+			   ) {
+			pid_t *p, *lim;
+			waitpid(in.si_pid, NULL, 0);
+			if (in.si_pid == child_pid)
+				child_pid = -1;
+			if (!(p = autostart_pids))
+				continue;
+			lim = &p[autostart_len];
+
+			for (; p < lim; p++) {
+				if (*p == in.si_pid) {
+					*p = -1;
+					break;
+				}
+			}
+		}
 	} else if (signo == SIGINT || signo == SIGTERM) {
 		quit(NULL);
 	}
@@ -1604,17 +1700,24 @@ mapnotify(struct wl_listener *listener, void *data)
 		c->border[i]->node.data = c;
 	}
 
-	c->dimmer = wlr_scene_rect_create(c->scene, 0, 0, unfocuseddim);
-	c->dimmer->node.data = c;
-	client_set_dimmer_state(c, 0);
-
 	/* Initialize client geometry with room for border */
 	client_set_tiled(c, WLR_EDGE_TOP | WLR_EDGE_BOTTOM | WLR_EDGE_LEFT | WLR_EDGE_RIGHT);
 	c->geom.width += 2 * c->bw;
 	c->geom.height += 2 * c->bw;
 
 	/* Insert this client into client lists. */
-	wl_list_insert(&clients, &c->link);
+	i = 0;
+	wl_list_for_each(w, &clients, link) {
+		if (!VISIBLEON(w, selmon) || c->isfloating)
+			continue;
+		p = w;
+		if (++i >= selmon->nmaster)
+			break;
+	}
+	if (i > 0)
+		wl_list_insert(&p->link, &c->link);
+	else
+		wl_list_insert(&clients, &c->link);
 	wl_list_insert(&fstack, &c->flink);
 
 	/* Set initial monitor, tags, floating status, and focus:
@@ -1892,8 +1995,13 @@ pointerfocus(Client *c, struct wlr_surface *surface, double sx, double sy,
 	struct timespec now;
 
 	if ((!active_constraint || active_constraint->surface != surface) &&
-			sloppyfocus && time && c && !client_is_unmanaged(c))
-		focusclient(c, 0);
+			sloppyfocus && time && c && !client_is_unmanaged(c)) {
+		if (c->isfloating || c->isfullscreen) {
+			focusclient(c, 0);
+		} else {
+			focusclient(c, 1);
+		}
+	}
 
 	/* If surface is NULL, clear pointer focus */
 	if (!surface) {
@@ -2041,7 +2149,7 @@ requestmonstate(struct wl_listener *listener, void *data)
 }
 
 void
-resize(Client *c, struct wlr_box geo, int interact)
+resizeapply(Client *c, struct wlr_box geo, int interact)
 {
 	struct wlr_box *bbox = interact ? &sgeom : &c->mon->w;
 	struct wlr_box clip;
@@ -2049,7 +2157,7 @@ resize(Client *c, struct wlr_box geo, int interact)
 	c->geom = geo;
 	applybounds(c, bbox);
 
-	/* Update scene-graph, including borders and dimmer*/
+	/* Update scene-graph, including borders */
 	wlr_scene_node_set_position(&c->scene->node, c->geom.x, c->geom.y);
 	wlr_scene_node_set_position(&c->scene_surface->node, c->bw, c->bw);
 	wlr_scene_rect_set_size(c->border[0], c->geom.width, c->bw);
@@ -2059,14 +2167,19 @@ resize(Client *c, struct wlr_box geo, int interact)
 	wlr_scene_node_set_position(&c->border[1]->node, 0, c->geom.height - c->bw);
 	wlr_scene_node_set_position(&c->border[2]->node, 0, c->bw);
 	wlr_scene_node_set_position(&c->border[3]->node, c->geom.width - c->bw, c->bw);
-	wlr_scene_rect_set_size(c->dimmer, c->geom.width, c-> geom.height);
-	wlr_scene_node_set_position(&c->dimmer->node, 0, 0);
 
 	/* this is a no-op if size hasn't changed */
 	c->resize = client_set_size(c, c->geom.width - 2 * c->bw,
 			c->geom.height - 2 * c->bw);
 	client_get_clip(c, &clip);
 	wlr_scene_subsurface_tree_set_clip(&c->scene_surface->node, &clip);
+}
+
+void
+resizenoapply(Client *c, struct wlr_box geo, int interact)
+{
+	c->geom = geo;
+	c->interact = interact;
 }
 
 void
@@ -2084,6 +2197,7 @@ run(char *startup_cmd)
 		die("startup: backend_start");
 
 	/* Now that the socket exists and the backend is started, run the startup command */
+	autostartexec();
 	if (startup_cmd) {
 		int piperw[2];
 		if (pipe(piperw) < 0)
