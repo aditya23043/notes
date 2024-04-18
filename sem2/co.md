@@ -1,6 +1,6 @@
 <style>
 *{
-font-family: "Ubuntu";
+font-family: "VictorMono NFM";
 }
 </style>
 
@@ -931,3 +931,103 @@ baz:
 ### Structural Hazard
 - An instruction in the pipeline needs a resource being used by another instruciton in the pipeline
 - Can happen in unified memory 
+
+# $18/04/2024$
+- Fetch (F) Stage: In this stage, the processor fetches the next instruction from memory. It retrieves the instruction address from the program counter (PC) and fetches the corresponding instruction from the instruction memory.
+
+- Decode (D) Stage: In the decode stage, the fetched instruction is decoded to determine the operation to be performed and the operands involved. The necessary control signals and register addresses are generated.
+
+- Execute (X) Stage: The execute stage performs the actual computation or operation specified by the instruction. It may involve arithmetic or logical operations, data manipulation, or control flow decisions. For branch instructions, the branch target address is calculated in this stage.
+
+- Memory (M) Stage: The memory stage is responsible for accessing memory if required by the instruction. It includes operations such as loading data from memory or storing data to memory. Memory operations may involve accessing the data cache or interacting with the main memory.
+
+- Write-back (W) Stage: In the write-back stage, the results of the executed instruction are written back to the appropriate registers. This stage updates the register file with the computed values or the results of memory operations.
+
+# Data Hazards
+
+```asm
+add r1, r2, r3
+add r4, r1, r5
+```
+
+- This is the wrong way to approach this
+
+| Instruction | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------------|---|---|---|---|---|---|
+| Ins1        | F | D | X | M | W |   |
+| Ins2        |   | F | D | X | M | W |
+- Here the 2nd instruction needs the value of r1 from the first instruction (data hazard)
+- The correct way (stalling until the 1st instruction writes the value of r1 in the writeback stage)
+
+| Instruction | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------------|---|---|---|---|---|---|
+| Ins1        | F | D | X | M | W |   |
+| Ins2        |   | F | D | D | D | D |
+
+- Or by bypassing (selectively forwarding the data)
+
+| Instruction | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------------|---|---|---|---|---|---|
+| Ins1        | F | D | X | M | W |   |
+| Ins2        |   | F | D | X | M | W |
+- Here at clock cycle 3 i.e. the execute stage, inst1 passes the data of the dependent register to inst2
+
+#### Feedback to resolve hazards (Bypassing / Stalling)
+- Later stages provides dependence info to earlier stages which can stall / forward values.
+
+## Control Hazards
+- Control hazards occur due to jumps and branches. We could stall the pipeline, but this decreases performance.
+- CPI : Cycles per instruction
+
+| Instructions | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--------------|---|---|---|---|---|---|---|
+| 1            | F | D | X | M | W |   |   |
+| 2            |   | F | D | X | M | W |   |
+| 3            |   |   | F | D | X | M | W |
+- Here CPI = 1
+
+| Instructions | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|--------------|---|---|---|---|---|---|---|---|---|
+| 1            | F | D | X | M | W |   |   |   |   |
+| 2            |   |   | F | D | X | M | W |   |   |
+| 3            |   |   |   |   | F | D | X | M | W |
+- Here we are waiting for the previous instruction to complete decoding before fetching in the next instruction
+- So, CPI = 1
+- Very conservative method
+- Not efficient
+- 50% efficiency loss
+
+## Speculate that the next instruction is at address PC + 4
+- Note: A branch instruction jumps to its destination at the X (execute) stage
+
+| Instruction | PC  | Operation | 1 | 2 | 3 | 4 | 5   | 6   | 7   |     |
+|-------------|-----|-----------|---|---|---|---|-----|-----|-----|-----|
+| 1           | 096 | ADD       | F | D | X | M | W   |     |     |     |
+| 2           | 100 | B 304     |   | F | D | X | M   | W   |     |     |
+| 3           | 104 | ADD       |   |   | F | D | NOP | NOP | NOP | NOP |
+| 4           | 304 | ADD       |   |   |   | F | D   | X   | M   | W   |
+- Note B 304, is a branch operation pointing to PC = 304
+- Killing the operation = replacing stages with NOP : No Operation
+
+| Instruction | PC  | Operation | 1 | 2 | 3 | 4 | 5   | 6   | 7   | 8   | 9 |
+|-------------|-----|-----------|---|---|---|---|-----|-----|-----|-----|---|
+| 1           | 096 | ADD       | F | D | X | M | W   |     |     |     |   |
+| 2           | 100 | B 304     |   | F | D | X | M   | W   |     |     |   |
+| 3           | 104 | ADD       |   |   | F | D | NOP | NOP | NOP |     |   |
+| 4           | 108 | SUB       |   |   |   | F | NOP | NOP | NOP | NOP |   |
+| 5           | 304 | ADD       |   |   |   |   | F   | D   | X   | M   | W |
+
+## Backward / Forward moving branch
+- If you have a branch instruction, the compiler will automatically put an instruction independent of the branch operation immediately after the branch instruction in order to prevent killing the instruction
+- At max, you can have 2 delay slots in which the compiler can find 2 independent instructions to put next to the branch operation
+- If the compiler cannot find any instruction independent of the branch operation, the `compiler` will kill the next instruction instead of the hardware
+
+## Branch Delay Slots
+- (expose control hazards to software)
+- The instruction that follows a branch is always executed
+- Gives compiler the flexibility to put useful instructions where normally a pipeline bubble would have resulted
+- Advance branch prediction techniques can dramatically reduce branch penalty
+
+- Note: Implementation of RV32I : SERV
+    - 32 Bit architecture but hardware is designed to take 1 bit at a time, so 32 steps to perform one instruction
+    - Very lightweight, low power consumption, minimalistic
