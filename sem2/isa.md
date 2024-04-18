@@ -1,6 +1,6 @@
 <style>
 * {
-  font-family: "Ubuntu";
+  font-family: "VictorMono NFM";
 }
 </style>
 
@@ -663,3 +663,21 @@ Celebrating the idea of new life (new harvest is equivalent to the idea of women
 
 # $04/04/2024$
 
+# $18/04/2024$
+- Passport photoshoot: Controlled, authority
+- Selfie: Not restricted, taken by self
+- Why did the institute need those 3 images in the 12 page brochure
+- Images express relatedness
+- Lineage of local political authority
+    - A fable of the local MLAs political lineage
+- Clicking in prison, shows affirmation that they still care for their loved one
+- Lack of physical touch in traditional prisons when families come to visit their loved ones
+- Not natural to talk to someone through a wall
+- Prisoners have not touched someone in years
+- Rarely get a chance to show skinship
+- Touching in prisons usually means violence
+- In the modern prison meets, familes sharing a moment of intimacy
+- Background photos (fantasy space) separates them from the uniform white background
+- Reminder that they cannot have this forever : cruelty
+- Reminder that their family exists beyond bars
+- Prisoner exceeds his personality, beyond being a prisoner, to show relatedness
