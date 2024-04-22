@@ -141,6 +141,8 @@ wlr-randr
 ybacklight
 
 # Custom Packages
+git
+fish
 xorg
 xorg-apps
 xorg-xinit
