@@ -1,6 +1,6 @@
 <style>
 *{
-font-family: "VictorMono NFM";
+    font-family: "VictorMono NFM";
 }
 </style>
 
@@ -943,7 +943,7 @@ baz:
 
 - Write-back (W) Stage: In the write-back stage, the results of the executed instruction are written back to the appropriate registers. This stage updates the register file with the computed values or the results of memory operations.
 
-# Data Hazards
+## Data Hazards
 
 ```asm
 add r1, r2, r3
@@ -1031,3 +1031,48 @@ add r4, r1, r5
 - Note: Implementation of RV32I : SERV
     - 32 Bit architecture but hardware is designed to take 1 bit at a time, so 32 steps to perform one instruction
     - Very lightweight, low power consumption, minimalistic
+
+# $19/04/2024$
+## Memory Systems
+- Near memory processing (NMI)
+    - Processing in memory (PIM)
+    - Since 40-50% of energy is utilized in just moving the data from memory to reg and vice versa
+    - To prevent this, processing is done in the memory itself
+
+## How does memory work?
+- Memory stores 0 or 1 in order to do processing
+- Simple memory implementation
+- Two inverters placed in series in a loop
+
+## 6T SRAM
+
+| Advantages | Disadvantages       |
+|------------|---------------------|
+| Very Fast  | Expensive           |
+|            | Not space efficient |
+|            | Not Expandable      |
+
+## DRAM
+
+| Advantages      | Disadvantages |
+|-----------------|---------------|
+| Expandable      | Slower        |
+| Space efficient |               |
+| Inexpensive     |               |
+
+## D Flip Flop
+- Implementation using multiplexer
+
+## Memory Technology Trade Off
+| Type                             | Attributes                                 |
+|----------------------------------|--------------------------------------------|
+| Latches / Flip Flops / Registers | Low Capacity, Low Latency, High Bandwidth  |
+| Register File                    |                                            |
+| SRAM                             |                                            |
+| DRAM                             | High Capacity, High Latency, Low Bandwidth |
+
+- There are gaps between two pages/allocation of memory in order to prevent fragmentation
+- Though cache is a small memory, if cache can provide the data 90% of the time to the processor rather than the main memory, it will be very efficient
+
+| Processor | - | Cache | - | Main Memory |
+|-----------|---|-------|---|-------------|

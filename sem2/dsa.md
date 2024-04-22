@@ -1160,3 +1160,6 @@ Tree-Insert(T,z):
   /   \                       /   \
 a       b                   b       z
 ```
+
+# $19/04/2024$
+## Graphs
