@@ -1076,3 +1076,45 @@ add r4, r1, r5
 
 | Processor | - | Cache | - | Main Memory |
 |-----------|---|-------|---|-------------|
+
+# Lecture 33 $23/04/2024$
+## Delay
+- One Inverted driving multiple inverters will result in a higher delay as compared to a similar circuit with less inverters
+    - Hence, 
+        - Bigger = Slower
+        - Smaller = Faster
+### FO4 : Fan out of 4
+> "My gate has fan out delay of 4"
+- Delay is optimized for 4 such drivers
+
+## Locality
+- Temporal Locality: If a location is referenced, it is likely to be referenced in the near future
+    - We store the data from main memory to cache so that it can be quickly passed to the processor when needed
+- Spacial Locality: If a location is referenced, it is likely that the locations near it will be referenced in the near future
+    - We store the data near our current data from main memory to cache so that it can be quickly passed to the processor when needed
+
+## Memory Heirarchy
+
+| Processor | Small, Fast memory | Big, Slow Memory |
+|-----------|--------------------|------------------|
+| Registers | SRAM               | DRAM             |
+- Capacity: Register << SRAM << DRAM
+- Speed: Register >> SRAM >> DRAM
+##### NOTE: This memory heirarchy only works if the small, fast memory actually stores data that is used by the processor
+
+## Cache
+- Cache will exploit both types of locality
+    1. by remembering the content of recently accessed locations
+    1. by fetching blocks of data around recently accessed locations
+
+| Processor |                  | Cache |                  | Main Memory |
+|-----------|------------------|-------|------------------|-------------|
+|           | ----address----> |       | ----address----> |             |
+|           | <-----data------ |       | <-----data------ |             |
+
+|             |            | CACHE      |            |  |  |  |
+|-------------|------------|------------|------------|--|--|--|
+| Address tag | Data Bytes | Data Bytes | Data Bytes |  |  |  |
+
+- Copy of the data from main memory location \<Address tag\>
+- this whole block - address tag = Data Block
