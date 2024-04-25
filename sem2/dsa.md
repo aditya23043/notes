@@ -1163,3 +1163,14 @@ a       b                   b       z
 
 # $19/04/2024$
 ## Graphs
+- Directed
+- Undirected
+- Adjacency Lists / Matrix
+- BFS
+- Check Register for notes
+
+# $23/04/2024$
+
+- Depth First Search (DFS)
+  - Searches deeper in the graph whenever possible
+  - Explores edges out of the most recently discovered vertex v that still has unexplored edges leaving it
