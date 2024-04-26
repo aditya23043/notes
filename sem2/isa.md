@@ -1,6 +1,7 @@
 <style>
 * {
   font-family: "VictorMono NFM";
+  font-weight: Bold;
 }
 </style>
 
@@ -662,6 +663,141 @@ Celebrating the idea of new life (new harvest is equivalent to the idea of women
 - Next time: what prisons do to families
 
 # $04/04/2024$
+
+# $09/04/2024$
+
+- Types of marriages:
+    - Arranged marriage
+    - Love marriage
+    - Court marriage
+    - Forced marriage
+
+    - elopement(not marriage probably)
+
+- court marriage = func(S1, S2, Xfactor)                     // function of both the spouses and an x factor
+- arranged marriage = func(p(S1), p(S2), r(S1), r(S2), ...)  // function of parents, relatives of spouses, etc
+
+
+### Protestantism:
+- Martin Luther(person in Europe): goes to the church and questions some traditional practices
+
+
+- Reformists: religious + rational
+
+### The story:
+- There is a reformist sect called Brahmosamaj, and they say to the government that they want a non-idolatory 
+- Henry Maine gave the people a way(the marriage act) in which they can think of marriage as a contract.
+- There was a lot of backlash to this.
+    1. people said that who are the British, that they can impose marriage laws on Hindus?
+    2. wording of the Marriage act was implying that the Brahmosamaj people were not Hindus
+- 1872: Brahmosamaj opposition - British overreach into religion
+    - Then the Brahmosamaj said that u can only avail the marriage act if u give up religion.
+    - When 2 people elope, they are disowned by their community. This is why the people accepted the marriage act since the act was doing what would be done anyway. So, by availing the act(which is legal), they would not be disowned by their community for marrying, because that is legal.
+    - The marriage act was in place till 1954
+- 1954: Special Marriage Act
+    - Changes from the previous act(marriage act):-
+        - U are not required to being exfoliated from the community in order to marry
+        - Notice period - for parents to object to the marriage
+        - eligibility(age-wise for boy and girl, because boy and boy would be GAY)
+
+    - But now, the power of exfoliation/expulsion from the community is in the hands of the community, not the court.
+
+    - Role of the state/court: the court now protects the couple
+
+### Quote from the text(Samina part, page 29):
+- From the lowest echelons of the court employees upwards, there was the widespread sense that civil marriages were false marriages, and that they represented nothing more than government interference in a matter best left to the gods of religion and ritual.
+- We see that people were against court marriages, they associated it with (government interference in something that has to be decided by religion, etc). Some poeple also associated it with Hindu-Muslim marriages.
+
+### Love-cum-arranged marriage: 
+- a plus for this is that u wont be expelled from ur community.
+
+### SAMINA:
+- Samina is a Muslim girl, who wants to marry an American guy. She goes to the court under the special marriage act:
+    - Even though Samina has all the required papers, etc, the government makes her run around too much, and still they dont allow her to marry.
+
+- Moses: 
+    - 10 commandments
+    - destruction of idols is a
+
+- Brahmosamaj learnt from the reformist Protestantism in Christianity. Actually many current Indian 'things' like rss also learnt from Protestantism.
+
+
+- 2008 Economic crisis:
+    - Countries which failed: Ireland, Portugal, Italy - all catholic Countries.
+
+
+# ISA Tutorial 15/04/2024
+
+- Caste:
+    - perpetuates through Endogamy. Endogamy is intra-caste marriage.
+        - done through control of women's sexuality(whom they marry)
+            - Chastity: not boom boom-ing anyone or boom boom-ing only wife/husband
+    - How Caste system was justified: jo ho raha hai wo toh 'natural' hai, some people are lower, some are higher
+    - Problem with caste community: based on birth, no dignity of labour
+
+
+- Love marriage:
+    - Individual agency(choice)
+    - Lust(unholy)
+    - Immoral
+    - Threatens social fabric(caste, class, community)
+    - Sanctioned by law
+    - Mutual compatibility
+    - Against nature(caste, class, community)
+    - "Chaos"
+    - Private ceremony
+
+- Arranged marriage:
+    - Community decides
+    - Love 'gifted by the gods'
+    - Moral
+    - Maintains social distinctions
+    - Sanctioned by community
+    - Social compatibility
+    - Natural - 'as it should be, as it is forever'(by caste, class, community)
+    - Order
+    - Public ceremony
+
+- 3 kinds of marriages which came to court:
+    - Civil marriage
+    - Hindu marriage: done in Aryasamaj temple
+    - No marriage: done in some random temple, no proof
+
+ 
+- Civil Marriage Act III of 1872:
+    - Argument against civil marriages(by someone): unmixed blood is present in India, since people haven't married outside their caste. If the act is passed, the purity will not be there anymore.
+    - Before availing the act, people had to give up their faith
+    - There is time for parents to object
+
+- Special Marriage Act 1954:
+    - Civil marriage
+    - 30 days period of proof of residence: to prevent bigamy(or polygamy)
+
+
+- Benedict: "The nation is an imagined community because we haven't seen everyone in the community."
+
+> Crony capitalism: WE RULE YOU, WE FOOL YOU
+
+- How does the community colonise the individual:
+    - the community is a political agent, and not a monoleith
+    - Eg: marital choice - it is imposed on you by the community. If you go against it, u are expelled from your community
+    - If parents try to arrange love-cum-arranged marriage, and if community gets to know, then the parents are also expelled.
+
+- How couples justify inter-caste marriages:
+    1. love is transcendental, it is above caste, religion, everything else.
+    2. show similarities between both individuals(similar economic background, similar literacy, etc)
+
+- Selfhood threatens communities(communities as political agents)
+
+- State ----> colonises community. Community ----> colonises individual
+- Community ----> colonising state:
+    - the attempts of Hindu nationalist groups to obstruct inter-caste/community marriages using laws
+
+- Consenting adults: spiritual, beyond material considerations
+
+- Love-cum-arranged marriage:
+    Something thats chaotic(love marriage) is given the semblance of order(arranged marriage) through love-cum-arranged
+    marriages
 
 # $18/04/2024$
 - Passport photoshoot: Controlled, authority
