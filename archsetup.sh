@@ -46,11 +46,14 @@ pico(){
   cd $HOME/AUR_packages && git clone https://aur.archlinux.org/$1 && cd $1 && makepkg -si && cd
 }
 
-sudo pacman -S --needed git fish chromium xorg xorg-xinit xorg-drivers libinput wayland wlroots libxkbcommon wayland-protocols pkgconf nvidia nvidia-settings nvidia-utils acpi bottom bluez bluez-libs bluez-utils blueman clang cmake dunst mako eza feh flameshot gvfs gvfs-gphoto2 gvfs-mtp libnotify lxappearance-gtk3 make mpv mtpfs ncdu nodejs npm ntfs-3g chrony openssh pavucontrol pipewire-alsa pipewire-audio pipewire-pulse pipewire-session-manager playerctl tar tldr ttf-fira-sans ttf-jetbrains-mono-nerd ttf-iosevka-nerd ttf-ubuntu-font-family unzip usbutils vulkan-headers wget xbindkeys xclip wl-clipboard zip slurp grim nwg-look swayimg swaybg waycheck wlr-randr firefox thunar papirus-icon-theme wev python-pytube wine wine-mono wine-gecko winetricks zathura zathura-pdf-mupdf dosfstools
+sudo pacman -S --needed foot git fish chromium xorg xorg-xinit xorg-drivers libinput wayland wlroots libxkbcommon wayland-protocols pkgconf nvidia nvidia-settings nvidia-utils acpi bottom bluez bluez-libs bluez-utils blueman clang cmake dunst mako eza feh flameshot gvfs gvfs-gphoto2 gvfs-mtp libnotify lxappearance-gtk3 make chrony mpv mtpfs ncdu nodejs npm ntfs-3g chrony blueman openssh pavucontrol pipewire-alsa pipewire-audio pipewire-pulse pipewire-session-manager playerctl tar tldr ttf-fira-sans ttf-jetbrains-mono-nerd ttf-iosevka-nerd ttf-ubuntu-font-family unzip usbutils vulkan-headers wget xbindkeys xclip wl-clipboard zip slurp grim nwg-look swayimg swaybg waycheck wlr-randr firefox thunar papirus-icon-theme wev python-pytube zathura zathura-pdf-mupdf dosfstools mtools fish
 
 # Tor Keys
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 
+chsh
+
+pico niri-bin
 pico tor-browser-bin
 pico neovim-nightly-bin
 pico ttf-comfortaa
@@ -61,7 +64,7 @@ pico vulkan-amdgpu-pro
 pico transmission-gtk3
 pico flat-remix-gtk
 pico dracula-gtk-theme
-pico winegui
+# pico winegui
 
 systemctl enable bluetooth
 systemctl enable chronyd
@@ -88,4 +91,9 @@ Section "InputClass"
     Option "TappingButtonMap" "lmr"
     Option "NaturalScrolling" "true"
 EndSection
+'
+
+:' SUDO
+sudo nvim /etc/sudoers
+adi ALL=NOPASSWD: /bin/ybacklight
 '

@@ -134,7 +134,7 @@ zsh
 # Local Repo Packages (AUR)
 dmenu-wayland-git
 neovim-nightly-bin
-niri
+niri-bin
 transmission-gtk3
 vulkan-amdgpu-pro
 wlr-randr
@@ -206,6 +206,7 @@ nwg-look
 swayimg
 waycheck
 firefox
+foot
 thunar
 papirus-icon-theme
 qogir-cursor-theme-git
