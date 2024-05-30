@@ -21,3 +21,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt_local.scrolloff = 0
 	end,
 })
+
+-- Load Folds on startup
+vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+	pattern = { "coding/leetcode/*.cpp" },
+	desc = "Automatically include imp headers in cpp files for leetcode",
+	command = "normal! i#include <iostream>\n#include <vector>\n\nint main(){\n\nreturn 0;\n}",
+})

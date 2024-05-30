@@ -41,7 +41,7 @@ keymap("n", "L", "10zl")
 keymap("n", "H", "10zh")
 
 -- Terminal
-keymap("n", "<C-t>", ":split | terminal<CR>15<C-w>-")
+keymap("n", "<C-t>", ":split | terminal<CR>10<C-w>-i")
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 
 -- Open a terminal at the bottom of the screen with a fixed height.
@@ -67,6 +67,8 @@ keymap("n", "<M-.>", "<c-w>5>")
 keymap("n", "<M-t>", "<c-W>+")
 keymap("n", "<M-s>", "<c-W>-")
 
+keymap("n", "<esc>", "<cmd>nohl<CR>", opts)
+
 -- Toggle hlsearch if it's on, otherwise just do "enter"
 keymap("n", "<CR>", function()
 	---@diagnostic disable-next-line: undefined-field
@@ -83,3 +85,4 @@ keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnosti
 keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>we", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)

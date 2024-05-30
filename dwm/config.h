@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -111,6 +112,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+  { 0,                            XF86XK_MonBrightnessUp,   spawn,     SHCMD("sudo ybacklight -inc 5%") },
+  { 0,                            XF86XK_MonBrightnessDown, spawn,     SHCMD("sudo ybacklight -dec 5%") },
+  { 0,                            XF86XK_AudioLowerVolume,  spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
+  { 0,                            XF86XK_AudioRaiseVolume,  spawn,     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+  { 0,                            XF86XK_AudioMute,         spawn,     SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
 };
 
 /* button definitions */

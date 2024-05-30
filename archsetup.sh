@@ -40,6 +40,12 @@ $ umount -l /mnt
 $ reboot
 '
 
+cp -r $HOME/notes/dmenu $HOME/notes/dunst $HOME/notes/dwl $HOME/notes/dwm $HOME/notes/emacs $HOME/notes/fish $HOME/notes/foot $HOME/notes/mako $HOME/notes/niri $HOME/notes/nvim $HOME/notes/st $HOME/.config
+cd $HOME/.config/dmenu && sudo make clean install
+cd $HOME/.config/dwm && sudo make clean install
+cd $HOME/.config/st && sudo make clean install
+cd $HOME/.config/dwl && sudo make clean install
+
 mkdir $HOME/AUR_packages
 
 pico(){
@@ -66,12 +72,13 @@ pico flat-remix-gtk
 pico dracula-gtk-theme
 # pico winegui
 
-systemctl enable bluetooth
-systemctl enable chronyd
 systemctl start bluetooth
 systemctl start chronyd
 
 timedatectl set-timezone Asia/Kolkata
+
+cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
+chmod +x $HOME/.xinitrc
 
 : ' GITHUB SSH
 git config --global user.email "adityascottish27@gmail.com"
@@ -93,7 +100,14 @@ Section "InputClass"
 EndSection
 '
 
-:' SUDO
+: ' SUDO
 sudo nvim /etc/sudoers
 adi ALL=NOPASSWD: /bin/ybacklight
+'
+
+: ' ssh
+sudo chmod 600 ~/.ssh/id_ed25519
+sudo chmod 600 ~/.ssh/id_ed25519.pub
+sudo chmod 644 ~/.ssh/known_hosts
+sudo chmod 755 ~/.ssh
 '

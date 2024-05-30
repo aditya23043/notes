@@ -10,13 +10,16 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- set number column width to 2 {default 4}
-vim.opt.numberwidth = 4
+vim.opt.numberwidth = 2
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
+-- Show fold lines in column
+-- vim.cmd("set foldcolumn=1")
 
 -- always show tabs
 vim.opt.showtabline = 1
@@ -61,7 +64,7 @@ vim.opt.pumblend = 0
 vim.opt.conceallevel = 3
 
 -- Status bar
-vim.opt.laststatus = 0
+vim.opt.laststatus = 3
 
 -- the encoding written to a file
 vim.opt.fileencoding = "utf-8"

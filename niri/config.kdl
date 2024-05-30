@@ -140,7 +140,7 @@ layout {
         // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#11111b"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -188,7 +188,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "swaybg" "-m" "fill" "-i" "Pictures/wallhaven-kxg7d1.png"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/adi/floral.png"
 spawn-at-startup "mako"
 spawn-at-startup "/home/adi/.config/niri/checkBat.sh"
 
@@ -261,7 +261,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "foot"; }
     Mod+Shift+W { spawn "chromium"; }
-    Alt+Comma { focus-column-left; }
+    // Alt+Comma { focus-column-left; }
     Mod+P { spawn "/home/adi/.config/niri/dmenu.sh"; }
 
     // You can also use a shell:
@@ -269,6 +269,8 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
+    XF86AudioPlay        allow-when-locked=true { spawn "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn "playerctl play-pause"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
