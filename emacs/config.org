@@ -5,30 +5,30 @@
 #+begin_src emacs-lisp
 
   (set-face-attribute 'default nil
-    :font "VictorMono NFM"
-    :height 150
+    :font "JetBrainsMono NFM"
+    :height 130
     :weight 'Bold)
   (set-face-attribute 'variable-pitch nil
-    :font "VictorMono NFM"
-    :height 150
+    :font "JetBrainsMono NFM"
+    :height 130
     :weight 'Bold)
   (set-face-attribute 'fixed-pitch nil
-    :font "VictorMono NFM"
-    :height 150
+    :font "JetBrainsMono NFM"
+    :height 130
     :weight 'Bold)
   (set-face-attribute 'italic nil 
-    :font "VictorMono NFM"
+    :font "JetBrainsMono NFM"
     :slant 'italic
-    :height 150) 
+    :height 130) 
   (set-face-attribute 'bold nil 
-    :font "VictorMono NFM"
+    :font "JetBrainsMono NFM"
     :weight 'bold
-    :height 150) 
+    :height 130) 
   (set-face-attribute 'bold-italic nil 
-    :font "VictorMono NFM"
+    :font "JetBrainsMono NFM"
     :weight 'bold
     :slant 'italic
-    :height 150) 
+    :height 130) 
   (setq-default line-spacing 0.10)
   (set-language-environment "UTF-8")
 
@@ -268,4 +268,3 @@
     (evil-org-agenda-set-keys))
 
 #+end_src
-* 

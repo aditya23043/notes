@@ -7,8 +7,10 @@
  */
 /*static char *font =*/
 /*    "VictorMono NFM:style=Bold:size=18:antialias=true:autohint=true";*/
+/*static char *font =*/
+/*    "Maple Mono:style=Bold:size=18:antialias=true:autohint=true";*/
 static char *font =
-    "JetBrainsMonoNFM:style=Bold:size=18:antialias=true:autohint=true";
+    "JetBrainsMonoNFM:style=SemiBold:size=17:antialias=true:autohint=true";
 /*static char *font = "Iosevka Term SS07 "*/
 /*                    "Extended:style=Bold:size=18:antialias=true:autohint=true";*/
 /*static char *font = "Iosevka Term SS07 SmBd "*/
@@ -16,7 +18,12 @@ static char *font =
 /*static char *font = "Iosevka Term SS07 SmBd "*/
 /*                    "Ex:style=SemiBold:size=18:antialias=true:autohint=true";*/
 /*static char *font = "Iosevka Term SS07"*/
-/*                    ":style=SemiBold:size=18:antialias=true:autohint=true";*/
+/*                    ":style=Bold:size=18:antialias=true:autohint=true";*/
+/*static char *font = "Pragmasevka Nerd Font"*/
+/*                    ":style=regular:size=20:antialias=true:autohint=true";*/
+/*static char *font =*/
+/*    "Iosevka Term SS07 Semibold Extended"*/
+/*    ":style=Semibold Extended:size=18:antialias=true:autohint=true";*/
 static int borderpx = 2;
 
 /*
@@ -37,7 +44,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.9;
+static float cwscale = 0.85;
 static float chscale = 1;
 
 /*
@@ -104,31 +111,100 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.75;
+
 /* Terminal colors (16 first used in escape sequence) */
+/*static const char *colorname[] = {*/
+/*    //  8 normal colors*/
+/*    [0] = "#000000", //  hard contrast: #1d2021 / soft contrast: #32302f*/
+/*    [1] = "#ea6962", //  red*/
+/*    [2] = "#a9b665", //  green*/
+/*    [3] = "#d8a657", //  yellow*/
+/*    [4] = "#7daea3", //  blue*/
+/*    [5] = "#d3869b", //  magenta*/
+/*    [6] = "#89b482", //  cyan*/
+/*    [7] = "#d4be98", //  white*/
+/**/
+/*    //  8 bright colors*/
+/*    [8] = "#928374",  //  black*/
+/*    [9] = "#ef938e",  //  red*/
+/*    [10] = "#bbc585", //  green*/
+/*    [11] = "#e1bb7e", //  yellow*/
+/*    [12] = "#9dc2ba", //  blue*/
+/*    [13] = "#e1acbb", //  magenta*/
+/*    [14] = "#a7c7a2", //  cyan*/
+/*    [15] = "#e2d3ba", //  white*/
+/*};*/
+
+/*static const char *colorname[] = {*/
+/*    //  8 normal colors*/
+/*    "#282c34",*/
+/*    "#e06c75",*/
+/*    "#98c379",*/
+/*    "#e5c07b",*/
+/*    "#61afef",*/
+/*    "#c678dd",*/
+/*    "#56b6c2",*/
+/*    "#abb2bf",*/
+/**/
+/*    //  8 bright colors*/
+/*    "#282c34",*/
+/*    "#e06c75",*/
+/*    "#98c379",*/
+/*    "#e5c07b",*/
+/*    "#61afef",*/
+/*    "#c678dd",*/
+/*    "#56b6c2",*/
+/*    "#abb2bf",*/
+/*    [255] = 0,*/
+/**/
+/*    "#cccccc",*/
+/*    "#555555",*/
+/*    "#abb2bf",*/
+/*    "#000000",*/
+/*};*/
+
 static const char *colorname[] = {
-    /* 8 normal colors */
-    "#282c34", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2",
-    "#abb2bf",
+    //  8 normal colors
+    "#000000",
+    "#ea6962",
+    "#a9b665",
+    "#d8a657",
+    "#7daea3",
+    "#d3869b",
+    "#89b482",
+    "#ddc7a1",
 
-    /* 8 bright colors */
-    "#282c34", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2",
-    "#abb2bf",
-
+    //  8 bright colors
+    "#000000",
+    "#ea6962",
+    "#a9b665",
+    "#d8a657",
+    "#7daea3",
+    "#d3869b",
+    "#89b482",
+    "#ddc7a1",
     [255] = 0,
 
-    /* more colors can be added after 255 to use with DefaultXX */
-    "#cccccc", "#555555", "#abb2bf", /* default foreground colour */
-    "#16181d",                       /* default background colour */
+    "#d4be98",
+    "#000000",
+    "#ddc7a1",
+    "#000000",
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
 unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+/*unsigned int defaultfg = 15;*/
+/*unsigned int defaultbg = 0;*/
+/*unsigned int defaultcs = 15;*/
+unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
