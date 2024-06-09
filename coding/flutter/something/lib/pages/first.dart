@@ -1,48 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:something/pages/second.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "First Page",
-            style: TextStyle(
-              fontFamily: "VictorMono NFM",
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              shadows: [
-                Shadow(
-                  color: Colors.black,
-                  offset: Offset(5, 5),
-                  blurRadius: 8,
-                )
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "First Page",
+          style: TextStyle(
+            fontFamily: "VictorMono NFM",
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
           ),
-          centerTitle: true,
-          backgroundColor: Colors.teal,
-          foregroundColor: Colors.white,
         ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SecondPage()));
-            },
-            child: Text(
-              "Go To 2nd Page",
-              style: TextStyle(
-                fontFamily: "VictorMono NFM",
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        centerTitle: true,
+        backgroundColor: Colors.teal[900],
+        foregroundColor: Colors.white,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple[100],
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                Icons.route,
+                size: 64,
               ),
             ),
-          ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("H O M E"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/homepage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E T T I N G S"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/settingspage');
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -1,9 +1,51 @@
 <style>
 *{
     font-family: VictorMono NFM;
-    font-weight: SemiBold;
+    font-weight: Bold;
 }
 </style>
+
+<!-- mtoc-start -->
+
+* [Hello World](#hello-world)
+* [Variables](#variables)
+* [Math](#math)
+* [Comparison Operators](#comparison-operators)
+* [Logical Operators](#logical-operators)
+* [If Else](#if-else)
+* [Switches](#switches)
+* [Loops](#loops)
+* [Functions](#functions)
+* [Data Structures](#data-structures)
+* [Basic About Me page](#basic-about-me-page)
+* [Concepts Covered](#concepts-covered)
+* [OUTLINE](#outline)
+* [Expanded](#expanded)
+* [List View](#list-view)
+* [Vertical Scrolling](#vertical-scrolling)
+* [Horizontal Scrolling](#horizontal-scrolling)
+* [List View Builder](#list-view-builder)
+  * [Count from 0 to (n-1)](#count-from-0-to-n-1)
+  * [Using a list data type](#using-a-list-data-type)
+* [Grid View](#grid-view)
+* [Builder](#builder)
+* [Stack](#stack)
+* [Gesture](#gesture)
+* [Navigation](#navigation)
+* [Simple 2 page nav](#simple-2-page-nav)
+  * [main.dart](#maindart)
+  * [first.dart](#firstdart)
+  * [second.dart](#seconddart)
+* [Routing](#routing)
+* [Drawer](#drawer)
+* [Project](#project)
+  * [Main.dart](#maindart-1)
+  * [First Page](#first-page)
+  * [Home Page](#home-page)
+  * [Settings Page](#settings-page)
+* [Bottom Navigation Bar](#bottom-navigation-bar)
+
+<!-- mtoc-end -->
 
 # Hello World
 ```dart
@@ -418,7 +460,7 @@ class MyApp extends StatelessWidget {
 ```
 
 ## List View Builder
-### Count from 0 .. (n-1)
+### Count from 0 to (n-1)
 - Here, n = 50
 ```dart
 import 'package:flutter/material.dart';
@@ -599,7 +641,6 @@ class MyApp extends StatelessWidget {
                     color: Colors.black26,
                     offset: Offset(5, 5),
                     blurRadius: 5,
-                #                    spreadRadius: 2,
                   )
                 ],
                 color: Colors.teal,
@@ -636,4 +677,300 @@ class MyApp extends StatelessWidget {
 ```
 
 # Navigation
+## Simple 2 page nav
+- Project Directory
+    - libs/main.dart
+    - libs/pages/first.dart
+    - libs/pages/second.dart
+
+### main.dart
+```dart
+import 'package:flutter/material.dart';
+import 'package:something/pages/first.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(),
+    );
+  }
+}
+```
+
+### first.dart
+```dart
+import 'package:flutter/material.dart';
+import 'package:something/pages/second.dart';
+
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "First Page",
+            style: TextStyle(
+              fontFamily: "VictorMono NFM",
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.teal[900],
+          foregroundColor: Colors.white,
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SecondPage()));
+            },
+            child: Text(
+              "Go To 2nd Page",
+              style: TextStyle(
+                color: Colors.teal[900],
+                fontFamily: "VictorMono NFM",
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+### second.dart
+```dart
+import 'package:flutter/material.dart';
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.keyboard_double_arrow_left),
+          ),
+          title: const Text(
+            "Second Page",
+            style: TextStyle(
+              fontFamily: "VictorMono NFM",
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.teal[900],
+          foregroundColor: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Routing
+- Useful to navigate through multiple pages
+- Add routes to the Material App
+```dart
+routes: {
+  '/secondpage': (context) => SecondPage(),
+},
+```
+- Change the function performed on clicking the elevated button from Navigator.push to Navigator.pushName
+```dart
+onPressed: () {
+  Navigator.pushNamed(context, '/secondpage');
+},
+```
+
+# Drawer
+- Note: By default, this application will not close the drawer once we have clicked on home or settings which can be clearly seen when we switch back to the first page
+- To prevent this, we do Navigator.pop(context); to remove whatever is on the screen on top currently i.e. the drawer
+
+## Project
+- lib/main.dart
+- lib/pages/first.dart
+- lib/pages/home_page.dart
+- lib/pages/settings_page.dart
+
+### Main.dart
+```dart
+import 'package:flutter/material.dart';
+import 'package:something/pages/first.dart';
+import 'package:something/pages/home_page.dart';
+import 'package:something/pages/settings_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(),
+      routes: {
+        '/settingspage': (context) => SettingsPage(),
+        '/homepage': (context) => HomePage(),
+      },
+    );
+  }
+}
+```
+
+### First Page
+```dart
+import 'package:flutter/material.dart';
+
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "First Page",
+          style: TextStyle(
+            fontFamily: "VictorMono NFM",
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.teal[900],
+        foregroundColor: Colors.white,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple[100],
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                Icons.route,
+                size: 64,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("H O M E"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/homepage');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E T T I N G S"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/settingspage');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+### Home Page
+```dart
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Home Page',
+          style: TextStyle(
+            fontFamily: "VictorMono NFM",
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.teal[900],
+        foregroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 25,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+### Settings Page
+```dart
+import 'package:flutter/material.dart';
+
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Settings Page',
+          style: TextStyle(
+            fontFamily: "VictorMono NFM",
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.teal[900],
+        foregroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 25,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+# Bottom Navigation Bar
 
