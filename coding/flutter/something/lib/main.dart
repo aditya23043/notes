@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:something/pages/first.dart';
+import 'package:something/pages/button_press.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
+      home: ButtonPress(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
