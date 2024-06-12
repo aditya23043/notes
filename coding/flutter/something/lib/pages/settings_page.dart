@@ -6,25 +6,15 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Settings Page',
+      backgroundColor: Colors.black87,
+      body: Center(
+        child: Text(
+          "Settings Page",
           style: TextStyle(
+            color: Colors.grey,
+            fontSize: 20,
             fontFamily: "VictorMono NFM",
-            fontSize: 28,
             fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.teal[900],
-        foregroundColor: Colors.white,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(
-            Icons.arrow_back_ios,
-            size: 25,
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:something/pages/first.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: FirstPage(),
+    );
   }
 }

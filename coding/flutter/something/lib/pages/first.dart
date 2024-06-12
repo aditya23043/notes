@@ -1,52 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:something/pages/home_page.dart';
+import 'package:something/pages/profile_page.dart';
+import 'package:something/pages/settings_page.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+class FirstPage extends StatefulWidget {
+  FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selected_index = index;
+    });
+  }
+
+  int _selected_index = 0;
+
+  final List _pages = [
+    HomePage(),
+    ProfilePage(),
+    SettingsPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
+      body: _pages[_selected_index],
       appBar: AppBar(
-        title: Text(
-          "First Page",
-          style: TextStyle(
-            fontFamily: "VictorMono NFM",
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        title: Text("1st Page"),
         centerTitle: true,
-        backgroundColor: Colors.teal[900],
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.grey[900],
+        foregroundColor: Colors.grey[400],
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.deepPurple[100],
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Icon(
-                Icons.route,
-                size: 64,
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("H O M E"),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/homepage');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("S E T T I N G S"),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/settingspage');
-              },
-            ),
-          ],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _navigateBottomBar,
+        currentIndex: _selected_index,
+        backgroundColor: Colors.grey[900],
+        unselectedItemColor: Colors.grey[600],
+        selectedItemColor: Colors.teal,
+        selectedLabelStyle: TextStyle(
+          fontFamily: "VictorMono NFM",
+          fontWeight: FontWeight.bold,
         ),
+        unselectedLabelStyle: TextStyle(
+          fontFamily: "VictorMono NFM",
+          fontWeight: FontWeight.bold,
+        ),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
+        ],
       ),
     );
   }
