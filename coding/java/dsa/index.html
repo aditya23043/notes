@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DSA Tutorial</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	
+	<h1>Data Structures</h1>	
+
+	<h2>Arrays</h2>
+	<ul>
+		<li>Ordered collection of data</li>
+		<li>Easy to find any element because of zero based indexing</li>
+		<li>Arrays are stored in contiguous memory which means each element of the array is next to one another in memory</li>
+		<li>Very good for reading elements</li>
+		<li>If you need to insert an element but the memory next to the last element is occupied, the computer needs to find another memory block which is of sufficient size. This is very inefficient</li>
+	</ul>
+	<h3>Time Complexity</h3>
+	<table>
+		<tr>
+			<td>Read</td>
+			<td>O(1)</td>
+		</tr>
+		<tr>
+			<td>Insert</td>
+			<td>O(n)</td>
+		</tr>
+		<tr>
+			<td>Delete</td>
+			<td>O(n)</td>
+		</tr>
+	</table>
+
+	<br>
+	<hr>
+
+	<h2>Linked Lists</h2>
+	<ul>
+		<li>Slow in reading but very fast in inserting and deleting elements</li>
+		<li>It has a pointer which has the address of the next element</li>
+		<li>Solves the array insertion problem since you can place the elements anywhere in the memory and simply make the previous element point to the new one</li>
+		<li>However, they do not have indexes and hence are slower for finding elements</li>
+	</ul>
+	<h3>Time Complexity</h3>
+	<table>
+		<tr>
+			<td>Read</td>
+			<td>O(n)</td>
+		</tr>
+		<tr>
+			<td>Insert</td>
+			<td>O(1)</td>
+		</tr>
+		<tr>
+			<td>Delete</td>
+			<td>O(1)</td>
+		</tr>
+	</table>
+
+	</body>
+</html>
+		

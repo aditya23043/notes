@@ -1,0 +1,22 @@
+html {
+	background-color: #111;
+	color: #aaa;
+	font-family: "VictorMono NFM";
+	font-size: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+td {
+	border: 1px solid #333;
+	padding-left: 0.4rem;
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	padding-right: 0.5rem;
+	border-collapse: collapse;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}

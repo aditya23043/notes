@@ -1,0 +1,20 @@
+html {
+	background-color: #fdf6e3;
+	color: #002b36;
+	font-family: "VictorMono NFM";
+	font-weight: bold;
+	font-size: 28;
+	margin-left: 4rem;
+	margin-right: 4rem;
+}
+
+th, td  {
+	padding: 0.5rem;
+	border: 1px solid #e9e3d2;
+	border-collapse: collapse;
+	font-size: 0.8rem;
+}
+
+th { 
+	font-style: italic;
+}

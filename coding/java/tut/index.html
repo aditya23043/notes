@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Java Tutorial</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="prism.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <h1 style="text-align: center">JAVA TUTORIAL</h1>
+
+    <hr />
+
+    <h2>Printing to the console</h2>
+
+    <pre>
+			<code class="language-java">
+				public class Main {
+					public static void main(String[] args){
+						System.out.println("Hello World")
+					}
+				}
+			</code>
+		</pre>
+
+		<hr>
+
+		<h2>Data Types</h2>
+
+		<table>
+			<tr>
+				<th>Data Type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>int</td>
+				<td>4 bytes limit</td>
+			</tr>
+			<tr>
+				<td>long</td>
+				<td>8 bytes limit</td>
+			</tr>
+			<tr>
+				<td>short</td>
+				<td>2 bytes limit</td>
+			</tr>
+			<tr>
+				<td>byte</td>
+				<td>1 bytes limit</td>
+			</tr>
+			<tr>
+				<td>float</td>
+				<td>requires an f at the end and 4 bytes limit</td>
+			</tr>
+			<tr>
+				<td>double</td>
+				<td>double precision floating point number and 8 bytes limit</td>
+			</tr>
+			<tr>
+				<td>bool</td>
+				<td>does not return 0 or 1. Its simply true or false</td>
+			</tr>
+			<tr>
+				<td>char</td>
+				<td>requires single quotes</td>
+			</tr>
+			<tr>
+				<td>String</td>
+				<td>requires double quotes</td>
+			</tr>
+		</table>
+
+		<pre>
+			<code class="language-java">
+				public class Main {
+					public static void main(String[] args) {
+						
+						int num1 = 4;
+						long num2 = 8;
+						short num3 = 2;
+						byte num4 = 1;
+
+						float cgpa = 7.3f;
+						double us_gpa = 3.0;
+
+						boolean wants_to_get_placed_on_campus = true;
+
+						char grade = 'B';
+						String name = "Aditya Gautam";
+
+					}
+				}
+			</code>
+		</pre>
+
+		<hr>
+
+		<h2>Literals</h2>
+
+		<ul>
+			<li>You can pass in hexadecimal, binary and exponential numbers to int data type as well</li>
+		</ul>
+
+		<pre>
+			<code class="language-java">
+				public class Main {
+					public static void main(String[] args) {
+						int num1 = 0x7E;
+						int num2 = 0b0101;
+						int num3 = 12e10;
+						int num4 = 10_00_00_00_000;
+					}
+				}
+			</code>
+		</pre>
+
+    <script charset="utf-8" src="prism.js"></script>
+  </body>
+</html>

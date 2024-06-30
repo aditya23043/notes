@@ -1,16 +1,8 @@
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-
 public class Main {
-  public static void main(String[] args) {
-
-    Scanner scanner = new Scanner(System.in);
-    String name = "";
-
-    while (name.isBlank()) {
-      System.out.print("Enter your name: ");
-      name = scanner.nextLine();
-    }
-    System.out.println("Hello " + name);
-  }
+	public static void main(String[] args) {
+		int num1 = 0x7E;
+		int num2 = 0b0101;
+		double num3 = 12e10;
+		long num4 = 10_00_00_00_000L;
+	}
 }
