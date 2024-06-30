@@ -134,7 +134,7 @@ int main(){
 int main(){
     int x = 12;
     int y = 5;
-    int y = x / (int)y;
+    int y = x / (float)y;
 }
 ```
 
