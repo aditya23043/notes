@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Data Structures and Algorithm</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="all">
+	</head>
+	<body>
+
+		<h1>Data Structures and Algorithm</h1>
+
+		<h2>Data Structure</h2>
+		<p>A data structure is a way of organizing data so that it can be used effectively.</p>
+
+		<h2>Abstract Data Structures</h2>
+		<p>An abstraction of a data structure which provides only the interface to which a data structure must adhere to. The interface does not give any specific details about how something should be implemented or in which programming language.</p>
+
+		<h3>Examples</h3>
+
+		<table>
+			<tr>
+				<th>Abstraction</th>
+				<th>Implementation</th>
+			</tr>
+			<tr>
+				<td>List</td>
+				<td>Dynamic Array / Linked List</td>
+			</tr>
+			<tr>
+				<td>Queue</td>
+				<td>Linked list / Stack / Array</td>
+			</tr>
+			<tr>
+				<td>Map</td>
+				<td>Tree map / Hash map / Hash table</td>
+			</tr>
+		</table>
+
+		<h2>Computational Analysis</h2>
+		<ul>
+			<li>How much <em>time</em> does this algo take?</li>
+			<li>How much <em>space</em> does this algo take?</li>
+		</ul>
+
+		<h3>Big-O Notation</h3>
+		<p>Gives an upper bound of the complexity in the worst case, helping to quantify performance as the input size becomes arbitrarily large</p>
+
+		<table>
+			<tr>
+				<th>Type</th>
+				<th>Complexity</th>
+			</tr>
+			<tr>
+				<td>Constant</td>
+				<td>O(1)</td>
+			</tr>
+			<tr>
+				<td>Logarithmic</td>
+				<td>O(logn)</td>
+			</tr>
+			<tr>
+				<td>Linear</td>
+				<td>O(n)</td>
+			</tr>
+			<tr>
+				<td>Linearithmic</td>
+				<td>O(nlogn)</td>
+			</tr>
+			<tr>
+				<td>Quadric</td>
+				<td>O(n^2)</td>
+			</tr>
+			<tr>
+				<td>Cubic</td>
+				<td>O(n^3)</td>
+			</tr>
+			<tr>
+				<td>Exponential</td>
+				<td>O(b^n)</td>
+			</tr>
+			<tr>
+				<td>Factorial</td>
+				<td>O(n!)</td>
+			</tr>
+		</table>
+
+		<h3>Big-O Properties</h3>
+		<ul>
+			<li>O(n + c) = O(n)</li>
+			<li>O(c * n) = O(n) : c > 0</li>
+		</ul>
+
+		<h3>Big-O examples</h3>
+		<ul>
+			<li>Finding all subsets of a set : O(2^n)</li>
+			<li>Finding all permutations of a string : O(n!)</li>
+			<li>Soring using merge sort : O(nlogn)</li>
+			<li>Iterating over all cells of an n x m matrix : O(n*m)</li>
+		</ul>
+
+		<h2>Arrays</h2>
+
+		<h3>Static Arrays</h3>
+		<ul>
+			<li>Arrays with fixed length container containing n elements indexable from the range [0, n-1]</li>
+			<li>Stored in contiguous memory</li>
+		</ul>
+
+		<h3>Complexity</h3>
+
+		<table>
+			<tr>
+				<th>Operation</th>
+				<th>Static Array</th>
+				<th>Dynamic Array</th>
+			</tr>
+			<tr>
+				<td>Access</td>
+				<td>O(1)</td>
+				<td>O(1)</td>
+			</tr>
+			<tr>
+				<td>Search</td>
+				<td>O(n)</td>
+				<td>O(n)</td>
+			</tr>
+			<tr>
+				<td>Insertion</td>
+				<td>NA</td>
+				<td>O(n)</td>
+			</tr>
+			<tr>
+				<td>Appending</td>
+				<td>NA</td>
+				<td>O(1)</td>
+			</tr>
+			<tr>
+				<td>Deletion</td>
+				<td>NA</td>
+				<td>O(n)</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

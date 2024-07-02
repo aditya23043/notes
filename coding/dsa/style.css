@@ -2,12 +2,12 @@ html {
 	background-color: #111;
 	color: #aaa;
 	font-family: "VictorMono NFM";
-	font-size: 1rem;
+	font-size: 2rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
 
-td {
+td, th {
 	border: 1px solid #333;
 	padding-left: 0.4rem;
 	padding-top: 0.4rem;
