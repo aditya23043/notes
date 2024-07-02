@@ -372,3 +372,31 @@ color: #aaa;
 - Now, Data Frame bits (8 bits) and once again ACK for acknowledgement
 - Then, SDA goes from 0 to 1 THEN SCL goes from 0 to 1
 - And the clock peaks whenever the data needs to be scanned by the receiver
+- Everything read at positive edge of clock cycle
+
+## SPI Interface
+- Serial Peripheral Interface
+- 4 signals
+    - CS (bar) : chip select (inverted)
+    - SCLK : serial clock
+    - SDI / MISO : serial data in (main in / subnode out)
+    - SDO / MOSI : serial data out (main out / subnode in)
+- One main and one / multiple subnodes
+- Bidirectional, duplex communication
+- Higher freq than i2c communication
+- There hasn't been many cases where we need to speak in both directions at the same time even in sensors / displays / human interface devices
+
+### SPI Communication
+
+| SPI Mode | CPOL | CPHA | Clock polarity | Clock phase used to sample and or shift the data       |
+|----------|------|------|----------------|--------------------------------------------------------|
+| 0        | 0    | 0    | Logical Low    | data sampled: rising edge; shifted out in falling edge |
+| 1        | 0    | 1    | Logical Low    | data sampled: falling edge; shifted out in rising edge |
+| 2        | 1    | 0    | Logical High   | data sampled: falling edge; shifted out in rising edge |
+| 3        | 1    | 1    | Logical High   | data sampled: rising edge; shifted out in falling edge |
+
+- In regular SPI mode and in multi subnode spi communication, you can read from any ONE of the those at a time since you cannot make out where the data is coming from because we are using different chip selects
+- Daisy chaining : not supported on all SPI devices
+    - SDO to SDI; SDO to SDI... and so on
+    - Delayed data input (data in after 24 cycles if we have 3 of those receivers and each take 8 cycles because of common CS(bar))
+    - Save on Chip select by using the same on all
