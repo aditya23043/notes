@@ -400,3 +400,143 @@ color: #aaa;
     - SDO to SDI; SDO to SDI... and so on
     - Delayed data input (data in after 24 cycles if we have 3 of those receivers and each take 8 cycles because of common CS(bar))
     - Save on Chip select by using the same on all
+
+## Hands-on NodeMCU Stuff
+
+### Connecting to the internet
+
+```c
+#include <ESP8266WiFi.h>
+
+WiFiClient client;
+WiFiServer server(80);
+
+void setup() { 
+
+    Serial.begin(9600); 
+
+    WiFi.begin("Something", "something"); 
+
+    while(WiFi.status() != WL_CONNECTED) { 
+        Serial.print("..");
+        delay(200);
+    }
+    Serial.println();
+    Serial.println("NodeMCU is Connected!"); 
+    Serial.println(WiFi.localIP()); 
+
+    server.begin();
+
+}
+
+void loop() { 
+
+    client = server.available();
+    if( client == 1 ){
+        String request = client.readStringUntil('\n');
+        Serial.println(request);
+    }
+
+}
+```
+
+#### OUTPUT
+```serial
+09:02:46.248 -> ....................................................................����............................................................�a�Q¡q�K�!!�cGa�..................................................................................................
+09:18:31.744 -> NodeMCU is Connected!
+09:18:31.744 -> 192.168.171.34
+```
+
+```output
+Connecting....
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: cc:50:e3:3c:16:6e
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Compressed 272336 bytes to 200336...
+Writing at 0x00000000... (7 %)
+Writing at 0x00004000... (15 %)
+Writing at 0x00008000... (23 %)
+Writing at 0x0000c000... (30 %)
+Writing at 0x00010000... (38 %)
+Writing at 0x00014000... (46 %)
+Writing at 0x00018000... (53 %)
+Writing at 0x0001c000... (61 %)
+Writing at 0x00020000... (69 %)
+Writing at 0x00024000... (76 %)
+Writing at 0x00028000... (84 %)
+Writing at 0x0002c000... (92 %)
+Writing at 0x00030000... (100 %)
+Wrote 272336 bytes (200336 compressed) at 0x00000000 in 17.7 seconds (effective 123.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+```
+
+- Wifi.status() returns these enum values
+    1. WL_CONNECTED: The NodeMCU is successfully connected to a WiFi network.
+    2. WL_IDLE_STATUS: The WiFi is in idle mode.
+    3. WL_CONNECT_FAILED: The connection attempt failed.
+
+### Interfacing with a web page using MCU
+```c
+#include <ESP8266WiFi.h>
+
+WiFiClient client;
+WiFiServer server(80);
+
+void setup() { 
+
+    Serial.begin(9600); 
+
+    pinMode(D4, OUTPUT); // Set LED pin as OUTPUT
+
+    WiFi.begin("Robify", "iot@robify"); 
+
+    while(WiFi.status() != WL_CONNECTED) { 
+        Serial.print("..");
+        delay(200);
+    }
+    Serial.println();
+    Serial.println("NodeMCU is Connected!"); 
+    Serial.println(WiFi.localIP()); 
+
+    server.begin();
+
+}
+
+void loop() { 
+
+    client = server.available();
+    if( client == 1 ){
+        String request = client.readStringUntil('\n');
+        Serial.println(request);
+        request.trim();
+        if(request == "GET /on HTTP/1.1"){
+            digitalWrite(D4, HIGH);
+        }
+        else if(request == "GET /off HTTP/1.1"){
+            digitalWrite(D4, LOW);
+        }
+    }
+
+    client.println("HTTP/1.1 200 OK");
+    client.println("Content-Type: text/html");
+    client.println(""); // Important: this is the blank line that indicates the end of the headers
+    client.println("<!DOCTYPE HTML>");
+    client.println("<html>");
+    client.println("<h1>Welcome to the Robify Webcontrol Page!</h1>");
+    client.println("<h3>LED Controls</h3>");
+    client.println("<br>");
+    client.println("<a href=\"/on\"><button>LED ON</button></a>");
+    client.println("<a href=\"/off\"><button>LED OFF</button></a><br/>");
+    client.println("</html>");
+
+}
+```
