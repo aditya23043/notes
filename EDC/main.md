@@ -670,3 +670,707 @@ void loop() {
   delay(200);
 }
 ```
+
+## POST method
+```c
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+#include <DHT.h>
+
+const char* ssid = "Something";
+const char* password = "something";
+const char* serverName = "http://iot.robify.in/tempactivity/eoxhts6v";
+
+
+float temp = 25.5;  // Replace with the actual temperature value
+
+DHT dht(D5, DHT11);
+
+
+void setup() {
+
+  dht.begin();
+  String temp1 = (String) dht.readTemperature(); 
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+
+  Serial.print("Connecting to WiFi...");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.print(".");
+  }
+  Serial.println(" connected");
+
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    WiFiClient client;
+
+
+    http.begin(client, serverName);
+    http.addHeader("Content-Type", "application/json");
+
+
+    String jsonPayload = "{\"temperature\":" + String(temp1) + "}";
+
+
+    int httpResponseCode = http.POST(jsonPayload);
+
+
+    if (httpResponseCode > 0) {
+      String response = http.getString();
+      Serial.println("HTTP Response code: " + String(httpResponseCode));
+      Serial.println("Response: " + response);
+    } else {
+      Serial.println("Error on sending POST: " + String(httpResponseCode));
+    }
+
+
+    http.end();
+  } else {
+    Serial.println("WiFi not connected");
+  }
+}
+
+
+void loop() {
+ // put your main code here, to run repeatedly
+}
+```
+
+## Message Box
+```c
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+
+const String serverUrl = "http://iot.robify.in/msgactivity/eoxhts6v";
+const String ssid = "Something";
+const String password = "something";
+const String msg = "Hire kar lo please";
+
+void setup() {
+  Serial.begin(115200);
+  delay(10);
+
+  WiFi.begin(ssid, password);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+  if (WiFi.status() == WL_CONNECTED) {
+     HTTPClient http;  // Object of class HTTPClient
+     WiFiClient client;
+     http.begin(client, serverUrl);
+     http.addHeader("Content-Type", "application/json");
+     String jsonPayload = "{\"message\": \"Hire kar lo please\"}";
+     int httpResponseCode = http.POST(jsonPayload);
+     http.end();
+
+  } else {
+    Serial.println("Error in WiFi connection");
+  }
+}
+
+void loop() {
+ // Do nothing in the loop
+}
+```
+- Note: Ensure you put quotes around the variable when you use a string var to post the message
+- Robify Hosts: Aryan Jain and Abhishek
+
+## Quiz
+```c
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+
+const char* ssid = "Something";
+const char* password = "something";
+const String host = "http://iot.robify.in";
+const String url = "/quiz1?userid=eoxhts6v&field=a";
+const String final = host + url;
+
+HTTPClient http;
+WiFiClient client;
+
+void setup(){
+
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting...");
+  }
+  Serial.println("Connected to WiFi");
+
+  http.begin(client, final);
+  int httpCode = http.GET();
+
+  if( httpCode > 0 ){
+    String response = http.getString();
+    Serial.println("HTTP Response code: " + String(httpCode));
+    Serial.println("Response: " + response);
+  }
+}
+
+void loop(){
+
+}
+```
+- Note: `http.begin` requires 4 args => client, host, port, args_url, 
+    - host => eg: www.google.com
+    - port => eg: 80 for http and 443 for https
+    - args_url => eg: /search?search_query=something&other_arg=no
+
+## RFID Write
+```c
+#include <SPI.h>
+#include <MFRC522.h>
+
+constexpr uint8_t RST_PIN = D3;     // Configurable, see typical pin layout above
+constexpr uint8_t SS_PIN = D4;     // Configurable, see typical pin layout above
+
+MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
+MFRC522::MIFARE_Key key;        
+
+/* Set the block to which we want to write data */
+/* Be aware of Sector Trailer Blocks */
+int blockNum = 2;  
+/* Create an array of 16 Bytes and fill it with data */
+/* This is the actual data which is going to be written into the card */
+byte blockData [16] = {"something"};
+
+/* Create another array to read data from Block */
+/* Legthn of buffer should be 2 Bytes more than the size of Block (16 Bytes) */
+byte bufferLen = 18;
+byte readBlockData[18];
+
+MFRC522::StatusCode status;
+
+void setup() 
+{
+  /* Initialize serial communications with the PC */
+  Serial.begin(9600);
+  /* Initialize SPI bus */
+  SPI.begin();
+  /* Initialize MFRC522 Module */
+  mfrc522.PCD_Init();
+  Serial.println("Scan a MIFARE 1K Tag to write data...");
+}
+
+void loop()
+{
+  /* Prepare the ksy for authentication */
+  /* All keys are set to FFFFFFFFFFFFh at chip delivery from the factory */
+  for (byte i = 0; i < 6; i++)
+  {
+    key.keyByte[i] = 0xFF;
+  }
+  /* Look for new cards */
+  /* Reset the loop if no new card is present on RC522 Reader */
+  if ( ! mfrc522.PICC_IsNewCardPresent())
+  {
+    return;
+  }
+  
+  /* Select one of the cards */
+  if ( ! mfrc522.PICC_ReadCardSerial()) 
+  {
+    return;
+  }
+  Serial.print("\n");
+  Serial.println("**Card Detected**");
+  /* Print UID of the Card */
+  Serial.print(F("Card UID:"));
+  for (byte i = 0; i < mfrc522.uid.size; i++)
+  {
+    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+    Serial.print(mfrc522.uid.uidByte[i], HEX);
+  }
+  Serial.print("\n");
+  /* Print type of card (for example, MIFARE 1K) */
+  Serial.print(F("PICC type: "));
+  MFRC522::PICC_Type piccType = mfrc522.PICC_GetType(mfrc522.uid.sak);
+  Serial.println(mfrc522.PICC_GetTypeName(piccType));
+         
+   /* Call 'WriteDataToBlock' function, which will write data to the block */
+   Serial.print("\n");
+   Serial.println("Writing to Data Block...");
+   WriteDataToBlock(blockNum, blockData);
+   
+   /* Read data from the same block */
+   Serial.print("\n");
+   Serial.println("Reading from Data Block...");
+   ReadDataFromBlock(blockNum, readBlockData);
+   /* If you want to print the full memory dump, uncomment the next line */
+   //mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+   
+   /* Print the data read from block */
+   Serial.print("\n");
+   Serial.print("Data in Block:");
+   Serial.print(blockNum);
+   Serial.print(" --> ");
+   for (int j=0 ; j<16 ; j++)
+   {
+     Serial.write(readBlockData[j]);
+   }
+   Serial.print("\n");
+}
+
+
+
+void WriteDataToBlock(int blockNum, byte blockData[]) 
+{
+  /* Authenticating the desired data block for write access using Key A */
+  status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, blockNum, &key, &(mfrc522.uid));
+  if (status != MFRC522::STATUS_OK)
+  {
+    Serial.print("Authentication failed for Write: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
+  }
+  else
+  {
+    Serial.println("Authentication success");
+  }
+
+  
+  /* Write data to the block */
+  status = mfrc522.MIFARE_Write(blockNum, blockData, 16);
+  if (status != MFRC522::STATUS_OK)
+  {
+    Serial.print("Writing to Block failed: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
+  }
+  else
+  {
+    Serial.println("Data was written into Block successfully");
+  }
+  
+}
+
+void ReadDataFromBlock(int blockNum, byte readBlockData[]) 
+{
+  /* Authenticating the desired data block for Read access using Key A */
+  status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, blockNum, &key, &(mfrc522.uid));
+
+  if (status != MFRC522::STATUS_OK)
+  {
+     Serial.print("Authentication failed for Read: ");
+     Serial.println(mfrc522.GetStatusCodeName(status));
+     return;
+  }
+  else
+  {
+    Serial.println("Authentication success");
+  }
+
+  /* Reading data from the Block */
+  status = mfrc522.MIFARE_Read(blockNum, readBlockData, &bufferLen);
+  if (status != MFRC522::STATUS_OK)
+  {
+    Serial.print("Reading failed: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
+  }
+  else
+  {
+    Serial.println("Block was read successfully");  
+  }
+  
+}
+```
+## RFID READ
+```c
+#include <SPI.h>
+#include <MFRC522.h>
+#include <Arduino.h>
+#include <ESP8266HTTPClient.h>
+
+#define RST_PIN  D3     // Configurable, see typical pin layout above
+#define SS_PIN   D4     // Configurable, see typical pin layout above
+#define BUZZER   D2     // Configurable, see typical pin layout above
+
+MFRC522 mfrc522(SS_PIN, RST_PIN);  // Instance of the class
+MFRC522::MIFARE_Key key;  
+MFRC522::StatusCode status;      
+
+/* Be aware of Sector Trailer Blocks */
+int blockNum = 2;  
+
+/* Create another array to read data from Block */
+/* Legthn of buffer should be 2 Bytes more than the size of Block (16 Bytes) */
+byte bufferLen = 18;
+byte readBlockData[18];
+String data2;
+
+void setup() 
+{
+  /* Initialize serial communications with the PC */
+  Serial.begin(9600);
+
+  Serial.println();
+  Serial.println();
+  Serial.println();
+
+  for (uint8_t t = 4; t > 0; t--) {
+    Serial.printf("[SETUP] WAIT %d...\n", t);
+    Serial.flush();
+    delay(1000);
+  }
+
+  /* Set BUZZER as OUTPUT */
+  pinMode(BUZZER, OUTPUT);
+  /* Initialize SPI bus */
+  SPI.begin();
+}
+
+void loop()
+{
+  /* Initialize MFRC522 Module */
+  mfrc522.PCD_Init();
+  /* Look for new cards */
+  /* Reset the loop if no new card is present on RC522 Reader */
+  if ( ! mfrc522.PICC_IsNewCardPresent())
+  {
+    return;
+  }
+  /* Select one of the cards */
+  if ( ! mfrc522.PICC_ReadCardSerial()) 
+  {
+    return;
+  }
+  /* Read data from the same block */
+  Serial.println();
+  Serial.println(F("Reading last data from RFID..."));
+  ReadDataFromBlock(blockNum, readBlockData);
+  /* If you want to print the full memory dump, uncomment the next line */
+  //mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+  
+  /* Print the data read from block */
+  Serial.println();
+  Serial.print(F("Last data in RFID:"));
+  Serial.print(blockNum);
+  Serial.print(F(" --> "));
+  for (int j=0 ; j<16 ; j++)
+  {
+    Serial.write(readBlockData[j]);
+  }
+  Serial.println();
+  digitalWrite(BUZZER, HIGH);
+  delay(200);
+  digitalWrite(BUZZER, LOW);
+  delay(200);
+  digitalWrite(BUZZER, HIGH);
+  delay(200);
+  digitalWrite(BUZZER, LOW);
+
+
+    data2 = String((char*)readBlockData);
+    data2.trim();
+    Serial.println(data2);
+    
+    
+}
+
+void ReadDataFromBlock(int blockNum, byte readBlockData[]) 
+{ 
+  /* Prepare the ksy for authentication */
+  /* All keys are set to FFFFFFFFFFFFh at chip delivery from the factory */
+  for (byte i = 0; i < 6; i++)
+  {
+    key.keyByte[i] = 0xFF;
+  }
+  /* Authenticating the desired data block for Read access using Key A */
+  status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, blockNum, &key, &(mfrc522.uid));
+
+  if (status != MFRC522::STATUS_OK)
+  {
+     Serial.print("Authentication failed for Read: ");
+     Serial.println(mfrc522.GetStatusCodeName(status));
+     return;
+  }
+  else
+  {
+    Serial.println("Authentication success");
+  }
+
+  /* Reading data from the Block */
+  status = mfrc522.MIFARE_Read(blockNum, readBlockData, &bufferLen);
+  if (status != MFRC522::STATUS_OK)
+  {
+    Serial.print("Reading failed: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
+  }
+  else
+  {
+    Serial.println("Block was read successfully");  
+  }
+}
+```
+
+## Attendance
+```c
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+
+// Replace with your network credentials
+const char* ssid = "Something";
+const char* password = "something";
+
+
+const String serverUrl = "http://iot.robify.in/attendance";
+
+// Define your userId variable
+String userId = "eoxhts6v";
+
+void setup() {
+  // Start the Serial communication to send messages to the computer
+  Serial.begin(115200);
+  delay(10);
+
+  // Connect to Wi-Fi network
+  WiFi.begin(ssid, password);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  // Wait for connection
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+  // Making the POST request
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;  // Object of class HTTPClient
+    WiFiClient client;
+    http.begin(client, serverUrl);  // Specify request destination
+    http.addHeader("Content-Type", "application/json");  // Specify content-type header
+
+    String postData = "{\"userId\":\"" + userId + "\"}";
+
+    int httpResponseCode = http.POST(postData);  // Send the request
+
+    if (httpResponseCode > 0) {
+      String response = http.getString();  // Get the response payload
+      Serial.println("HTTP Response code: " + String(httpResponseCode));  // Print response code
+      Serial.println("Response: " + response);  // Print response payload
+    } else {
+      Serial.println("Error on sending POST: " + String(httpResponseCode));
+    }
+
+    http.end();  // Free resources
+  } else {
+    Serial.println("Error in WiFi connection");
+  }
+}
+
+void loop() {
+  // Do nothing in the loop
+}
+```
+
+## RFID Attendance
+```c
+#include <SPI.h>
+#include <MFRC522.h>
+#include <Arduino.h>
+#include <ESP8266HTTPClient.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+
+const char* ssid = "Something";
+const char* password = "something";
+
+const String serverUrl = "http://iot.robify.in/attendance";
+
+#define RST_PIN  D3     // Configurable, see typical pin layout above
+#define SS_PIN   D4     // Configurable, see typical pin layout above
+#define BUZZER   D2     // Configurable, see typical pin layout above
+
+const String userId = "eoxhts6v"; 
+
+MFRC522 mfrc522(SS_PIN, RST_PIN);  // Instance of the class
+MFRC522::MIFARE_Key key;  
+MFRC522::StatusCode status;      
+
+/* Be aware of Sector Trailer Blocks */
+int blockNum = 2;  
+
+/* Create another array to read data from Block */
+/* Legthn of buffer should be 2 Bytes more than the size of Block (16 Bytes) */
+byte bufferLen = 18;
+byte readBlockData[18];
+String data2;
+
+void setup() 
+{
+  /* Initialize serial communications with the PC */
+  Serial.begin(9600);
+
+  WiFi.begin(ssid, password);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+
+  Serial.println();
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+
+  Serial.println();
+  Serial.println();
+  Serial.println();
+
+  for (uint8_t t = 4; t > 0; t--) {
+    Serial.printf("[SETUP] WAIT %d...\n", t);
+    Serial.flush();
+    delay(1000);
+  }
+
+  /* Set BUZZER as OUTPUT */
+  pinMode(BUZZER, OUTPUT);
+  /* Initialize SPI bus */
+  SPI.begin();
+}
+
+void loop()
+{
+  /* Initialize MFRC522 Module */
+  mfrc522.PCD_Init();
+  /* Look for new cards */
+  /* Reset the loop if no new card is present on RC522 Reader */
+  if ( ! mfrc522.PICC_IsNewCardPresent())
+  {
+    return;
+  }
+  /* Select one of the cards */
+  if ( ! mfrc522.PICC_ReadCardSerial()) 
+  {
+    return;
+  }
+  /* Read data from the same block */
+  Serial.println();
+  Serial.println(F("Reading last data from RFID..."));
+  ReadDataFromBlock(blockNum, readBlockData);
+  /* If you want to print the full memory dump, uncomment the next line */
+  //mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+  
+  /* Print the data read from block */
+  Serial.println();
+  Serial.print(F("Last data in RFID:"));
+  Serial.print(blockNum);
+  Serial.print(F(" --> "));
+  for (int j=0 ; j<16 ; j++)
+  {
+    Serial.write(readBlockData[j]);
+  }
+  Serial.println();
+  digitalWrite(BUZZER, HIGH);
+  delay(200);
+  digitalWrite(BUZZER, LOW);
+  delay(200);
+  digitalWrite(BUZZER, HIGH);
+  delay(200);
+  digitalWrite(BUZZER, LOW);
+
+
+    data2 = String((char*)readBlockData);
+    data2.trim();
+    Serial.println(data2);
+    
+  if(data2 == userId){
+    Serial.println("True");
+    if (WiFi.status() == WL_CONNECTED) {
+      HTTPClient http;  // Object of class HTTPClient
+      WiFiClient client;
+      http.begin(client, serverUrl);  // Specify request destination
+      http.addHeader("Content-Type", "application/json");  // Specify content-type header
+
+      String postData = "{\"userId\":\"" + userId + "\"}";
+
+      int httpResponseCode = http.POST(postData);  // Send the request
+
+      if (httpResponseCode > 0) {
+        String response = http.getString();  // Get the response payload
+        Serial.println("HTTP Response code: " + String(httpResponseCode));  // Print response code
+        Serial.println("Response: " + response);  // Print response payload
+      } else {
+        Serial.println("Error on sending POST: " + String(httpResponseCode));
+      }
+
+      http.end();  // Free resources
+    } else {
+      Serial.println("Error in WiFi connection");
+    }
+
+  }
+    
+}
+
+void ReadDataFromBlock(int blockNum, byte readBlockData[]) 
+{ 
+  /* Prepare the ksy for authentication */
+  /* All keys are set to FFFFFFFFFFFFh at chip delivery from the factory */
+  for (byte i = 0; i < 6; i++)
+  {
+    key.keyByte[i] = 0xFF;
+  }
+  /* Authenticating the desired data block for Read access using Key A */
+  status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, blockNum, &key, &(mfrc522.uid));
+
+  if (status != MFRC522::STATUS_OK)
+  {
+     Serial.print("Authentication failed for Read: ");
+     Serial.println(mfrc522.GetStatusCodeName(status));
+     return;
+  }
+  else
+  {
+    Serial.println("Authentication success");
+  }
+
+  /* Reading data from the Block */
+  status = mfrc522.MIFARE_Read(blockNum, readBlockData, &bufferLen);
+  if (status != MFRC522::STATUS_OK)
+  {
+    Serial.print("Reading failed: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
+  }
+  else
+  {
+    Serial.println("Block was read successfully");  
+  }
+}
+```
