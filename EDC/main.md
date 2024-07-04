@@ -540,3 +540,133 @@ void loop() {
 
 }
 ```
+
+### DHT Sensor
+```c
+#include <ESP8266WiFi.h>
+#include <DHT.h>
+#include <WiFiClient.h>
+#include <ESP8266HTTPClient.h>
+
+DHT dht(D5, DHT11);
+
+String host = "api.thingspeak.com";
+int httpPort = 80;  
+String url1 = "/update?api_key=2V7FSMUWEC9TJKQA&field1=";
+String url2 = "/update?api_key=2V7FSMUWEC9TJKQA&field2=";
+
+HTTPClient http; 
+WiFiClient client;
+
+void setup() 
+{
+  Serial.begin(9600);
+  WiFi.begin("Robify", "iot@robify");
+  while(WiFi.status() != WL_CONNECTED)
+  {
+    delay(200);
+    Serial.print("..");
+  }
+  Serial.println();
+  Serial.println("NodeMCU is connected!");
+  Serial.println(WiFi.localIP());
+  dht.begin();
+}
+
+void loop() 
+{
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  Serial.println("Temperature: " + (String) t);
+  Serial.println("Humidity: " + (String) h);
+
+  url1 = url1 + (String) t;
+  http.begin(client, host, httpPort, url1); 
+  int httpCode = http.GET();
+  Serial.println(httpCode);
+  delay(2000);
+
+  url2 = url2 + (String) h;
+  http.begin(client, host, httpPort, url2); 
+  httpCode = http.GET();
+  Serial.println(httpCode);
+  delay(2000);
+}
+```
+
+# DAY 4 (HTTP Get req without lib)
+- http : Port = 80
+- https : Port = 443
+- Url : port, host, attributes
+
+## How to send http get request
+```c
+http.begin(client, host, httpPort, url1); 
+int httpCode = http.GET();
+```
+- httpCode returns a return value
+    - positive value => everything is fine
+    - negative value => everything is wrong
+
+- Negative reciprocal of 1 in base 10 is 9 because 10 - 1 = 9
+
+## Smart RGB Led
+```c
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+
+const char* ssid = "Something";
+const char* password = "something";
+
+#define blueLED D5
+#define greenLED D6
+#define redLED D7
+
+HTTPClient http;
+WiFiClient client;
+
+void setup() {
+
+  pinMode(redLED, OUTPUT);
+  pinMode(blueLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting...");
+  }
+
+  Serial.println("Connected to WiFi");
+}
+
+void loop() {
+  http.begin(client, "http://iot.robify.in/rgbactivity");
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(payload);
+    String red = (String)payload[0] + (String)payload[1] + (String)payload[2];
+    String green = (String)payload[4] + (String)payload[5] + (String)payload[6];
+    String blue = (String)payload[8] + (String)payload[9] + (String)payload[10];
+    int red1 = red.toInt();
+    int green1 = green.toInt();
+    int blue1 = blue.toInt();
+
+    analogWrite(redLED, red1);
+    analogWrite(greenLED, green1);
+    analogWrite(blueLED, blue1);
+    Serial.println(red);
+    Serial.println(green);
+    Serial.println(blue);
+  } else {
+    Serial.println("Error on HTTP request");
+  }
+
+  http.end();
+  delay(200);
+}
+```
