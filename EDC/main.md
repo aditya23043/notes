@@ -1374,3 +1374,9 @@ void ReadDataFromBlock(int blockNum, byte readBlockData[])
   }
 }
 ```
+
+## Product Desiging
+
+- Empathising
+- Defining the problem
+- Brainstorming
