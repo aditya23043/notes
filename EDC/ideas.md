@@ -12,6 +12,7 @@
 - RTC (real time clock) / free WorldTimeAPI.com : for showing date and time purposes
 - Speed sensor
 - Inclination sensor
+- Notify vehicle owner in case the car is moving when the user has not set plugged in.
 
 ## Security & Safety
 - Motion sensor when security mode is on will send a notification to the user

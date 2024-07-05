@@ -1,0 +1,6 @@
+    String year = (String)datetime[0] + (String)datetime[1] + (String)datetime[2] + (String)datetime[3];
+    String month = (String)datetime[5] + (String)datetime[6];
+    String date = (String)datetime[8] + (String)datetime[9];
+    String hour = (String)datetime[11] + (String)datetime[12];
+    String minute = (String)datetime[14] + (String)datetime[15];
+    String second = (String)datetime[17] + (String)datetime[18];
