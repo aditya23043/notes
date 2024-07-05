@@ -1380,3 +1380,95 @@ void ReadDataFromBlock(int blockNum, byte readBlockData[])
 - Empathising
 - Defining the problem
 - Brainstorming
+
+# DAY 4
+
+## Using Blynk Console to interface LED
+```c
+#define BLYNK_TEMPLATE_ID "TMPL3Ji91Ro61"
+#define BLYNK_TEMPLATE_NAME "ledBlink"
+#define BLYNK_AUTH_TOKEN "5ra8SaF9RG5j5uXGmh56wAB8OhIuFovm"
+
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>  
+#include <BlynkSimpleEsp8266.h>
+ 
+
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Something";  // Enter your Wifi Username
+char pass[] = "something";  // Enter your Wifi password
+
+int ledpin = D4;
+void setup()
+{     
+
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, pass); 
+  while(WiFi.status() != WL_CONNECTED) { 
+    Serial.print("..");
+    delay(200);
+  }
+    Serial.println();
+    Serial.println("NodeMCU is Connected!"); 
+    Serial.println(WiFi.localIP()); 
+
+  Blynk.begin(auth, ssid, pass);    
+  pinMode(ledpin,OUTPUT);
+}
+
+void loop()
+{
+  Blynk.run(); 
+}
+```
+
+## Gas Sensor (MQ135)
+```c
+#define BLYNK_TEMPLATE_ID "TMPL3Vh8rCpSd"
+#define BLYNK_TEMPLATE_NAME "Gas Sensor"
+#define BLYNK_AUTH_TOKEN "JuPF3O7XAtEF1Mnf759ZnPSuB5_5Lapb"
+
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+ 
+char auth[] = BLYNK_AUTH_TOKEN;
+
+char ssid[] = "Something";  // type your wifi name
+char pass[] = "something";  // type your wifi password
+int smokeA0 = A0;
+int data = 0;
+int sensorThres = 100;
+
+
+BlynkTimer timer;
+
+void sendSensor(){
+ 
+ int data = analogRead(smokeA0);
+ Blynk.virtualWrite(V0, data);
+  Serial.print("Pin A0: ");
+  Serial.println(data);
+
+
+  if(data > 360){
+    // Blynk.email("aditya23043@iiitd.ac..com", "Alert", "Gas Leakage Detected!");
+    Blynk.logEvent("GAS","Gas Leakage Detected");
+  }
+}
+
+void setup(){
+  pinMode(smokeA0, INPUT);
+   Serial.begin(115200);
+  Blynk.begin(auth, ssid, pass);
+  //dht.begin();
+  timer.setInterval(2500L, sendSensor);
+}
+
+void loop(){
+  Blynk.run();
+  timer.run();
+}
+```
