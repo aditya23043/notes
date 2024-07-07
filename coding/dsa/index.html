@@ -8,15 +8,32 @@
 	</head>
 	<body>
 
-		<h1>Data Structures and Algorithm</h1>
+		<h1>Data Structures and Algorithm - Neso Academy</h1>
+    
+    <h2>Data Type</h2>
+    <ul>
+      <li>Defines a certain <em>domain</em> of values</li>
+      <li>Defined <em>operations</em> allowed on those values</li>
+    </ul>
 
-		<h2>Data Structure</h2>
-		<p>A data structure is a way of organizing data so that it can be used effectively.</p>
+    <h3>User Defined Data Types</h3>
+    <ul>
+      <li>Not specified in the language itself</li>
+      <li>Defined by the user</li>
+      <li>Eg: strucs, union, enums</li>
+    </ul>
 
-		<h2>Abstract Data Structures</h2>
+    <h3>Abstract Data Types</h3>
 		<p>An abstraction of a data structure which provides only the interface to which a data structure must adhere to. The interface does not give any specific details about how something should be implemented or in which programming language.</p>
-
-		<h3>Examples</h3>
+    <ul>
+      <li>User defined data types which defines operations on values using functions without specifying what is there inside the functionn and how the operations are performed (ABSTRACTION!!)</li>
+      <li>The person using ADTs need not know how the data type is <em>working</em>. Rather they are interested in how to <em>use</em> the data type</li>
+      <li>The program which uses the data structure is the called a client program</li>
+      <li>It has access to the ADT i.e. the interface</li>
+      <li>The program which implements the data strcuture is known as the implementation</li>
+    </ul>
+    
+		<h4>Examples</h4>
 
 		<table>
 			<tr>
@@ -37,7 +54,57 @@
 			</tr>
 		</table>
 
-		<h2>Computational Analysis</h2>
+    <h2>Data Structures</h2>
+		<p>A data structure is a way of organizing data so that it can be used effectively.</p>
+
+    <h3>Popular uses of data structures</h3>
+    <ul>
+      <li>Undo and redo feature of Google Docs uses stack data structure</li>
+      <li>Bitmap images are stored in arrays</li>
+      <li>Relation information in social networking apps / sites is stored using graphs</li>
+    </ul>
+
+
+    <h3>Advantages of Data Structures</h3>
+    <ul>
+      <li>Efficiency</li>
+      <li>Reusability</li>
+      <li>Abstraction</li>
+    </ul>
+
+    <h3>Types of Data Structures</h3>
+
+    <h4>Linear DS</h4>
+    <ul>
+      <li>All the elements in the DS are arranged in a linear (sequential) order</li>
+      <li>Eg: Array</li>
+    </ul>
+
+    <h4>Non-Linear DS</h4>
+    <ul>
+      <li>No linear arrangement of the elements</li>
+      <li>Eg: BST</li>
+    </ul>
+
+    <h4>Static DS</h4>
+    <ul>
+      <li>Memory is allocated at compile time</li>
+      <li>maximum size is fixed</li>
+      <li>Fast Access</li>
+      <li>Slower insertion and deletion</li>
+      <li>Eg: Array</li>
+    </ul>
+
+    <h4>Dynamic DS</h4>
+    <ul>
+      <li>Memory is allocated at run time</li>
+      <li>maximum size is flexible</li>
+      <li>Slower Access</li>
+      <li>Faster insertion and deletion</li>
+      <li>Eg: Linked List</li>
+    </ul>
+
+		<h2>Asymptotic Analysis</h2>
 		<ul>
 			<li>How much <em>time</em> does this algo take?</li>
 			<li>How much <em>space</em> does this algo take?</li>
@@ -98,80 +165,6 @@
 			<li>Soring using merge sort : O(nlogn)</li>
 			<li>Iterating over all cells of an n x m matrix : O(n*m)</li>
 		</ul>
-
-		<h2>Arrays</h2>
-
-		<h3>Static Arrays</h3>
-		<ul>
-			<li>Arrays with fixed length container containing n elements indexable from the range [0, n-1]</li>
-			<li>Stored in contiguous memory</li>
-		</ul>
-
-		<h3>Complexity</h3>
-
-		<table>
-			<tr>
-				<th>Operation</th>
-				<th>Static Array</th>
-				<th>Dynamic Array</th>
-			</tr>
-			<tr>
-				<td>Access</td>
-				<td>O(1)</td>
-				<td>O(1)</td>
-			</tr>
-			<tr>
-				<td>Search</td>
-				<td>O(n)</td>
-				<td>O(n)</td>
-			</tr>
-			<tr>
-				<td>Insertion</td>
-				<td>NA</td>
-				<td>O(n)</td>
-			</tr>
-			<tr>
-				<td>Appending</td>
-				<td>NA</td>
-				<td>O(1)</td>
-			</tr>
-			<tr>
-				<td>Deletion</td>
-				<td>NA</td>
-				<td>O(n)</td>
-			</tr>
-		</table>
-
-    <hr>
-
-    <h1>DSA - Neso Academy</h1>
-    
-    <h2>Introduction</h2>
-    <h4>Popular uses of data structures</h4>
-    <ul>
-      <li>Undo and redo feature of Google Docs uses stack data structure</li>
-      <li>Bitmap images are stored in arrays</li>
-      <li>Relation information in social networking apps / sites is stored using graphs</li>
-    </ul>
-
-    <h2>Data Type</h2>
-    <ul>
-      <li>Defines a certain <em>domain</em> of values</li>
-      <li>Defined <em>operations</em> allowed on those values</li>
-    </ul>
-
-    <h3>User Defined Data Types</h3>
-    <ul>
-      <li>Not specified in the language itself</li>
-      <li>Defined by the user</li>
-      <li>Eg: strucs, union, enums</li>
-    </ul>
-
-    <h3>Abstract Data Types</h3>
-    <ul>
-      <li>User defined data types which defines operations on values using functions without specifying what is there inside the functionn and how the operations are performed (ABSTRACTION!!)</li>
-      <li>The person using ADTs need not know how the data type is <em>working</em>. Rather they are interested in how to <em>use</em> the data type</li>
-    </ul>
 		
 	</body>
 </html>
