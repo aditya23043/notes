@@ -1591,3 +1591,17 @@ void loop(){
 
 #### Voltage divider
 - Vout = Vin * ( R1 / (R1 + R2) )
+
+## Hands on Session
+    
+### Voltage Divider Circuit
+- R1 = R2 = 10k Ohm
+- V1 = 5 * sin * ( 2pi * 1000 ) : Transient
+- V1 = 1V to 10V with steps of 0.1V
+- in A * sin(wt) where w = 2 * pi * f,
+    - A is amplitude
+    - w is angular frequency : rad / s
+    - so, frequency f in our case for voltage is 1000
+    - so, first cut at x axis is 0.5ms because total time for one wave = 1/f = 1/1000
+    - but the first cut appears at half point
+- In DC Sweep, we dont have time on the x axis, we have voltage V1 at the x axis i.e. the thing we "sweeped"
