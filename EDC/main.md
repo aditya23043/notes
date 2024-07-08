@@ -1477,12 +1477,14 @@ void loop(){
 - EDA: Electronic Design Automation
 - The methodologies and technologies used to verify and analyse
 
-## Types of EDA Tools
+## 1st session : EDA
+
+### Types of EDA Tools
 1. Cloud based
 2. AI/ML based
 3. Open Sourced
 
-## Advantage
+### Advantage
 - Error free circuit
 - Cost saving by preventing errors in fabrication by remove them at the designing stage
 - Reduce manual effort
@@ -1491,7 +1493,7 @@ void loop(){
 - Design reuse and modularity
 - Cost and time savings
 
-## Tests
+### Tests
 1. Timing Analysis
     - If our chip is able to run at a particular frequency
 2. Physical design rules
@@ -1499,10 +1501,77 @@ void loop(){
     - Electrical rule check : any unconnected pin or lack of power supply
     - Layout vs Schematic check : matching functionality or not
 
-## Advantages of Simulation
+### Advantages of Simulation
 - We can try new ideas since this is not the final step i.e. fabrication
 - Early design verification
 - Run circuit under challenging conditions
 
-## Tools for Schematic Editing and Simulation
-- 
+### Tools for Schematic Editing and Simulation
+- Eagle
+- Spice
+
+## 2nd session :
+
+### Ohm's Law
+- J = Sigma * E
+- J is current density
+- Sigma is conductivity of a material
+- E is electric field
+
+### MOSFETs
+- Metal Oxide Substrate Field Effect Transistor
+- When voltage is applied to the gate, an electrical field is generated that changes the width of the channel region, where the electrons flow. The wider the channel region, the better conductivity of a device will be.
+
+### Amplifier
+- Increases power / gain in the input signal
+
+### Inverter
+- According to Electrical Engineers, inverters convert AC to DC signal
+- For us, it is basically a `NOT` gate 
+
+### SPICE
+- Simulation program with integrated circuit emphasis
+- Not a software
+- Kind of a language / syntax / script / protocol
+
+### Verilog
+- Verilog is a (HDL) Hardware Description Language; a textual format for describing electronic circuits and systems. Applied to electronic design
+- One abstraction layer below gui circuit drawing tools
+- What is the need for SPICE if verilog exists?
+    - For doing time analysis
+    - Design rules checking
+    - Electrical Rules checking
+    - Etc..
+
+### Importance of SPICE Netlist
+- Netlist is a textual representation of a circuit
+- SPICE / Netlisting is very useful for VLSI Industries for scripting using bash / fish / python / perl
+- Ensures correctness
+- Easier debugging
+- Easy for complex measurements
+- Scripting >>>> GUI
+
+### Spice Synax
+- Case insensitive
+- Resistor : R or r
+    - eg: R\<name\> \<port1\> \<port2\> \<resitance_value\>
+- Capacitor : C or c
+    - eg: C\<name\> \<port1\> \<port2\> \<resitance_value\>
+- DC Voltage : V or v
+- Mosfet : M or m
+- All SPICE commands start with a period "."
+- .tran : transient simulation
+- .dc : DC sweep simulation
+- .op : finding DC Operating point
+- .ac : AC analysis
+- .param : define and use a parameter (like a variable)
+    - Syntax : .param \<param_name\> \<value\>
+- .meas : specify a measurement
+- .end : compulsory to placed at the end of a netlist
+- .subckt : define a circuit module and call / instantiate in a bigger circuit (like a function)
+- .lib : include a model library containing all different models
+- .model : to link default model types with use-specified mnames
+    - Default model types
+        - NPN / PNP : BIT Models
+        - NMOS / PMOS : MOFSET Models
+    - These models can be defined with different params and can be called multiple times with diff names
