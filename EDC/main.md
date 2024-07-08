@@ -1,13 +1,13 @@
 <style>
-html {
-background-color: #111;
-}
-* {
-font-family: "VictorMono NFM";
-font-weight: bold;
-background-color: #111;
-color: #aaa;
-}
+    html {
+        background-color: #111;
+    }
+    * {
+        font-family: "VictorMono NFM";
+        font-weight: bold;
+        background-color: #111;
+        color: #aaa;
+    }
 </style>
 
 # Electronics Design Carnival 2024 ( DAY 1 ) : 01-07-24
@@ -1521,6 +1521,7 @@ void loop(){
 ### MOSFETs
 - Metal Oxide Substrate Field Effect Transistor
 - When voltage is applied to the gate, an electrical field is generated that changes the width of the channel region, where the electrons flow. The wider the channel region, the better conductivity of a device will be.
+- 4 terminal device
 
 ### Amplifier
 - Increases power / gain in the input signal
@@ -1561,6 +1562,7 @@ void loop(){
 - Mosfet : M or m
 - All SPICE commands start with a period "."
 - .tran : transient simulation
+    - \<TPrint\> \<Tstop\> \<Tstart\> \<Tmaxstep\>
 - .dc : DC sweep simulation
 - .op : finding DC Operating point
 - .ac : AC analysis
@@ -1575,3 +1577,17 @@ void loop(){
         - NPN / PNP : BIT Models
         - NMOS / PMOS : MOFSET Models
     - These models can be defined with different params and can be called multiple times with diff names
+
+#### Something
+- Click
+- Leave
+- Move
+- Place
+
+- In DC we have
+    - Operating point : .op
+    - sweep : .dc
+    - observe the Stable static constant current and voltage
+
+#### Voltage divider
+- Vout = Vin * ( R1 / (R1 + R2) )
