@@ -1472,3 +1472,37 @@ void loop(){
   timer.run();
 }
 ```
+
+# DAY 6 (EDA)
+- EDA: Electronic Design Automation
+- The methodologies and technologies used to verify and analyse
+
+## Types of EDA Tools
+1. Cloud based
+2. AI/ML based
+3. Open Sourced
+
+## Advantage
+- Error free circuit
+- Cost saving by preventing errors in fabrication by remove them at the designing stage
+- Reduce manual effort
+- Increases productivity
+- Design optimization algorithms can be implemented to get more efficient designs
+- Design reuse and modularity
+- Cost and time savings
+
+## Tests
+1. Timing Analysis
+    - If our chip is able to run at a particular frequency
+2. Physical design rules
+    - Design rule check : if any metal plate is shorted or not
+    - Electrical rule check : any unconnected pin or lack of power supply
+    - Layout vs Schematic check : matching functionality or not
+
+## Advantages of Simulation
+- We can try new ideas since this is not the final step i.e. fabrication
+- Early design verification
+- Run circuit under challenging conditions
+
+## Tools for Schematic Editing and Simulation
+- 
