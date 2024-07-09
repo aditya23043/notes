@@ -1605,3 +1605,51 @@ void loop(){
     - so, first cut at x axis is 0.5ms because total time for one wave = 1/f = 1/1000
     - but the first cut appears at half point
 - In DC Sweep, we dont have time on the x axis, we have voltage V1 at the x axis i.e. the thing we "sweeped"
+
+# DAY 7
+
+## Introduction to Test and Measurement instruments for Electronic System Design
+1. Verification
+    - Ensuring reliability
+    - Functionality
+2. Validation
+    - operates as intended under various conditions
+3. Diagnosis
+    - Debugging
+    - Troubleshooting
+
+### Types of T&M Instruments
+- Oscilloscopes
+- Signal Generators
+- Spectrum Analyzers
+- Digital Multimeters
+- Logic Analyzers
+- Power Supplies
+
+> They are either Time Domain or Frequency Domain instruments
+
+### Oscilloscope
+- f(t) = A * sin(2pi*f*t + theta) + Const
+    - A : amplitude
+    - f : freq
+    - theta : phase
+    - Const : DC Offset
+
+- Types of Oscilloscopes
+    - Benchtop
+    - USB
+    - Handhelp
+    - Analog
+    - Digital
+        - DSO : Digital Signal Oscilloscope
+        - DPO : Digital Phosphor Oscilloscope
+        - MSO : Mixed Signal Oscilloscope
+        - MDO : Mixed Domain Oscilloscope
+        - DSO : Digital Sampling Oscilloscope
+        - RTO : Real Time Oscilloscope
+
+- DSO BLOCK DIAGRAM
+
+|           | Digital | Storage                         | Oscilloscope |
+|-----------|---------|---------------------------------|--------------|
+| Signal -> | ADC     | Storage and Processing (Memory) | Display      |
