@@ -208,8 +208,7 @@ ___
 | RAM         | Volatile Storage |
 | IO          | Interface        |
 
-___
-| Sno | Part
+| Sno | Part           |
 |-----|----------------|
 | 1   | CPU            |
 | 2   | GPU            |
