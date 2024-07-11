@@ -32,7 +32,7 @@ layout_alpha_2, KEY_BACKSPACE,           ' ', layout_symbols
 
 char alpha_2[] = {
 
-    '.', 'v', 'w', 'm',           'k', '\'', 'z', '"', 
+    KEY_ESC, 'v', 'w', 'm',           'k', '\'', 'z', '"', 
     'q',        'f', 'p', 'b',           'j',  ',', 'x', 'y', 
        KEY_TAB, ' ',                      KEY_CAPS_LOCK,  KEY_TAB
 
@@ -192,5 +192,6 @@ void loop() {
 
   delay(10);
 }
+
 
 
