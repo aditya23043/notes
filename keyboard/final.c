@@ -32,8 +32,8 @@ layout_alpha_2, KEY_BACKSPACE,           ' ', layout_symbols
 
 char alpha_2[] = {
 
-    '.', 'v', 'w', 'm',           'f', '\'', 'z', '"', 
-    'q',        'j', 'p', 'k',           'b',  ',', 'x', 'y', 
+    '.', 'v', 'w', 'm',           'k', '\'', 'z', '"', 
+    'q',        'f', 'p', 'b',           'j',  ',', 'x', 'y', 
        KEY_TAB, ' ',                      KEY_CAPS_LOCK,  KEY_TAB
 
 };
