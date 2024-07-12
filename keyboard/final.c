@@ -66,7 +66,7 @@ char sys[] = {
 
     KEY_MENU,       KEY_UP_ARROW,   ' ',             KEY_LEFT_SHIFT,         KEY_RETURN, KEY_TAB, ' ', ' ', 
     KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_LEFT_CTRL,          KEY_CAPS_LOCK, ' ', ' ', ' ', 
-                                       KEY_LEFT_GUI, KEY_RIGHT_ALT,          KEY_RIGHT_ALT, KEY_RIGHT_GUI
+                                       KEY_LEFT_GUI, KEY_LEFT_ALT,          KEY_RIGHT_ALT, KEY_RIGHT_GUI
 
 };
 
@@ -157,7 +157,7 @@ void loop() {
           for (int i = 0; i < num_pins; i++) {
             if (digitalRead(pins[i]) == LOW) {
               if (!key_down[i] && alpha_1[i] != layout_sys && sys[i] != ' ') {
-                if(sys[i] == KEY_LEFT_SHIFT || sys[i] == KEY_LEFT_CTRL || sys[i] == KEY_LEFT_GUI || sys[i] == KEY_RIGHT_SHIFT || sys[i] == KEY_RIGHT_CTRL || sys[i] == KEY_RIGHT_GUI){
+                if(sys[i] == KEY_LEFT_SHIFT || sys[i] == KEY_LEFT_CTRL || sys[i] == KEY_LEFT_GUI || sys[i] == KEY_RIGHT_SHIFT || sys[i] == KEY_RIGHT_CTRL || sys[i] == KEY_RIGHT_GUI || sys[i] == KEY_RIGHT_ALT){
                   Keyboard.press(sys[i]);
                   modifier_key_on = true;
                 } else {
