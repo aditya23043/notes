@@ -1,0 +1,39 @@
+html {
+    font-family: "VictorMono NFM";
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-spacing: 0.5rem;
+}
+
+td {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: 4px solid #aaa;
+    border-radius: 1rem;
+    text-align: center;
+    width: 70px;
+    height: 60px;
+}
+
+.layer {
+    color: #000;
+    background-color: #aaa;
+}
+
+.space {
+    border: none;
+}
