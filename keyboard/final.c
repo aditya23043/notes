@@ -13,6 +13,7 @@ const char layout_num = '┴';
 const char layout_symbols = '┬';
 const char layout_symbols_2 = '├';
 const char layout_sys = '─';
+const char layout_sys_hold = '┼';
 
 int pins[] = {2, 3, 4,  5,  10, 11, 12, 13, 6,  7,
               8, 9, 21, 20, 19, 18, 14, 15, 16, 17};
@@ -64,8 +65,16 @@ char symbols_2[] = {
 
 char sys[] = {
 
-    KEY_MENU,       KEY_UP_ARROW,   ' ',             KEY_LEFT_SHIFT,         KEY_RETURN, KEY_TAB, ' ', ' ', 
+    KEY_MENU,       KEY_UP_ARROW,   ' ',             KEY_LEFT_SHIFT,         KEY_RETURN, KEY_TAB, layout_sys_hold, ' ', 
     KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_LEFT_CTRL,          KEY_CAPS_LOCK, ' ', ' ', ' ', 
+                                       KEY_LEFT_GUI, KEY_LEFT_ALT,          KEY_RIGHT_ALT, KEY_RIGHT_GUI
+
+};
+
+char sys_hold[] = {
+
+    ' ',       KEY_UP_ARROW,   ' ',             KEY_LEFT_SHIFT,         KEY_RETURN, ' ', ' ', ' ', 
+    KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW, KEY_LEFT_CTRL,          KEY_BACKSPACE, ' ', ' ', ' ', 
                                        KEY_LEFT_GUI, KEY_LEFT_ALT,          KEY_RIGHT_ALT, KEY_RIGHT_GUI
 
 };
@@ -79,10 +88,11 @@ void setup() {
 }
 
 bool modifier_key_on = false;
+bool modifier_hold = false;
 
 void loop() {
 
-  if(modifier_key_on){
+  if(modifier_key_on || modifier_hold){
     digitalWrite(LED_BUILTIN, HIGH);
   } else {
     digitalWrite(LED_BUILTIN, LOW);
@@ -97,6 +107,10 @@ void loop() {
           for (int i = 0; i < num_pins; i++) {
             if (digitalRead(pins[i]) == LOW) {
               if (!key_down[i] && alpha_1[i] != layout_alpha_2) {
+                if (alpha_2[i] == KEY_ESC){
+                  modifier_hold = false;
+                  Keyboard.releaseAll();
+                }
                 Keyboard.write(alpha_2[i]);
                 if(modifier_key_on){
                   Keyboard.releaseAll();
@@ -156,7 +170,10 @@ void loop() {
         while (digitalRead(pins[i]) == LOW) {
           for (int i = 0; i < num_pins; i++) {
             if (digitalRead(pins[i]) == LOW) {
-              if (!key_down[i] && alpha_1[i] != layout_sys && sys[i] != ' ') {
+              if (!key_down[i] && sys_hold[i] != ' ' && alpha_1[i] != layout_sys && sys[i] != layout_sys_hold && digitalRead(12) == LOW){
+                Keyboard.press(sys[i]);
+                modifier_hold = true;
+              } else if (!key_down[i] && alpha_1[i] != layout_sys && sys[i] != ' ') {
                 if(sys[i] == KEY_LEFT_SHIFT || sys[i] == KEY_LEFT_CTRL || sys[i] == KEY_LEFT_GUI || sys[i] == KEY_RIGHT_SHIFT || sys[i] == KEY_RIGHT_CTRL || sys[i] == KEY_RIGHT_GUI || sys[i] == KEY_RIGHT_ALT){
                   Keyboard.press(sys[i]);
                   modifier_key_on = true;
@@ -192,6 +209,5 @@ void loop() {
 
   delay(10);
 }
-
 
 
