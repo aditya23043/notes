@@ -23,7 +23,7 @@
 		</code>
 		<pre>
 
-❯ gcc main.c; ./a.out
+❯ ./a.out
 Hello World
 		</pre>
 
@@ -161,7 +161,7 @@ Hello World
 
 		<pre>
 
-❯ gcc main.c; ./a.out
+❯ ./a.out
 item 1 : $     5.8
 item 2 : $   10.00
 item 3 : $   101.0
@@ -196,7 +196,7 @@ item 3 : $   101.0
 		</code>
 		<pre>
 
-❯ gcc main.c; ./a.out
+❯ ./a.out
 3.141590
 		</pre>
 
@@ -234,7 +234,91 @@ item 3 : $   101.0
 			</tr>
 		</table>
 
+		<h1>Passing argument as reference</h1>
 
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+	#include &lt;stdio.h&gt;
+
+	void foo(int* a){
+		*a = *a + 1;
+	}
+
+	int main(int argc, char *argv[])
+	{
+		
+		int b = 5;
+		foo(&b);
+		printf("Value of b is: %d\n", b);
+
+		return 0;
+	}
+		</code>
+		<pre>
+
+❯ ./a.out
+Value of b is: 6
+		</pre>
+		<hr>
+
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+	#include &lt;stdio.h&gt;
+
+	int main(int argc, char *argv[])
+	{
+		
+		int a = 10;
+		int b = 12;
+		int *c;
+		c = &b;
+
+		printf("%p\n", c);
+		printf("%d\n", *c);
+
+		*c += a;
+
+		printf("%d\n", *c);
+
+		return 0;
+	}
+		</code>
+		<pre>
+
+❯ ./a.out
+0x7ffc52b65a48
+12
+22
+		</pre>
+
+		<h1>Array Notation Vs Pointer Notation</h1>
+
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+	#include &lt;stdio.h&gt;
+
+	int main(int argc, char *argv[])
+	{
+
+		int a[] = { 1, 2, 3, 4, 5 };
+		int *b;
+		b = a;
+
+		printf("%d\n", *b); 		// prints the first element of the array which is being pointed to by the pointer
+		printf("%d\n", b[1]); 		// array notation
+		printf("%d\n", *(b+2)); 	// pointer notation
+		printf("%d\n", *(b+3)); 	// pointer notation
+		
+		return 0;
+	}
+		</code>
+		<pre>
+
+❯ ./a.out
+1
+2
+3
+4
+		</pre>
+
+		<br>
 		<h1>File IO</h1>
 
 		<h3>Important Keywords</h3>
@@ -320,6 +404,58 @@ Frontend web dev sucks
 Frontend web dev sucks
 
 		</pre>
+
+		<br>
+		<h1>Dynamically Allocated Memory</h1>
+
+		<table>
+			<tr>
+				<td>malloc</td>
+				<td>Allocate SIZE bytes of memory.</td>
+				<td>void *malloc(size_t __size)</td>
+			</tr>
+			<tr>
+				<td>calloc</td>
+				<td>Allocate NMEMB elements of SIZE bytes each, all initialized to 0.</td>
+				<td>void *calloc(size_t __nmemb, size_t __size)</td>
+			</tr>
+			<tr>
+				<td>realloc</td>
+				<td>Re-allocate the previously allocated block in PTR, making the new block SIZE bytes long.</td>
+				<td>void *realloc(void *__ptr, size_t __size)</td>
+			</tr>
+			<tr>
+				<td>free</td>
+				<td>Free a block allocated by `malloc', `realloc' or `calloc'.</td>
+				<td>void free(void *__ptr)</td>
+			</tr>
+		</table>
+
+		<code class="language-c" id="code">
+	#include &lt;stdio.h&gt;
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main(int argc, char *argv[])
+	{
+		
+		int *a;
+		a = malloc(sizeof(int)*5);
+		a[0] = 1;
+		a[1] = 2;
+		a[2] = 3;
+		a[3] = 4;
+		a[4] = 5;
+		
+		for(int i = 0; i < 5; i++){
+			printf("%d\n", a[i]); // array notation
+		}
+
+		free(a);
+
+		return 0;
+	}
 
 	<script src="prism.js"></script>	
 	</body>
