@@ -1,9 +1,9 @@
 html {
 	background-color: #fdf6e3;
 	color: #002b36;
-	font-family: "VictorMono NFM";
-	font-weight: bold;
-	font-size: 28;
+	/* font-family: "IBM Plex Mono"; */
+	font-family: "Lekton Nerd Font Mono";
+	font-size: 1.2rem;
 	margin-left: 4rem;
 	margin-right: 4rem;
 }
@@ -15,6 +15,28 @@ th, td  {
 	font-size: 0.8rem;
 }
 
+table {
+	border-collapse: collapse;
+}
+
 th { 
-	font-style: italic;
+	font-weight: 800;
+}
+
+.center {
+	text-align: center;
+}
+
+#code {
+	font-family: 'JetBrainsMono NFM'; 
+	font-weight: bold;
+}
+
+pre { 
+	background-color: #fdf6e3;
+	border: 3px solid #e9e3d2;
+	white-space: pre-line;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	display: inline-block;
 }

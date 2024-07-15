@@ -8,11 +8,7 @@
 	</head>
 	<body>
 
-		<h1>C Tutorial</h1>
-
-		<hr>
-
-		<h2>Printing to the console</h2>
+		<h1>Printing to the console</h1>
 		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
 			#include &ltstdio.h&gt
 			int main() {
@@ -24,9 +20,7 @@
 
 		</code>
 
-		<hr>
-
-		<h2>Variables</h2>
+		<h1>Variables</h1>
 
 		<table>
 			
@@ -135,9 +129,7 @@
 			}
 		</code>
 
-		<hr>
-
-		<h2>Formatting</h2>
+		<h1>Formatting</h1>
 
 		<table>
 			<tr>
@@ -198,9 +190,7 @@
 
 		</code>
 
-		<hr>
-
-		<h2>Constant Value</h2>
+		<h1>Constant Value</h1>
 
 		<ul>
 			<li>
@@ -212,7 +202,6 @@
 		</ul>
 
 		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
-
 			#include &lt;stdio.h&gt;
 
 			int main() {
@@ -226,12 +215,9 @@
 
 				return 0;
 			}
-
 		</code>
 
-		<hr>
-		
-		<h2>Operations</h2>
+		<h1>Operations</h1>
 
 		<table>
 			<tr>
@@ -264,41 +250,125 @@
 			</tr>
 		</table>
 
-		<hr>
+		<br>
+		<h1>Int Division VS Float Division</h1>
 
-		<h2>Int Division VS Float Division</h2>
-
-		<h3>Integer</h3>
+		<h2>Integer</h2>
 
 		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
-
 			#include &lt;stdio.h&gt;
 
 			int main(){
 					int x = 12;
 					int y = 5;
 					int y = x / y;
-			}
 
+					return 0;
+			}
 		</code>
 
-		<h3>Float</h3>
+		<h2>Float</h2>
 
 		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
-
 			#include &lt;stdio.h&gt;
 
 			int main(){
 					int x = 12;
 					int y = 5;
 					int y = x / (float)y;
-			}
 
+					return 0;
+			}
 		</code>
 
 		<p>Make any one or both of the operators float explicitly</p>
 
-		<hr>
+		<h1>Input</h1>
+
+		<code class="language-c" id="code">
+			#include &lt;stdio.h&gt;
+
+			int main(int argc, char **argv){
+
+				int age;
+				printf("Enter age: ");
+				scanf("%d", &age);
+				printf("%d\n", age);
+
+				int id;
+				printf("Enter id: ");
+				scanf("%d", &id);
+				printf("%d\n", id);
+
+
+				return 0;
+			}
+		</code>
+
+		<h3>OUTPUT:</h3>
+
+		<pre>
+
+		  $ ./a.out
+			Enter age: 19
+			19
+			Enter id: 2023043
+			2023043
+
+		</pre>
+
+		<br>
+		<br>
+		<h1>File IO</h1>
+		
+		<code class="language-c" id="code">
+
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv){
+
+	FILE *fp;
+	char string[100];
+	char *foo = "suckss";
+
+	fp = fopen("foo.txt", "w+");
+	
+	if(fp == NULL){
+		printf("Error while opening file!");
+		return 1;
+	}
+
+	// WRITING
+	fprintf(fp, "Frontend web dev %s\n", foo);
+
+	// sets the file pointer to the head of the file
+	rewind(fp);
+
+	// READING
+	while(fgets(string, 100, fp) != NULL){
+		printf("%s", string);
+	}
+
+	fclose(fp);
+
+	return 0;
+}
+
+		</code>
+
+		<h3>OUTPUT:</h3>
+		<pre>
+
+		$ ./a.out
+			Frontend web dev suckss
+
+		$ cat foo.txt
+			Frontend web dev suckss
+
+		</pre>
+
+		<h1>Dynamic Memory Allocation</h1>
+		<h2>MALLOC</h2>
 
 	</body>
 	<script src="prism/prism.js"></script>

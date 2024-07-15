@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>C Programming</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="prism.css">
+	</head>
+	<body>
+
+		<h1>Printing to the Console</h1>
+
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+	#include &lt;stdio.h&gt;
+	int main() {
+
+		// helo
+		printf("Hello World");
+
+		return 0;
+	}
+		</code>
+		<pre>
+
+❯ gcc main.c; ./a.out
+Hello World
+		</pre>
+
+		<h1>Data Types</h1>
+		
+		<table>
+			
+				<tr>
+					<td>char</td>
+					<td>1 byte</td>
+					<td>%c</td>
+				</tr>
+				<tr>
+					<td>char arr</td>
+					<td>string</td>
+					<td>%s</td>
+				</tr>
+				<tr>
+					<td>float</td>
+					<td>4 bytes (32 bits precision) 6-7 digits </td>
+					<td>%f</td>
+				</tr>
+				<tr>
+					<td>double</td>
+					<td>8 bytes (64 bits precision) 15-16 digits </td>
+					<td>%lf</td>
+				</tr>
+				<tr>
+					<td>bool (requires stdbool.h)</td>
+					<td>1 byte </td>
+					<td>%d</td>
+				</tr>
+				<tr>
+					<td>char</td>
+					<td>1 byte (-128 to 127) </td>
+					<td>%d / %c</td>
+				</tr>
+				<tr>
+					<td>unsigned char</td>
+					<td>1 byte (0 to 255) </td>
+					<td>%d / %c</td>
+				</tr>
+				<tr>
+					<td>short int</td>
+					<td>2 bytes </td>
+					<td>%d</td>
+				</tr>
+				<tr>
+					<td>unsigned short int</td>
+					<td>2 bytes </td>
+					<td>%d</td>
+				</tr>
+				<tr>
+					<td>int</td>
+					<td>4 bytes </td>
+					<td>%d</td>
+				</tr>
+				<tr>
+					<td>unsigned int</td>
+					<td>4 bytes </td>
+					<td>%u</td>
+				</tr>
+				<tr>
+					<td>long long int</td>
+					<td>8 bytes </td>
+					<td>%lld</td>
+				</tr>
+				<tr>
+					<td>unsigned long long int</td>
+					<td>8 bytes </td>
+					<td>%llu</td>
+				</tr>
+
+		</table>
+
+		<br>
+		<h1>Formatting</h1>
+
+		<table>
+			<tr>
+				<th>Format</th>
+				<th>Data Type</th>
+			</tr>
+			<tr>
+				<td>%c</td>
+				<td>char</td>
+			</tr>
+			<tr>
+				<td>%s</td>
+				<td>string</td>
+			</tr>
+			<tr>
+				<td>%f</td>
+				<td>float</td>
+			</tr>
+			<tr>
+				<td>%lf</td>
+				<td>double</td>
+			</tr>
+			<tr>
+				<td>%d</td>
+				<td>int</td>
+			</tr>
+			<tr>
+				<td>%.1</td>
+				<td>decimal precision</td>
+			</tr>
+			<tr>
+				<td>%1</td>
+				<td>minimum field width</td>
+			</tr>
+			<tr>
+				<td>%-</td>
+				<td>left align</td>
+			</tr>
+		</table>
+
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+
+	#include &lt;stdio.h&gt;
+
+	int main(){
+
+		float item1 = 5.75;
+		float item2 = 10.00;
+		float item3 = 100.99;
+
+		printf("item 1 : $%8.2f\n", item1);
+		printf("item 2 : $%8.2f\n", item2);
+		printf("item 3 : $%8.2f\n", item3);
+
+		return 0;
+	}
+		</code>
+
+		<pre>
+
+❯ gcc main.c; ./a.out
+item 1 : $     5.8
+item 2 : $   10.00
+item 3 : $   101.0
+		</pre>
+
+		<br>
+		<h1>Constant Value</h1>
+
+		<ul>
+			<li>
+				constant values cannot be changed after declaration
+			</li>
+			<li>
+				naming convention : all letters => uppercase
+			</li>
+		</ul>
+
+		<code class="language-c" style="font-family: 'JetBrainsMono NFM'; font-weight: bold;">
+	#include &lt;stdio.h&gt;
+
+	int main() {
+
+		const float PI = 3.14159;
+
+		// PI = 5;
+		// Reassigning a value to a const will result in an error
+
+		printf("%f\n", PI);
+
+		return 0;
+	}
+		</code>
+		<pre>
+
+❯ gcc main.c; ./a.out
+3.141590
+		</pre>
+
+		<br>
+		<h1>Operations</h1>
+
+		<table>
+			<tr>
+				<td>Addition</td>
+				<td>+</td>
+			</tr>
+			<tr>
+				<td>Subtraction</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Multiplication</td>
+				<td>*</td>
+			</tr>
+			<tr>
+				<td>Division</td>
+				<td>/</td>
+			</tr>
+			<tr>
+				<td>Modulus</td>
+				<td>%</td>
+			</tr>
+			<tr>
+				<td>Increment</td>
+				<td>++</td>
+			</tr>
+			<tr>
+				<td>Decrement</td>
+				<td>--</td>
+			</tr>
+		</table>
+
+
+		<h1>File IO</h1>
+
+		<h3>Important Keywords</h3>
+
+		<table>
+			<tr>
+				<td>FILE</td>
+				<td>Initializes a file pointer</td>
+			</tr>
+			<tr>
+				<td>fopen</td>
+				<td>Opens a file whose path is given as the 1st arg and in the mode as given in the 2nd arg</td>
+				<td>Open a file and create a new stream for it.</td>
+				<td>FILE *fopen(const char *__filename,</td>
+			</tr>
+			<tr>
+				<td>fprintf</td>
+				<td>write to a file using its file pointer in write / append mode</td>
+				<td>Write formatted output to STREAM.</td>
+				<td>int fprintf(FILE *__stream, const char *__format)</td>
+			</tr>
+			<tr>
+				<td>fgets</td>
+				<td>used to retrieve strings (char arrays) from the file pointer's current position</td>
+				<td>Get a newline-terminated string of finite length from STREAM.</td>
+				<td>char *fgets(char *__s, int __n, FILE *__stream)</td>
+			</tr>
+			<tr>
+				<td>rewind</td>
+				<td>places the file pointer cursor to the beginning</td>
+				<td>Rewind to the beginning of STREAM.</td>
+				<td>void rewind(FILE *__stream)</td>
+			</tr>
+			<tr>
+				<td>fclose</td>
+				<td>terminates the file pointer</td>
+				<td>Close STREAM.</td>
+				<td>int fclose(FILE *__stream)</td>
+			</tr>
+		</table>
+
+		<br>
+		
+		<code class="language-c" id="code">
+	#include &lt;stdio.h&gt;
+
+	int main(int argc, char **argv){
+
+		FILE *fp;
+		char string[100];
+		char *foo = "sucks";
+
+		fp = fopen("foo.txt", "w+");
+		
+		if(fp == NULL){
+			printf("Error while opening file!");
+			return 1;
+		}
+
+		// WRITING
+		fprintf(fp, "Frontend web dev %s\n", foo);
+
+		// sets the file pointer to the head of the file
+		rewind(fp);
+
+		// READING
+		while(fgets(string, 100, fp) != NULL){
+			printf("%s", string);
+		}
+
+		fclose(fp);
+
+		return 0;
+	}
+		</code>
+
+		<pre>
+
+❯ ./a.out
+Frontend web dev sucks
+
+❯ cat foo.txt
+Frontend web dev sucks
+
+		</pre>
+
+	<script src="prism.js"></script>	
+	</body>
+</html>

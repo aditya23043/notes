@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>C Programming</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+		<div class="foo">
+			<h1>Printing to the console</h1>
+			<div class="c">
+			<div class="header">
+				<div class="size"></div><div class="text">main.c</div>
+			</div>
+			<pre>
+			<code>
+#include &lt;stdio.h&gt;
+int main() {
+
+	printf("Hello World");
+
+	return 0;
+}
+			</code>
+			</pre>
+			</div>
+		</div>
+
+		<br>
+		<h1>Data Types</h1>
+
+		<table>
+			<tr>
+				<td>char</td>
+				<td>1 byte</td>
+				<td>%c</td>
+			</tr>
+			<tr>
+				<td>char[] / char*</td>
+				<td>string</td>
+				<td>%s</td>
+			</tr>
+			<tr>
+				<td>float</td>
+				<td>4 bytes (32 bits precision) 6-7 digits </td>
+				<td>%f</td>
+			</tr>
+			<tr>
+				<td>double</td>
+				<td>8 bytes (64 bits precision) 15-16 digits </td>
+				<td>%lf</td>
+			</tr>
+			<tr>
+				<td>bool (requires stdbool.h)</td>
+				<td>1 byte </td>
+				<td>%d</td>
+			</tr>
+			<tr>
+				<td>char</td>
+				<td>1 byte (-128 to 127) </td>
+				<td>%d / %c</td>
+			</tr>
+			<tr>
+				<td>unsigned char</td>
+				<td>1 byte (0 to 255) </td>
+				<td>%d / %c</td>
+			</tr>
+			<tr>
+				<td>short int</td>
+				<td>2 bytes </td>
+				<td>%d</td>
+			</tr>
+			<tr>
+				<td>unsigned short int</td>
+				<td>2 bytes </td>
+				<td>%d</td>
+			</tr>
+			<tr>
+				<td>int</td>
+				<td>4 bytes </td>
+				<td>%d</td>
+			</tr>
+			<tr>
+				<td>unsigned int</td>
+				<td>4 bytes </td>
+				<td>%u</td>
+			</tr>
+			<tr>
+				<td>long long int</td>
+				<td>8 bytes </td>
+				<td>%lld</td>
+			</tr>
+			<tr>
+				<td>unsigned long long int</td>
+				<td>8 bytes </td>
+				<td>%llu</td>
+			</tr>
+
+		</table>
+		<br>
+		<div class="foo">
+			<h1>File IO</h1>
+			<div class="c">
+				<div class="header">
+					<div class="size"></div><div class="text">main.c</div>
+				</div>
+				<pre>
+				<code>
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv){
+
+	FILE *fp;
+	char string[100];
+	char *foo = "suckss";
+
+	fp = fopen("foo.txt", "w+");
+	
+	if(fp == NULL){
+		printf("Error while opening file!");
+		return 1;
+	}
+
+	// WRITING
+	fprintf(fp, "Frontend web dev %s\n", foo);
+
+	// sets the file pointer to the head of the file
+	rewind(fp);
+
+	// READING
+	while(fgets(string, 100, fp) != NULL){
+		printf("%s", string);
+	}
+
+	fclose(fp);
+
+	return 0;
+}
+				</code>
+				</pre>
+			</div>
+		</div>
+
+		<div class="foo">
+			<h1></h1>
+			<div class="c">
+				<div class="header">
+					<div class="size"></div><div class="text">main.c</div>
+				</div>
+				<pre>
+				<code>
+
+				</code>
+				</pre>
+			</div>
+		</div>
+
+	</body>
+</html>
+

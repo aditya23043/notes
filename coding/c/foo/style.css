@@ -1,0 +1,62 @@
+html { 
+	color: #ddc7a1;
+	background-color: #141617;
+	font-family: "Lekton Nerd Font Mono";
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin: 2rem;
+}
+
+
+.c {
+	font-weight: bold;
+	background-color: #282828;
+	display: inline-block;
+	border-radius: 0.5rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+
+.size {
+	font-size: 2rem;
+	display: inline-block;
+}
+
+.header {
+	display: inline-block;
+	margin-top: 1.2rem;
+	color: #c29b56;
+	width: 100%;
+}
+
+.text {
+	display: inline-block;
+	vertical-align: 30%;
+	margin-left: 10px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr, td, th {
+	/* border: 2px dotted #ddc7a1; */
+	padding: 0.5rem;
+	padding-right: 3rem;
+	border: 1px solid #ddc7a133;
+}
+
+pre, code {
+	display: inline-block;
+}
+
+pre {
+	position: relative;
+	left: 300px;
+	bottom: 200px;
+	border: 3px solid #ddc7a133;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-radius: 1rem;
+}
