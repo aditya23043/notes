@@ -44,7 +44,7 @@ tr, td, th {
 	/* border: 2px dotted #ddc7a1; */
 	padding: 0.5rem;
 	padding-right: 3rem;
-	border: 1px solid #ddc7a133;
+	border: 1px solid #544e45;
 }
 
 pre, code {
@@ -55,7 +55,7 @@ pre {
 	position: relative;
 	left: 300px;
 	bottom: 200px;
-	border: 3px solid #ddc7a133;
+	border: 3px solid #544e45;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	border-radius: 1rem;
@@ -68,4 +68,10 @@ hr {
   border-top: 1px solid #484848;
   margin: 1em 0;
   padding: 0;
+}
+
+#code_2 {
+	position: relative;
+	left: 80px;
+	bottom: 38px;
 }
