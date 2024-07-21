@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>Java Tutorial</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="prism.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="prism/prism.css" type="text/css" media="all" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1 style="text-align: center">JAVA TUTORIAL</h1>
@@ -15,11 +18,11 @@
 
     <pre>
 			<code class="language-java">
-				public class Main {
-					public static void main(String[] args){
-						System.out.println("Hello World")
-					}
-				}
+	public class Main {
+		public static void main(String[] args){
+			System.out.println("Hello World")
+		}
+	}
 			</code>
 		</pre>
 
@@ -30,66 +33,80 @@
 		<table>
 			<tr>
 				<th>Data Type</th>
+				<th>Size</th>
 				<th>Description</th>
 			</tr>
 			<tr>
 				<td>int</td>
-				<td>4 bytes limit</td>
+				<td>4 bytes</td>
+				<td>-2 bil to +2 bil</td>
 			</tr>
 			<tr>
 				<td>long</td>
-				<td>8 bytes limit</td>
+				<td>8 bytes</td>
+				<td>-9 quintillion to +9 quintillion</td>
 			</tr>
 			<tr>
 				<td>short</td>
-				<td>2 bytes limit</td>
+				<td>2 bytes</td>
+				<td>-32,768 to +32,767</td>
 			</tr>
 			<tr>
 				<td>byte</td>
-				<td>1 bytes limit</td>
+				<td>1 bytes</td>
+				<td>-128 to 127</td>
 			</tr>
 			<tr>
 				<td>float</td>
-				<td>requires an f at the end and 4 bytes limit</td>
+				<td>4 bytes</td>
+				<td>fractional number upto 5-6 digits and requires an f at the end</td>
 			</tr>
 			<tr>
 				<td>double</td>
-				<td>double precision floating point number and 8 bytes limit</td>
+				<td>8 bytes</td>
+				<td>double precision floating point number upto 15 digits</td>
 			</tr>
 			<tr>
 				<td>bool</td>
+				<td>1 byte</td>
 				<td>does not return 0 or 1. Its simply true or false</td>
 			</tr>
 			<tr>
 				<td>char</td>
+				<td>2 byte</td>
 				<td>requires single quotes</td>
 			</tr>
 			<tr>
 				<td>String</td>
+				<td>varies</td>
 				<td>requires double quotes</td>
 			</tr>
 		</table>
 
+		<ul>
+			<li>Note: String is a reference data type whereas every other data type is primitive datatype</li>
+		</ul>
+
 		<pre>
 			<code class="language-java">
-				public class Main {
-					public static void main(String[] args) {
-						
-						int num1 = 4;
-						long num2 = 8;
-						short num3 = 2;
-						byte num4 = 1;
+	public class Main {
+		public static void main(String[] args) {
+			
+			int num1 = 4;
+			long num2 = 8;
+			short num3 = 2;
+			byte num4 = 1;
 
-						float cgpa = 7.3f;
-						double us_gpa = 3.0;
+			float cgpa = 7.3f;
+			double us_gpa = 3.0;
 
-						boolean wants_to_get_placed_on_campus = true;
+			boolean wants_to_get_placed_on_campus = true;
 
-						char grade = 'B';
-						String name = "Aditya Gautam";
+			char grade = 'B';
+			String name = "Aditya Gautam";
 
-					}
-				}
+		}
+	}
 			</code>
 		</pre>
 
@@ -103,17 +120,17 @@
 
 		<pre>
 			<code class="language-java">
-				public class Main {
-					public static void main(String[] args) {
-						int num1 = 0x7E;
-						int num2 = 0b0101;
-						int num3 = 12e10;
-						int num4 = 10_00_00_00_000;
-					}
-				}
+	public class Main {
+		public static void main(String[] args) {
+			int num1 = 0x7E;
+			int num2 = 0b0101;
+			int num3 = 12e10;
+			int num4 = 10_00_00_00_000;
+		}
+	}
 			</code>
 		</pre>
 
-    <script charset="utf-8" src="prism.js"></script>
+    <script charset="utf-8" src="prism/prism.js"></script>
   </body>
 </html>

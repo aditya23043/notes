@@ -1,20 +1,36 @@
 html {
-	background-color: #fdf6e3;
-	color: #002b36;
-	font-family: "VictorMono NFM";
+	background-color: #141617;
+	color: #ddc7a1;
+	font-family: "Victor Mono";
 	font-weight: bold;
-	font-size: 28;
+	font-size: 2rem;
 	margin-left: 4rem;
 	margin-right: 4rem;
 }
 
 th, td  {
 	padding: 0.5rem;
-	border: 1px solid #e9e3d2;
-	border-collapse: collapse;
+	border: 1px solid #383838;
 	font-size: 0.8rem;
 }
 
-th { 
-	font-style: italic;
+table {
+	border-collapse: collapse;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #383838;
+  margin: 1em 0;
+  padding: 0;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background: #282828;
+}
+
+::selection {
+  background: #282828;
 }
