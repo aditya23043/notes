@@ -8,7 +8,7 @@ bool modifier_should_close = false;
 char layout_alpha_2_key = 'ÿ';
 char layout_symbol_key = 'þ';
 char layout_num_key = 'ý';
-char layout_symbol_2_key = 'ü';
+char layout_system_key = 'ü';
 
 int long_delay = 25;
 int short_delay = 5;
@@ -22,7 +22,7 @@ int pins[] = {
 const int num_pins = sizeof(pins)/sizeof(pins[0]);
 
 char alpha_1[] = {
-  'h', 'u', 'o', ' ',
+  'h', 'u', 'o', layout_system_key,
   'n', 'e', 'a', 'c',
   ' ', layout_alpha_2_key
 };
@@ -31,6 +31,12 @@ char alpha_2[] = {
   'k', '\'', 'z', '"',
   'j', ',', 'x', 'y',
   KEY_CAPS_LOCK, KEY_TAB
+};
+
+char sys[] = {
+  KEY_LEFT_SHIFT, KEY_LEFT_ALT , ' ', ' ',
+  KEY_LEFT_CTRL , KEY_CAPS_LOCK, ' ', ' ',
+  KEY_RETURN    , KEY_LEFT_GUI
 };
 
 char key_down[num_pins];
@@ -65,21 +71,34 @@ void loop() {
 
     if(digitalRead(pins[i]) == LOW){
 
-      if(!key_down[0] && !key_down[1] && digitalRead(pins[0]) == LOW && digitalRead(pins[1]) == LOW){
-        KeyboardBLE.press(KEY_LEFT_GUI);
-        modifier_down = true;
-        key_down[0] = true;
-        key_down[1] = true;
+      if(digitalRead(13) == LOW){
+        if(!key_down[i] && alpha_1[i] != layout_system_key){
+          if(sys[i] == KEY_LEFT_SHIFT || sys[i] == KEY_LEFT_CTRL || sys[i] == KEY_LEFT_ALT || sys[i] == KEY_LEFT_GUI){
+            KeyboardBLE.press(sys[i]);
+            modifier_down = true;
+            key_down[i] = true;
+          } else {
+            KeyboardBLE.write(sys[i]);
+            if(modifier_down){
+              modifier_should_close = true;
+            }
+            key_down[i] = true;
+          }
+        }
       } else if(digitalRead(17) == LOW){
         if(!key_down[i] && alpha_1[i] != layout_alpha_2_key){
           KeyboardBLE.write(alpha_2[i]);
-          modifier_should_close = true;
+          if(modifier_down){
+            modifier_should_close = true;
+          }
           key_down[i] = true;
         }
       } else { 
         if(!key_down[i]){
           KeyboardBLE.write(alpha_1[i]);
-          modifier_should_close = true;
+          if(modifier_down){
+            modifier_should_close = true;
+          }
           key_down[i] = true;
         }
       }
