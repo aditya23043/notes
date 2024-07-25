@@ -2,6 +2,9 @@
 
 #include <KeyboardBLE.h>
 
+bool modifier_down = false;
+bool modifier_should_close = false;
+
 char layout_alpha_2_key = 'ÿ';
 char layout_symbol_key = 'þ';
 char layout_num_key = 'ý';
@@ -41,22 +44,42 @@ void setup() {
     key_down[i] = false;
   }
 
+  pinMode(LED_BUILTIN, OUTPUT);
+
 }
 
 void loop() {
+
+  if(modifier_down){
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  if(modifier_should_close){
+    KeyboardBLE.releaseAll();
+    modifier_should_close = false;
+    modifier_down = false;
+  }
 
   for(int i = 0; i < num_pins; i++){
 
     if(digitalRead(pins[i]) == LOW){
 
-      if(digitalRead(17) == LOW){
+      if(!key_down[0] && !key_down[1] && digitalRead(pins[0]) == LOW && digitalRead(pins[1]) == LOW){
+        KeyboardBLE.press(KEY_LEFT_GUI);
+        modifier_down = true;
+        key_down[0] = true;
+        key_down[1] = true;
+      } else if(digitalRead(17) == LOW){
         if(!key_down[i] && alpha_1[i] != layout_alpha_2_key){
           KeyboardBLE.write(alpha_2[i]);
+          modifier_should_close = true;
           key_down[i] = true;
         }
       } else { 
         if(!key_down[i]){
           KeyboardBLE.write(alpha_1[i]);
+          modifier_should_close = true;
           key_down[i] = true;
         }
       }
@@ -68,3 +91,4 @@ void loop() {
   }
   delay(10);
 }
+
