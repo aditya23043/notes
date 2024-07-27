@@ -1,16 +1,16 @@
 html {
 	background-color: #141617;
 	color: #ddc7a1;
-	font-family: "Victor Mono";
-	font-weight: bold;
-	font-size: 2rem;
+	font-family: "NanumGothicCoding";
+	font-weight: 900;
+	font-size: 1rem;
 	margin-left: 4rem;
 	margin-right: 4rem;
 }
 
 th, td  {
 	padding: 0.5rem;
-	border: 1px solid #383838;
+	border: 1px solid #38383866;
 	font-size: 0.8rem;
 }
 
