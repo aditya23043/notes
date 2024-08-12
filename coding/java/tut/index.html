@@ -131,6 +131,49 @@
 			</code>
 		</pre>
 
+    <hr>
+
+    <h2>String</h2>
+
+    <pre>
+    <code class="language-java">
+  String something = new String("something");
+  String foo = "foo";
+    </code>
+    </pre>
+
+    <ul>
+      <li>Both statements are the same thing</li>
+    </ul>
+
+    <hr>
+    <h2>String Buffer</h2>
+
+    <pre>
+    <code class="language-java">
+  StringBuffer something = new StringBuffer("something");
+    </code>
+    </pre>
+
+    <ul>
+      <li>StringBuffer is a peer class of String, it is mutable in nature and it is thread safe class , we can use it when we have multi threaded environment and shared object of string buffer i.e, used by mutiple thread. As it is thread safe so there is extra overhead, so it is mainly used for multithreaded program.</li>
+    </ul>
+
+    <hr>
+    <h2>String from characters</h2>
+
+    <pre>
+    <code class="language-java">
+  class foo {
+    public static void main(String[] args){
+      char something = { 'a', 'b', 'c', 'd', 'e' };
+      String bruh = new String(something);
+      System.out.println(bruh);
+    }
+  }
+    </code>
+    </pre>
+
     <script charset="utf-8" src="prism/prism.js"></script>
   </body>
 </html>
