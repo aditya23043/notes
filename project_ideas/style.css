@@ -1,0 +1,47 @@
+/* 
+index.html
+*/
+
+html {
+  font-family: "VictorMono NFM";
+  background-color: #121212;
+  color: #cccccc;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.title {
+  margin-left: 1rem;  
+}
+
+.idea {
+  margin-left: 1.6rem;  
+}
+
+.project::before{
+  content: "* ";
+}
+
+.smol {
+  display: inline;
+  position: relative;
+  bottom: 0.1rem;
+  font-size: 0.6rem;
+}
+
+.no_point {
+  list-style: none;
+}
+
+.pending::before {
+  content: "󰄱 ";
+}
+
+.completed::before {
+  content: " ";
+}
+
+.second_order_bullets {
+  margin-left: 2rem;
+  font-size: 0.6rem;
+}
