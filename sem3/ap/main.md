@@ -1,4 +1,4 @@
-# CSE 201 : ADVANCED PROGRAMMING => Lecture 0 (12/08/2024)
+# CSE 201 : ADVANCED PROGRAMMING => Lecture 1 (12/08/2024)
 ## Eval
 - Assignments : 20%
 - Surprise Quizzes : 10%
@@ -37,7 +37,7 @@ String greeting = "hello";
 String s = greeting.substring(0,3);
 ```
 
-# Lecture 1 (14/08/24)
+# Lecture 2 (14/08/24)
 
 ## Main
 - With the static keyword, we do not need to initalize the class object to access it's methods
@@ -69,3 +69,59 @@ builder.append(ch);
 builder.append(str);
 String longString  = builder.toString();
 ```
+
+# Lecture 3 (19/08/24)
+
+```java
+class Employee {
+    private String name;
+    private double salary;
+    private localDate hireDay;
+
+    // Constructor
+    public Employee(...){
+        ...
+    }
+}
+```
+
+- Now we cannot call this :
+```java
+Employee e;
+System.out.println(e.name);
+```
+- because name is a private attribute of the class
+
+
+## Array of objects
+```java
+Employee[] staff = new Employee[3];
+staff[0] = new Employee("bruh", ...);
+staff[1] = new Employee("something", ...);
+staff[2] = new Employee("else", ...);
+```
+
+> Class with main() method should ideally be different from the class whose objects it uses.
+
+## Private/Public
+- By default, every method and attribute is public
+- Every time we call the `new` keyword, it stores the variable in the heap unlike the default datatype variable which are stored in the stack
+- Private keyword for class members - cannot be accessed through public objects. Can only be accessed through class members.
+- To make a class visible to the JVm and other files, you must declare it as public
+- All public classes need their respective files
+- Non-public classes need not have their own files
+
+## Final Keyword
+- similar to const in C
+
+
+- E is a reference to any object of class employee e
+- We use `final` keyword alongside the variable which is used to initalize an object of a class in order to prevent us from loosing the reference to that object
+```java
+final Employee e = new Employee;
+```
+
+## Static Keyword
+- Can be used without the class object obnly with the class name only
+- Oly one variable shared across all objects of the class
+- Eg: System.out.println
