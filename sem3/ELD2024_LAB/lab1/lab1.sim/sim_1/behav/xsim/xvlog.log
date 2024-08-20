@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sources_1/imports/Downloads/full_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module full_adder_1bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sources_1/imports/Downloads/top_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sim_1/imports/Downloads/adder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_tb
+ERROR: [VRFC 10-1247] port connections cannot be mixed ordered and named [/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sim_1/imports/Downloads/adder_tb.v:30]
+ERROR: [VRFC 10-2953] 'overflow' is not a function [/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sim_1/imports/Downloads/adder_tb.v:30]
+ERROR: [VRFC 10-2922] 'overflow' expects 0 arguments [/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sim_1/imports/Downloads/adder_tb.v:30]
+ERROR: [VRFC 10-2865] module 'adder_tb' ignored due to previous errors [/home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.srcs/sim_1/imports/Downloads/adder_tb.v:23]
