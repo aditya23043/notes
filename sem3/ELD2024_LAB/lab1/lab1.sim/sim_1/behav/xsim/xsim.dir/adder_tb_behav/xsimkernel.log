@@ -1,7 +1,4 @@
-Running: xsim.dir/adder_tb_behav/xsimk -simmode gui -wdb adder_tb_behav.wdb -simrunnum 0 -socket 59785
+Running: xsim.dir/adder_tb_behav/xsimk -simmode gui -wdb adder_tb_behav.wdb -simrunnum 0 -socket 58481
 Design successfully loaded
 Design Loading Memory Usage: 32872 KB (Peak: 33572 KB)
-Design Loading CPU Usage: 10 ms
-Simulation completed
-Simulation Memory Usage: 114608 KB (Peak: 172140 KB)
-Simulation CPU Usage: 10 ms
+Design Loading CPU Usage: 40 ms
