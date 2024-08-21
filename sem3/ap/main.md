@@ -11,18 +11,20 @@
 
 ### ENCAPSULATION
 - Private and public methods withing classes / methods in order to prevent clients with less privilidge from accessing those functions
+- Making data private in order to prevent people with inadequate privilidges to access that data
 ### METHOD OVERLOADING 
 - Defining another function with same name with arguments with different data types in order to make it work with different data types
 ### INHERITANCE
 - Child class copies all methods from inherited parent class
 ### ABSTRACTION
+- Hiding unnecessary details that the users should not care about
 ### METHOD OVERRIDING
 ### POLYMORPHISM
 - If there are two child classes 'B' and 'C' that inherit from one parent class 'A'
 - Since 'A' had function X() defined in it, 'B' and 'C' also inherit it
 - But then if we override those X() functions in both 'B' and 'C' and then call B.X() then JVM ensures that the new X() function inside 'B' is only called and not the parent X() function from 'A'
 
-## BITWISE OPERATORS
+#:# BITWISE OPERATORS
 - & : and
 - | : or
 - ^ : xor
@@ -125,3 +127,84 @@ final Employee e = new Employee;
 - Can be used without the class object obnly with the class name only
 - Oly one variable shared across all objects of the class
 - Eg: System.out.println
+
+# TUTORIAL 1 : C214 : 21/08/24
+- Interviews require : DSA + OOP + DBMS + OS
+
+## OOP
+- Classes are a collection of data (methods and attributes)
+- Calling a null pointer = skill issue L
+
+# LECTURE 4 (21/08/24)
+
+## UML : Unified Modeling Language (also called Useless modelling language)
+- UML Diagrams show relationships among classes and objects
+- UML class diagram consists of one or more classes each with sections for class name, attributess (data), and operations (methods)
+- eg:
+
+| Player     | -> | Die        |
+|------------|----|------------|
+| Attributes | -> | Attributes |
+| Methods    | -> | Methods    |
+
+## Class relationships
+- The whole point of OOP is that your code replicates real world objects, thus making your code readable and maintainable
+- How are different classes related to each other?
+
+### Most common class relationships
+- [Reference](https://www.scientecheasy.com/2021/02/class-relationships-in-java.html/)
+
+1. Composition
+    - One of the attributes of B is contained inside class A and also initializing it
+    - A "contains" B
+    - A instantiates B as well
+    - Class A contains objects of class B
+    - By default memory is not allocated until new keyword is called, rather keeps a reference to that class
+    - Diamond shaped arrow head is used to show that an object is "composed" of B
+    - Asymmetric: A knows about B but B has no way to get the objects of A
+2. Association
+    - Defining but not referencing it
+    - A "knows-about" B
+    - Relationship between two objects
+    - but B is not a component of A
+    - B is not instantiated but being referred in A
+    - Symmetric relationship : both can access each other's objects
+    - Objects MAY not be instantiated
+    - Solid arrow with regular arrow head in UML
+3. Dependency
+    - Neither declaring it nor referencing it
+    - A "depends on" B
+    - ... if A cannot carry out its work without B, but B is neither a component of A nor it has association with A
+    - Neither B has a component in A nor does B is instantiated in A but A depends on a service from B
+    - Eg: Inheritance
+    - Dotted arrow with a regular arrow head in UML
+
+    ```java
+    class Die {
+        private int faceValue, faces;
+        ...
+        public void roll() { ... }
+    }
+
+    class Player {
+        public void takeTurn(Die die){
+            die.roll();
+            ...
+        }
+    }
+    ```
+
+### Coupling
+- If several classes of an application program depend on each other, then we say that the coupling between classes is high.
+
+> Note: referring to something that is not initialized = Exception (just like referencing null pointer in C)
+> Note 2: In the association example, PetShop should be defined first in the main function because 
+> Note 3: In Java, objects do not store block of memory until a constructor function has been called through instantiation, it creates a reference
+> EVERY OBJECT IS A REFERENCE BY DEFAULT
+
+## Overloading
+- Method Overloading
+    - Redefinition of the methods again in inherited children classes inherited from the parent class (which contains that method as well)
+    > Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
+    > Child class can overwrite (NOT EDIT) the constructor of parent class
+- Constructor Overloading

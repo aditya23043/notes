@@ -26,6 +26,7 @@ style.css
           <li>Dictionary <div class="smol">checks definition and other info about the word being typed without actually sending keypresses using <em>https://api.dictionaryapi.dev/api/v2/entries/en/{word}</em></div></li>
           <li>Quotes <div class="smol">Displays inspirational quotes on the screen which is shown by default in normal mode using <em>https://zenquotes.io/api/random</em></div></li>
           <li>Time <div class="smol">by default on normal mode which is updated every minute since we do not need precise time; using <em>http://worldtimeapi.org/api/timezone/Asia/Kolkata</em></div></li>
+          <li>Vim Mode <div class="smol">When enabled, the keyboard will keep track of the current mode (normal/visual/insert/replace/select/command) and will send keypresses in accordance with the corresponding vim counterpart</div></li>
         </ul>
 
         <h4>Progress Tracker:</h4>
@@ -49,7 +50,40 @@ style.css
 
       </div>
 
+      <br>
+      <hr>
+      <br>
+
+      <h2 class="project">Password Manager</h2>
+      <div class="idea">
+        <h4>A password manager with following features</h4>
+        <ul>
+          <li>Cross Platform (Android / IOS / Windows / MacOS / Linux / Web)</li>
+          <li>Storing passwords locally (csv?)</li>
+          <li>Master password + Email OTP for login</li>
+          <li>backup codes?</li>
+          <li>QR code?</li>
+          <li>Create, Update, Delete, Show, Enter</li>
+        </ul>
+      </div>
+
+      <h2 class="project">Physical Password Manager Device using MCU</h2>
+      <div class="idea">
+        <h4>A physical usb device which plugs in your device and enters your passwords for you so that you dont have to look and then type</h4>
+        <ul>
+          <li>Locally storing passwords on the device</li>
+          <li>No interfacing from the system</li>
+          <li>Acts as a simple HID when looking from the system</li>
+          <li>All interfacing / configuration from user part to be done through onboard buttons and screen on the device</li>
+          <li>Size should be ideally like a thumb drive</li>
+          <li>Master key?</li>
+        </ul>
+      </div>
+      
+
     </div>
+
+
   
   </body>
 </html>
