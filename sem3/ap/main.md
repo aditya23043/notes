@@ -208,3 +208,10 @@ final Employee e = new Employee;
     > Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
     > Child class can overwrite (NOT EDIT) the constructor of parent class
 - Constructor Overloading
+
+# LECTURE 5 (28/08/24)
+
+## INHERITANCE
+- Closely connected to polymorphism
+- Referencing many related objects as one generic type
+- Reference of parent class utilizing 

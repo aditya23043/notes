@@ -2,12 +2,12 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Aug 20 10:45:35 2024
-# Process ID: 26845
+# Start of session at: Thu Aug 29 11:35:31 2024
+# Process ID: 5396
 # Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.sim/sim_1/behav/xsim/xsim.dir/adder_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
 source /home/adi/repo/notes/sem3/ELD2024_LAB/lab1/lab1.sim/sim_1/behav/xsim/xsim.dir/adder_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Tue Aug 20 10:45:35 2024...
+INFO: [Common 17-206] Exiting Webtalk at Thu Aug 29 11:35:31 2024...

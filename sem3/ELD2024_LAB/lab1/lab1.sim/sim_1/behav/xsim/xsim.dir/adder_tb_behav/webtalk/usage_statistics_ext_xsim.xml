@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Aug 20 10:45:35 2024'>
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Aug 29 11:35:31 2024'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2552052" description="" />
-  <keyValuePair key="date_generated" value="Tue Aug 20 10:45:34 2024" description="" />
+  <keyValuePair key="date_generated" value="Thu Aug 29 11:35:27 2024" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="XSIM v2019.1 (64-bit)" description="" />
   <keyValuePair key="project_id" value="c823f94c6ee841ae8f972ea926572cce" description="" />
-  <keyValuePair key="project_iteration" value="2" description="" />
-  <keyValuePair key="random_id" value="131cc774-9ffb-44d2-a58f-561b25005596" description="" />
-  <keyValuePair key="registration_id" value="211433259_1777510721_210765779_928" description="" />
+  <keyValuePair key="project_iteration" value="12" description="" />
+  <keyValuePair key="random_id" value="f0422334-4d41-4bc7-8be5-32e3318e8925" description="" />
+  <keyValuePair key="registration_id" value="f0422334-4d41-4bc7-8be5-32e3318e8925" description="" />
   <keyValuePair key="route_design" value="FALSE" description="" />
   <keyValuePair key="target_device" value="not_applicable" description="" />
   <keyValuePair key="target_family" value="not_applicable" description="" />
@@ -20,7 +20,7 @@
  </section>
  <section name="user_environment" level="1" order="2" description="">
   <keyValuePair key="cpu_name" value="AMD Ryzen 9 5900HX with Radeon Graphics" description="" />
-  <keyValuePair key="cpu_speed" value="3531.453 MHz" description="" />
+  <keyValuePair key="cpu_speed" value="4295.278 MHz" description="" />
   <keyValuePair key="os_name" value="Arch" description="" />
   <keyValuePair key="os_release" value="Arch Linux" description="" />
   <keyValuePair key="system_ram" value="16.000 GB" description="" />
@@ -36,7 +36,7 @@
    <keyValuePair key="iteration" value="0" description="" />
    <keyValuePair key="runtime" value="1 us" description="" />
    <keyValuePair key="simulation_memory" value="114608_KB" description="" />
-   <keyValuePair key="simulation_time" value="0.02_sec" description="" />
+   <keyValuePair key="simulation_time" value="0.01_sec" description="" />
    <keyValuePair key="trace_waveform" value="true" description="" />
   </section>
  </section>
