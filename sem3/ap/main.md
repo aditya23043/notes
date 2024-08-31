@@ -215,3 +215,59 @@ final Employee e = new Employee;
 - Closely connected to polymorphism
 - Referencing many related objects as one generic type
 - Reference of parent class utilizing 
+
+# LECTURE 6 (31/08/24)
+
+## INHERITANCE AND POLYMORPHISM
+
+- Child class "extends" parent class
+- All attributes and methods of the parent class are copied to the child class
+- And the parent class has a reference to the child class
+
+### POLYMORPHISM
+- Method types : privare, static, final
+- Static binding : we do not need the instance of the object to call its methods
+- Dynamic binding
+- Polymorphic associations : dynamic binding at runtime
+- Everything is a reference : attribute, methods
+- If there is a method in the child class with the same name as one in the parent class, the compiler doesnt know which one to call so, the compiler does dynamic binding in order to link those
+- "Protected" methods : Can be inherited but cannot be called through an instance
+- Java packages are like files in a GUI/LINUX filesystem
+- "Static", Final" and "Private" methods cannot be inherited even though all other methods which are public can be inherited
+- Super is the reference to the parent class
+- Fork() creates child processes
+
+### ABSTRACT CLASSES
+- The parent class is not defining that method but the child class is the one that provides it a definition
+- If you have even a single `abstract` method, you NEED to make the class `abstract`
+```java
+public abstract class Person{
+    public abstract String getDescription();
+}
+
+public class Student extends Person {
+    public String getDescription() {
+        return ...
+    }
+}
+```
+
+## OBJECT
+- Parent of all classes (implicit); not of primitive types - int, char, byte, etc
+- Can be assigned to object at any class
+
+```java
+Object obj = new Employee("something", 3000);
+// type casting to another object without any loss of information unlike float to decimal
+Employee e = (Employee) obj;
+```
+
+### METHODS
+1. Equals() method
+    - Whether they point / refer to the same object or not (default) or same value or not, etc
+    - Object class defines equal(). Other classes can extend it with their own definition
+2. toString() method
+    - Used to print a string equivalent information of the class, eg. System.out.println(toString(s));
+    - The return type is String and name is toString()
+    - "." : dereference operator
+    - Used to access the values of a reference
