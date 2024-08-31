@@ -271,3 +271,19 @@ Employee e = (Employee) obj;
     - The return type is String and name is toString()
     - "." : dereference operator
     - Used to access the values of a reference
+
+### OBJECT WRAPPERS AND AUTOBOXING
+- Object corresponding to a primitive type [Integer, Long, Flloat, Double, Short, Byte and Boolean] (case sensitive)
+- Their objects are immutable - once a wrapper object has been created their values cannot be changed
+- Methods inside Integer and other primitive types are final so we cannot modify it and we cannot inherit it
+```
+Integer[] list;
+list = new Integer[500];
+list[0] = 1;
+list[1] = 1;
+list[i]++;
+```
+- But list[i] == list[j] fails
+- For that, we use Equals method
+- This works as well:
+`list[i].intValue() == list[j].intValue()`
