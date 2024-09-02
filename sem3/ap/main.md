@@ -272,7 +272,7 @@ Employee e = (Employee) obj;
     - "." : dereference operator
     - Used to access the values of a reference
 
-### OBJECT WRAPPERS AND AUTOBOXING
+## OBJECT WRAPPERS AND AUTOBOXING
 - Object corresponding to a primitive type [Integer, Long, Flloat, Double, Short, Byte and Boolean] (case sensitive)
 - Their objects are immutable - once a wrapper object has been created their values cannot be changed
 - Methods inside Integer and other primitive types are final so we cannot modify it and we cannot inherit it
@@ -306,3 +306,10 @@ public enum Size {
 Size s = Enum.valueOf(Size.class, "SMALL");
 
 ```
+
+# LECTURE 7 (02/09/24)
+
+## Generic Arraylists
+- Generic class with a type parameter
+- Provides a dynamically growing (or shrinking) array of objects
+- `ArrayList<Integer> myList = new ArrayList<Integer>();`
