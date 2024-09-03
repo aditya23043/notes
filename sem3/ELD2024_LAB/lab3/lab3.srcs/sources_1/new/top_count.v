@@ -37,7 +37,7 @@ module top_count (
   );  // input Clk_100M
 
   // FREQ DIVISION INSTANTIATION
-  clk_div_rt1 fd (
+  clk_div_rtl fd (
       .Clk_8M (Clk_8M),
       .Clk_1Hz(Clk_1Hz)
   );

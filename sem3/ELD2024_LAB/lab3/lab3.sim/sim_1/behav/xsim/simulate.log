@@ -1,2 +1,3 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
+$stop called at time : 1050 ns : File "/home/adi/repo/notes/sem3/ELD2024_LAB/lab3/lab3.srcs/sim_1/new/counter_tb.v" Line 49
