@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab2/lab2.srcs/sources_1/new/counter_8bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_8bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab2/lab2.srcs/sim_1/new/counter_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab2/lab2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
