@@ -309,7 +309,110 @@ Size s = Enum.valueOf(Size.class, "SMALL");
 
 # LECTURE 7 (02/09/24)
 
-## Generic Arraylists
+## Generic Array lists
 - Generic class with a type parameter
 - Provides a dynamically growing (or shrinking) array of objects
 - `ArrayList<Integer> myList = new ArrayList<Integer>();`
+
+# LECTURE 8 (04/09/24)
+- Interfaces are classes has nothing, no attributes, no methods.
+- Expects the user to define all those things
+- so, instead of extends, we use `implements` keyword to inherit an interface
+- Inner class means a class inside a class (nesting)
+
+```java
+public class TalkingClock {
+    privat int interval;
+    private boolean beep;
+
+    public TalkingClock(){
+        ...
+    }
+
+    public class TimePrinter implements ActionListener {
+        // Inner class
+        ...
+    }
+}
+```
+
+- What if both the outer class and inner class have the same attribute beep?
+
+```
+if (TalkingClock.this.beep){
+    Toolkit.getDefaultToolkit().beep();
+}
+```
+
+- Accessible without requiring an object
+- Outer class encapsulates inner class
+- We can define a class which implements an interface without naming it
+- Same as anonymous class
+
+```java
+public void start(int interval, boolean beep){
+    var listener = new ActionListener(){
+        public void actionPerformed(ActionEvent event){
+            ...
+        }
+    }
+}
+```
+
+- `var` in java is same as `:=` in go
+- Automatically assigns data type
+- Syntax for anonymous class
+
+```java
+new SuperType(params){
+    inner class methods and attributes...
+}
+```
+
+## Exceptions and Exception Handling
+- Array out of error bounds
+- IOExceptions; eg: File not found
+- Mathematical Exception: divide by zero, Not-A-Number
+- Exceptions are also classes
+- Every error is an event
+- And every event has an event handler
+
+```
+Throwable
+|
+|__ Error
+|   |__ ...
+|__ Exception
+    |__ IOException
+    |   |__ ...
+    |__ Runtime Exception
+    |   |__ ...
+    |__ ...
+```
+
+### STACKFRAME
+- A region of stack reserved for local variables and other stuff of a specific function / method / program
+- Every time an exception is thrown and if it has to handle that, a new stack frame is made
+
+## Throwing an exception
+- You have to specifically define that the specific class throws an exception
+
+```java
+String readData(Scanner in) throws EOFException {
+    while(...){
+        if(Condition){
+            throw new EOFException();
+        }
+    }
+}
+```
+
+## Handling that exception
+
+```java
+try {
+    readData(...);
+} catch (EOFException) {
+    ...;
+}
+```
