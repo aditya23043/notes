@@ -1,0 +1,21 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/adi/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto c582a01ca437408ba983f094703741d4 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vio_wrapper_behav xil_defaultlib.vio_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=38.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div_rtl
+Compiling module xil_defaultlib.updown_counter
+Compiling module xil_defaultlib.top_count
+Compiling module xil_defaultlib.vio_0
+Compiling module xil_defaultlib.vio_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vio_wrapper_behav
