@@ -30,18 +30,26 @@ module updown_counter (
   reg [6:0] PS = 0, NS = 0;
 
   always @(posedge Clk_1Hz) begin
-    if (reset) PS <= 7'd0;
-    else PS <= NS;
+    if (reset)
+      PS <= 7'd0;
+    else
+      PS <= NS;
   end
 
-  always @(*) begin
+  always @(*) 
+  begin
     if (up == 1'b1)
-      if (PS == 7'd85) NS = 7'd0;
-      else NS = PS + 7'd1;
+      if (PS == 7'd85)
+        NS = 7'd0;
+      else
+        NS = PS + 7'd1;
     else if (up == 1'b0)
-      if (PS == 7'd0) NS = 7'd85;
-      else NS = PS - 7'd1;
+      if (PS == 7'd0)
+        NS = 7'd85;
+      else
+        NS = PS - 7'd1;
   end
 
-  assign count = PS;
+  assign Count = PS;
+
 endmodule

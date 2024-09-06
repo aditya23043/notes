@@ -44,8 +44,20 @@ module top_count (
   );
 
   // COUNTER INSTANTIATION
-  updown_counter counter(
-      .Clk_1Hz(Clk_1Hz), .reset(reset), .up(up), .Count(Count)
+  updown_counter counter (
+      .Clk_1Hz(Clk_1Hz),
+      .reset(reset),
+      .up(up),
+      .Count(Count)
+  );
+
+  ila_0 ila0 (
+      .clk(Clk_100M),  // input wire clk
+
+      .probe0(Clk_1Hz),  // input wire [0:0]  probe0
+      .probe1(reset),  // input wire [0:0]  probe1
+      .probe2(up),  // input wire [0:0]  probe2
+      .probe3(Count)  // input wire [6:0]  probe3
   );
 
 endmodule

@@ -17,6 +17,9 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 4
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -25,7 +28,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.cache/wt [current_project]
 set_property parent.project_path /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:zedboard:part0:1.1 [current_project]
@@ -46,6 +49,12 @@ read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/source
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/vio_0/vio_0.xdc]
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/vio_0/vio_0_ooc.xdc]
 
+read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -54,6 +63,9 @@ set_property used_in_implementation false [get_files -all /home/adi/repo/notes/s
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/constrs_1/imports/Downloads/Zed_cons.xdc
+set_property used_in_implementation false [get_files /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.srcs/constrs_1/imports/Downloads/Zed_cons.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

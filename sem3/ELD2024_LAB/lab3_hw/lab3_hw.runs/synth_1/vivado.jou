@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Sep  5 12:39:23 2024
-# Process ID: 84539
+# Start of session at: Thu Sep  5 23:13:08 2024
+# Process ID: 134480
 # Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.runs/synth_1
 # Command line: vivado -log vio_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_wrapper.tcl
 # Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab3_hw/lab3_hw.runs/synth_1/vio_wrapper.vds

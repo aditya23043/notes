@@ -36,7 +36,7 @@ module vio_wrapper (
   );
 
   vio_0 vio0 (
-    .clk(clk),                // input wire clk
+    .clk(Clk_100M),                // input wire clk
     .probe_in0(Count),        // input wire [7 : 0] probe_in0
     .probe_out0(reset),       // output wire [0 : 0] probe_out0
     .probe_out1(up)           // output wire [0 : 0] probe_out0
