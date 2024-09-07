@@ -15,3 +15,6 @@
 | 5    | 10k    | 230   | 102.12µA |       | 15.318V | 1.5318mA |        |            |
 | 6    | 100k   | 230   | 10.212µA |       | 15.319V | 153.19µA |        |            |
 | 7    | 1M     | 230   | 1.0212µA |       | 15.319V | 15.319µA |        |            |
+
+- 2.3mV across 1k ohm resistor with fuse
+- 15.01V across 1k ohm resistor without fuse
