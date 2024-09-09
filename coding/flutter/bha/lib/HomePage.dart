@@ -14,36 +14,56 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[100],
       appBar: AppBar(
+        backgroundColor: const Color(0xff460570),
+        foregroundColor: Colors.white,
+        elevation: 10,
         title: const Center(
-          child: Text(
-            "Happy Birthday Bro!!",
-            style: TextStyle(
-              fontFamily: "Dancing Script",
-              fontWeight: FontWeight.w100,
-              fontSize: 25,
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              "Happy Birthday Bro!!",
+              style: TextStyle(
+                fontFamily: "Dancing Script",
+                fontWeight: FontWeight.w100,
+                fontSize: 30,
+              ),
             ),
           ),
         ),
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
       ),
       body: Builder(
         builder: (context) {
-          final double height = MediaQuery.of(context).size.height;
           return CarouselSlider(
             options: CarouselOptions(
-              height: height,
-              viewportFraction: 1.0,
-              enlargeCenterPage: false,
+              viewportFraction: 0.8,
+              enlargeCenterPage: true,
+              enlargeFactor: 0.3,
               autoPlay: true,
               autoPlayCurve: Curves.easeInOutQuint,
-              autoPlayInterval: const Duration(seconds: 6),
+              autoPlayInterval: const Duration(seconds: 4),
+              aspectRatio: 9/16,
             ),
             items: imgList.map((item) => Center(
-              child: Image.asset(
-                item, fit: BoxFit.cover, height: height,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 5,
+                      spreadRadius: 2,
+                      offset: Offset(4, 4)
+                    )
+                  ]
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    item, 
+                    fit: BoxFit.cover,
+                  ),
+                ),
               )
             )).toList(),
           );

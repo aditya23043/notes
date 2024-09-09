@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import './HomePage.dart';
 
 
@@ -17,10 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Happy Birthday Bro!",
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: const Color(0xff181a1b),
+        primaryColor: const Color(0xff460570),
       ),
-      darkTheme: ThemeData.dark(),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

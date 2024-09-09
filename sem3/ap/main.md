@@ -390,6 +390,9 @@ Throwable
     |__ ...
 ```
 
+- We can create our own excpetion by extending one of these abstract exception classes
+- Note: we cannot extend the throwable class
+
 ### STACKFRAME
 - A region of stack reserved for local variables and other stuff of a specific function / method / program
 - Every time an exception is thrown and if it has to handle that, a new stack frame is made
@@ -414,5 +417,180 @@ try {
     readData(...);
 } catch (EOFException) {
     ...;
+}
+```
+
+# LECTURE 9 (09/09/24)
+
+## Exceptions
+- Exceptions will slow down programmes
+- Note: try and catch blocks have separate stack frames
+- It is better to use an if(..)else(..) because we do not return to the try stmt if an exception is caught since a new stackframe is created for the catch block and the try block stackframe is (eventually) deleted by the garbage collector
+    - We cannot return from a catch and resume to whatever was being done in the try block
+    - Whereas, in if else we can use `goto`
+
+```java
+try {
+    ;
+} 
+catch(Excpetion e) {
+    System.out.println(e)
+}
+```
+- Here, the .toString function of the `e` class is run whenever we try to print it
+- if .toString does not exist, it prints the reference to the object
+- Because PrintStream.println has an overload that takes an Object, and then calls its toString method.
+
+## Try, Catch, Finally
+- After all try, catch blocks, just before the program terminates, the finally block is called
+- Special block of code that is executed whether or not an exception is thrown
+- Finally is like a destructor for try-catch blocks
+- One catch per exception / One catch for all Exceptions : Both acceptable
+- Methods tells Java compiler that what kind of errors it can throw
+- The lowermost heirarchy of exceptions is preferred (i.e. the specific exception rather than its parent generalized class) by the JVM
+    - i.e. if FileNotFoundException error is defined and is thrown, it will be preferred in catch stmt rather than its parent, Exception
+
+```java
+class Something {
+    public loadimg(String s) throws FileNotFoundException, EOFException, SomethingElseException {
+
+    }
+}
+```
+
+## Extending parent Exception
+- Both constructors work and serve similar purpose
+
+```java
+class FileFormatException extends IOException {
+
+    public FileFormatException() {
+        ...
+    }
+
+    public FileFormatException(String gripe) {
+        super(gripe);
+        ...
+    }
+
+}
+```
+
+## Catching what was thrown
+- Both works
+
+- Handling 2 exceptions together
+```java
+try {
+    ...
+}
+catch (FileNotFoundException | UnknownHostException e){
+    ...
+}
+catch (IOException) {
+    ...
+}
+```
+
+- Handling each exception individually
+```java
+try {
+    ...
+}
+catch (FileNotFoundException e){
+    ...
+}
+catch (UnknownHostException e){
+    ...
+}
+catch (IOException) {
+    ...
+}
+```
+
+## Rethrowing exceptions
+```java
+try {
+    ...
+}
+catch (SQLException e){
+    throw new ServletException("database error: " + e.getMessage());
+}
+```
+
+## ASSERTIONS
+- We have 3 ways to handle with errors
+    - If else blocks with conditions
+    - Try Catch block with specific error name
+    - Assertions
+- Used for debug purposes
+- Not used in production code
+- Faster execution than throwing exceptions
+- Irrecoverable
+- Terminates the program
+- `assert [condition];`
+- `assert [condition] : [expression];`
+- Assertions = Exceptions which you cannot catch
+- Check [condition]. If false then create an object with argument [expression] of type AssertionError.
+- And JVM catches it and prints the details presented in the [expression]
+
+```java
+
+if(x > 0){
+    ...
+} else {
+    ...
+}
+
+if(x > 0){
+    ...
+    throw new exception("myexception");
+}
+catch(exception ep){
+    ...
+}
+
+assert x > 0 : new String("x > 0");
+
+```
+
+## LOGGING
+- We use domain sockets to tell syslog to dump log files
+- Its a different process than the main program
+- Everytime you type to a terminal, the system needs to instantly pass it to the graphics buffer to show on the monitor
+- But writing to a file, means writing to a buffer (cache) and then it is written to the main storage on write command
+- And since writing to main storage is slow whereas writing to the cache is faster and hence writing to a file is faster than writing to a console
+- Also, decoupling the logger program means making the logging mechanism separate than the main program and hence does not depend on the main program's execution
+- Also, some low priority messages can be missed in certain cases without any penalty
+
+### In java
+- `Logger.getGlobal().info("File->Open menu item selected);`
+- Info is a log level here
+- Syslogs has levels in logging
+    - SEVERE
+    - WARNING
+    - INFO
+    - CONFIG
+    - FINE
+    - FINER
+    - FINEST
+- Two methods used for logging
+```java
+void throwing(String className, String methodName, Throwable t);
+void log(Level l, String message, Throwable t);
+```
+
+- Child throws an excpetion and parent catches it and logs it
+- The parent's logger can be connected to the child's logger
+```java
+try{
+    if(..){
+        var e = new IOException("...");
+        logger.throwing("commycompany.mylib.Reader", "read", e);
+        throw e;
+    }
+}
+catch (IOException e){
+    Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
 }
 ```
