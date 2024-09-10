@@ -15,21 +15,43 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff460570),
+        backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
-        elevation: 10,
-        title: const Center(
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "Happy Birthday Bro!!",
-              style: TextStyle(
-                fontFamily: "Dancing Script",
-                fontWeight: FontWeight.w100,
-                fontSize: 30,
-              ),
+        elevation: 0,
+        title: const Padding(
+          padding: EdgeInsets.all(10),
+          child: Text(
+            "Happy 24th Cake Day Bro!!",
+            style: TextStyle(
+              fontFamily: "Handlee",
+              fontWeight: FontWeight.w100,
+              fontSize: 30,
             ),
           ),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.grey.shade900,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TextButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/wishes');
+              }, 
+              child: const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "Wishes",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: "Handlee",
+                  ),
+                ),
+              )
+            )
+          ],
         ),
       ),
       body: Builder(

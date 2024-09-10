@@ -67,7 +67,13 @@ flutter:
   fonts:
     - family: Dancing Script
       fonts:
-        - asset: fonts/DancingScript-Regular.ttf
+        - asset: assets/fonts/DancingScript-Regular.ttf
+    - family: Playwrite PE
+      fonts:
+        - asset: assets/fonts/PlaywritePE-Regular.ttf
+    - family: Handlee
+      fonts:
+        - asset: assets/fonts/Handlee-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

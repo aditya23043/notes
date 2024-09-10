@@ -1,0 +1,207 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "ila0",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "C43F7696D0D45F618E82F96D994DF7EF",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "sec_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sec_1[5]"
+                                            },
+                                            {
+                                                "name": "sec_1[4]"
+                                            },
+                                            {
+                                                "name": "sec_1[3]"
+                                            },
+                                            {
+                                                "name": "sec_1[2]"
+                                            },
+                                            {
+                                                "name": "sec_1[1]"
+                                            },
+                                            {
+                                                "name": "sec_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "min_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "min_1[5]"
+                                            },
+                                            {
+                                                "name": "min_1[4]"
+                                            },
+                                            {
+                                                "name": "min_1[3]"
+                                            },
+                                            {
+                                                "name": "min_1[2]"
+                                            },
+                                            {
+                                                "name": "min_1[1]"
+                                            },
+                                            {
+                                                "name": "min_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "vio0",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "55628FB7A6725A26BB8359684D11EA49",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "sec",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sec[5]"
+                                            },
+                                            {
+                                                "name": "sec[4]"
+                                            },
+                                            {
+                                                "name": "sec[3]"
+                                            },
+                                            {
+                                                "name": "sec[2]"
+                                            },
+                                            {
+                                                "name": "sec[1]"
+                                            },
+                                            {
+                                                "name": "sec[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "min",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "min[5]"
+                                            },
+                                            {
+                                                "name": "min[4]"
+                                            },
+                                            {
+                                                "name": "min[3]"
+                                            },
+                                            {
+                                                "name": "min[2]"
+                                            },
+                                            {
+                                                "name": "min[1]"
+                                            },
+                                            {
+                                                "name": "min[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "reset",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
