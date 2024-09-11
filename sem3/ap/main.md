@@ -594,3 +594,93 @@ catch (IOException e){
     Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
 }
 ```
+
+# LECTURE 10 (11/09/24)
+
+## GENERIC CLASSES
+- Just like unions in C
+- But implementing it might not result in an optimized union since we cannot explicitly control memory
+- We can implement them using Object (supermost class in context of heirarchy)
+
+## Generic Programming
+- <T> : container / template
+    - Can hold any non-primitive type / or any class
+    - Placeholder
+    - Cannot template's type after 1st definition
+
+```java
+public class My GenericList <T> {
+
+    private ArrayList <T> myList;
+    
+    privat T first;
+    privat T second;
+
+    public Pair() {
+        this.first = null; // will uninitialize it
+        this.second = null; // will uninitialize it
+    }
+
+    public Pair(T first, T second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() { return this.first; }
+    public T getSecond() { return this.second; }
+
+}
+```
+
+### Object Initialization
+```java
+var files = new ArrayList<String>();
+// or
+ArrayList<String> files = new ArrayList();
+```
+
+### Advantage of Wrapper Classes over primitive types
+- To bring the super class Object unlike primitive types which are like
+- Is a part of a heirarchy under Object
+- Is a class
+
+### GENERIC METHODS
+```java
+class ArrayAlg {
+    public static <T> T get Middle(T something, ... a) { // a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))
+        return a[a.length/2];                            // a is the array/container 
+    }
+}
+
+String middle = ArrayAlg <String> getMiddle("something", "foo", "bar");     // the arguments passed are treated as part of an array
+String middle = ArrayAlg.getMiddle("something", "foo", "bar");
+
+```
+
+### generic classes with two fields
+- T1 and T2 can be any non primitive type
+- Can be same as well
+
+```java
+
+public class Pair <T1, T2> { 
+
+    private T1 key; 
+    private T2 value;
+
+    public Pair(T1 _k, T2 _v) {
+        this.key = _k;
+        this.value = _v;
+    }
+
+    public T1 getKey(){
+        return this.key;
+    }
+
+    public T2 getValue(){
+        return this.value;
+    }
+
+}
+
+```
