@@ -684,3 +684,65 @@ public class Pair <T1, T2> {
 }
 
 ```
+
+- `Object array[] = new Integer[10];` Legal Statement; allowed
+    - Array of objects pointing to an array of integers
+- `List<Object> myList = new ArrayList<Integer>();` this gives compilation error
+    - List of objects pointing to an integer list
+
+- Illegal (Errors)
+    - An object array cannot point to generic type arrays
+```java
+List<Integer> intList[] = new ArrayList<Integer>[5];
+List<String> strList[] = new ArrayList<String>();
+
+strList.add("something");
+Object objArray[] = intList;
+objArray[0] = strList;
+```
+
+- ClassCastException (error) `int my_num = objArray[0].get(0);`
+
+### NOTE
+- Arrays are covariant
+    - Subclass array type can be assigned to superclass array reference
+- Generics are invariant
+    - Subclass type generic type cannot be assigned to superclass generic reference
+
+## Bounds For Type Variables
+- `public static <T extends Comparability> T min(T[] a) {...}`
+- Specificying what all it can take
+- this is NOT inheritance
+- This also works : `T extends Comparable & Serializable`
+    - they are abstract class / interface
+    - At a time a class can only extend one "thing", so it extends either of the two at an instance
+> Note: we need `implement` for interfaces whereas `extends` otherwise
+
+## Type Erasers
+- Rule: Erase and replace generic type with a raw type (for bounded types) and Object for unbounded
+```java
+public class Interval <T extends Comparable & Serializable> implements Serializable {
+    private T lower;
+    private T upper;
+    ...
+    public Interval(T first, T second) {
+        if(first.compareTo(second) <= 0) {
+            lower = first;
+            upper = second;
+        }
+        else {
+            lower = second;
+            upper = first;
+        }
+    }
+}
+```
+- To
+```java
+public class Interval implements Serializable {
+    private Comparable lower;
+    private Comparable upper;
+    ...
+    public Interval (Comparable first, Comparable second){ ... }
+}
+```
