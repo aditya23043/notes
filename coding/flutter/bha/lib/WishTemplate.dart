@@ -22,6 +22,13 @@ class WishTemplate extends StatelessWidget {
               fontWeight: FontWeight.w100,
               color: Colors.white,
               fontSize: 30,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 2,
+                ),
+              ],
             ),
           ),
           Text(
@@ -31,12 +38,19 @@ class WishTemplate extends StatelessWidget {
               fontFamily: "Handlee",
               fontWeight: FontWeight.w100,
               color: Colors.white70,
-              fontSize: 20,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 2,
+                ),
+              ],
+              fontSize: 30,
             ),
           ),
           const Text(""),
           const Text(""),
-          Divider(color: Colors.grey),
+          Divider(color: Colors.white30, indent: 25, endIndent: 25),
           const Text(""),
           const Text(""),
           const Text(""),
