@@ -24,13 +24,88 @@
 
 - Non Ideal Transformer
 
-| S.No | R load | V src | I src    | P src | V primary | I primary | P primary | V load  | I load   | P load | Efficiency of transformer | Efficiency of Power Source |
-|------|--------|-------|----------|-------|-----------|-----------|-----------|---------|----------|--------|---------------------------|----------------------------|
-| 1    | 1      | 230V  | 156.63mA |       | 211.02V   | 156.63mA  |           | 2.2937V | 2.2937A  |        |                           |                            |
-| 2    | 10     | 230V  | 70.159mA |       | 221.4V    | 70.159mA  |           | 9.6261V | 962.61mA |        |                           |                            |
-| 3    | 100    | 230V  | 16.821mA |       | 227.8V    | 16.821mA  |           | 14.149V | 141.49mA |        |                           |                            |
-| 4    | 1k     | 230V  | 8.5945mA |       | 228.79V   | 8.5945mA  |           | 14.847V | 14.847mA |        |                           |                            |
-| 5    | 10k    | 230V  | 7.727mA  |       | 228.89V   | 7.727mA   |           | 14.92V  | 1.492mA  |        |                           |                            |
-| 6    | 100k   | 230V  | 7.6398mA |       | 228.9V    | 7.6398mA  |           | 14.928V | 149.28µA |        |                           |                            |
-| 7    | 1M     | 230V  | 7.6311mA |       | 228.9V    | 7.6311mA  |           | 14.928V | 14.928µA |        |                           |                            |
-| 8    | 10M    | 230V  | 7.6302mA |       | 228.9V    | 7.6302mA  |           | 14.928V | 1.4928µA |        |                           |                            |
+| S.No | R load | V src | I src    | P src   | V primary | I primary | P primary | V load  | I load   | P load  | Efficiency of transformer | Efficiency of Power Source |
+|------|--------|-------|----------|---------|-----------|-----------|-----------|---------|----------|---------|---------------------------|----------------------------|
+| 1    | 1      | 230V  | 156.63mA | 36.024W | 211.02V   | 156.63mA  | 33.052W   | 2.2937V | 2.2937A  | 5.261W  | 15.91%                    | 14.6%                      |
+| 2    | 10     | 230V  | 70.159mA | 16.136W | 221.4V    | 70.159mA  | 15.533W   | 9.6261V | 962.61mA | 9.266W  | 59.65%                    | 57.4%                      |
+| 3    | 100    | 230V  | 16.821mA | 3.868W  | 227.8V    | 16.821mA  | 3.831W    | 14.149V | 141.49mA | 2.001W  | 52.23%                    | 51.7%                      |
+| 4    | 1k     | 230V  | 8.5945mA | 1.976W  | 228.79V   | 8.5945mA  | 1.966W    | 14.847V | 14.847mA | 0.220W  | 11.1%                     | 11.1%                      |
+| 5    | 10k    | 230V  | 7.727mA  | 1.777W  | 228.89V   | 7.727mA   | 1.768W    | 14.92V  | 1.492mA  | 0.022W  | 1.2%                      | 1.2%                       |
+| 6    | 100k   | 230V  | 7.6398mA | 1.757W  | 228.9V    | 7.6398mA  | 1.748W    | 14.928V | 149.28µA | 0.002W  | 0.11%                     | 0.11%                      |
+| 7    | 1M     | 230V  | 7.6311mA | 1.755W  | 228.9V    | 7.6311mA  | 1.746W    | 14.928V | 14.928µA | 0.222mW | 0.03%                     | 0.012%                     |
+| 8    | 10M    | 230V  | 7.6302mA | 1.754W  | 228.9V    | 7.6302mA  | 1.746W    | 14.928V | 1.4928µA | 0.022mW | 0.001%                    | 0.001%                     |
+
+# LAB 3 (Rectifier : AC -> DC) : 13/09/2024
+- We use a diode to clip the negative part of the wave
+    - If we wanted the negative part only, we would place the diode in the opposite direction (= positive clipper : clips the positive partclip)
+    - but there is some voltage after which the diode works eg: 0.3V for germanium diode
+    - so, there is a bit of the part there up till the threshold voltage when clipping
+    - If we added two diodes in parallel in opposite direction, so the output will be clipped in both sides, i.e. kind of a square wave of amplitude = threshold voltage of diode
+    - Positive / Negative / Positive and Negative bias clippers
+- We use two diodes
+    - Signal Diode : dealing with circuit which needs less current (~100mA or less)
+        - Low speed
+    - Power Diode
+        - Dealing with high current (1A-25A)
+        - High speed
+
+## Half Wave Rectifier
+- Source, Diode and Load all in series
+- No 5V drop here because circuit opens/closes due to diode
+- Cicuit is simple
+- Positive to negative hwr? Reverse the polarity of the diode
+- Disadvantage : Output wave is only half than the original
+
+## Full Wave Rectifier
+
+### Center Tap
+- Primary side and Secondary side
+- 230V to 15V
+- Uses transformer
+- No pwower loss
+- Output voltage is more efficient
+- Quite expensive
+
+### Bridge
+- Efficiency is almost same as center tap
+- Circuit is complex but inexpensive
+
+## Factors
+- Efficiency : Pdc / Pac
+- Ripple Factor
+    - V = sqrt((Vrms/Vdc)^2 - 1)
+    - The lower the better
+    - Half wave : 1.21
+    - Full wave : 0.48
+- P inverse Voltage (PIV)
+    - Half wave : Vmax
+    - Full Wave : 2Vmax
+    - Depends on how much the diode can hold
+
+> Note: diode silver side is negative and black side is positive
+> We need to use the DC sweep voltage from the function generator because we need to plot the I-V characteristics and we need the ratio of Vout and Vin
+- DSO
+    - Triangular Wave / Ramp
+    - Freq: 100hz
+    - Amplitude -> High Level -> 5V
+        - It normally gives 5V peak to peak i.e. 2.5 to -2.5 but we need 0 to 5
+    - Horizontal -> XY
+    - DSO gives only voltage output but we want current output
+        - thats why we are using the 1ohm resistor
+        - Black wire : Function generator
+        - Grey wire : XY
+            - Connect Y to I (current) => Between 1k pot and 1ohm res
+            - Connect X to V (voltage) => Between 1ohm res and diode
+            - Plot X between 1k pot and source
+
+- Ans: threshold voltage of the diode = Diode Voltage : 0.65 V
+- Diode Current : 5mA
+
+### 2nd Part (Clipper)
+- Same circuit but with sinusoidal wave input with 50hz 
+
+> "mujhe laga aag lag gayi" - Anant 2024
+
+### 3rd Part (full wave bridge rectifier)
+- Math function (subtract : v2 - (-v1) = v2 + v1)
+- In DSO, we have instantaneous values but we want RMS so we set the scale knob beside math function to multiply with root 2
