@@ -6,7 +6,7 @@
   "/home/adi/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../lab4.srcs/sources_1/ip/ila_0/sim/ila_0.v" \
+  "../../../../lab4_hw.srcs/sources_1/ip/ila_0/sim/ila_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

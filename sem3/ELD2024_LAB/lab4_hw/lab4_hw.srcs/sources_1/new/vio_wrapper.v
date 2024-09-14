@@ -34,19 +34,11 @@ module vio_wrapper (
     .sec(sec)
   );
 
-
   vio_0 vio0 (
     .clk(Clk_100M),                // input wire clk
     .probe_in0(sec),    // input wire [5 : 0] probe_in0
     .probe_in1(min),    // input wire [5 : 0] probe_in1
     .probe_out0(reset)  // output wire [0 : 0] probe_out0
   );
-
-  ila_0 ila0 (
-    .clk(Clk_100M), // input wire clk
-    .probe0(sec), // input wire [5:0]  probe0
-    .probe1(min) // input wire [5:0]  probe1
-  );
-
 
 endmodule

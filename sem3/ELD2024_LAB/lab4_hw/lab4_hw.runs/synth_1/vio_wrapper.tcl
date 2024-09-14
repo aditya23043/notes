@@ -40,6 +40,12 @@ read_verilog -library xil_defaultlib {
   /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/new/top_count.v
   /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/new/vio_wrapper.v
 }
+read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
 read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
@@ -48,12 +54,6 @@ set_property used_in_implementation false [get_files -all /home/adi/repo/notes/s
 read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/vio_0/vio_0.xci
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/vio_0/vio_0.xdc]
 set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/vio_0/vio_0_ooc.xdc]
-
-read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -66,6 +66,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/constrs_1/imports/Downloads/Zed_cons.xdc
 set_property used_in_implementation false [get_files /home/adi/repo/notes/sem3/ELD2024_LAB/lab4_hw/lab4_hw.srcs/constrs_1/imports/Downloads/Zed_cons.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
