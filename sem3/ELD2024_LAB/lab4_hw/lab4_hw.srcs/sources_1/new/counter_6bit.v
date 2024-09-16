@@ -32,29 +32,29 @@ module counter_6bit (
 
   always @(posedge Clk_1Hz) begin
     if (reset)
-      sec_count_next <= 6'd0;
+      sec_count_reg <= 0;
     else
-      sec_count_next <= sec_count_reg;
+      sec_count_reg <= sec_count_next;
   end
 
   always @(*) begin
-    if (sec_count_reg == 6'd59)
-      sec_count_next = 6'd0;
+    if (sec_count_reg == 59)
+      sec_count_next = 0;
     else
       sec_count_next = sec_count_reg + 1;
   end
 
   always @(posedge Clk_1Hz) begin
     if (reset)
-      min_count_next <= 6'd0;
+      min_count_reg <= 0;
     else
-      min_count_next <= min_count_reg;
+      min_count_reg <= min_count_next;
   end
 
   always @(*) begin
-    if (sec_count_reg == 6'd59)
-      if(min_count_reg == 6'd59)
-        min_count_next = 6'd0;
+    if (sec_count_reg == 59)
+      if(min_count_reg == 59)
+        min_count_next = 0;
       else
         min_count_next = min_count_reg + 1;
     else

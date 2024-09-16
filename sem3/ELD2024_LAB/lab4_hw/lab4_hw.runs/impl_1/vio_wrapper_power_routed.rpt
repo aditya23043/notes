@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Fri Sep 13 20:27:13 2024
+| Date             : Sat Sep 14 18:39:45 2024
 | Host             : archlinux running 64-bit Arch Linux
 | Command          : report_power -file vio_wrapper_power_routed.rpt -pb vio_wrapper_power_summary_routed.pb -rpx vio_wrapper_power_routed.rpx
 | Design           : vio_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.243        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.138        |
+| Dynamic (W)              | 0.139        |
 | Device Static (W)        | 0.105        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 82.2         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.010 |        6 |       --- |             --- |
-| Slice Logic              |    <0.001 |     4143 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1235 |     53200 |            2.32 |
-|   Register               |    <0.001 |     2284 |    106400 |            2.15 |
-|   CARRY4                 |    <0.001 |       37 |     13300 |            0.28 |
-|   LUT as Shift Register  |    <0.001 |       83 |     17400 |            0.48 |
+| Slice Logic              |     0.001 |     4061 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     1216 |     53200 |            2.29 |
+|   Register               |    <0.001 |     2243 |    106400 |            2.11 |
+|   CARRY4                 |    <0.001 |       35 |     13300 |            0.26 |
+|   LUT as Shift Register  |    <0.001 |       78 |     17400 |            0.45 |
 |   LUT as Distributed RAM |    <0.001 |       24 |     17400 |            0.14 |
 |   F7/F8 Muxes            |    <0.001 |        3 |     53200 |           <0.01 |
-|   Others                 |     0.000 |      246 |       --- |             --- |
-| Signals                  |    <0.001 |     3038 |       --- |             --- |
+|   Others                 |     0.000 |      236 |       --- |             --- |
+| Signals                  |     0.001 |     2992 |       --- |             --- |
 | Block RAM                |    <0.001 |      0.5 |       140 |            0.36 |
 | MMCM                     |     0.126 |        1 |         4 |           25.00 |
 | I/O                      |    <0.001 |        1 |       200 |            0.50 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.012 |      0.008 |
+| Vccint    |       1.000 |     0.021 |       0.013 |      0.008 |
 | Vccaux    |       1.800 |     0.080 |       0.070 |      0.011 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -155,15 +155,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| vio_wrapper              |     0.138 |
+| vio_wrapper              |     0.139 |
 |   dbg_hub                |     0.003 |
 |     inst                 |     0.003 |
 |       BSCANID.u_xsdbm_id |     0.003 |
-|   t1                     |     0.133 |
+|   ila0                   |     0.007 |
+|     inst                 |     0.007 |
+|       ila_core_inst      |     0.007 |
+|   t1                     |     0.126 |
 |     cmt                  |     0.126 |
 |       inst               |     0.126 |
-|     ila0                 |     0.007 |
-|       inst               |     0.007 |
 |   vio0                   |     0.002 |
 |     inst                 |     0.002 |
 |       U_XSDB_SLAVE       |     0.001 |

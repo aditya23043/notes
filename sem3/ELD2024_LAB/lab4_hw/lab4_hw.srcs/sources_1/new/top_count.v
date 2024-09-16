@@ -47,12 +47,4 @@ module top_count (
       .Clk_1Hz(Clk_1Hz), .reset(reset), .sec(sec), .min(min)
   );
 
-  ila_0 ila0 (
-    .clk(Clk_100M), // input wire clk
-    .probe0(sec), // input wire [5:0]  probe0
-    .probe1(min), // input wire [5:0]  probe1
-    .probe2(reset), // input wire [0:0]  probe2
-    .probe3(Clk_1Hz)
-  );
-
 endmodule

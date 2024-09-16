@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
--- Date        : Fri Sep 13 20:05:00 2024
+-- Date        : Fri Sep 13 20:07:29 2024
 -- Host        : archlinux running 64-bit Arch Linux
 -- Command     : write_vhdl -force -mode synth_stub -rename_top ila_0 -prefix
 --               ila_0_ ila_0_stub.vhdl
@@ -17,8 +17,7 @@ entity ila_0 is
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 5 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 
 end ila_0;
@@ -27,7 +26,7 @@ architecture stub of ila_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,probe0[5:0],probe1[5:0],probe2[0:0],probe3[0:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,probe0[5:0],probe1[5:0],probe2[0:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "ila,Vivado 2019.1";
 begin
