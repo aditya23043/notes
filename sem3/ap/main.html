@@ -1,0 +1,856 @@
+<h1 id="cse-201-advanced-programming-lecture-1-12082024">CSE 201 :
+ADVANCED PROGRAMMING =&gt; Lecture 1 (12/08/2024)</h1>
+<h2 id="eval">Eval</h2>
+<ul>
+<li>Assignments : 20%</li>
+<li>Surprise Quizzes : 10%</li>
+<li>Mid sem : 25%</li>
+<li>End sem : 25%</li>
+<li>Project : 20%</li>
+<li>NOTE: must do 2 before mid sems and 2 before end sems even though
+there are 6 quizzes in total</li>
+</ul>
+<h2 id="oop-features">OOP FEATURES</h2>
+<h3 id="encapsulation">ENCAPSULATION</h3>
+<ul>
+<li>Private and public methods withing classes / methods in order to
+prevent clients with less privilidge from accessing those functions</li>
+<li>Making data private in order to prevent people with inadequate
+privilidges to access that data ### METHOD OVERLOADING</li>
+<li>Defining another function with same name with arguments with
+different data types in order to make it work with different data types
+### INHERITANCE</li>
+<li>Child class copies all methods from inherited parent class ###
+ABSTRACTION</li>
+<li>Hiding unnecessary details that the users should not care about ###
+METHOD OVERRIDING ### POLYMORPHISM</li>
+<li>If there are two child classes ‘B’ and ‘C’ that inherit from one
+parent class ‘A’</li>
+<li>Since ‘A’ had function X() defined in it, ‘B’ and ‘C’ also inherit
+it</li>
+<li>But then if we override those X() functions in both ‘B’ and ‘C’ and
+then call B.X() then JVM ensures that the new X() function inside ‘B’ is
+only called and not the parent X() function from ‘A’</li>
+</ul>
+<p>#:# BITWISE OPERATORS - &amp; : and - | : or - ^ : xor - ~ : nor -
+&lt;&lt; : left shift - &gt;&gt; : right shift</p>
+<h2 id="string">STRING</h2>
+<ul>
+<li>Immutable character array</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> greeting <span class="op">=</span> <span class="st">&quot;hello&quot;</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> greeting<span class="op">.</span><span class="fu">substring</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">3</span><span class="op">);</span></span></code></pre></div>
+<h1 id="lecture-2-140824">Lecture 2 (14/08/24)</h1>
+<h2 id="main">Main</h2>
+<ul>
+<li>With the static keyword, we do not need to initalize the class
+object to access it’s methods
+<ul>
+<li>Eg: System class initialization is not needed when we call
+System.out.println()</li>
+</ul></li>
+<li>With the public access modifier, we can access classes from outside
+the file</li>
+</ul>
+<h2 id="intro-contd">Intro contd</h2>
+<ul>
+<li>Instead of pointers, we have references</li>
+</ul>
+<h2 id="strings">Strings</h2>
+<h3 id="substrings">Substrings</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> something <span class="op">=</span> <span class="st">&quot;foo&quot;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> another <span class="op">=</span> something<span class="op">.</span><span class="fu">substring</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span><span class="dv">3</span><span class="op">);</span></span></code></pre></div>
+<h2 id="constructor">Constructor</h2>
+<ul>
+<li>This is a function which is called when a class object is
+initialized</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span> sys <span class="op">=</span> <span class="kw">new</span> <span class="bu">System</span><span class="op">();</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">);</span></span></code></pre></div>
+<ul>
+<li>The <code>new</code> keyword makes JVM allocate memory for the
+reference which is used to hold the class attributes and methods</li>
+</ul>
+<h2 id="string-builder">String Builder</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> builder  <span class="op">=</span> <span class="kw">new</span> <span class="bu">StringBuilder</span><span class="op">();</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>builder<span class="op">.</span><span class="fu">append</span><span class="op">(</span>ch<span class="op">);</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>builder<span class="op">.</span><span class="fu">append</span><span class="op">(</span>str<span class="op">);</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> longString  <span class="op">=</span> builder<span class="op">.</span><span class="fu">toString</span><span class="op">();</span></span></code></pre></div>
+<h1 id="lecture-3-190824">Lecture 3 (19/08/24)</h1>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Employee <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> name<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">double</span> salary<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> localDate hireDay<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Constructor</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Employee</span><span class="op">(</span><span class="kw">...</span><span class="op">){</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>Now we cannot call this :</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Employee e<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>e<span class="op">.</span><span class="fu">name</span><span class="op">);</span></span></code></pre></div>
+<ul>
+<li>because name is a private attribute of the class</li>
+</ul>
+<h2 id="array-of-objects">Array of objects</h2>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Employee<span class="op">[]</span> staff <span class="op">=</span> <span class="kw">new</span> Employee<span class="op">[</span><span class="dv">3</span><span class="op">];</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>staff<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;bruh&quot;</span><span class="op">,</span> <span class="kw">...</span><span class="op">);</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>staff<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">,</span> <span class="kw">...</span><span class="op">);</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>staff<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;else&quot;</span><span class="op">,</span> <span class="kw">...</span><span class="op">);</span></span></code></pre></div>
+<blockquote>
+<p>Class with main() method should ideally be different from the class
+whose objects it uses.</p>
+</blockquote>
+<h2 id="privatepublic">Private/Public</h2>
+<ul>
+<li>By default, every method and attribute is public</li>
+<li>Every time we call the <code>new</code> keyword, it stores the
+variable in the heap unlike the default datatype variable which are
+stored in the stack</li>
+<li>Private keyword for class members - cannot be accessed through
+public objects. Can only be accessed through class members.</li>
+<li>To make a class visible to the JVm and other files, you must declare
+it as public</li>
+<li>All public classes need their respective files</li>
+<li>Non-public classes need not have their own files</li>
+</ul>
+<h2 id="final-keyword">Final Keyword</h2>
+<ul>
+<li><p>similar to const in C</p></li>
+<li><p>E is a reference to any object of class employee e</p></li>
+<li><p>We use <code>final</code> keyword alongside the variable which is
+used to initalize an object of a class in order to prevent us from
+loosing the reference to that object</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">final</span> Employee e <span class="op">=</span> <span class="kw">new</span> Employee<span class="op">;</span></span></code></pre></div>
+<h2 id="static-keyword">Static Keyword</h2>
+<ul>
+<li>Can be used without the class object obnly with the class name
+only</li>
+<li>Oly one variable shared across all objects of the class</li>
+<li>Eg: System.out.println</li>
+</ul>
+<h1 id="tutorial-1-c214-210824">TUTORIAL 1 : C214 : 21/08/24</h1>
+<ul>
+<li>Interviews require : DSA + OOP + DBMS + OS</li>
+</ul>
+<h2 id="oop">OOP</h2>
+<ul>
+<li>Classes are a collection of data (methods and attributes)</li>
+<li>Calling a null pointer = skill issue L</li>
+</ul>
+<h1 id="lecture-4-210824">LECTURE 4 (21/08/24)</h1>
+<h2
+id="uml-unified-modeling-language-also-called-useless-modelling-language">UML
+: Unified Modeling Language (also called Useless modelling
+language)</h2>
+<ul>
+<li>UML Diagrams show relationships among classes and objects</li>
+<li>UML class diagram consists of one or more classes each with sections
+for class name, attributess (data), and operations (methods)</li>
+<li>eg:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Player</th>
+<th>-&gt;</th>
+<th>Die</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attributes</td>
+<td>-&gt;</td>
+<td>Attributes</td>
+</tr>
+<tr>
+<td>Methods</td>
+<td>-&gt;</td>
+<td>Methods</td>
+</tr>
+</tbody>
+</table>
+<h2 id="class-relationships">Class relationships</h2>
+<ul>
+<li>The whole point of OOP is that your code replicates real world
+objects, thus making your code readable and maintainable</li>
+<li>How are different classes related to each other?</li>
+</ul>
+<h3 id="most-common-class-relationships">Most common class
+relationships</h3>
+<ul>
+<li><a
+href="https://www.scientecheasy.com/2021/02/class-relationships-in-java.html/">Reference</a></li>
+</ul>
+<ol type="1">
+<li>Composition
+<ul>
+<li>One of the attributes of B is contained inside class A and also
+initializing it</li>
+<li>A “contains” B</li>
+<li>A instantiates B as well</li>
+<li>Class A contains objects of class B</li>
+<li>By default memory is not allocated until new keyword is called,
+rather keeps a reference to that class</li>
+<li>Diamond shaped arrow head is used to show that an object is
+“composed” of B</li>
+<li>Asymmetric: A knows about B but B has no way to get the objects of
+A</li>
+</ul></li>
+<li>Association
+<ul>
+<li>Defining but not referencing it</li>
+<li>A “knows-about” B</li>
+<li>Relationship between two objects</li>
+<li>but B is not a component of A</li>
+<li>B is not instantiated but being referred in A</li>
+<li>Symmetric relationship : both can access each other’s objects</li>
+<li>Objects MAY not be instantiated</li>
+<li>Solid arrow with regular arrow head in UML</li>
+</ul></li>
+<li>Dependency
+<ul>
+<li>Neither declaring it nor referencing it</li>
+<li>A “depends on” B</li>
+<li>… if A cannot carry out its work without B, but B is neither a
+component of A nor it has association with A</li>
+<li>Neither B has a component in A nor does B is instantiated in A but A
+depends on a service from B</li>
+<li>Eg: Inheritance</li>
+<li>Dotted arrow with a regular arrow head in UML</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Die <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> faceValue<span class="op">,</span> faces<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">roll</span><span class="op">()</span> <span class="op">{</span> <span class="kw">...</span> <span class="op">}</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player <span class="op">{</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">takeTurn</span><span class="op">(</span>Die die<span class="op">){</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        die<span class="op">.</span><span class="fu">roll</span><span class="op">();</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+</ol>
+<h3 id="coupling">Coupling</h3>
+<ul>
+<li>If several classes of an application program depend on each other,
+then we say that the coupling between classes is high.</li>
+</ul>
+<blockquote>
+<p>Note: referring to something that is not initialized = Exception
+(just like referencing null pointer in C) Note 2: In the association
+example, PetShop should be defined first in the main function because
+Note 3: In Java, objects do not store block of memory until a
+constructor function has been called through instantiation, it creates a
+reference EVERY OBJECT IS A REFERENCE BY DEFAULT</p>
+</blockquote>
+<h2 id="overloading">Overloading</h2>
+<ul>
+<li>Method Overloading
+<ul>
+<li>Redefinition of the methods again in inherited children classes
+inherited from the parent class (which contains that method as well)
+&gt; Note: during inheritance, the child inherits all data (including
+private stuff as well and constructors also) &gt; Child class can
+overwrite (NOT EDIT) the constructor of parent class</li>
+</ul></li>
+<li>Constructor Overloading</li>
+</ul>
+<h1 id="lecture-5-280824">LECTURE 5 (28/08/24)</h1>
+<h2 id="inheritance">INHERITANCE</h2>
+<ul>
+<li>Closely connected to polymorphism</li>
+<li>Referencing many related objects as one generic type</li>
+<li>Reference of parent class utilizing</li>
+</ul>
+<h1 id="lecture-6-310824">LECTURE 6 (31/08/24)</h1>
+<h2 id="inheritance-and-polymorphism">INHERITANCE AND POLYMORPHISM</h2>
+<ul>
+<li>Child class “extends” parent class</li>
+<li>All attributes and methods of the parent class are copied to the
+child class</li>
+<li>And the parent class has a reference to the child class</li>
+</ul>
+<h3 id="polymorphism">POLYMORPHISM</h3>
+<ul>
+<li>Method types : privare, static, final</li>
+<li>Static binding : we do not need the instance of the object to call
+its methods</li>
+<li>Dynamic binding</li>
+<li>Polymorphic associations : dynamic binding at runtime</li>
+<li>Everything is a reference : attribute, methods</li>
+<li>If there is a method in the child class with the same name as one in
+the parent class, the compiler doesnt know which one to call so, the
+compiler does dynamic binding in order to link those</li>
+<li>“Protected” methods : Can be inherited but cannot be called through
+an instance</li>
+<li>Java packages are like files in a GUI/LINUX filesystem</li>
+<li>“Static”, Final” and “Private” methods cannot be inherited even
+though all other methods which are public can be inherited</li>
+<li>Super is the reference to the parent class</li>
+<li>Fork() creates child processes</li>
+</ul>
+<h3 id="abstract-classes">ABSTRACT CLASSES</h3>
+<ul>
+<li>The parent class is not defining that method but the child class is
+the one that provides it a definition</li>
+<li>If you have even a single <code>abstract</code> method, you NEED to
+make the class <code>abstract</code></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> Person<span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">abstract</span> <span class="bu">String</span> <span class="fu">getDescription</span><span class="op">();</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">extends</span> Person <span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getDescription</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">...</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="object">OBJECT</h2>
+<ul>
+<li>Parent of all classes (implicit); not of primitive types - int,
+char, byte, etc</li>
+<li>Can be assigned to object at any class</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span> obj <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">,</span> <span class="dv">3000</span><span class="op">);</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">// type casting to another object without any loss of information unlike float to decimal</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Employee e <span class="op">=</span> <span class="op">(</span>Employee<span class="op">)</span> obj<span class="op">;</span></span></code></pre></div>
+<h3 id="methods">METHODS</h3>
+<ol type="1">
+<li>Equals() method
+<ul>
+<li>Whether they point / refer to the same object or not (default) or
+same value or not, etc</li>
+<li>Object class defines equal(). Other classes can extend it with their
+own definition</li>
+</ul></li>
+<li>toString() method
+<ul>
+<li>Used to print a string equivalent information of the class, eg.
+System.out.println(toString(s));</li>
+<li>The return type is String and name is toString()</li>
+<li>“.” : dereference operator</li>
+<li>Used to access the values of a reference</li>
+</ul></li>
+</ol>
+<h2 id="object-wrappers-and-autoboxing">OBJECT WRAPPERS AND
+AUTOBOXING</h2>
+<ul>
+<li>Object corresponding to a primitive type [Integer, Long, Flloat,
+Double, Short, Byte and Boolean] (case sensitive)</li>
+<li>Their objects are immutable - once a wrapper object has been created
+their values cannot be changed</li>
+<li>Methods inside Integer and other primitive types are final so we
+cannot modify it and we cannot inherit it</li>
+</ul>
+<pre><code>Integer[] list;
+list = new Integer[500];
+list[0] = 1;
+list[1] = 1;
+list[i]++;</code></pre>
+<ul>
+<li>But list[i] == list[j] fails</li>
+<li>For that, we use Equals method</li>
+<li>This works as well:
+<code>list[i].intValue() == list[j].intValue()</code></li>
+</ul>
+<h2 id="enum-classes">ENUM CLASSES</h2>
+<ul>
+<li>These enums have constructors as well</li>
+</ul>
+<pre><code>public enum Size {
+
+    SMALL(&quot;S&quot;), MEDIUM(&quot;M&quot;), LARGE(&quot;L&quot;), EXTRA_LARGE(&quot;XL&quot;);
+
+    private String abbreviation;
+
+    private Size(String abbreviation) { this.abbreviation = abbreviation; }
+    public String getAbbreviation() { return abbreviation; }
+
+}
+
+Size s = Enum.valueOf(Size.class, &quot;SMALL&quot;);
+</code></pre>
+<h1 id="lecture-7-020924">LECTURE 7 (02/09/24)</h1>
+<h2 id="generic-array-lists">Generic Array lists</h2>
+<ul>
+<li>Generic class with a type parameter</li>
+<li>Provides a dynamically growing (or shrinking) array of objects</li>
+<li><code>ArrayList&lt;Integer&gt; myList = new ArrayList&lt;Integer&gt;();</code></li>
+</ul>
+<h1 id="lecture-8-040924">LECTURE 8 (04/09/24)</h1>
+<ul>
+<li>Interfaces are classes has nothing, no attributes, no methods.</li>
+<li>Expects the user to define all those things</li>
+<li>so, instead of extends, we use <code>implements</code> keyword to
+inherit an interface</li>
+<li>Inner class means a class inside a class (nesting)</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> TalkingClock <span class="op">{</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    privat <span class="dt">int</span> interval<span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">boolean</span> beep<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">TalkingClock</span><span class="op">(){</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">class</span> TimePrinter <span class="kw">implements</span> <span class="bu">ActionListener</span> <span class="op">{</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Inner class</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>What if both the outer class and inner class have the same attribute
+beep?</li>
+</ul>
+<pre><code>if (TalkingClock.this.beep){
+    Toolkit.getDefaultToolkit().beep();
+}</code></pre>
+<ul>
+<li>Accessible without requiring an object</li>
+<li>Outer class encapsulates inner class</li>
+<li>We can define a class which implements an interface without naming
+it</li>
+<li>Same as anonymous class</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span><span class="op">(</span><span class="dt">int</span> interval<span class="op">,</span> <span class="dt">boolean</span> beep<span class="op">){</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> listener <span class="op">=</span> <span class="kw">new</span> <span class="bu">ActionListener</span><span class="op">(){</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">public</span> <span class="dt">void</span> <span class="fu">actionPerformed</span><span class="op">(</span><span class="bu">ActionEvent</span> event<span class="op">){</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">...</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li><code>var</code> in java is same as <code>:=</code> in go</li>
+<li>Automatically assigns data type</li>
+<li>Syntax for anonymous class</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> <span class="fu">SuperType</span><span class="op">(</span>params<span class="op">){</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    inner <span class="kw">class</span> methods and attributes<span class="kw">...</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="exceptions-and-exception-handling">Exceptions and Exception
+Handling</h2>
+<ul>
+<li>Array out of error bounds</li>
+<li>IOExceptions; eg: File not found</li>
+<li>Mathematical Exception: divide by zero, Not-A-Number</li>
+<li>Exceptions are also classes</li>
+<li>Every error is an event</li>
+<li>And every event has an event handler</li>
+</ul>
+<pre><code>Throwable
+|
+|__ Error
+|   |__ ...
+|__ Exception
+    |__ IOException
+    |   |__ ...
+    |__ Runtime Exception
+    |   |__ ...
+    |__ ...</code></pre>
+<ul>
+<li>We can create our own excpetion by extending one of these abstract
+exception classes</li>
+<li>Note: we cannot extend the throwable class</li>
+</ul>
+<h3 id="stackframe">STACKFRAME</h3>
+<ul>
+<li>A region of stack reserved for local variables and other stuff of a
+specific function / method / program</li>
+<li>Every time an exception is thrown and if it has to handle that, a
+new stack frame is made</li>
+</ul>
+<h2 id="throwing-an-exception">Throwing an exception</h2>
+<ul>
+<li>You have to specifically define that the specific class throws an
+exception</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> <span class="fu">readData</span><span class="op">(</span><span class="bu">Scanner</span> in<span class="op">)</span> <span class="kw">throws</span> <span class="bu">EOFException</span> <span class="op">{</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span><span class="op">(</span><span class="kw">...</span><span class="op">){</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span><span class="bu">Condition</span><span class="op">){</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">EOFException</span><span class="op">();</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="handling-that-exception">Handling that exception</h2>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">readData</span><span class="op">(</span><span class="kw">...</span><span class="op">);</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">EOFException</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span><span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h1 id="lecture-9-090924">LECTURE 9 (09/09/24)</h1>
+<h2 id="exceptions">Exceptions</h2>
+<ul>
+<li>Exceptions will slow down programmes</li>
+<li>Note: try and catch blocks have separate stack frames</li>
+<li>It is better to use an if(..)else(..) because we do not return to
+the try stmt if an exception is caught since a new stackframe is created
+for the catch block and the try block stackframe is (eventually) deleted
+by the garbage collector
+<ul>
+<li>We cannot return from a catch and resume to whatever was being done
+in the try block</li>
+<li>Whereas, in if else we can use <code>goto</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span><span class="op">(</span>Excpetion e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>e<span class="op">)</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>Here, the .toString function of the <code>e</code> class is run
+whenever we try to print it</li>
+<li>if .toString does not exist, it prints the reference to the
+object</li>
+<li>Because PrintStream.println has an overload that takes an Object,
+and then calls its toString method.</li>
+</ul>
+<h2 id="try-catch-finally">Try, Catch, Finally</h2>
+<ul>
+<li>After all try, catch blocks, just before the program terminates, the
+finally block is called</li>
+<li>Special block of code that is executed whether or not an exception
+is thrown</li>
+<li>Finally is like a destructor for try-catch blocks</li>
+<li>One catch per exception / One catch for all Exceptions : Both
+acceptable</li>
+<li>Methods tells Java compiler that what kind of errors it can
+throw</li>
+<li>The lowermost heirarchy of exceptions is preferred (i.e. the
+specific exception rather than its parent generalized class) by the JVM
+<ul>
+<li>i.e. if FileNotFoundException error is defined and is thrown, it
+will be preferred in catch stmt rather than its parent, Exception</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Something <span class="op">{</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">loadimg</span><span class="op">(</span><span class="bu">String</span> s<span class="op">)</span> <span class="kw">throws</span> <span class="bu">FileNotFoundException</span><span class="op">,</span> <span class="bu">EOFException</span><span class="op">,</span> SomethingElseException <span class="op">{</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="extending-parent-exception">Extending parent Exception</h2>
+<ul>
+<li>Both constructors work and serve similar purpose</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FileFormatException <span class="kw">extends</span> <span class="bu">IOException</span> <span class="op">{</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">FileFormatException</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">FileFormatException</span><span class="op">(</span><span class="bu">String</span> gripe<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">super</span><span class="op">(</span>gripe<span class="op">);</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">...</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="catching-what-was-thrown">Catching what was thrown</h2>
+<ul>
+<li><p>Both works</p></li>
+<li><p>Handling 2 exceptions together</p></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">FileNotFoundException</span> <span class="op">|</span> <span class="bu">UnknownHostException</span> e<span class="op">){</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>Handling each exception individually</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">FileNotFoundException</span> e<span class="op">){</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">UnknownHostException</span> e<span class="op">){</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="rethrowing-exceptions">Rethrowing exceptions</h2>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">SQLException</span> e<span class="op">){</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="fu">ServletException</span><span class="op">(</span><span class="st">&quot;database error: &quot;</span> <span class="op">+</span> e<span class="op">.</span><span class="fu">getMessage</span><span class="op">());</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="assertions">ASSERTIONS</h2>
+<ul>
+<li>We have 3 ways to handle with errors
+<ul>
+<li>If else blocks with conditions</li>
+<li>Try Catch block with specific error name</li>
+<li>Assertions</li>
+</ul></li>
+<li>Used for debug purposes</li>
+<li>Not used in production code</li>
+<li>Faster execution than throwing exceptions</li>
+<li>Irrecoverable</li>
+<li>Terminates the program</li>
+<li><code>assert [condition];</code></li>
+<li><code>assert [condition] : [expression];</code></li>
+<li>Assertions = Exceptions which you cannot catch</li>
+<li>Check [condition]. If false then create an object with argument
+[expression] of type AssertionError.</li>
+<li>And JVM catches it and prints the details presented in the
+[expression]</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>x <span class="op">&gt;</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>x <span class="op">&gt;</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">throw</span> <span class="kw">new</span> <span class="fu">exception</span><span class="op">(</span><span class="st">&quot;myexception&quot;</span><span class="op">);</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span><span class="op">(</span>exception ep<span class="op">){</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> x <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">:</span> <span class="kw">new</span> <span class="bu">String</span><span class="op">(</span><span class="st">&quot;x &gt; 0&quot;</span><span class="op">);</span></span></code></pre></div>
+<h2 id="logging">LOGGING</h2>
+<ul>
+<li>We use domain sockets to tell syslog to dump log files</li>
+<li>Its a different process than the main program</li>
+<li>Everytime you type to a terminal, the system needs to instantly pass
+it to the graphics buffer to show on the monitor</li>
+<li>But writing to a file, means writing to a buffer (cache) and then it
+is written to the main storage on write command</li>
+<li>And since writing to main storage is slow whereas writing to the
+cache is faster and hence writing to a file is faster than writing to a
+console</li>
+<li>Also, decoupling the logger program means making the logging
+mechanism separate than the main program and hence does not depend on
+the main program’s execution</li>
+<li>Also, some low priority messages can be missed in certain cases
+without any penalty</li>
+</ul>
+<h3 id="in-java">In java</h3>
+<ul>
+<li><code>Logger.getGlobal().info("File-&gt;Open menu item selected);</code></li>
+<li>Info is a log level here</li>
+<li>Syslogs has levels in logging
+<ul>
+<li>SEVERE</li>
+<li>WARNING</li>
+<li>INFO</li>
+<li>CONFIG</li>
+<li>FINE</li>
+<li>FINER</li>
+<li>FINEST</li>
+</ul></li>
+<li>Two methods used for logging</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">throwing</span><span class="op">(</span><span class="bu">String</span> className<span class="op">,</span> <span class="bu">String</span> methodName<span class="op">,</span> <span class="bu">Throwable</span> t<span class="op">);</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">log</span><span class="op">(</span><span class="bu">Level</span> l<span class="op">,</span> <span class="bu">String</span> message<span class="op">,</span> <span class="bu">Throwable</span> t<span class="op">);</span></span></code></pre></div>
+<ul>
+<li>Child throws an excpetion and parent catches it and logs it</li>
+<li>The parent’s logger can be connected to the child’s logger</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span><span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(..){</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="bu">IOException</span><span class="op">(</span><span class="st">&quot;...&quot;</span><span class="op">);</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        logger<span class="op">.</span><span class="fu">throwing</span><span class="op">(</span><span class="st">&quot;commycompany.mylib.Reader&quot;</span><span class="op">,</span> <span class="st">&quot;read&quot;</span><span class="op">,</span> e<span class="op">);</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> e<span class="op">;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> e<span class="op">){</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Logger</span><span class="op">.</span><span class="fu">getLogger</span><span class="op">(</span><span class="st">&quot;my.mycompany.myapp&quot;</span><span class="op">).</span><span class="fu">log</span><span class="op">(</span><span class="bu">Level</span><span class="op">.</span><span class="fu">WARNING</span><span class="op">,</span> <span class="st">&quot;Reading Image&quot;</span><span class="op">,</span> e<span class="op">);</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h1 id="lecture-10-110924">LECTURE 10 (11/09/24)</h1>
+<h2 id="generic-classes">GENERIC CLASSES</h2>
+<ul>
+<li>Just like unions in C</li>
+<li>But implementing it might not result in an optimized union since we
+cannot explicitly control memory</li>
+<li>We can implement them using Object (supermost class in context of
+heirarchy)</li>
+</ul>
+<h2 id="generic-programming">Generic Programming</h2>
+<ul>
+<li><T> : container / template
+<ul>
+<li>Can hold any non-primitive type / or any class</li>
+<li>Placeholder</li>
+<li>Cannot template’s type after 1st definition</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> My GenericList <span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">ArrayList</span> <span class="op">&lt;</span>T<span class="op">&gt;</span> myList<span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    privat T first<span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    privat T second<span class="op">;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Pair</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">first</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span> <span class="co">// will uninitialize it</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">second</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span> <span class="co">// will uninitialize it</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Pair</span><span class="op">(</span>T first<span class="op">,</span> T second<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">first</span> <span class="op">=</span> first<span class="op">;</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">second</span> <span class="op">=</span> second<span class="op">;</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> T <span class="fu">getFirst</span><span class="op">()</span> <span class="op">{</span> <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">first</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> T <span class="fu">getSecond</span><span class="op">()</span> <span class="op">{</span> <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">second</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="object-initialization">Object Initialization</h3>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">var</span> files <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">// or</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> files <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">();</span></span></code></pre></div>
+<h3 id="advantage-of-wrapper-classes-over-primitive-types">Advantage of
+Wrapper Classes over primitive types</h3>
+<ul>
+<li>To bring the super class Object unlike primitive types which are
+like</li>
+<li>Is a part of a heirarchy under Object</li>
+<li>Is a class</li>
+</ul>
+<h3 id="generic-methods">GENERIC METHODS</h3>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ArrayAlg <span class="op">{</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="op">&lt;</span>T<span class="op">&gt;</span> T get <span class="fu">Middle</span><span class="op">(</span>T something<span class="op">,</span> <span class="kw">...</span> a<span class="op">)</span> <span class="op">{</span> <span class="co">// a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">[</span>a<span class="op">.</span><span class="fu">length</span><span class="op">/</span><span class="dv">2</span><span class="op">];</span>                            <span class="co">// a is the array/container </span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> middle <span class="op">=</span> ArrayAlg <span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> <span class="fu">getMiddle</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">,</span> <span class="st">&quot;foo&quot;</span><span class="op">,</span> <span class="st">&quot;bar&quot;</span><span class="op">);</span>     <span class="co">// the arguments passed are treated as part of an array</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> middle <span class="op">=</span> ArrayAlg<span class="op">.</span><span class="fu">getMiddle</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">,</span> <span class="st">&quot;foo&quot;</span><span class="op">,</span> <span class="st">&quot;bar&quot;</span><span class="op">);</span></span></code></pre></div>
+<h3 id="generic-classes-with-two-fields">generic classes with two
+fields</h3>
+<ul>
+<li>T1 and T2 can be any non primitive type</li>
+<li>Can be same as well</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Pair <span class="op">&lt;</span>T1<span class="op">,</span> T2<span class="op">&gt;</span> <span class="op">{</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> T1 key<span class="op">;</span> </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> T2 value<span class="op">;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Pair</span><span class="op">(</span>T1 _k<span class="op">,</span> T2 _v<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">key</span> <span class="op">=</span> _k<span class="op">;</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">value</span> <span class="op">=</span> _v<span class="op">;</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> T1 <span class="fu">getKey</span><span class="op">(){</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">key</span><span class="op">;</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> T2 <span class="fu">getValue</span><span class="op">(){</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="fu">value</span><span class="op">;</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li><code>Object array[] = new Integer[10];</code> Legal Statement;
+allowed
+<ul>
+<li>Array of objects pointing to an array of integers</li>
+</ul></li>
+<li><code>List&lt;Object&gt; myList = new ArrayList&lt;Integer&gt;();</code>
+this gives compilation error
+<ul>
+<li>List of objects pointing to an integer list</li>
+</ul></li>
+<li>Illegal (Errors)
+<ul>
+<li>An object array cannot point to generic type arrays ```java
+List<Integer> intList[] = new ArrayList<Integer>[5]; List<String>
+strList[] = new ArrayList<String>();</li>
+</ul></li>
+</ul>
+<p>strList.add(“something”); Object objArray[] = intList; objArray[0] =
+strList;</p>
+<pre><code>
+- ClassCastException (error) `int my_num = objArray[0].get(0);`
+
+### NOTE
+- Arrays are covariant
+    - Subclass array type can be assigned to superclass array reference
+- Generics are invariant
+    - Subclass type generic type cannot be assigned to superclass generic reference
+
+## Bounds For Type Variables
+- `public static &lt;T extends Comparability&gt; T min(T[] a) {...}`
+- Specificying what all it can take
+- this is NOT inheritance
+- This also works : `T extends Comparable &amp; Serializable`
+    - they are abstract class / interface
+    - At a time a class can only extend one &quot;thing&quot;, so it extends either of the two at an instance
+&gt; Note: we need `implement` for interfaces whereas `extends` otherwise
+
+## Type Erasers
+- Rule: Erase and replace generic type with a raw type (for bounded types) and Object for unbounded
+```java
+public class Interval &lt;T extends Comparable &amp; Serializable&gt; implements Serializable {
+    private T lower;
+    private T upper;
+    ...
+    public Interval(T first, T second) {
+        if(first.compareTo(second) &lt;= 0) {
+            lower = first;
+            upper = second;
+        }
+        else {
+            lower = second;
+            upper = first;
+        }
+    }
+}</code></pre>
+<ul>
+<li>To</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Interval <span class="kw">implements</span> <span class="bu">Serializable</span> <span class="op">{</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">Comparable</span> lower<span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">Comparable</span> upper<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">...</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Interval</span> <span class="op">(</span><span class="bu">Comparable</span> first<span class="op">,</span> <span class="bu">Comparable</span> second<span class="op">){</span> <span class="kw">...</span> <span class="op">}</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
