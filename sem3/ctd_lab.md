@@ -109,3 +109,8 @@
 ### 3rd Part (full wave bridge rectifier)
 - Math function (subtract : v2 - (-v1) = v2 + v1)
 - In DSO, we have instantaneous values but we want RMS so we set the scale knob beside math function to multiply with root 2
+
+## LTSPICE SIMULATION
+
+### Clipper (Part A)
+- We achieve R = 2860.7 as the resistance value when source voltage is 15V DC and diode current is 5mA with diode forward voltage = 0.7V

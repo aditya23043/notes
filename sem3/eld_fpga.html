@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ELD FPGA Revision</title>
+  </head>
+  <body>
+
+  <style>
+  
+    * {
+      font-family: "CaskaydiaCove NFM";
+      font-weight: regular;
+    }
+
+    html {
+      padding: 1rem;
+    }
+
+    code {
+      font-size: 1.3rem;
+    }
+  
+  </style>
+
+  <h1>FPGA Architecture</h1>
+
+  <pre><code>
+CLB (Configurable Logic Block)
+|__ 2 Slices
+|   |__ Slice L (LUT can be used only for logic)
+|   |__ Slice M / L (LUT can be used for both logic and memory / SRL)
+|       |__ Mulitplexers
+|       |__ Carry Chains (used for arithmetic operations)
+|       |__ 4 Flip Flops / Latches
+|       |__ 4 Additional Flip Flops
+|       |__ 4 6-input LUTs
+|           |__ A[6:1] = Address
+|           |__ W[6:1] = Write Data
+|           |__ O5 : outputted either through mux as (A/B/C/D)MUX or through flip flop (A/B/C/D)Q
+|           |__ O6 : outputted directly as (A/B/C/D)
+|           |__ F7(A/B)MUX is used to combine output of two 6-bit LUTs to obtain one 7-bit LUT
+|           |__ F8(A/B)MUX is used to combine output of all four 6-bit LUTs to obtain one 8-bit LUT (256 locations)
+|__ 8 LUTs
+|__ 16 Flip Flops
+|__ 2 Arithmetic &amp; Carry Chains
+  </code></pre>
+
+  <p>Note: Slice L only has address A[6:1], not data input W[6:1]; whereas, Slice M has both</p>
+  
+  </body>
+</html>
+
