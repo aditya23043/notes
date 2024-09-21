@@ -114,3 +114,73 @@
 
 ### Clipper (Part A)
 - We achieve R = 2860.7 as the resistance value when source voltage is 15V DC and diode current is 5mA with diode forward voltage = 0.7V
+
+# LAB 3 : FILTERS (20/09/2024)
+- Dampens pulses to ripples
+
+## Component
+- Passive: R, L, C
+    - They do not require energy to work
+- Active: Op Amp, Transistors
+    - They require energy to work
+
+## Filters
+- Low pass filter : passes only low frequencies
+- High pass filter : pass high frequencies only
+- Band pass filter : combination of both; we need specific band of frequencies
+- Band stop filter : stopping a particular band of frequencies and letting the rest pass
+
+### Graph
+- dB (logarithmic way of leading the frequency and can be heard by human) vs freq
+
+### Cutoff frequency
+- ~70.7%
+- The value at which signal cuts x-axis
+- Value where signal attenuates (goes down)
+- Fourier transform => Bode plot
+- db = 20 log (Vout/Vin)
+
+### ROLLOFF Rate / Freq
+- when slope decreases
+- (-20 * n) db / decade
+- per decade means -> 1, 10, 100, 1000
+- per octane means -> 1, 2, 4, 8, 16
+- If we have one reactive element, we have rolloff rate = 20 db/dec and order of the filter = 1 (n)
+- In RLC circuit, we have 2 reactive elements, n = 2, rolloff rate = 40 db/dec i.e. faster decreasing slope i.e. steeper slope, i.e. better output
+- Higher the value of n, better the output (frequency response)
+- Peak = ripples, lower the better
+- In all, load = 100 ohms
+- Yellow capacitor: no polarity 1mH
+- Capacitor => Short leg: negative, long leg: positive
+- 10mH inductor > Brown black red grey > Inductor > thick resistor
+
+## IMP
+- Capacitor passes AC
+    - Hence it is connected in parallel
+- Inductor passes DC
+    - Hence it is connected in series
+
+## LAB
+- Series : voltage + Inductor (1mH/10mH) and load resistor (100ohm)
+- Input from wave gen
+
+## READING
+### 2
+- 10Hz
+    - Input
+        - Amplitude: 962.5mV 
+        - P2P: 2V
+    - Output
+        - Amplitude: -1V 
+        - P2P: 750mV
+
+- 1MHz
+    - Input
+        - Amplitude: 710mV
+        - P2P: 1.422V
+    - Output
+        - Amplitude: -27.5mV
+        - P2P: 65mV
+
+- We get similar readings with 10kHz as with 1MHz
+
