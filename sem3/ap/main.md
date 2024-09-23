@@ -746,3 +746,109 @@ public class Interval implements Serializable {
     public Interval (Comparable first, Comparable second){ ... }
 }
 ```
+
+# LECTURE 11 (23/09/2024)
+- Primitive types => Non-Primitive types => Generic Classes
+- Generic classes are collections
+- Here, E can be any type
+
+```java
+public interface Queue<E>{
+    void add(E element);
+    E remove();
+    int size();
+    Iterator<E> iterator();
+}
+```
+
+> Note: normal arrow = extends and dotted means implements
+
+```
+Iteratable*
+|__ Collection*
+    |__ List*
+    |   |__ ArrayList
+    |   |__ LinkedList
+    |   |__ Vector
+    |       |__ Stack
+    |__ Queue*
+    |   |__ PriorityQueue
+    |   |__ Dequeue*
+    |       |__ ArrayDequeue
+    |__ Set*
+        |__ HashSet
+        |__ LinkedHashSet
+        |__ SortedSet*
+            |__ Tree Set
+
+Here, [something]* means it is an interface
+```
+
+## Iterator
+
+```java
+public interface Iterator<E>{
+    E next();
+    boolean hasNext();
+    void remove();
+    defaut void forEachRemaining(Consumer <? super E> action);
+    // <? super E> : anything that is a super class of E
+    // called a wildcard
+}
+
+// multiple interfaces can be implemented by the same class
+public class something() implements Collection, Iterator {
+
+    Collection<String> c = new [anything derived from Collection like ArrayList/Vector/LinkedList/etc]
+    // this will never happen
+    // Collection<String> c = new Collection
+    // because constructor of an interface does not exist
+    
+    Iterator<String iter = c.iterator();
+    while(iter.hasNext()){
+        String element = iter.next();
+        // do something with the element
+    }
+}
+```
+
+> Interface does not has a constructor
+
+- Iterator is an object used to iterate through elements of a collection
+
+### Inline in C
+- Instead of jumping to a function when called in the main function, inline functions' statements are directly copied to the current lines in order to increase speed
+
+### Lambda Function in Java
+```java
+(String first, String second) -> {
+    // do something
+}
+
+// OR
+
+(String first, String second) -> return first + second;
+```
+
+### Removing consecutive elements
+```java
+Iterator<String> it = c.iterator();
+it.next(); // moves from beginning to between index 0 and 1
+it.remove(); // removes the object just behind the iterator
+
+// so, logically, this gives an error
+it.remove();
+it.remove();
+// because the JVM still has the reference to the removed object
+// to update it, we need to do it.next() before removing
+// because remove just tells the JVM garbage collector to remove the object
+
+// this works
+it.remove();
+it.next();
+it.remove();
+```
+
+### Linked List
+- In java, all linked lists are (circular) double linked lists
+- You don't go backwards but we go only forward in a circle, i.e. point to the first object when .next() called on the last object
