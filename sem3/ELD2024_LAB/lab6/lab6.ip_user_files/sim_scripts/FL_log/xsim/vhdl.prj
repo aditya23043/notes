@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../lab6.srcs/sources_1/ip/FL_log/sim/FL_log.vhd" \
+
+nosort

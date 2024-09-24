@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab6/lab6.srcs/sources_1/ip/FL_inverse/sim/FL_inverse.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_inverse'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab6/lab6.srcs/sources_1/ip/FL_log/sim/FL_log.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_log'

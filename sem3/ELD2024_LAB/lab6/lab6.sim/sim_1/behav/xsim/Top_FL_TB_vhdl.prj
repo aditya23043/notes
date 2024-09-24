@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../lab6.srcs/sources_1/ip/FL_inverse/sim/FL_inverse.vhd" \
+"../../../../lab6.srcs/sources_1/ip/FL_log/sim/FL_log.vhd" \
+
+# Do not sort compile order
+nosort
