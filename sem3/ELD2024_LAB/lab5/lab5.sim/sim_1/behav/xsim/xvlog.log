@@ -1,4 +1,24 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sim_1/new/counter_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module counter_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/vio_0/sim/vio_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vio_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/FSM_moore_1101.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FSM_moore_1101
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/imports/Downloads/clk_div_rtl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div_rtl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/pb_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pb_clk
+INFO: [VRFC 10-2458] undeclared symbol inp_pulse, assumed default net type wire [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/pb_clk.v:29]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_FSM
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'inp_1' is not allowed [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v:31]
+INFO: [VRFC 10-2458] undeclared symbol pb_clk, assumed default net type wire [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v:57]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vio_wrapper
+INFO: [VRFC 10-2458] undeclared symbol pb_clk, assumed default net type wire [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v:39]
+INFO: [VRFC 10-2458] undeclared symbol inp_0, assumed default net type wire [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v:42]
+INFO: [VRFC 10-2458] undeclared symbol inp_1, assumed default net type wire [/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v:43]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

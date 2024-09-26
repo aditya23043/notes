@@ -68,7 +68,7 @@ module FSM_moore_1101 (
               next_state = S0;
           S4:
             if(inp_1 == 1)
-              next_state = S1;
+              next_state = S4;
             else
               next_state = S0;
           default:
@@ -82,7 +82,7 @@ module FSM_moore_1101 (
           if(next_state == S4)
             detect = 1;
           else
-            devtect = 0;
+            detect = 0;
         end
 
   assign FSM_state = present_state;

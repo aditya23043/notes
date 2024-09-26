@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.runs/synth_1'
+HD_PWD='/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

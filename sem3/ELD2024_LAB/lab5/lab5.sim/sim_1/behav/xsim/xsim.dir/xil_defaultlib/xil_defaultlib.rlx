@@ -1,0 +1,13 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.sim/sim_1/behav/xsim/glbl.v,1724778608,verilog,,,,glbl,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/imports/Downloads/clk_div_rtl.v,1725338393,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/pb_clk.v,,clk_div_rtl,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,1725337843,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/FSM_moore_1101.v,,clk_wiz_0,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,1725337843,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/vio_0/sim/vio_0.v,1726548899,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,,vio_0,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/FSM_moore_1101.v,1727336621,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/imports/Downloads/clk_div_rtl.v,,FSM_moore_1101,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/pb_clk.v,1726547836,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v,,pb_clk,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v,1727342756,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v,,top_FSM,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v,1726549228,verilog,,,,vio_wrapper,,,../../../../lab5.srcs/sources_1/ip/clk_wiz_0;../../../../lab5.srcs/sources_1/ip/vio_0/hdl,,,,,

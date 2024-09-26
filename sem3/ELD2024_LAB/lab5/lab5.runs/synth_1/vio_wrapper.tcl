@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 create_project -in_memory -part xc7z020clg484-1
 
@@ -26,34 +24,29 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.cache/wt [current_project]
-set_property parent.project_path /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property webtalk.parent_dir /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.cache/wt [current_project]
+set_property parent.project_path /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:zedboard:part0:1.1 [current_project]
-set_property ip_output_repo /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.cache/ip [current_project]
+set_property ip_output_repo /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/imports/Downloads/clk_div_rtl.v
-  /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/new/counter_6bit.v
-  /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/new/top_count.v
-  /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/new/vio_wrapper.v
+  /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/FSM_moore_1101.v
+  /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/imports/Downloads/clk_div_rtl.v
+  /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/pb_clk.v
+  /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/top_FSM.v
+  /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/new/vio_wrapper.v
 }
-read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/vio_0/vio_0.xci
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/vio_0/vio_0.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/vio_0/vio_0_ooc.xdc]
-
-read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+read_ip -quiet /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/vio_0/vio_0.xci
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/vio_0/vio_0.xdc]
+set_property used_in_implementation false [get_files -all /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/sources_1/ip/vio_0/vio_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -63,8 +56,8 @@ set_property used_in_implementation false [get_files -all /home/adi/repo/notes/s
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/constrs_1/imports/Downloads/Zed_cons.xdc
-set_property used_in_implementation false [get_files /home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/constrs_1/imports/Downloads/Zed_cons.xdc]
+read_xdc /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/constrs_1/imports/Downloads/Zed_cons.xdc
+set_property used_in_implementation false [get_files /home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.srcs/constrs_1/imports/Downloads/Zed_cons.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

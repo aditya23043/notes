@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.runs/impl_1'
+HD_PWD='/home/adi/repo/notes/sem3/ELD2024_LAB/lab5/lab5.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log vio_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source vio_wrapper.tcl -notrace
 
 

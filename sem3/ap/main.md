@@ -852,3 +852,146 @@ it.remove();
 ### Linked List
 - In java, all linked lists are (circular) double linked lists
 - You don't go backwards but we go only forward in a circle, i.e. point to the first object when .next() called on the last object
+
+# TUTORIAL : 25/09/24
+
+## OBJECT CLASS
+
+### toString(): String
+- returns class instance name + its memory by default
+
+### equals(): boolean
+- calls the toString methods of two different objects to see if the condition satisfies
+- == will compare the memory addresses for Reference data type and .equals() compares value whereas in primitive data type, == will compare only values
+- By default, equals() will compare memory addresses
+
+### getClass({class_instance_name}): Class<T>
+- returns class object
+
+### clone()
+- `Employee emp2 = (Employee) emp.clone();`
+    - Attributes which are classes (i.e. Reference data type) will get a shallow copy is by reference i.e. the copied value also change with change in the initial object's value
+    - Attributes which are primitive data type will get a deep copy i.e. it will create a new memory and each other's values are independent
+- by default copies the value of primitive data types from one class to another
+- To override the method
+    - import java.lang.Cloneable;
+    - you need to implement Clonable because it is an interface
+    - clone() is protected
+- `Employee emp2 = emp;`
+    - emp2 references emp
+    - both share same memory
+
+
+# LECTURE 12 (25/09/24)
+- Midsem syllabus : till monday's class
+- Why are we looking at random syntax?
+    - Up until the last decade, Java had classes for its standard libraries
+    - But now, we have generic classes for standard libraries, alongside the classes for backwards compatibility
+- We use standard libraries because it has optimized implementations
+
+- Extends something from the object list and implements something from the collection objects and implements an iterator
+
+## Linked List
+- `LinkedList.add()` always adds at the end. What if i want to add in the middle?
+- We use the iterator
+- Iterator is an "in-between" parser
+- Gives you the reference of the current object and moves past it but before the next object
+- If we do remove, remove the object the iterator just passed through
+- Illusion of the iterator is that is it between objects
+- if we do remove, it is not how it works but the illusion is such that the object before the iterator's position is removed
+
+## ArrayList
+- A class will mimics an array
+- clear() : removes all the elements but keeps the object is kept even though the reference becomes null
+
+## Sets
+- Collexction of unique elements with no order
+
+### HashSet<E>
+- Keeps elements in a hash table
+- Randomly ordered by their hash code
+- Indexed by a string
+- Searching and insertion takes constant complexity : O(1)
+
+```java
+import java.util.HashSet;
+
+HashSet<String> students = new HashSet<String>();
+
+students.add("random person 1");
+students.add("random person 2");
+students.add("random person 3");
+students.add("random person 4");
+System.println(students); // prints elements in random order cus set
+
+student.contains("something"); // returns boolean
+students.remove("random person 4"); // returns boolean status code
+
+students.clear();
+students.size();
+```
+
+### TreeSet
+- Elements stored in a red black
+- Red Black Tree ~ AVL Tree
+- Red Nodes have black children and vice versa
+- Searching and insertion takes logarithmic complexity
+- When you print it, it prints in sorted order unlike HashSet
+
+## Maps
+- Key-Value pair
+- Keys are unique
+- Keys are always Strings
+- Value can be any objects
+
+### HashMap
+- Stored in a hash table
+- Random Order
+- O(Log(n)) for printing
+- O(1) for insertion / searching
+- Key gives set
+- Value gives collection
+
+```java
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args){
+
+        HashMap<String, Integer> something = new HashMap<>();
+
+        something.put("a", new Integer(100));
+        something.put("b", new Integer(101));
+        something.put("c", new Integer(102));
+
+        System.out.println(something);
+    }
+}
+```
+
+### TreeMap
+- Stored in a red black tree order
+- Sorted Order
+- Ordered using the `.compareTo()` function of the key (String here)
+
+```java
+import java.util.TreeMap;
+
+public class Main {
+    public static void main(String[] args){
+
+        TreeMap<String, Integer> something = new TreeMap<>();
+
+        something.put("a", new Integer(100));
+        something.put("b", new Integer(101));
+        something.put("c", new Integer(102));
+
+        System.out.println(something);
+    }
+}
+```
+
+> Java API : (API)[https://docs.oracle.com/javase/8/docs/api/]
+
+- Primitive -> different memory
+- Reference -> Common memory

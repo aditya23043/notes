@@ -1,7 +1,22 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: /home/adi/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 891322b167ec4112b1114b30a22fa6e5 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot counter_tb_behav xil_defaultlib.counter_tb xil_defaultlib.glbl -log elaborate.log 
+Running: /home/adi/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 7bb4467ec4e743bdb55aa4946ce0e7c7 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vio_wrapper_behav xil_defaultlib.vio_wrapper xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-ERROR: [VRFC 10-2063] Module <counter_8bit> not found while processing module instance <foo> [/home/adi/repo/notes/sem3/ELD2024_LAB/lab4/lab4.srcs/sim_1/new/counter_tb.v:31]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=38.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div_rtl
+Compiling module xil_defaultlib.pb_clk
+Compiling module xil_defaultlib.FSM_moore_1101
+Compiling module xil_defaultlib.vio_0
+Compiling module xil_defaultlib.top_FSM
+Compiling module xil_defaultlib.vio_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vio_wrapper_behav
