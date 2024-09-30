@@ -115,7 +115,7 @@
 ### Clipper (Part A)
 - We achieve R = 2860.7 as the resistance value when source voltage is 15V DC and diode current is 5mA with diode forward voltage = 0.7V
 
-# LAB 3 : FILTERS (20/09/2024)
+# LAB 4 : FILTERS (20/09/2024)
 - Dampens pulses to ripples
 
 ## Component
@@ -184,3 +184,96 @@
 
 - We get similar readings with 10kHz as with 1MHz
 
+# LAB 4: FILTERS (HW)
+
+```
+       --- AC Analysis ---
+
+frequency:	10	Hz
+V(n001):	mag:          1 phase: -6.21202e-018° 	voltage
+V(n002):	mag:    0.99999 phase: -0.0359996° 	voltage
+I(L1):	mag:  0.0099999 phase:    179.964° 	device_current
+I(R1):	mag:  0.0099999 phase: -0.0359996° 	device_current
+I(V1):	mag:  0.0099999 phase:    179.964° 	device_current
+
+```
+
+# LAB 5: Voltage Regulator (27/09/2024)
+- No ripple at all
+- Plain DC
+- There is still some AC component (pulse) in the filtered output and the output might be varying and that it is not constant throughout
+- This outputs constant voltage DC
+- We use special purpose diode
+- Zener diode
+    - Cathode at line in symbol (negative)
+    - Black side = negative : zener diode
+    - Positive of source connected to negative of zener diode
+    - Works in reverse as well
+    - 0.3 knee voltage if germanium diode
+    - 0.7 knee voltage if silicon diode
+    - Negative voltage = Breakdown region
+    - Mostly used in the Breakdown region
+        - Zener Effect happens in less than 4V usually
+            - Impurities increase => Dople Region decreases => Electric Conductivity increases
+        - Avalanche Effect happens in more than 6V usually
+            - Impurities less => 
+        - Zener Voltage in between 4V and 6V?
+            - Any of the two effects can happen
+
+- Voltage source, Rs resistor, Vz Zener Diode in resistance in series
+- Then RL, load resistor in parallel to zener diode
+    - Rs = Current Limiting Resistor / Dropping Resistor
+-  V  =  E  - I  x R
+- 100 = 200 - 10 x 10 = 100
+- 100 = 300 - 20 x 10 = 100
+- 100 = 150 -  5 x 10 = 100
+- Here V = fixed regulated voltage
+- We have to consider value of RL so that zener diode (CSVI) works in breakdown region
+- Iz_min < Iz < Iz_max : for working in the breakdown region
+- Fix Rs = 1k ohm
+- Iz = 5mA
+- Vl should be atleast 5.1V
+    - If you are getting less, then change resistor
+
+- 2nd part
+    - min and max value of RL
+
+- Iz_min < Iz < Iz_max
+- Vs > Vz
+
+- V_TH = RL/(RL+RS) * Vs
+- V_TH >= Vz
+- RL_min = (Rs * Vz) / (Vs - Vz)
+- IL_min = Vz / RL_max
+- Is = (Vs - Vz) / Rs
+- Is = Iz_max + IL_min
+- IL_min = Is - Iz_max
+- RL_max = Vz / (Is - Iz_max)
+
+- There is still some noise due to diode due to resistance in them
+- Hence, we use a smoothing capacitor to filter out the noise
+- For that we use an IC 7805 for voltage regulator circuit
+- 78 : family of IC (CMOS/...)
+- 05 : how much voltage i want at the output
+- Terminals
+    - 1st Input (15V here) (can take 7-35V)
+    - 2nd Ground
+    - 3rd Output (5V here) (4.8-5.2V error margin)
+- Connect 3rd output to resistor 330 ohm (to limit current) and then to 5V LED
+- Current - 14-15mA; not more than that
+
+- 1st find RL Value
+- 2nd Connect potentiometer
+
+## Calculations
+- Finding RLmin and RLmax
+    - RLmin = (Rs * Vz)/(Vs - Vz) = (1000)(5.1)/15-5 = 510 ohm
+        - 515.15 ohm
+    - RLmax = Vz / (Is - Iz_max)
+        - 5.1 / ((10/1000) - 5/1000) = 1020 ohm 
+
+## 3
+- 2V -> 100mV
+- 3V -> 2.3V
+- 5V -> 4.1V
+- in : 6V - 15V -> out : 4.9V

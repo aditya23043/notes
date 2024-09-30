@@ -53,13 +53,4 @@ module top_FSM (
       .clk_pb(clk_pb), .clear(clear), .inp_1(inp_1), .detect(detect), .FSM_state(FSM_state)
   );
 
-  vio_0 vio (
-    .clk(pb_clk),                // input wire clk
-    .probe_in0(detect),    // input wire [0 : 0] probe_in0
-    .probe_in1(FSM_state),    // input wire [2 : 0] probe_in1
-    .probe_out0(inp_0),  // output wire [0 : 0] probe_out0
-    .probe_out1(inp_1),  // output wire [0 : 0] probe_out1
-    .probe_out2(clear)  // output wire [0 : 0] probe_out2
-  );
-
 endmodule

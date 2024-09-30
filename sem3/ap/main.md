@@ -995,3 +995,7 @@ public class Main {
 
 - Primitive -> different memory
 - Reference -> Common memory
+
+> We can define member variables in interface only if it is primitive
+> Interfaces just cannot have constructor i.e. an object cannot be created but we can have default and static ethods
+> An interface can inherit other interfaces without implementations (nested interfaces)

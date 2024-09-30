@@ -30,60 +30,58 @@ module FSM_moore_1101 (
 );
 
   // 2
-  parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b0111, S4 = 3'b100;
-  reg [2:0] present_state = S0, next_state;
+  parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b011, S4 = 3'b100;
+  reg [2:0] present_state = S0;
+  reg [2:0] next_state;
 
   // 3 STATE REGISTER
-  always @ (posedge clk_pb or posedge clear)
-    begin
-      if(clear == 1)
-        present_state <= 0;
-      else
-        present_state <= next_state;
-    end
+  always @(posedge clk_pb or posedge clear) begin
+    if (clear == 1)
+      present_state <= S0;
+    else
+      present_state <= next_state;
+  end
 
-    // 4 Login Comb CKt
-    always @ (*)
-      begin
-        case (present_state)
-          S0:
-            if(inp_1 == 1)
-              next_state = S1;
-            else
-              next_state = S0;
-          S1:
-            if(inp_1 == 1)
-              next_state = S2;
-            else
-              next_state = S0;
-          S2:
-            if(inp_1 == 1)
-              next_state = S3;
-            else
-              next_state = S0;
-          S3:
-            if(inp_1 == 1)
-              next_state = S4;
-            else
-              next_state = S0;
-          S4:
-            if(inp_1 == 1)
-              next_state = S4;
-            else
-              next_state = S0;
-          default:
-            next_state = S0;
-        endcase
-      end
+  // 4 Login Comb CKt
+  always @(*) begin
+    case (present_state)
+      S0:
+        if (inp_1 == 1)
+          next_state <= S1;
+        else
+          next_state <= S0;
+      S1:
+        if (inp_1 == 1)
+          next_state <= S2;
+        else
+          next_state <= S0;
+      S2:
+        if (inp_1 == 1)
+          next_state <= S3;
+        else
+          next_state <= S0;
+      S3:
+        if (inp_1 == 1)
+          next_state <= S4;
+        else
+          next_state <= S0;
+      S4:
+        if (inp_1 == 1)
+          next_state <= S4;
+        else
+          next_state <= S0;
+      default:
+        next_state <= S0;
+    endcase
+  end
 
-      // 5 Output Comb Ckt
-      always @ (*)
-        begin
-          if(next_state == S4)
-            detect = 1;
-          else
-            detect = 0;
-        end
+  // 5 Output Comb Ckt
+  always @(*) begin
+    if (present_state == S4)
+      detect = 1;
+    else
+      detect = 0;
+  end
 
   assign FSM_state = present_state;
 
