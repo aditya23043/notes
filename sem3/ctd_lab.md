@@ -277,3 +277,6 @@ I(V1):	mag:  0.0099999 phase:    179.964° 	device_current
 - 3V -> 2.3V
 - 5V -> 4.1V
 - in : 6V - 15V -> out : 4.9V
+
+# LAB 6: Everything combined
+- 11th: Lab Viva
