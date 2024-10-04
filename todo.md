@@ -14,3 +14,10 @@
 - Run a http server using rp2040/esp8266
 - Send a post request sending a json object through flutter using the http package
 - Now, make it so that the data received to the mcu is displayed on the oled screen
+
+## 04/10/2024
+- For SNS
+    - Practice Sheets >= 4
+    - Formula revision
+
+- Aloo tamar ki kali mirch namak wali sabzi jisme pyaaz tamar cut ke dalta hai
