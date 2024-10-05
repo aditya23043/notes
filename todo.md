@@ -21,3 +21,7 @@
     - Formula revision
 
 - Aloo tamar ki kali mirch namak wali sabzi jisme pyaaz tamar cut ke dalta hai
+
+## 06/10/2024
+- FSM Theory done but see actual code specifically, push button thingy
+- LUT Shift Register Stuff

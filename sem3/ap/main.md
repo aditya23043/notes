@@ -999,3 +999,10 @@ public class Main {
 > We can define member variables in interface only if it is primitive
 > Interfaces just cannot have constructor i.e. an object cannot be created but we can have default and static ethods
 > An interface can inherit other interfaces without implementations (nested interfaces)
+
+# VIM Autocomplete features
+- <C-x><C-l> : Line Completion
+- <C-x><C-s> : Spell Completion (you need :set spell)
+- <C-x><C-f> : Dir completion
+- <C-x><C-k> : Dictionary Completion
+> Useful stuff = :h ins-completion
