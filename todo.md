@@ -25,3 +25,9 @@
 ## 06/10/2024
 - FSM Theory done but see actual code specifically, push button thingy
 - LUT Shift Register Stuff
+
+## 06/10/2024
+- Raycaster in c (SDL? or SFML? or OpenGL?)
+
+## 08/10/2024
+- https://github.com/opengl-tutorials/ogl

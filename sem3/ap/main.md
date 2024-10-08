@@ -43,7 +43,7 @@ String s = greeting.substring(0,3);
 
 ## Main
 - With the static keyword, we do not need to initalize the class object to access it's methods
-    - Eg: System class initialization is not needed when we call System.out.println()
+	- Eg: System class initialization is not needed when we call System.out.println()
 - With the public access modifier, we can access classes from outside the file
 
 ## Intro contd
@@ -76,14 +76,14 @@ String longString  = builder.toString();
 
 ```java
 class Employee {
-    private String name;
-    private double salary;
-    private localDate hireDay;
+	private String name;
+	private double salary;
+	private localDate hireDay;
 
-    // Constructor
-    public Employee(...){
-        ...
-    }
+	// Constructor
+	public Employee(...){
+		...
+	}
 }
 ```
 
@@ -155,44 +155,44 @@ final Employee e = new Employee;
 - [Reference](https://www.scientecheasy.com/2021/02/class-relationships-in-java.html/)
 
 1. Composition
-    - One of the attributes of B is contained inside class A and also initializing it
-    - A "contains" B
-    - A instantiates B as well
-    - Class A contains objects of class B
-    - By default memory is not allocated until new keyword is called, rather keeps a reference to that class
-    - Diamond shaped arrow head is used to show that an object is "composed" of B
-    - Asymmetric: A knows about B but B has no way to get the objects of A
+	- One of the attributes of B is contained inside class A and also initializing it
+	- A "contains" B
+	- A instantiates B as well
+	- Class A contains objects of class B
+	- By default memory is not allocated until new keyword is called, rather keeps a reference to that class
+	- Diamond shaped arrow head is used to show that an object is "composed" of B
+	- Asymmetric: A knows about B but B has no way to get the objects of A
 2. Association
-    - Defining but not referencing it
-    - A "knows-about" B
-    - Relationship between two objects
-    - but B is not a component of A
-    - B is not instantiated but being referred in A
-    - Symmetric relationship : both can access each other's objects
-    - Objects MAY not be instantiated
-    - Solid arrow with regular arrow head in UML
+	- Defining but not referencing it
+	- A "knows-about" B
+	- Relationship between two objects
+	- but B is not a component of A
+	- B is not instantiated but being referred in A
+	- Symmetric relationship : both can access each other's objects
+	- Objects MAY not be instantiated
+	- Solid arrow with regular arrow head in UML
 3. Dependency
-    - Neither declaring it nor referencing it
-    - A "depends on" B
-    - ... if A cannot carry out its work without B, but B is neither a component of A nor it has association with A
-    - Neither B has a component in A nor does B is instantiated in A but A depends on a service from B
-    - Eg: Inheritance
-    - Dotted arrow with a regular arrow head in UML
+	- Neither declaring it nor referencing it
+	- A "depends on" B
+	- ... if A cannot carry out its work without B, but B is neither a component of A nor it has association with A
+	- Neither B has a component in A nor does B is instantiated in A but A depends on a service from B
+	- Eg: Inheritance
+	- Dotted arrow with a regular arrow head in UML
 
-    ```java
-    class Die {
-        private int faceValue, faces;
-        ...
-        public void roll() { ... }
-    }
+	```java
+	class Die {
+		private int faceValue, faces;
+		...
+		public void roll() { ... }
+	}
 
-    class Player {
-        public void takeTurn(Die die){
-            die.roll();
-            ...
-        }
-    }
-    ```
+	class Player {
+		public void takeTurn(Die die){
+			die.roll();
+			...
+		}
+	}
+	```
 
 ### Coupling
 - If several classes of an application program depend on each other, then we say that the coupling between classes is high.
@@ -204,9 +204,9 @@ final Employee e = new Employee;
 
 ## Overloading
 - Method Overloading
-    - Redefinition of the methods again in inherited children classes inherited from the parent class (which contains that method as well)
-    > Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
-    > Child class can overwrite (NOT EDIT) the constructor of parent class
+	- Redefinition of the methods again in inherited children classes inherited from the parent class (which contains that method as well)
+	> Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
+	> Child class can overwrite (NOT EDIT) the constructor of parent class
 - Constructor Overloading
 
 # LECTURE 5 (28/08/24)
@@ -242,13 +242,13 @@ final Employee e = new Employee;
 - If you have even a single `abstract` method, you NEED to make the class `abstract`
 ```java
 public abstract class Person{
-    public abstract String getDescription();
+	public abstract String getDescription();
 }
 
 public class Student extends Person {
-    public String getDescription() {
-        return ...
-    }
+	public String getDescription() {
+		return ...
+	}
 }
 ```
 
@@ -264,13 +264,13 @@ Employee e = (Employee) obj;
 
 ### METHODS
 1. Equals() method
-    - Whether they point / refer to the same object or not (default) or same value or not, etc
-    - Object class defines equal(). Other classes can extend it with their own definition
+	- Whether they point / refer to the same object or not (default) or same value or not, etc
+	- Object class defines equal(). Other classes can extend it with their own definition
 2. toString() method
-    - Used to print a string equivalent information of the class, eg. System.out.println(toString(s));
-    - The return type is String and name is toString()
-    - "." : dereference operator
-    - Used to access the values of a reference
+	- Used to print a string equivalent information of the class, eg. System.out.println(toString(s));
+	- The return type is String and name is toString()
+	- "." : dereference operator
+	- Used to access the values of a reference
 
 ## OBJECT WRAPPERS AND AUTOBOXING
 - Object corresponding to a primitive type [Integer, Long, Flloat, Double, Short, Byte and Boolean] (case sensitive)
@@ -294,12 +294,12 @@ list[i]++;
 ```
 public enum Size {
 
-    SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
+SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
 
-    private String abbreviation;
+private String abbreviation;
 
-    private Size(String abbreviation) { this.abbreviation = abbreviation; }
-    public String getAbbreviation() { return abbreviation; }
+private Size(String abbreviation) { this.abbreviation = abbreviation; }
+public String getAbbreviation() { return abbreviation; }
 
 }
 
@@ -322,17 +322,17 @@ Size s = Enum.valueOf(Size.class, "SMALL");
 
 ```java
 public class TalkingClock {
-    privat int interval;
-    private boolean beep;
+	privat int interval;
+	private boolean beep;
 
-    public TalkingClock(){
-        ...
-    }
+	public TalkingClock(){
+		...
+	}
 
-    public class TimePrinter implements ActionListener {
-        // Inner class
-        ...
-    }
+	public class TimePrinter implements ActionListener {
+		// Inner class
+		...
+	}
 }
 ```
 
@@ -340,7 +340,7 @@ public class TalkingClock {
 
 ```
 if (TalkingClock.this.beep){
-    Toolkit.getDefaultToolkit().beep();
+Toolkit.getDefaultToolkit().beep();
 }
 ```
 
@@ -351,11 +351,11 @@ if (TalkingClock.this.beep){
 
 ```java
 public void start(int interval, boolean beep){
-    var listener = new ActionListener(){
-        public void actionPerformed(ActionEvent event){
-            ...
-        }
-    }
+	var listener = new ActionListener(){
+		public void actionPerformed(ActionEvent event){
+			...
+		}
+	}
 }
 ```
 
@@ -365,7 +365,7 @@ public void start(int interval, boolean beep){
 
 ```java
 new SuperType(params){
-    inner class methods and attributes...
+	inner class methods and attributes...
 }
 ```
 
@@ -383,11 +383,11 @@ Throwable
 |__ Error
 |   |__ ...
 |__ Exception
-    |__ IOException
-    |   |__ ...
-    |__ Runtime Exception
-    |   |__ ...
-    |__ ...
+|__ IOException
+|   |__ ...
+|__ Runtime Exception
+|   |__ ...
+|__ ...
 ```
 
 - We can create our own excpetion by extending one of these abstract exception classes
@@ -402,11 +402,11 @@ Throwable
 
 ```java
 String readData(Scanner in) throws EOFException {
-    while(...){
-        if(Condition){
-            throw new EOFException();
-        }
-    }
+	while(...){
+		if(Condition){
+			throw new EOFException();
+		}
+	}
 }
 ```
 
@@ -414,9 +414,9 @@ String readData(Scanner in) throws EOFException {
 
 ```java
 try {
-    readData(...);
+	readData(...);
 } catch (EOFException) {
-    ...;
+	...;
 }
 ```
 
@@ -426,15 +426,15 @@ try {
 - Exceptions will slow down programmes
 - Note: try and catch blocks have separate stack frames
 - It is better to use an if(..)else(..) because we do not return to the try stmt if an exception is caught since a new stackframe is created for the catch block and the try block stackframe is (eventually) deleted by the garbage collector
-    - We cannot return from a catch and resume to whatever was being done in the try block
-    - Whereas, in if else we can use `goto`
+	- We cannot return from a catch and resume to whatever was being done in the try block
+	- Whereas, in if else we can use `goto`
 
 ```java
 try {
-    ;
+	;
 } 
 catch(Excpetion e) {
-    System.out.println(e)
+	System.out.println(e)
 }
 ```
 - Here, the .toString function of the `e` class is run whenever we try to print it
@@ -448,13 +448,13 @@ catch(Excpetion e) {
 - One catch per exception / One catch for all Exceptions : Both acceptable
 - Methods tells Java compiler that what kind of errors it can throw
 - The lowermost heirarchy of exceptions is preferred (i.e. the specific exception rather than its parent generalized class) by the JVM
-    - i.e. if FileNotFoundException error is defined and is thrown, it will be preferred in catch stmt rather than its parent, Exception
+	- i.e. if FileNotFoundException error is defined and is thrown, it will be preferred in catch stmt rather than its parent, Exception
 
 ```java
 class Something {
-    public loadimg(String s) throws FileNotFoundException, EOFException, SomethingElseException {
+	public loadimg(String s) throws FileNotFoundException, EOFException, SomethingElseException {
 
-    }
+	}
 }
 ```
 
@@ -464,14 +464,14 @@ class Something {
 ```java
 class FileFormatException extends IOException {
 
-    public FileFormatException() {
-        ...
-    }
+	public FileFormatException() {
+		...
+	}
 
-    public FileFormatException(String gripe) {
-        super(gripe);
-        ...
-    }
+	public FileFormatException(String gripe) {
+		super(gripe);
+		...
+	}
 
 }
 ```
@@ -482,47 +482,47 @@ class FileFormatException extends IOException {
 - Handling 2 exceptions together
 ```java
 try {
-    ...
+	...
 }
 catch (FileNotFoundException | UnknownHostException e){
-    ...
+	...
 }
 catch (IOException) {
-    ...
+	...
 }
 ```
 
 - Handling each exception individually
 ```java
 try {
-    ...
+	...
 }
 catch (FileNotFoundException e){
-    ...
+	...
 }
 catch (UnknownHostException e){
-    ...
+	...
 }
 catch (IOException) {
-    ...
+	...
 }
 ```
 
 ## Rethrowing exceptions
 ```java
 try {
-    ...
+	...
 }
 catch (SQLException e){
-    throw new ServletException("database error: " + e.getMessage());
+	throw new ServletException("database error: " + e.getMessage());
 }
 ```
 
 ## ASSERTIONS
 - We have 3 ways to handle with errors
-    - If else blocks with conditions
-    - Try Catch block with specific error name
-    - Assertions
+	- If else blocks with conditions
+	- Try Catch block with specific error name
+	- Assertions
 - Used for debug purposes
 - Not used in production code
 - Faster execution than throwing exceptions
@@ -537,17 +537,17 @@ catch (SQLException e){
 ```java
 
 if(x > 0){
-    ...
+	...
 } else {
-    ...
+	...
 }
 
 if(x > 0){
-    ...
-    throw new exception("myexception");
+	...
+	throw new exception("myexception");
 }
 catch(exception ep){
-    ...
+	...
 }
 
 assert x > 0 : new String("x > 0");
@@ -567,13 +567,13 @@ assert x > 0 : new String("x > 0");
 - `Logger.getGlobal().info("File->Open menu item selected);`
 - Info is a log level here
 - Syslogs has levels in logging
-    - SEVERE
-    - WARNING
-    - INFO
-    - CONFIG
-    - FINE
-    - FINER
-    - FINEST
+	- SEVERE
+	- WARNING
+	- INFO
+	- CONFIG
+	- FINE
+	- FINER
+	- FINEST
 - Two methods used for logging
 ```java
 void throwing(String className, String methodName, Throwable t);
@@ -584,14 +584,14 @@ void log(Level l, String message, Throwable t);
 - The parent's logger can be connected to the child's logger
 ```java
 try{
-    if(..){
-        var e = new IOException("...");
-        logger.throwing("commycompany.mylib.Reader", "read", e);
-        throw e;
-    }
+	if(..){
+		var e = new IOException("...");
+		logger.throwing("commycompany.mylib.Reader", "read", e);
+		throw e;
+	}
 }
 catch (IOException e){
-    Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
+	Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
 }
 ```
 
@@ -604,30 +604,30 @@ catch (IOException e){
 
 ## Generic Programming
 - <T> : container / template
-    - Can hold any non-primitive type / or any class
-    - Placeholder
-    - Cannot template's type after 1st definition
+	- Can hold any non-primitive type / or any class
+	- Placeholder
+	- Cannot template's type after 1st definition
 
 ```java
 public class My GenericList <T> {
 
-    private ArrayList <T> myList;
-    
-    privat T first;
-    privat T second;
+	private ArrayList <T> myList;
 
-    public Pair() {
-        this.first = null; // will uninitialize it
-        this.second = null; // will uninitialize it
-    }
+	privat T first;
+	privat T second;
 
-    public Pair(T first, T second) {
-        this.first = first;
-        this.second = second;
-    }
+	public Pair() {
+		this.first = null; // will uninitialize it
+		this.second = null; // will uninitialize it
+	}
 
-    public T getFirst() { return this.first; }
-    public T getSecond() { return this.second; }
+	public Pair(T first, T second) {
+		this.first = first;
+		this.second = second;
+	}
+
+	public T getFirst() { return this.first; }
+	public T getSecond() { return this.second; }
 
 }
 ```
@@ -647,9 +647,9 @@ ArrayList<String> files = new ArrayList();
 ### GENERIC METHODS
 ```java
 class ArrayAlg {
-    public static <T> T get Middle(T something, ... a) { // a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))
-        return a[a.length/2];                            // a is the array/container 
-    }
+	public static <T> T get Middle(T something, ... a) { // a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))
+		return a[a.length/2];                            // a is the array/container 
+	}
 }
 
 String middle = ArrayAlg <String> getMiddle("something", "foo", "bar");     // the arguments passed are treated as part of an array
@@ -665,33 +665,33 @@ String middle = ArrayAlg.getMiddle("something", "foo", "bar");
 
 public class Pair <T1, T2> { 
 
-    private T1 key; 
-    private T2 value;
+	private T1 key; 
+	private T2 value;
 
-    public Pair(T1 _k, T2 _v) {
-        this.key = _k;
-        this.value = _v;
-    }
+	public Pair(T1 _k, T2 _v) {
+		this.key = _k;
+		this.value = _v;
+	}
 
-    public T1 getKey(){
-        return this.key;
-    }
+	public T1 getKey(){
+		return this.key;
+	}
 
-    public T2 getValue(){
-        return this.value;
-    }
+	public T2 getValue(){
+		return this.value;
+	}
 
 }
 
 ```
 
 - `Object array[] = new Integer[10];` Legal Statement; allowed
-    - Array of objects pointing to an array of integers
+	- Array of objects pointing to an array of integers
 - `List<Object> myList = new ArrayList<Integer>();` this gives compilation error
-    - List of objects pointing to an integer list
+	- List of objects pointing to an integer list
 
 - Illegal (Errors)
-    - An object array cannot point to generic type arrays
+	- An object array cannot point to generic type arrays
 ```java
 List<Integer> intList[] = new ArrayList<Integer>[5];
 List<String> strList[] = new ArrayList<String>();
@@ -705,45 +705,45 @@ objArray[0] = strList;
 
 ### NOTE
 - Arrays are covariant
-    - Subclass array type can be assigned to superclass array reference
+	- Subclass array type can be assigned to superclass array reference
 - Generics are invariant
-    - Subclass type generic type cannot be assigned to superclass generic reference
+	- Subclass type generic type cannot be assigned to superclass generic reference
 
 ## Bounds For Type Variables
 - `public static <T extends Comparability> T min(T[] a) {...}`
 - Specificying what all it can take
 - this is NOT inheritance
 - This also works : `T extends Comparable & Serializable`
-    - they are abstract class / interface
-    - At a time a class can only extend one "thing", so it extends either of the two at an instance
+	- they are abstract class / interface
+	- At a time a class can only extend one "thing", so it extends either of the two at an instance
 > Note: we need `implement` for interfaces whereas `extends` otherwise
 
 ## Type Erasers
 - Rule: Erase and replace generic type with a raw type (for bounded types) and Object for unbounded
 ```java
 public class Interval <T extends Comparable & Serializable> implements Serializable {
-    private T lower;
-    private T upper;
-    ...
-    public Interval(T first, T second) {
-        if(first.compareTo(second) <= 0) {
-            lower = first;
-            upper = second;
-        }
-        else {
-            lower = second;
-            upper = first;
-        }
-    }
+	private T lower;
+	private T upper;
+	...
+	public Interval(T first, T second) {
+		if(first.compareTo(second) <= 0) {
+			lower = first;
+			upper = second;
+		}
+		else {
+			lower = second;
+			upper = first;
+		}
+	}
 }
 ```
 - To
 ```java
 public class Interval implements Serializable {
-    private Comparable lower;
-    private Comparable upper;
-    ...
-    public Interval (Comparable first, Comparable second){ ... }
+	private Comparable lower;
+	private Comparable upper;
+	...
+	public Interval (Comparable first, Comparable second){ ... }
 }
 ```
 
@@ -754,10 +754,10 @@ public class Interval implements Serializable {
 
 ```java
 public interface Queue<E>{
-    void add(E element);
-    E remove();
-    int size();
-    Iterator<E> iterator();
+	void add(E element);
+	E remove();
+	int size();
+	Iterator<E> iterator();
 }
 ```
 
@@ -766,20 +766,20 @@ public interface Queue<E>{
 ```
 Iteratable*
 |__ Collection*
-    |__ List*
-    |   |__ ArrayList
-    |   |__ LinkedList
-    |   |__ Vector
-    |       |__ Stack
-    |__ Queue*
-    |   |__ PriorityQueue
-    |   |__ Dequeue*
-    |       |__ ArrayDequeue
-    |__ Set*
-        |__ HashSet
-        |__ LinkedHashSet
-        |__ SortedSet*
-            |__ Tree Set
+|__ List*
+|   |__ ArrayList
+|   |__ LinkedList
+|   |__ Vector
+|       |__ Stack
+|__ Queue*
+|   |__ PriorityQueue
+|   |__ Dequeue*
+|       |__ ArrayDequeue
+|__ Set*
+|__ HashSet
+|__ LinkedHashSet
+|__ SortedSet*
+|__ Tree Set
 
 Here, [something]* means it is an interface
 ```
@@ -788,27 +788,27 @@ Here, [something]* means it is an interface
 
 ```java
 public interface Iterator<E>{
-    E next();
-    boolean hasNext();
-    void remove();
-    defaut void forEachRemaining(Consumer <? super E> action);
-    // <? super E> : anything that is a super class of E
-    // called a wildcard
+	E next();
+	boolean hasNext();
+	void remove();
+	defaut void forEachRemaining(Consumer <? super E> action);
+	// <? super E> : anything that is a super class of E
+	// called a wildcard
 }
 
 // multiple interfaces can be implemented by the same class
 public class something() implements Collection, Iterator {
 
-    Collection<String> c = new [anything derived from Collection like ArrayList/Vector/LinkedList/etc]
-    // this will never happen
-    // Collection<String> c = new Collection
-    // because constructor of an interface does not exist
-    
-    Iterator<String iter = c.iterator();
-    while(iter.hasNext()){
-        String element = iter.next();
-        // do something with the element
-    }
+	Collection<String> c = new [anything derived from Collection like ArrayList/Vector/LinkedList/etc]
+	// this will never happen
+	// Collection<String> c = new Collection
+	// because constructor of an interface does not exist
+
+	Iterator<String iter = c.iterator();
+	while(iter.hasNext()){
+		String element = iter.next();
+		// do something with the element
+	}
 }
 ```
 
@@ -822,7 +822,7 @@ public class something() implements Collection, Iterator {
 ### Lambda Function in Java
 ```java
 (String first, String second) -> {
-    // do something
+	// do something
 }
 
 // OR
@@ -870,23 +870,23 @@ it.remove();
 
 ### clone()
 - `Employee emp2 = (Employee) emp.clone();`
-    - Attributes which are classes (i.e. Reference data type) will get a shallow copy is by reference i.e. the copied value also change with change in the initial object's value
-    - Attributes which are primitive data type will get a deep copy i.e. it will create a new memory and each other's values are independent
+	- Attributes which are classes (i.e. Reference data type) will get a shallow copy is by reference i.e. the copied value also change with change in the initial object's value
+	- Attributes which are primitive data type will get a deep copy i.e. it will create a new memory and each other's values are independent
 - by default copies the value of primitive data types from one class to another
 - To override the method
-    - import java.lang.Cloneable;
-    - you need to implement Clonable because it is an interface
-    - clone() is protected
+	- import java.lang.Cloneable;
+	- you need to implement Clonable because it is an interface
+	- clone() is protected
 - `Employee emp2 = emp;`
-    - emp2 references emp
-    - both share same memory
+	- emp2 references emp
+	- both share same memory
 
 
 # LECTURE 12 (25/09/24)
 - Midsem syllabus : till monday's class
 - Why are we looking at random syntax?
-    - Up until the last decade, Java had classes for its standard libraries
-    - But now, we have generic classes for standard libraries, alongside the classes for backwards compatibility
+	- Up until the last decade, Java had classes for its standard libraries
+	- But now, we have generic classes for standard libraries, alongside the classes for backwards compatibility
 - We use standard libraries because it has optimized implementations
 
 - Extends something from the object list and implements something from the collection objects and implements an iterator
@@ -956,16 +956,16 @@ students.size();
 import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args){
+	public static void main(String[] args){
 
-        HashMap<String, Integer> something = new HashMap<>();
+		HashMap<String, Integer> something = new HashMap<>();
 
-        something.put("a", new Integer(100));
-        something.put("b", new Integer(101));
-        something.put("c", new Integer(102));
+		something.put("a", new Integer(100));
+		something.put("b", new Integer(101));
+		something.put("c", new Integer(102));
 
-        System.out.println(something);
-    }
+		System.out.println(something);
+	}
 }
 ```
 
@@ -978,16 +978,13 @@ public class Main {
 import java.util.TreeMap;
 
 public class Main {
-    public static void main(String[] args){
-
-        TreeMap<String, Integer> something = new TreeMap<>();
-
-        something.put("a", new Integer(100));
-        something.put("b", new Integer(101));
-        something.put("c", new Integer(102));
-
-        System.out.println(something);
-    }
+	public static void main(String[] args){
+		TreeMap<String, Integer> something = new TreeMap<>();
+		something.put("a", new Integer(100));
+		something.put("b", new Integer(101));
+		something.put("c", new Integer(102));
+		System.out.println(something);
+	}
 }
 ```
 
