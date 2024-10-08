@@ -31,3 +31,4 @@
 
 ## 08/10/2024
 - https://github.com/opengl-tutorials/ogl
+- add confidential stuff to either .gitignore or a totally different private repo
