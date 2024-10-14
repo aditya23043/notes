@@ -1,0 +1,1 @@
+FL_sqrt.vhd,vhdl,xil_defaultlib,../../../../lab6_hw.srcs/sources_1/ip/FL_sqrt/sim/FL_sqrt.vhd,

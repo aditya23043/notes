@@ -1,0 +1,11 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sim_1/new/Top_FL_TB.v,1728749505,verilog,,,,Top_FL_TB,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sources_1/ip/FL_add/sim/FL_add.vhd,1728745095,vhdl,,,,fl_add,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sources_1/ip/FL_inverse/sim/FL_inverse.vhd,1727152164,vhdl,,,,fl_inverse,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sources_1/ip/FL_log/sim/FL_log.vhd,1727151621,vhdl,,,,fl_log,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sources_1/ip/FL_sqrt/sim/FL_sqrt.vhd,1728745127,vhdl,,,,fl_sqrt,,,,,,,,
+/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sources_1/new/top_module.v,1728748514,verilog,,/home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.srcs/sim_1/new/Top_FL_TB.v,,top_module,,,,,,,,

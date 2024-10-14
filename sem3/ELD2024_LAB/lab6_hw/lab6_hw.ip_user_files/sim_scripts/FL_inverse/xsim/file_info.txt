@@ -1,0 +1,1 @@
+FL_inverse.vhd,vhdl,xil_defaultlib,../../../../lab6.srcs/sources_1/ip/FL_inverse/sim/FL_inverse.vhd,

@@ -32,3 +32,8 @@
 ## 08/10/2024
 - https://github.com/opengl-tutorials/ogl
 - add confidential stuff to either .gitignore or a totally different private repo
+
+## 11/10/2024
+- Jacobian
+- chp 12 = ez
+
