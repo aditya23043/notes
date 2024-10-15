@@ -2,8 +2,8 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Oct 12 22:14:22 2024
-# Process ID: 21069
+# Start of session at: Tue Oct 15 11:10:44 2024
+# Process ID: 2870
 # Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.sim/sim_1/behav/xsim/xsim.dir/Top_FL_TB_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab6_hw/lab6_hw.sim/sim_1/behav/xsim/webtalk.log
