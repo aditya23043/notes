@@ -111,3 +111,9 @@ sudo chmod 600 ~/.ssh/id_ed25519.pub
 sudo chmod 644 ~/.ssh/known_hosts
 sudo chmod 755 ~/.ssh
 '
+
+: ' VIM Clipboard setup
+git clone https://github.com/vim/vim.git
+./configure --with-features=huge --enable-multibyte --enable-python3interp=yes --with-x --prefix=/usr/local
+sudo make install
+'
