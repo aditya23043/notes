@@ -1,0 +1,3 @@
+/home/adi/repo/notes/coding/c/cmake_tut/build/CMakeFiles/database_c.dir
+/home/adi/repo/notes/coding/c/cmake_tut/build/CMakeFiles/edit_cache.dir
+/home/adi/repo/notes/coding/c/cmake_tut/build/CMakeFiles/rebuild_cache.dir

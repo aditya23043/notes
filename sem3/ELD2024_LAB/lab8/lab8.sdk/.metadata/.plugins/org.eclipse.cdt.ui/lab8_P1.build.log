@@ -1,0 +1,26 @@
+10:25:22 **** Auto Build of configuration Debug for project lab8_P1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lab8_P1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:66:29: error: 'z' undeclared (first use in this function)
+     float res3 = sqrt(res2);z
+                             ^
+../src/helloworld.c:66:29: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:66:30: error: expected ';' before 'float'
+     float res3 = sqrt(res2);z
+                              ^
+                              ;
+     float result = res1+res3;
+     ~~~~~                     
+../src/helloworld.c:73:64: error: 'result' undeclared (first use in this function); did you mean 'res3'?
+     printf("The final result of x/t + sqrt(2*1n(n)/t) in %f\n",result);
+                                                                ^~~~~~
+                                                                res3
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+
+10:25:22 Build Finished (took 333ms)
+

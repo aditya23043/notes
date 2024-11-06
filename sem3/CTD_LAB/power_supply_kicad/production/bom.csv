@@ -1,0 +1,8 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,CP_Radial_D5.0mm_P2.50mm,1,2200u,
+C2,C_Disc_D8.0mm_W2.5mm_P5.00mm,1,C,
+"D1, D2, D3, D4",D_DO-15_P10.16mm_Horizontal,4,Diode,
+D5,LED_D3.0mm,1,LED,
+J1,JWT_A3963_1x02_P3.96mm_Vertical,1,Conn_01x02,
+R1,R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical,1,R,
+U1,TO-220-3_Horizontal_TabUp,1,L7805,

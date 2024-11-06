@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/database_c.dir/src/main.c.o -o bin/database_c

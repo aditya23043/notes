@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../lab7_hw_2.srcs/sources_1/ip/FL_divide/sim/FL_divide.vhd" \
+
+nosort

@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.srcs/sources_1/ip/FL_add/sim/FL_add.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_add'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.srcs/sources_1/ip/FL_sqrt/sim/FL_sqrt.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_sqrt'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.srcs/sources_1/ip/FL_divide/sim/FL_divide.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_divide'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.srcs/sources_1/ip/FL_multiply/sim/FL_multiply.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_multiply'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.srcs/sources_1/ip/FL_log/sim/FL_log.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FL_log'

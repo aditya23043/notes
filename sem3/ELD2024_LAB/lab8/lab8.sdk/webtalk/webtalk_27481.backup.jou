@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# 
+# Start of session at: Tue Oct 22 10:21:44 2024
+# Process ID: 27481
+# Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab8/lab8.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab8/lab8.sdk/webtalk/webtalk.log
+# Journal file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab8/lab8.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

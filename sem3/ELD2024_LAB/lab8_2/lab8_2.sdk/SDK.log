@@ -1,0 +1,112 @@
+10:29:32 INFO  : Registering command handlers for SDK TCF services
+10:29:33 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/temp_xsdb_launch_script.tcl
+10:29:37 INFO  : XSCT server has started successfully.
+10:29:37 INFO  : Successfully done setting XSCT server connection channel  
+10:29:37 INFO  : Successfully done setting SDK workspace  
+10:29:37 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper.hdf.
+10:32:42 INFO  : Refreshed build settings on project hello_world
+10:35:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:35:45 INFO  : Jtag cable 'Digilent Zed 210248A39C83' is selected.
+10:35:45 INFO  : 'jtag frequency' command is executed.
+10:35:45 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:35:45 INFO  : Context for 'APU' is selected.
+10:35:45 INFO  : System reset is completed.
+10:35:48 INFO  : 'after 3000' command is executed.
+10:35:48 INFO  : Context for 'APU' is selected.
+10:35:48 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:35:48 INFO  : 'configparams force-mem-access 1' command is executed.
+10:35:48 INFO  : Context for 'APU' is selected.
+10:35:48 INFO  : 'ps7_init' command is executed.
+10:35:48 INFO  : 'ps7_post_config' command is executed.
+10:35:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:35:48 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:35:48 INFO  : 'configparams force-mem-access 0' command is executed.
+10:35:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:35:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:35:49 INFO  : 'con' command is executed.
+10:35:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+con
+----------------End of Script----------------
+
+10:35:49 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_hello_world.elf_on_local.tcl'
+10:36:03 INFO  : Disconnected from the channel tcfchan#1.
+10:36:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:36:04 INFO  : Jtag cable 'Digilent Zed 210248A39C83' is selected.
+10:36:04 INFO  : 'jtag frequency' command is executed.
+10:36:04 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:36:04 INFO  : Context for 'APU' is selected.
+10:36:04 INFO  : System reset is completed.
+10:36:07 INFO  : 'after 3000' command is executed.
+10:36:07 INFO  : Context for 'APU' is selected.
+10:36:08 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:36:08 INFO  : 'configparams force-mem-access 1' command is executed.
+10:36:08 INFO  : Context for 'APU' is selected.
+10:36:09 INFO  : 'ps7_init' command is executed.
+10:36:09 INFO  : 'ps7_post_config' command is executed.
+10:36:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:36:09 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:36:09 INFO  : 'configparams force-mem-access 0' command is executed.
+10:36:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:36:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:36:09 INFO  : 'con' command is executed.
+10:36:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+con
+----------------End of Script----------------
+
+10:36:09 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_hello_world.elf_on_local.tcl'
+10:36:57 ERROR : (XSDB Server)child exited with status 1
+
+10:37:02 ERROR : (XSDB Server)/usr/local/bin/st: /usr/local/bin/st: cannot execute binary file
+
+10:37:18 INFO  : Disconnected from the channel tcfchan#2.
+10:37:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:37:19 INFO  : Jtag cable 'Digilent Zed 210248A39C83' is selected.
+10:37:19 INFO  : 'jtag frequency' command is executed.
+10:37:19 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:37:19 INFO  : Context for 'APU' is selected.
+10:37:19 INFO  : System reset is completed.
+10:37:22 INFO  : 'after 3000' command is executed.
+10:37:25 ERROR : no targets found with "name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"". available targets: none
+10:37:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab8_2/lab8_2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248A39C83"} -index 0
+----------------End of Script----------------
+

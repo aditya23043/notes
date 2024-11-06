@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Oct 19 18:38:36 2024
+# Process ID: 28121
+# Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.runs/FL_multiply_synth_1
+# Command line: vivado -log FL_multiply.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FL_multiply.tcl
+# Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.runs/FL_multiply_synth_1/FL_multiply.vds
+# Journal file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_2/lab7_hw_2.runs/FL_multiply_synth_1/vivado.jou
+#-----------------------------------------------------------
+source FL_multiply.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP FL_multiply, cache-ID = 1afffa0b74728ae6.
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 19 18:38:43 2024...

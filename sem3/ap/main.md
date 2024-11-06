@@ -1,3 +1,11 @@
+<style>
+*{
+    font-family: "SF Mono";
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+</style>
+
 # CSE 201 : ADVANCED PROGRAMMING => Lecture 1 (12/08/2024)
 ## Eval
 - Assignments : 20%
@@ -43,7 +51,7 @@ String s = greeting.substring(0,3);
 
 ## Main
 - With the static keyword, we do not need to initalize the class object to access it's methods
-	- Eg: System class initialization is not needed when we call System.out.println()
+    - Eg: System class initialization is not needed when we call System.out.println()
 - With the public access modifier, we can access classes from outside the file
 
 ## Intro contd
@@ -76,14 +84,14 @@ String longString  = builder.toString();
 
 ```java
 class Employee {
-	private String name;
-	private double salary;
-	private localDate hireDay;
+    private String name;
+    private double salary;
+    private localDate hireDay;
 
-	// Constructor
-	public Employee(...){
-		...
-	}
+    // Constructor
+    public Employee(...){
+        ...
+    }
 }
 ```
 
@@ -155,44 +163,44 @@ final Employee e = new Employee;
 - [Reference](https://www.scientecheasy.com/2021/02/class-relationships-in-java.html/)
 
 1. Composition
-	- One of the attributes of B is contained inside class A and also initializing it
-	- A "contains" B
-	- A instantiates B as well
-	- Class A contains objects of class B
-	- By default memory is not allocated until new keyword is called, rather keeps a reference to that class
-	- Diamond shaped arrow head is used to show that an object is "composed" of B
-	- Asymmetric: A knows about B but B has no way to get the objects of A
+    - One of the attributes of B is contained inside class A and also initializing it
+    - A "contains" B
+    - A instantiates B as well
+    - Class A contains objects of class B
+    - By default memory is not allocated until new keyword is called, rather keeps a reference to that class
+    - Diamond shaped arrow head is used to show that an object is "composed" of B
+    - Asymmetric: A knows about B but B has no way to get the objects of A
 2. Association
-	- Defining but not referencing it
-	- A "knows-about" B
-	- Relationship between two objects
-	- but B is not a component of A
-	- B is not instantiated but being referred in A
-	- Symmetric relationship : both can access each other's objects
-	- Objects MAY not be instantiated
-	- Solid arrow with regular arrow head in UML
+    - Defining but not referencing it
+    - A "knows-about" B
+    - Relationship between two objects
+    - but B is not a component of A
+    - B is not instantiated but being referred in A
+    - Symmetric relationship : both can access each other's objects
+    - Objects MAY not be instantiated
+    - Solid arrow with regular arrow head in UML
 3. Dependency
-	- Neither declaring it nor referencing it
-	- A "depends on" B
-	- ... if A cannot carry out its work without B, but B is neither a component of A nor it has association with A
-	- Neither B has a component in A nor does B is instantiated in A but A depends on a service from B
-	- Eg: Inheritance
-	- Dotted arrow with a regular arrow head in UML
+    - Neither declaring it nor referencing it
+    - A "depends on" B
+    - ... if A cannot carry out its work without B, but B is neither a component of A nor it has association with A
+    - Neither B has a component in A nor does B is instantiated in A but A depends on a service from B
+    - Eg: Inheritance
+    - Dotted arrow with a regular arrow head in UML
 
-	```java
-	class Die {
-		private int faceValue, faces;
-		...
-		public void roll() { ... }
-	}
+    ```java
+    class Die {
+        private int faceValue, faces;
+        ...
+        public void roll() { ... }
+    }
 
-	class Player {
-		public void takeTurn(Die die){
-			die.roll();
-			...
-		}
-	}
-	```
+    class Player {
+        public void takeTurn(Die die){
+            die.roll();
+            ...
+        }
+    }
+    ```
 
 ### Coupling
 - If several classes of an application program depend on each other, then we say that the coupling between classes is high.
@@ -204,9 +212,9 @@ final Employee e = new Employee;
 
 ## Overloading
 - Method Overloading
-	- Redefinition of the methods again in inherited children classes inherited from the parent class (which contains that method as well)
-	> Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
-	> Child class can overwrite (NOT EDIT) the constructor of parent class
+    - Redefinition of the methods again in inherited children classes inherited from the parent class (which contains that method as well)
+    > Note: during inheritance, the child inherits all data (including private stuff as well and constructors also)
+    > Child class can overwrite (NOT EDIT) the constructor of parent class
 - Constructor Overloading
 
 # LECTURE 5 (28/08/24)
@@ -242,13 +250,13 @@ final Employee e = new Employee;
 - If you have even a single `abstract` method, you NEED to make the class `abstract`
 ```java
 public abstract class Person{
-	public abstract String getDescription();
+    public abstract String getDescription();
 }
 
 public class Student extends Person {
-	public String getDescription() {
-		return ...
-	}
+    public String getDescription() {
+        return ...
+    }
 }
 ```
 
@@ -264,13 +272,13 @@ Employee e = (Employee) obj;
 
 ### METHODS
 1. Equals() method
-	- Whether they point / refer to the same object or not (default) or same value or not, etc
-	- Object class defines equal(). Other classes can extend it with their own definition
+    - Whether they point / refer to the same object or not (default) or same value or not, etc
+    - Object class defines equal(). Other classes can extend it with their own definition
 2. toString() method
-	- Used to print a string equivalent information of the class, eg. System.out.println(toString(s));
-	- The return type is String and name is toString()
-	- "." : dereference operator
-	- Used to access the values of a reference
+    - Used to print a string equivalent information of the class, eg. System.out.println(toString(s));
+    - The return type is String and name is toString()
+    - "." : dereference operator
+    - Used to access the values of a reference
 
 ## OBJECT WRAPPERS AND AUTOBOXING
 - Object corresponding to a primitive type [Integer, Long, Flloat, Double, Short, Byte and Boolean] (case sensitive)
@@ -322,17 +330,17 @@ Size s = Enum.valueOf(Size.class, "SMALL");
 
 ```java
 public class TalkingClock {
-	privat int interval;
-	private boolean beep;
+    privat int interval;
+    private boolean beep;
 
-	public TalkingClock(){
-		...
-	}
+    public TalkingClock(){
+        ...
+    }
 
-	public class TimePrinter implements ActionListener {
-		// Inner class
-		...
-	}
+    public class TimePrinter implements ActionListener {
+        // Inner class
+        ...
+    }
 }
 ```
 
@@ -351,11 +359,11 @@ Toolkit.getDefaultToolkit().beep();
 
 ```java
 public void start(int interval, boolean beep){
-	var listener = new ActionListener(){
-		public void actionPerformed(ActionEvent event){
-			...
-		}
-	}
+    var listener = new ActionListener(){
+        public void actionPerformed(ActionEvent event){
+            ...
+        }
+    }
 }
 ```
 
@@ -365,7 +373,7 @@ public void start(int interval, boolean beep){
 
 ```java
 new SuperType(params){
-	inner class methods and attributes...
+    inner class methods and attributes...
 }
 ```
 
@@ -402,11 +410,11 @@ Throwable
 
 ```java
 String readData(Scanner in) throws EOFException {
-	while(...){
-		if(Condition){
-			throw new EOFException();
-		}
-	}
+    while(...){
+        if(Condition){
+            throw new EOFException();
+        }
+    }
 }
 ```
 
@@ -414,9 +422,9 @@ String readData(Scanner in) throws EOFException {
 
 ```java
 try {
-	readData(...);
+    readData(...);
 } catch (EOFException) {
-	...;
+    ...;
 }
 ```
 
@@ -426,15 +434,15 @@ try {
 - Exceptions will slow down programmes
 - Note: try and catch blocks have separate stack frames
 - It is better to use an if(..)else(..) because we do not return to the try stmt if an exception is caught since a new stackframe is created for the catch block and the try block stackframe is (eventually) deleted by the garbage collector
-	- We cannot return from a catch and resume to whatever was being done in the try block
-	- Whereas, in if else we can use `goto`
+    - We cannot return from a catch and resume to whatever was being done in the try block
+    - Whereas, in if else we can use `goto`
 
 ```java
 try {
-	;
+    ;
 } 
 catch(Excpetion e) {
-	System.out.println(e)
+    System.out.println(e)
 }
 ```
 - Here, the .toString function of the `e` class is run whenever we try to print it
@@ -448,13 +456,13 @@ catch(Excpetion e) {
 - One catch per exception / One catch for all Exceptions : Both acceptable
 - Methods tells Java compiler that what kind of errors it can throw
 - The lowermost heirarchy of exceptions is preferred (i.e. the specific exception rather than its parent generalized class) by the JVM
-	- i.e. if FileNotFoundException error is defined and is thrown, it will be preferred in catch stmt rather than its parent, Exception
+    - i.e. if FileNotFoundException error is defined and is thrown, it will be preferred in catch stmt rather than its parent, Exception
 
 ```java
 class Something {
-	public loadimg(String s) throws FileNotFoundException, EOFException, SomethingElseException {
+    public loadimg(String s) throws FileNotFoundException, EOFException, SomethingElseException {
 
-	}
+    }
 }
 ```
 
@@ -464,14 +472,14 @@ class Something {
 ```java
 class FileFormatException extends IOException {
 
-	public FileFormatException() {
-		...
-	}
+    public FileFormatException() {
+        ...
+    }
 
-	public FileFormatException(String gripe) {
-		super(gripe);
-		...
-	}
+    public FileFormatException(String gripe) {
+        super(gripe);
+        ...
+    }
 
 }
 ```
@@ -482,47 +490,47 @@ class FileFormatException extends IOException {
 - Handling 2 exceptions together
 ```java
 try {
-	...
+    ...
 }
 catch (FileNotFoundException | UnknownHostException e){
-	...
+    ...
 }
 catch (IOException) {
-	...
+    ...
 }
 ```
 
 - Handling each exception individually
 ```java
 try {
-	...
+    ...
 }
 catch (FileNotFoundException e){
-	...
+    ...
 }
 catch (UnknownHostException e){
-	...
+    ...
 }
 catch (IOException) {
-	...
+    ...
 }
 ```
 
 ## Rethrowing exceptions
 ```java
 try {
-	...
+    ...
 }
 catch (SQLException e){
-	throw new ServletException("database error: " + e.getMessage());
+    throw new ServletException("database error: " + e.getMessage());
 }
 ```
 
 ## ASSERTIONS
 - We have 3 ways to handle with errors
-	- If else blocks with conditions
-	- Try Catch block with specific error name
-	- Assertions
+    - If else blocks with conditions
+    - Try Catch block with specific error name
+    - Assertions
 - Used for debug purposes
 - Not used in production code
 - Faster execution than throwing exceptions
@@ -537,17 +545,17 @@ catch (SQLException e){
 ```java
 
 if(x > 0){
-	...
+    ...
 } else {
-	...
+    ...
 }
 
 if(x > 0){
-	...
-	throw new exception("myexception");
+    ...
+    throw new exception("myexception");
 }
 catch(exception ep){
-	...
+    ...
 }
 
 assert x > 0 : new String("x > 0");
@@ -567,13 +575,13 @@ assert x > 0 : new String("x > 0");
 - `Logger.getGlobal().info("File->Open menu item selected);`
 - Info is a log level here
 - Syslogs has levels in logging
-	- SEVERE
-	- WARNING
-	- INFO
-	- CONFIG
-	- FINE
-	- FINER
-	- FINEST
+    - SEVERE
+    - WARNING
+    - INFO
+    - CONFIG
+    - FINE
+    - FINER
+    - FINEST
 - Two methods used for logging
 ```java
 void throwing(String className, String methodName, Throwable t);
@@ -584,14 +592,14 @@ void log(Level l, String message, Throwable t);
 - The parent's logger can be connected to the child's logger
 ```java
 try{
-	if(..){
-		var e = new IOException("...");
-		logger.throwing("commycompany.mylib.Reader", "read", e);
-		throw e;
-	}
+    if(..){
+        var e = new IOException("...");
+        logger.throwing("commycompany.mylib.Reader", "read", e);
+        throw e;
+    }
 }
 catch (IOException e){
-	Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
+    Logger.getLogger("my.mycompany.myapp").log(Level.WARNING, "Reading Image", e);
 }
 ```
 
@@ -604,30 +612,30 @@ catch (IOException e){
 
 ## Generic Programming
 - <T> : container / template
-	- Can hold any non-primitive type / or any class
-	- Placeholder
-	- Cannot template's type after 1st definition
+    - Can hold any non-primitive type / or any class
+    - Placeholder
+    - Cannot template's type after 1st definition
 
 ```java
 public class My GenericList <T> {
 
-	private ArrayList <T> myList;
+    private ArrayList <T> myList;
 
-	privat T first;
-	privat T second;
+    privat T first;
+    privat T second;
 
-	public Pair() {
-		this.first = null; // will uninitialize it
-		this.second = null; // will uninitialize it
-	}
+    public Pair() {
+        this.first = null; // will uninitialize it
+        this.second = null; // will uninitialize it
+    }
 
-	public Pair(T first, T second) {
-		this.first = first;
-		this.second = second;
-	}
+    public Pair(T first, T second) {
+        this.first = first;
+        this.second = second;
+    }
 
-	public T getFirst() { return this.first; }
-	public T getSecond() { return this.second; }
+    public T getFirst() { return this.first; }
+    public T getSecond() { return this.second; }
 
 }
 ```
@@ -647,9 +655,9 @@ ArrayList<String> files = new ArrayList();
 ### GENERIC METHODS
 ```java
 class ArrayAlg {
-	public static <T> T get Middle(T something, ... a) { // a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))
-		return a[a.length/2];                            // a is the array/container 
-	}
+    public static <T> T get Middle(T something, ... a) { // a list of arguments : elipsis (**args in python (BAD LANGUAGE WORST AAAAAAAAAAAAA BOOOOOOOOOOOOOOOOOO LLLLLLLLLLL))
+        return a[a.length/2];                            // a is the array/container 
+    }
 }
 
 String middle = ArrayAlg <String> getMiddle("something", "foo", "bar");     // the arguments passed are treated as part of an array
@@ -665,33 +673,33 @@ String middle = ArrayAlg.getMiddle("something", "foo", "bar");
 
 public class Pair <T1, T2> { 
 
-	private T1 key; 
-	private T2 value;
+    private T1 key; 
+    private T2 value;
 
-	public Pair(T1 _k, T2 _v) {
-		this.key = _k;
-		this.value = _v;
-	}
+    public Pair(T1 _k, T2 _v) {
+        this.key = _k;
+        this.value = _v;
+    }
 
-	public T1 getKey(){
-		return this.key;
-	}
+    public T1 getKey(){
+        return this.key;
+    }
 
-	public T2 getValue(){
-		return this.value;
-	}
+    public T2 getValue(){
+        return this.value;
+    }
 
 }
 
 ```
 
 - `Object array[] = new Integer[10];` Legal Statement; allowed
-	- Array of objects pointing to an array of integers
+    - Array of objects pointing to an array of integers
 - `List<Object> myList = new ArrayList<Integer>();` this gives compilation error
-	- List of objects pointing to an integer list
+    - List of objects pointing to an integer list
 
 - Illegal (Errors)
-	- An object array cannot point to generic type arrays
+    - An object array cannot point to generic type arrays
 ```java
 List<Integer> intList[] = new ArrayList<Integer>[5];
 List<String> strList[] = new ArrayList<String>();
@@ -705,45 +713,45 @@ objArray[0] = strList;
 
 ### NOTE
 - Arrays are covariant
-	- Subclass array type can be assigned to superclass array reference
+    - Subclass array type can be assigned to superclass array reference
 - Generics are invariant
-	- Subclass type generic type cannot be assigned to superclass generic reference
+    - Subclass type generic type cannot be assigned to superclass generic reference
 
 ## Bounds For Type Variables
 - `public static <T extends Comparability> T min(T[] a) {...}`
 - Specificying what all it can take
 - this is NOT inheritance
 - This also works : `T extends Comparable & Serializable`
-	- they are abstract class / interface
-	- At a time a class can only extend one "thing", so it extends either of the two at an instance
+    - they are abstract class / interface
+    - At a time a class can only extend one "thing", so it extends either of the two at an instance
 > Note: we need `implement` for interfaces whereas `extends` otherwise
 
 ## Type Erasers
 - Rule: Erase and replace generic type with a raw type (for bounded types) and Object for unbounded
 ```java
 public class Interval <T extends Comparable & Serializable> implements Serializable {
-	private T lower;
-	private T upper;
-	...
-	public Interval(T first, T second) {
-		if(first.compareTo(second) <= 0) {
-			lower = first;
-			upper = second;
-		}
-		else {
-			lower = second;
-			upper = first;
-		}
-	}
+    private T lower;
+    private T upper;
+    ...
+    public Interval(T first, T second) {
+        if(first.compareTo(second) <= 0) {
+            lower = first;
+            upper = second;
+        }
+        else {
+            lower = second;
+            upper = first;
+        }
+    }
 }
 ```
 - To
 ```java
 public class Interval implements Serializable {
-	private Comparable lower;
-	private Comparable upper;
-	...
-	public Interval (Comparable first, Comparable second){ ... }
+    private Comparable lower;
+    private Comparable upper;
+    ...
+    public Interval (Comparable first, Comparable second){ ... }
 }
 ```
 
@@ -754,10 +762,10 @@ public class Interval implements Serializable {
 
 ```java
 public interface Queue<E>{
-	void add(E element);
-	E remove();
-	int size();
-	Iterator<E> iterator();
+    void add(E element);
+    E remove();
+    int size();
+    Iterator<E> iterator();
 }
 ```
 
@@ -788,27 +796,27 @@ Here, [something]* means it is an interface
 
 ```java
 public interface Iterator<E>{
-	E next();
-	boolean hasNext();
-	void remove();
-	defaut void forEachRemaining(Consumer <? super E> action);
-	// <? super E> : anything that is a super class of E
-	// called a wildcard
+    E next();
+    boolean hasNext();
+    void remove();
+    defaut void forEachRemaining(Consumer <? super E> action);
+    // <? super E> : anything that is a super class of E
+    // called a wildcard
 }
 
 // multiple interfaces can be implemented by the same class
 public class something() implements Collection, Iterator {
 
-	Collection<String> c = new [anything derived from Collection like ArrayList/Vector/LinkedList/etc]
-	// this will never happen
-	// Collection<String> c = new Collection
-	// because constructor of an interface does not exist
+    Collection<String> c = new [anything derived from Collection like ArrayList/Vector/LinkedList/etc]
+    // this will never happen
+    // Collection<String> c = new Collection
+    // because constructor of an interface does not exist
 
-	Iterator<String iter = c.iterator();
-	while(iter.hasNext()){
-		String element = iter.next();
-		// do something with the element
-	}
+    Iterator<String iter = c.iterator();
+    while(iter.hasNext()){
+        String element = iter.next();
+        // do something with the element
+    }
 }
 ```
 
@@ -822,7 +830,7 @@ public class something() implements Collection, Iterator {
 ### Lambda Function in Java
 ```java
 (String first, String second) -> {
-	// do something
+    // do something
 }
 
 // OR
@@ -870,23 +878,23 @@ it.remove();
 
 ### clone()
 - `Employee emp2 = (Employee) emp.clone();`
-	- Attributes which are classes (i.e. Reference data type) will get a shallow copy is by reference i.e. the copied value also change with change in the initial object's value
-	- Attributes which are primitive data type will get a deep copy i.e. it will create a new memory and each other's values are independent
+    - Attributes which are classes (i.e. Reference data type) will get a shallow copy is by reference i.e. the copied value also change with change in the initial object's value
+    - Attributes which are primitive data type will get a deep copy i.e. it will create a new memory and each other's values are independent
 - by default copies the value of primitive data types from one class to another
 - To override the method
-	- import java.lang.Cloneable;
-	- you need to implement Clonable because it is an interface
-	- clone() is protected
+    - import java.lang.Cloneable;
+    - you need to implement Clonable because it is an interface
+    - clone() is protected
 - `Employee emp2 = emp;`
-	- emp2 references emp
-	- both share same memory
+    - emp2 references emp
+    - both share same memory
 
 
 # LECTURE 12 (25/09/24)
 - Midsem syllabus : till monday's class
 - Why are we looking at random syntax?
-	- Up until the last decade, Java had classes for its standard libraries
-	- But now, we have generic classes for standard libraries, alongside the classes for backwards compatibility
+    - Up until the last decade, Java had classes for its standard libraries
+    - But now, we have generic classes for standard libraries, alongside the classes for backwards compatibility
 - We use standard libraries because it has optimized implementations
 
 - Extends something from the object list and implements something from the collection objects and implements an iterator
@@ -956,16 +964,16 @@ students.size();
 import java.util.HashMap;
 
 public class Main {
-	public static void main(String[] args){
+    public static void main(String[] args){
 
-		HashMap<String, Integer> something = new HashMap<>();
+        HashMap<String, Integer> something = new HashMap<>();
 
-		something.put("a", new Integer(100));
-		something.put("b", new Integer(101));
-		something.put("c", new Integer(102));
+        something.put("a", new Integer(100));
+        something.put("b", new Integer(101));
+        something.put("c", new Integer(102));
 
-		System.out.println(something);
-	}
+        System.out.println(something);
+    }
 }
 ```
 
@@ -978,13 +986,13 @@ public class Main {
 import java.util.TreeMap;
 
 public class Main {
-	public static void main(String[] args){
-		TreeMap<String, Integer> something = new TreeMap<>();
-		something.put("a", new Integer(100));
-		something.put("b", new Integer(101));
-		something.put("c", new Integer(102));
-		System.out.println(something);
-	}
+    public static void main(String[] args){
+        TreeMap<String, Integer> something = new TreeMap<>();
+        something.put("a", new Integer(100));
+        something.put("b", new Integer(101));
+        something.put("c", new Integer(102));
+        System.out.println(something);
+    }
 }
 ```
 
@@ -998,8 +1006,208 @@ public class Main {
 > An interface can inherit other interfaces without implementations (nested interfaces)
 
 # VIM Autocomplete features
-- <C-x><C-l> : Line Completion
-- <C-x><C-s> : Spell Completion (you need :set spell)
-- <C-x><C-f> : Dir completion
-- <C-x><C-k> : Dictionary Completion
+- \<C-x\>\<C-l\> : Line Completion
+- \<C-x\>\<C-s\> : Spell Completion (you need :set spell)
+- \<C-x\>\<C-f\> : Dir completion
+- \<C-x\>\<C-k\> : Dictionary Completion
 > Useful stuff = :h ins-completion
+
+# LECTURE 13 (MISSED: class just after midsems) (13/10/24)
+- UML: Unified Markup Language
+- UML contains everything besides the implementation
+- Flat line (no arrow head)
+    - not an implementation / inheritance
+- Solid Arrow with transparent head
+    - inheritance
+- Dotted Arrow with normal head
+    - implementation
+    - also shows if a class `<<throws>>` the exception
+- For an interface, you write `<<interface>>` above interface name
+
+## UML multiplicities
+- 0..1 zero or one instance
+- 0..* or * no limit on the number of instances (including none)
+- 1 exactly one instance
+- 1..* at least one instance
+
+## Use Case / action diagram
+- A use case diagram is a collection of actors, use cases and their communications
+
+### Actor, Actions
+- Who is using the entire set of classes
+- Actors / Actions can be classes / methods which are interconnected using some relationships
+- Eg: Human / management / patient / doctor
+- The classes being called by the main through instantiation can be classified as actors
+    - Each instantiation create a new actor then
+- Actors are not part of the system
+
+## Association Relationship
+- Exists onloy between an actor and a use case
+- Indicates that an actor can use certain functionality of the system
+- Representation: Solid arrow with normal arrow head
+
+## Generalization Relationship
+- Could exist between two actors or between two use cases
+- ~ inheritance
+- Indicates parent / child relationship
+- Representation: Solid line with triangular and hollow arrow head
+    - From child to parent
+
+## Extend Relationship
+- Exists only between use cases
+- Represents optional or seldom invoked cases
+- Like interfaces (no definition, only declaration) [not inheritance]
+- Represented using a dashed arrow with an arrow head
+- `<<extend>>` is also mentioned above the arrow
+- The direction of the arrow is towards the extended use cases (given in ppt)
+- Actual, Arrow direction: Implementation TO interface
+
+## Include Relationship
+- Only between use cases
+- Represents behaviour that is factored outside of the use case
+- Doesn't mean that the factored out use case is an optional or seldom invoked case
+- Represented using dashed arrow with an arrow head with `<<include>>` written on top
+- One method relies on another method
+- Direction: from the "class that depends on ..." to the "dependencies"
+- Like call -> telephone
+
+> Use case = method \
+> Semantics : meaning of something \
+> Solid line : Inheritance case \
+> Dotted line : Interface case
+
+# LECTURE 14 (20/10/24)
+
+## GUI
+- Construct GUI components
+- Render GUI
+- Check for any input
+- Respond to user input
+- Go back to render part and repeat
+
+# LECTURE 15 (23/10/24)
+
+## GUI
+- Listener / handler : responds to events
+- JVM handles window rendering (even window decorations like wind titlebar)
+- Environment agnostics
+- Speaker / microphone is also an interface
+- Frameworks like fx and awt, are like a wrapper on top of existing display environment
+- Ensures same behaviour across any device even though it can look different
+- In windows, we have `win32` which is a C API which communicates with the OS for window related something
+- In linux, we have individual graphical systems like X11/wayland
+- JVM = Event / callback driven environment
+
+## JFRAME
+```java
+import java.awt.*;
+import java.swing.*;
+
+public class SimpleFrame extends JFrame {
+
+    private static final int DEFAULT_WIDTH = 300;
+    private static final int DEFAULT_HEIGHT = 200;
+
+    public SimpleFrame(){
+        setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+        // this beelongs to JFrame
+    }
+}
+
+public class SimpleFrameTest {
+    public static void main(String[] args){
+        EventQueue InvokeLater(() -> {
+            var frame = new SimpleFrame();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+            // swaps graphics buffers to render the window
+        });
+    }
+}
+```
+
+- Frame Properties
+```
+Object
+|__ Component
+|__ Container
+    |__ JComponent
+    |   |__ JPanel
+    |__ Window
+        |__ Frame
+        |__ JFrame
+```
+- The last three stuff makes the window works like the one we have in Windows OS
+- These are concrete classes, not interfaces
+- Basic methods like isVisible, setVisible, setSize, setLocation, getSize, setBounds are defined by Component class
+- Component reference is passed to frame class
+- Overriding &cross;
+- Extending or implementing  &check;
+
+- `frame.pack()` is telling the VM to re-render the window
+- Used after adding a component
+- But not needed since adding the component already re-renders the window
+- This is used to pick out any bugs
+
+## 2D objects
+- There is a `Shape` interface
+- Line2D, Rectangle2D, Ellipse2D, etc, are all implementations of `Shape` interface
+- Graphics is a sub class of Graphics2D
+```java
+public void paintComponent(Graphics g){
+    // upcasting
+    Graphics2D g2 = (Graphics2D) g;
+    Rectangle2D rect = ...;
+    g2.draw(rect);
+}
+```
+
+```
+Rectangle2D
+|__ Rectangle2D (Float)
+|__ Rectangle2D (Double)
+```
+
+```
+Shape
+A
+|__ Line2D
+|__ Rectangle Shape
+    A
+    |__ Ellipse2D
+    |__ Rectangle2D
+        A
+        |__ Rectangle
+```
+
+```
+Point2D
+A
+|__ Point
+```
+
+- `Rectangle` = bounding box
+- We dont have a circle class because we can have the Ellipse and set both diameters to same
+
+# LECTURE 16 (04/11/24)
+- Lambda function does not has a name
+- Also, this process is avoided: go to stack frame -> do something -> return back
+- Less costly
+
+```java
+c = new JFrame();
+frame.add(c);
+```
+- JFrame are like picture frames
+- They have titles
+- They need to be `setVisible(true);` to be able to be rendered
+- `add()` is a method of JFrame
+- Type of Arg of `add()` is Component
+- `pack();` re-renders it by first checking the dimension of the component and then calls paintComponent to render the graphics on it
+
+# 2D objects
+- Shapes are of two types - based on floating point or double pixels
+
+## Event
+- we have EventListeners (interface) and EventAdapters (abstract class)
+- The advantage of adapter over listener is that we dont have to implement every single method when we "implement" or "extend" it

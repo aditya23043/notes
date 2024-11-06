@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_1/lab7_hw_1.srcs/sources_1/new/main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module main
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_1/lab7_hw_1.srcs/sim_1/new/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_1/lab7_hw_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/adi/repo/notes/sem3/ELD2024_LAB/lab7_hw_1/lab7_hw_1.srcs/sources_1/ip/xfft_03/sim/xfft_03.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'xfft_03'

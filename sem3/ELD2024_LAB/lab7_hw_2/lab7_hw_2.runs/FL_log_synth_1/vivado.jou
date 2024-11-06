@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Sep 24 09:50:23 2024
+# Process ID: 9412
+# Current directory: /home/adi/repo/notes/sem3/ELD2024_LAB/lab6/lab6.runs/FL_log_synth_1
+# Command line: vivado -log FL_log.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FL_log.tcl
+# Log file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab6/lab6.runs/FL_log_synth_1/FL_log.vds
+# Journal file: /home/adi/repo/notes/sem3/ELD2024_LAB/lab6/lab6.runs/FL_log_synth_1/vivado.jou
+#-----------------------------------------------------------
+source FL_log.tcl -notrace
