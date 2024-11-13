@@ -1,0 +1,18 @@
+# dune fmt
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/adi/.cache/dune/db
+# Workspace root: /home/adi/repo/notes/coding/ocaml/hello_world
+# Auto-detected concurrency: 16
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_4eaecd_output
+$ (cd _build/default && /home/adi/.opam/default/bin/ocamlformat --impl test/test_hello_world.ml) > _build/default/test/.formatted/test_hello_world.ml
+$ (cd _build/default && /home/adi/.opam/default/bin/ocamlformat --impl bin/main.ml) > _build/default/bin/.formatted/main.ml

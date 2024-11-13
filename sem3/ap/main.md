@@ -3,6 +3,7 @@
     font-family: "SF Mono";
     font-weight: bold;
     letter-spacing: -0.5px;
+    font-size: 0.8rem;
 }
 </style>
 
@@ -284,7 +285,7 @@ Employee e = (Employee) obj;
 - Object corresponding to a primitive type [Integer, Long, Flloat, Double, Short, Byte and Boolean] (case sensitive)
 - Their objects are immutable - once a wrapper object has been created their values cannot be changed
 - Methods inside Integer and other primitive types are final so we cannot modify it and we cannot inherit it
-```
+```java
 Integer[] list;
 list = new Integer[500];
 list[0] = 1;
@@ -299,7 +300,7 @@ list[i]++;
 ## ENUM CLASSES
 - These enums have constructors as well
 
-```
+```java
 public enum Size {
 
 SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
@@ -346,7 +347,7 @@ public class TalkingClock {
 
 - What if both the outer class and inner class have the same attribute beep?
 
-```
+```java
 if (TalkingClock.this.beep){
 Toolkit.getDefaultToolkit().beep();
 }
@@ -1211,3 +1212,142 @@ frame.add(c);
 ## Event
 - we have EventListeners (interface) and EventAdapters (abstract class)
 - The advantage of adapter over listener is that we dont have to implement every single method when we "implement" or "extend" it
+
+# LECTURE 17 (11/09/24)
+
+## File Streams and IO Operations
+- Read / Write = Input / Output
+
+## File Operations (general)
+- Open / Init : We assign a descriptor in UNIX or File Handle in WINDOWS or File Channel in JAVA
+    - Mode is passed in this stage
+        - READ
+        - WRITE
+            - Writing is not done immediately to the main disk on every byte written
+            - Virtual Memory is used to create a buffer to hold the data until some threshold time/ data size passes
+            - This is called Buffered IO
+            - For some use case, we dont need buffering to reduce latency
+            - Buffering != Caching
+        - APPEND
+
+- File IO can be buffered or unbuffered
+
+- Accessing File content
+    - Sequential Access
+        - aka seek operation
+        - this was used in magnetic tapes in older times
+    - Random Access
+        - aka Memory Mapped
+        - Entire file is mapped to a memory like an array and you can access it at any point
+
+## Hierarchy
+```
+InputStream
+|_ AudioInputStream
+|_ VideoInputStream
+|_ PipedInputStream
+|_ BufferedFileInputStream
+|_ StringBufferedInputStream
+|_ ...
+
+OutputStream
+|_ ByteArrayOutputStream
+|_ FileOutputStream
+|_ AudioOutputStream
+|_ PipedOutputStream
+```
+
+- In UNIX, everything is a file
+
+## InputSteam
+```
+abstract int read()
+// return -1 if error or the byte read (upcasted to an int)
+```
+
+## OutputStream
+```
+abstract void write(int b)
+// write a single byte (upcasted to an int)
+```
+
+## Flushing a buffer
+- If something is held in the buffer and is not written to the main memory, it will be written to the main disk afte this function is called
+
+- Flushable, Closable, Appendable : Interface
+
+## InputStream
+- FileInputStream - Read bytes from file
+- FileOutputtream - Write bytes to file
+
+```java
+FileInputStream fin = new FileInputStream("something.dat");
+byte b = (byte) fin.read();
+
+DataInputStream din = ...;
+double x = din.readDouble();
+```
+
+- FileInputStream returns file data only in bytes whereas DataInputStream can return different datatypes according the read method called
+
+```java
+FileInputStream fin = new FileInputStream("employee.dat");
+DataInputStream din = new DataInputStream(fin);
+double x = din.readDouble();
+```
+- Note: DataInputStream constructor needs object of class InputStream. It need not be FileInputStream.
+- So we can use any source like AudioInputStream or anything else for this class
+
+```java
+DataInputStream din = new DataInputStream(
+    new BufferedInputStream(
+        new FileInputStream("employee.dat");
+    )
+)
+```
+- By default InputStream is unbuffered
+
+## PushbackInputStream
+- One use case : CLI
+- Used for unbuffered stream since the stream has undefined behaviour if you do "next" with nothing at the next place
+- Using this will not result in undefined behaviour, instead move to the next state, i.e. for some cases, goes to the previous state (waiting for next input) i.e. forget that input happened
+- Not useful for buffered streams
+
+```java
+PushbackInputStream cli = new PushbackInputStream(System.in);
+if(cli.read().equals('q')){
+    quit;
+} else(cli.read().isLower()){
+    cli.unread();
+}
+```
+
+## IO
+- Two types of IO
+    - ASCII File
+        - ASCII: 8 bits / 1 byte dedicated to define one alphanumeric symbol
+        - ASCII characters are stored as the content of the file
+    - Binary File
+        - If you are storing / dumping actual bytes in the file
+> NOTE: ASCII is the standard used to display text on the screen, not actual bytes / bits
+
+# LECTURE 18 (13/09/24)
+- Two types of io operations: 
+    - Non Blocking
+    - Blocking
+        - Suspended
+-  TTY is unbuffered
+    - System.out.flush() is useful here
+
+
+## BufferedReader
+```java
+Reader br = new BufferedReader(new BufferedInputStream(new InputStreamReader("myfile")));
+String next_str = br.readline();
+char next_char = br.read();
+List<String> lines =  Files.readAllLines(path, charset);
+```
+- BufferedStream and BufferedReader have the same effect
+- EOF is a byte and \n is an ascii char
+- Stream read bytes and some methods read uptil the EOF byte
+- Reader can read ascii as well
