@@ -1350,4 +1350,39 @@ List<String> lines =  Files.readAllLines(path, charset);
 - BufferedStream and BufferedReader have the same effect
 - EOF is a byte and \n is an ascii char
 - Stream read bytes and some methods read uptil the EOF byte
-- Reader can read ascii as well
+- Reader/Writer can read ascii as well
+
+```java
+PrintWriter out = new PrintWriter(new FileOutputtream("something.txt"), "UTF-8");
+```
+
+## ZipInputStream
+```java
+ZipInputStream zin = new ZipInputStream(new FileInputStream(zipname));
+ZipEntry entry;
+while((entry = zin.getNextEntry()) != null){
+    InputSteam in = zin.getInputStream(entry);
+    // read the contents of in
+    zin.closeEntry();
+}
+zin.close();
+```
+
+```java
+ZipOutputStream zout = new ZipOutputStream(new FileOutputtream("test.zip"));
+// for all files {
+    ZipEntry ze = new ZipEntry(filename);
+    zout.putNextEntry(ze);
+    zout.write(...); // takes only bytes or byte array
+    zout.closeEntry();
+//}
+zout.close();
+```
+
+- How will you write ascii?
+    - Convert string to bytes using String.toByte()
+
+```java
+Path absolute = Paths.get("/home", "something");
+Path relative = Paths.get("repo", "notes", "coding", "rust");
+```
