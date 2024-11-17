@@ -1,0 +1,124 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Tue Oct 15 10:22:00 2024
+| Host         : archlinux running 64-bit unknown
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    46 |
+|    Minimum number of control sets                        |    46 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   135 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    46 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |    13 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    17 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             165 |           55 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              54 |           24 |
+| Yes          | No                    | No                     |            2175 |          454 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             743 |          168 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|   Clock Signal   |                                                        Enable Signal                                                       |                                                                                     Set/Reset Signal                                                                                     | Slice Load Count | Bel Load Count |
++------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/FLOW/reset_sustain.delay_reset_3/reset_3_raw                                             |                1 |              1 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/FLOW/reset_sustain.resets_4_pes[0].delay_reset_pe/reset_sustained_raw[0]                 |                1 |              1 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/FLOW/reset_sustain.resets_4_pes[1].delay_reset_pe/reset_sustained_raw[0]                 |                1 |              1 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/config_channel_fifo/gen_non_real_time.data_in_fifo_pt1/wr_enable                          |                                                                                                                                                                                          |                1 |              1 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/FLOW/reset_sustain.delay_reset_3/reset_3_raw1                                            |                1 |              2 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/imag_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/ALIGN_SHIFT/MUX_LOOP[1].SKEW_DIST_DEL.DEL_DIST/i_pipe/gen_ce_non_real_time.ce_predicted_reg |                1 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/count_ce_0                                                                                | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/real_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/ALIGN_SHIFT/MUX_LOOP[1].SKEW_DIST_DEL.DEL_DIST/i_pipe/gen_ce_non_real_time.ce_predicted_reg |                1 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_4[0]                                                | something/U0/i_synth/axi_wrapper/sclr_int_reg_1[0]                                                                                                                                       |                1 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/count_ce                                                                                  | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                1 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/reset_delays[0].first.reset_del_reg_n_0_[0]                                              |                4 |              4 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/axi_wrapper/sclr_int_reg_5                                                                                                                                          |                2 |              5 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/axi_wrapper/sclr_int_reg_3                                                                                                                                          |                2 |              5 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_2                                                   | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/reset_delays[0].first.reset_del_reg_n_0_[0]                                              |                2 |              5 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/axi_wrapper/sclr_int_reg_2                                                                                                                                          |                2 |              5 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/CE                                                                                        | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              5 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_1                                                   | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/fft/non_floating_point.arch_d.xfft_inst/reset_delays[0].first.reset_del_reg_n_0_[0]                                              |                2 |              5 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_0                                                   | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              5 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                4 |              6 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/count_ce_1                                                                                | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                3 |              6 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/axi_wrapper/reset_pipe[1]                                                                                                                                           |                4 |              7 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/convert_imag_to_fp/fpo/FIX_TO_FLT_OP.SPD.OP/NORM_SHIFT/MUX_LOOP[0].DEL_SHIFT/i_pipe/opt_has_pipe.first_q[30]_i_1_n_0             |                1 |              8 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/get_block_max_exp/gen_clear_max_exp/E[0]                           | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              8 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/convert_real_to_fp/fpo/FIX_TO_FLT_OP.SPD.OP/NORM_SHIFT/MUX_LOOP[0].DEL_SHIFT/i_pipe/opt_has_pipe.first_q[30]_i_1_n_0             |                1 |              8 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_5[0]                                                | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              9 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/E[0]                                                                                      | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                2 |              9 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/gen_ce_non_real_time.ce_predicted_reg_3[0]                                                | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |                3 |             14 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/real_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/ALIGN_SHIFT/MUX_LOOP[0].DEL_SHIFT/i_pipe/opt_has_pipe.first_q[25]_i_1_n_0                   |                2 |             15 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/imag_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/ALIGN_SHIFT/MUX_LOOP[0].DEL_SHIFT/i_pipe/opt_has_pipe.first_q[25]_i_1_n_0                   |                2 |             15 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/gen_block_exp_delay_streaming.block_exp_ram/dist_ram.lutram.mem/WE |                                                                                                                                                                                          |                5 |             20 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/convert_imag_to_fp/fpo/FIX_TO_FLT_OP.SPD.OP/EXP/ZERO_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]_0                        |                8 |             23 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/convert_real_to_fp/fpo/FIX_TO_FLT_OP.SPD.OP/EXP/ZERO_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]_0                        |                4 |             23 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/imag_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/p_1_in[25]                                                                                  |                7 |             26 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/real_to_bfp/fpo/FLT_TO_FIX_OP.SPD.OP/p_1_in[25]                                                                                  |               10 |             26 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/axi_wrapper/SR[0]                                                                                                                                                   |                5 |             31 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/axi_wrapper/sclr_int_reg_0[0]                                                                                                                                       |                5 |             31 |
+|  Clock_IBUF_BUFG |                                                                                                                            | something/U0/i_synth/axi_wrapper/reset_pipe[1]                                                                                                                                           |               12 |             33 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/data_in_channel_fifo/gen_non_real_time.data_in_fifo_pt1/rd_valid_2_reg[0]                 | something/U0/i_synth/axi_wrapper/reset_pipe[1]                                                                                                                                           |               11 |             64 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/data_in_channel_fifo/gen_non_real_time.data_in_fifo_pt1/wr_enable                         |                                                                                                                                                                                          |                8 |             64 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/data_in_channel_fifo/gen_non_real_time.data_in_fifo_pt1/block_enable_reg[0]               | something/U0/i_synth/axi_wrapper/reset_pipe[1]                                                                                                                                           |               13 |             64 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/data_out_channel/gen_non_real_time.fifo/fifo0/rd_enable                                   |                                                                                                                                                                                          |                9 |             65 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/data_out_channel/data_out_fifo_write                                                      |                                                                                                                                                                                          |                9 |             65 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/xfft_inst/floating_point.xfft_inst/get_block_max_exp/delay_addr_in_en_d                               |                                                                                                                                                                                          |               32 |            128 |
+|  Clock_IBUF_BUFG |                                                                                                                            |                                                                                                                                                                                          |               55 |            165 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    | something/U0/i_synth/axi_wrapper/sclr_w2c                                                                                                                                                |               63 |            307 |
+|  Clock_IBUF_BUFG | something/U0/i_synth/axi_wrapper/ce_w2c                                                                                    |                                                                                                                                                                                          |              467 |           2687 |
++------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+
+

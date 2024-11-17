@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1029991200fs"></ZoomStartTime>
+      <ZoomEndTime time="1029998461fs"></ZoomEndTime>
+      <Cursor1Time time="1030000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="162"></NameColumnWidth>
+      <ValueColumnWidth column_width="121"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject type="logic" fp_name="/testbench/Clock">
+      <obj_property name="ElementShortName">Clock</obj_property>
+      <obj_property name="ObjectShortName">Clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/slave_data">
+      <obj_property name="ElementShortName">slave_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/master_data">
+      <obj_property name="ElementShortName">master_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">master_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/config_data">
+      <obj_property name="ElementShortName">config_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">config_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/config_valid">
+      <obj_property name="ElementShortName">config_valid</obj_property>
+      <obj_property name="ObjectShortName">config_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/slave_valid">
+      <obj_property name="ElementShortName">slave_valid</obj_property>
+      <obj_property name="ObjectShortName">slave_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/slave_last">
+      <obj_property name="ElementShortName">slave_last</obj_property>
+      <obj_property name="ObjectShortName">slave_last</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/master_ready">
+      <obj_property name="ElementShortName">master_ready</obj_property>
+      <obj_property name="ObjectShortName">master_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/config_ready">
+      <obj_property name="ElementShortName">config_ready</obj_property>
+      <obj_property name="ObjectShortName">config_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/slave_ready">
+      <obj_property name="ElementShortName">slave_ready</obj_property>
+      <obj_property name="ObjectShortName">slave_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/master_valid">
+      <obj_property name="ElementShortName">master_valid</obj_property>
+      <obj_property name="ObjectShortName">master_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/master_last">
+      <obj_property name="ElementShortName">master_last</obj_property>
+      <obj_property name="ObjectShortName">master_last</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/slave_data_real">
+      <obj_property name="ElementShortName">slave_data_real[7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_data_real[7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/slave_data_im">
+      <obj_property name="ElementShortName">slave_data_im[7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_data_im[7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/master_data_real">
+      <obj_property name="ElementShortName">master_data_real[7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">master_data_real[7:0][31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/master_data_im">
+      <obj_property name="ElementShortName">master_data_im[7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">master_data_im[7:0][31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/i">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/j">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+   </wvobject>
+</wave_config>
