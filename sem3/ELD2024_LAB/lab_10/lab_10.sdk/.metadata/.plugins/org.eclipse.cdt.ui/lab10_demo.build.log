@@ -1,0 +1,70 @@
+20:01:05 **** Auto Build of configuration Debug for project lab10_demo ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lab10_demo_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:1:
+../src/dma_init.h: In function 'DMA_Init':
+../src/dma_init.h:13:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+      printf("\n\rDMA Initialization Failed !");
+      ^~~~~~
+../src/dma_init.h:13:6: warning: incompatible implicit declaration of built-in function 'printf'
+../src/dma_init.h:13:6: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/dma_init.h:3:1:
++#include <stdio.h>
+ 
+../src/dma_init.h:13:6:
+      printf("\n\rDMA Initialization Failed !");
+      ^~~~~~
+In file included from ../src/helloworld.c:9:
+../../lab10_demo_bsp/ps7_cortexa9_0/include/xtime_l.h: At top level:
+../../lab10_demo_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'bitreverse':
+../src/helloworld.c:19:1: warning: label 'bit_reversal' defined but not used [-Wunused-label]
+ bit_reversal:
+ ^~~~~~~~~~~~
+../src/helloworld.c: In function 'FFT_stages':
+../src/helloworld.c:42:1: warning: label 'stage3' defined but not used [-Wunused-label]
+ stage3:
+ ^~~~~~
+../src/helloworld.c:34:1: warning: label 'stage2' defined but not used [-Wunused-label]
+ stage2:
+ ^~~~~~
+../src/helloworld.c:28:1: warning: label 'stage1' defined but not used [-Wunused-label]
+ stage1:
+ ^~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:71:16: warning: passing argument 1 of 'bitreverse' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     bitreverse(FFT_input, FFT_rev_sw);
+                ^~~~~~~~~
+../src/helloworld.c:18:31: note: expected '_Complex float *' but argument is of type 'const _Complex float *'
+ void bitreverse(float complex dataIn[N], float complex dataOut[N]) {
+                 ~~~~~~~~~~~~~~^~~~~~~~~
+../src/helloworld.c:79:9: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+     int status;
+         ^~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lab10_demo_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: lab10_demo.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lab10_demo_bsp/ps7_cortexa9_0/lib -o "lab10_demo.elf" ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: lab10_demo.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size lab10_demo.elf  |tee "lab10_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70552	   2648	  23328	  96528	  17910	lab10_demo.elf
+Finished building: lab10_demo.elf.size
+ 
+
+20:01:05 Build Finished (took 265ms)
+

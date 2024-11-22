@@ -1386,3 +1386,387 @@ zout.close();
 Path absolute = Paths.get("/home", "something");
 Path relative = Paths.get("repo", "notes", "coding", "rust");
 ```
+
+# LECTURE 19 (18/11/24)
+
+## Reading from a file
+```java
+byte[] bytes = Files.readAllBytes(path);
+line<String> lines = Files.readAllLines(path, charset);
+```
+
+- charset is what encoding you want to use like utf-8
+
+## Writing to a file
+```java
+Files.write(path, content.getBytes(charset));
+```
+
+## Writing to a large file
+```java
+InputStream in = Files.newInputStream(path);
+OutputStream out = Files.newOutputStream(path);
+```
+
+## Copying to a file
+```java
+Files.write(path, File.readAllBytes(path));
+```
+
+## Create dir and file
+```java
+Files.createDirectory(path); // mkdir
+Files.createDirectories(path); // mkdir -p
+Files.createFile(path); // touch
+```
+
+## Create temporary files and directories
+```java
+Path newPath = Files.createTempFile(dir, prefix, suffix); // creates temp file in /prefix/dir/suffix where suffix is the file name and prefix is /tmp in most UNIX systems
+Path newPath = Files.createTempFile(prefix, suffix);
+
+Path newPath = Files.createTempDirectory(dir, prefix);
+Path newPath = Files.createTempDirectory(prefix);
+```
+
+## Copy File
+```java
+Files.copy(fromPath, toPath);
+```
+
+## Move File
+```java
+Files.move(fromPath, toPath);
+```
+
+## Copy/move with target overwrite
+```java
+Files.copy(fromPath, toPath, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
+```
+
+## Atomic Move
+```java
+Files.move(fromPath, toPath, StandardCopyOption.ATOMIC_MOVE);
+```
+- If something goes wrong like interrupt or anything, it will move it back to the src (courruption prevented)
+
+## Copy from InputStream to path and from path to OutputStream
+```java
+Files.copy(InputStream, toPath);
+Files.copy(fromPath, OutputStream);
+```
+
+## Delete files
+```java
+Files.delete(path);
+```
+
+## POSIX
+- Portable Operating System and Interchange
+- If the libraries and syscalls are same the program compiled and run in 1 system should also run and compile in another
+- All the semantics together form POSIX
+- `PosixFileAttributes`
+
+## Dir traversal
+```java
+try (Stream<Path> entries = Files.list(pathToDirectory)) {
+
+}
+```
+- Stream : class of paths (collection with path as the args)
+    - You can iterate over the contents of it
+
+## Memory Mapped IO
+
+### Sequential Access
+```java
+while(buffer.hasRemaining()) {
+    byte b = buffer.get();
+}
+```
+
+### Random Access
+```java
+for(int i = 0; i < buffer.limit(); i++) {
+    byte b = buffer.get(i);
+}
+```
+
+- FileChannel
+- File area
+- Mapping mode
+- reference to a byte buffer class for reading and writing like a flat file (mapping it to a buffer)
+
+## How to store non linear objects without losing data?
+- Serialization
+
+## PROBLEM
+
+### Writing objects to file
+```java
+ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("employee.dat"));
+
+Employee harry - new Employee(..);
+Manager boss - new Manager(..);
+out.writeObject(harry)
+out.writeObject(boss)
+```
+
+### Reading objects from file
+```java
+ObjectInputStream in = new ObjectInputStream(new FileInputStream("employee.dat"));
+
+Employee e1 = (Employee) in.readObject();
+Employee e2 = (Employee) in.readObject();
+```
+
+- the problem here is that e2 is more than just employee but the data is lost
+- so we use Serialization
+- Serializable means storing linearly and then read it back as it was
+
+- We have another attribute (serial number) and for this case, e2 has set its attrib secretary to object 1
+- Linearly Stored :tick: and data not lost
+
+## Solution
+
+```java
+class Employee implements Serializable { ... }
+```
+- no need to implement anything, JVM will handle that
+
+## Transient
+- Certain types cannot be serialized eg: native types
+- Mark such fields as transient and they are stored as separate blocks of objects
+
+```java
+public class something implements Serializable {
+    private String a;
+    private transient Point2D.Double point;
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeDouble(point.getX());
+        out.writeDouble(point.getY());
+    }
+
+    private void writeObject(ObjectOutputStream in) throws IOException {
+        in.defaultReadObject();
+        double x = in.readDouble();
+        double y = in.readDouble();
+        point = new Point2D.Double(x,y);
+    }
+}
+```
+
+- readObject() and writeObject() only needed for non-serializable fileds
+- doesnt concern with superclass info
+- readExternal() and writeExternal() needed if you want to make it work for parent classes as well
+
+## JUnit Testing
+- A systematic attempt to reveal errors
+    - Failed Test : an error was demonstatrated
+    - Passes Test : no error was found (for the particular situation)
+- Manual Testing : tedious, human error, time consuming, less reliable
+- Automated Testing : Fast, checks on every method, More reliable, less reliance on human resources
+
+- White box testing: we observe what happens inside the block and the code logic
+- Black box testing: doesnt care about how the code block works. just cares about the input/output
+
+- For every class something we create somethingTest class for JUnitTesting
+
+- Test Case
+```java
+import org.junit.Test;
+import static org.junit.Asset.assertEquals;
+
+public class MyTest {
+
+    @Test
+    public void testSum(){
+        Sum mySum = new Sum(1,1);
+        int sum = mySum.sum();
+        assertEquals(2, sum);
+    }
+}
+```
+
+- Test Suite
+```java
+public class TestRunner {
+    ...
+}
+```
+
+- returns error if te args inside assertEquals are not equal
+- `$ javac -cp /path/to/junit-4.10.jar`
+
+- assertTrue(test); // fails if not true
+- assertFalse(test); // fails if not false
+- assertEquals(expected, actual); // compares by values
+- assertSame(expected, actual); // compares by reference
+- assertNotSame(expected, actual) // fails if same
+- assertNull(value) // fails if value is not Null
+- assertNotNull(value) // fails if value is Null
+- fail() // causes current test to immediately fail
+
+- we need to have the `assert` keyword if are specifying @Test above a class
+- We need a testsuit which calls the test case and runs it and checks for errors
+
+## Time limitation in testing
+```java
+@Test(timeout = 5000){
+    ...
+} // 5s
+```
+- will fail if time exceeded
+
+## Exception
+```java
+@Test(expected = ExceptionType.class)
+public void something {
+
+}
+```
+- will fail if the specified exception is not thrown
+- else passes
+
+## Setup and Teardown
+```java
+@Before
+public void name() {
+    ...
+}
+@After
+public void name() {
+    ...
+}
+```
+- Methods to run before or after each test case method is called
+- If they are static, they are run after every case else only for that specific case
+- @BeforeClass is for static objects and @Before is for non static objects
+
+# LECTURE 20 (20/11/24)
+- Threads: Sub units of processes that are lightweight i.e. share lot of memory locations
+- They run within one program
+- Most OSs use Preemptive Scheduling to manage threads
+- JVM uses Non-Preemptive Scheduling
+- In java, threads are very different from processes
+
+## Preemptive Scheduling
+- OS Schedules a process and its other variante (pThreads)
+- OS is a scheduler
+- There is a timer
+- Timer will interrupt the CPU which invokes the OS (scheduler)
+
+## Non Preemptive Scheduling
+- There is no timer part in JVM
+- It just has a scheduler and thread libraries that decide to start / stop individual threads
+
+## Thread
+```java
+public class something {
+    public static void main(String[] args){
+        var bank = new Bank(4,100000);
+        Runable task1 = () -> {
+            try {
+                for (int i = 0; i < STEPS; i++){
+                    double amount = MAX_AMOUNT * Math.random();
+                    bank.transfer(0, 1, amount);
+
+                    Thread.sleep((int) (DELAY * Math.random()));
+                }
+            }
+            catch (InterruptedException e){
+
+            }
+        };
+        Runnable task2 = () -> {
+            try {
+                for (int i = 0; i < STEPS; i++){
+                    double amount = MAX_AMOUNT * Math.random();
+                    bank.transfer(2, 3, amount);
+
+                    Thread.sleep((int) (DELAY * Math.random()));
+                }
+            }
+            catch (InterruptedException e){
+
+            }
+        };
+    }
+}
+```
+
+- You need to periodically yield() a thread for others to be scheduled, because of non-preemptive scheduling
+
+### Thread States 
+- new
+- runnable
+- terminated
+- blocked
+- waiting
+- timed waiting
+
+> Ready: ready to run but not scheduled
+
+## java.lang.Thread
+- Thread(Runnable target)
+    - constructs a new thread that calls the run() method of the specified target
+- void start()
+    - starts this thread, causing the run() method to be called. This method will return immediately. The new threads runs concurrently
+- void run()
+    - calls the run method of the Runnable
+- static void sleep(long millis)
+    - sleeps for the given number of ms
+- void join()
+    - waits for the specified thread to terminate()
+- void join(long millis)
+    - waits for the specified thread to die or for the specified number of millis to pass
+- Thread.State getState()
+    - gets the state of this thread (NEW/RUNNABLE/BLOCKED/WAITING/TIMED_WAITING/TERMINATED)
+- void stop()
+    - stops the current thread DEPRECATED
+- void suspend()
+    - Suspends the current thread DEPRECATED
+- void resume()
+    - resumes this thread. valid only after suspend() DEPRECATED
+- void interrupt()
+    - interrupt the current thread
+- static boolean interrupted()
+    - checks if a thread is interrupted or not
+- void setDaemon(boolean isDeamon)
+    - marks this thread as a daemon thread or a user thread. must be called before the thread is started
+
+## Thread Interruption
+- Blocked and sleeping threads cannot be interrupted (InterruptedException happens)
+- Interruption doesnt mean termination necessarily - that is dependent on the system semantics
+- Thread is killed or terminates only when it exits / returns or an uncaught exception is thrown
+- It just grabs the thread's attention
+- Threads can choose to react or not
+```java
+// was i interrupted?
+while(!Thread.currentThread().isInterrupted()) {
+    ...
+}
+```
+
+- Threads can have variables assigned to them
+
+## Handlers of uncaught exceptions java.lang.Thread.UncaughtExceptionHandler
+- run() method can die from unchecked exceptions
+- there is no catch block to which the exception can be transferred to
+- void uncaughtException(Threat t, Throwable e);
+    - defined to log a custom report when a thread is terminated with an uncaught exception
+- Thread.setUncaughtExceptionHandler() or use Thread.setDefaultUncaughtExceptionHandler() to install handler on the thread
+- Both of these could be useful for ``graceful degradation``
+
+## Thread Priorities
+- MIN_PRIORITY(1) < NOMR_PRIORITY(5) < MAX_PRIORITY(10)
+- Thread.setPriority(int priority);
+- Threads have priority determines which thread is chosen to run next by the library after a process yields or is terminated
+- No hard fast rule about priority
+- It is just a suggestion
+- JVM makes the decision whether to run the process or not
+- Default priority is the priority of the parent thread
+- In linux, CFS : completely fair scheduling
+- UFS : unfair scheduling
