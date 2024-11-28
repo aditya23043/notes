@@ -1,0 +1,728 @@
+- HARDWARE OVERVIEW:
+
+  Model Name:	MacBook Pro
+  Model Identifier:	MacBookPro8,1
+  Processor Name:	Intel Core i5
+  Processor Speed:	2.4 GHz
+  Number of Processors:	1
+  Total Number of Cores:	2
+  L2 Cache (per Core):	256 KB
+  L3 Cache:	3 MB
+  Memory:	8 GB
+  Boot ROM Version:	87.0.0.0.0
+  SMC Version (system):	1.68f99
+  Serial Number (system):	C02H8YAEDV13
+  Hardware UUID:	9D4092AB-F635-5B20-8DDD-42F97EEC0E2A
+  Sudden Motion Sensor:
+  State:	Enabled
+
+
+- ATA
+
+This computer doesn't contain any ATA devices. If you installed ATA devices, make sure they're connected and powered on.
+
+
+- AUDIO
+
+Devices:
+
+Built-in Input:
+
+  Default Input Device:	Yes
+  Input Channels:	2
+  Manufacturer:	Apple Inc.
+  Current SampleRate:	44100
+  Transport:	Built-in
+  Input Source:	Internal Microphone
+
+Built-in Output:
+
+  Default Output Device:	Yes
+  Default System Output Device:	Yes
+  Manufacturer:	Apple Inc.
+  Output Channels:	2
+  Current SampleRate:	44100
+  Transport:	Built-in
+  Output Source:	Internal Speakers
+
+
+- BLUETOOTH
+
+  Apple Bluetooth Software Version:	6.0.7f10
+  Hardware, Features, and Settings:
+  Address:	10-40-F3-99-03-6B
+  Bluetooth Low Energy Supported:	No
+  Handoff Supported:	No
+  Instant Hot Spot Supported:	No
+  Manufacturer:	Broadcom
+  Transport:	USB
+  Chipset:	2070B0
+  Firmware Version:	v42 c847
+  Bluetooth Power:	Off
+  Auto Seek Pointing:	On
+  Remote wake:	On
+  Vendor ID:	0x05AC
+  Product ID:	0x821A
+  HCI Version:	2.1 (0x4)
+  HCI Revision:	0x34F
+  LMP Version:	2.1 (0x4)
+  LMP Subversion:	0x422A
+  Auto Seek Keyboard:	On
+  Services:
+  Bluetooth File Transfer:
+  Folder other devices can browse:	~/Public
+  When receiving items:	Prompt for each file
+  State:	Disabled
+  Bluetooth File Exchange:
+  Folder for accepted items:	~/Downloads
+  When other items are accepted:	Ask
+  When receiving items:	Prompt for each file
+  State:	Disabled
+  Bluetooth Internet Sharing:
+  State:	Disabled
+  Incoming Serial Ports:
+  Bluetooth-Incoming-Port:
+  RFCOMM Channel:	3
+  Requires Authentication:	No
+
+
+- CAMERA
+
+FaceTime HD Camera (Built-in):
+
+  Model ID:	UVC Camera VendorID_1452 ProductID_34057
+  Unique ID:	0xfa20000005ac8509
+
+
+- CARD READER
+
+Built in SD Card Reader:
+
+  Vendor ID:	0x14e4
+  Device ID:	0x16bc
+  Subsystem Vendor ID:	0x14e4
+  Subsystem ID:	0x0000
+  Revision:	0x0010
+  Link Width:	x1
+  Link Speed:	2.5 GT/s
+
+- CONTROLLER
+
+This computer doesn’t contain any Controller devices.
+
+
+- DIAGNOSTICS
+
+Power On Self-Test:
+
+  Last Run:	28/11/24, 12:11 PM
+  Result:	Passed
+
+
+- DISC BURNING
+
+OPTIARC DVD RW AD-5970H:
+
+  Firmware Revision:	3APE
+  Interconnect:	ATAPI
+  Burn Support:	Yes (Apple Shipping Drive)
+  Cache:	2048 KB
+  Reads DVD:	Yes
+  CD-Write:	-R, -RW
+  DVD-Write:	-R, -R DL, -RW, +R, +R DL, +RW
+  Write Strategies:	CD-TAO, CD-SAO, CD-Raw, DVD-DAO
+  Media:	To show the available burn speeds, insert a disc and choose File > Refresh Information
+
+
+- ETHERNET CARDS
+
+Broadcom 57765-B0:
+
+  Name:	ethernet
+  Type:	Ethernet Controller
+  Bus:	PCI
+  Vendor ID:	0x14e4
+  Device ID:	0x16b4
+  Subsystem Vendor ID:	0x14e4
+  Subsystem ID:	0x16b4
+  Revision ID:	0x0010
+  Link Width:	x1
+  BSD name:	en0
+  Kext name:	AppleBCM5701Ethernet.kext
+  Firmware version:	57765-a1.54
+  Location:	/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleBCM5701Ethernet.kext
+  mDNS offload capable:	68:5b:35:9d:75:ae
+  Version:	10.3.1
+
+
+- FIBRE CHANNEL
+
+This computer doesn't contain any Fibre Channel devices. If you installed Fibre Channel adapters, make sure they are seated properly and that any devices, hubs, and switches are connected properly and powered on.
+
+- FIREWIRE
+
+FireWire Bus:
+
+  Maximum Speed:	Up to 800 Mb/sec
+
+
+- GRAPHICS / DISPLAY
+
+Intel HD Graphics 3000:
+
+  Chipset Model:	Intel HD Graphics 3000
+  Type:	GPU
+  Bus:	Built-In
+  VRAM (Dynamic, Max):	512 MB
+  Vendor:	Intel
+  Device ID:	0x0126
+  Revision ID:	0x0009
+  Displays:
+Color LCD:
+  Display Type:	LCD
+  Resolution:	1280 x 800
+  UI Looks like:	1280 x 800
+  Framebuffer Depth:	24-Bit Color (ARGB8888)
+  Main Display:	Yes
+  Mirror:	Off
+  Online:	Yes
+  Rotation:	Supported
+  Automatically Adjust Brightness:	No
+
+
+- HARDWARE RAID
+
+This system doesn't contain any supported hardware RAID devices. If you installed hardware RAID devices, make sure you installed them properly.
+
+- MEMORY
+
+Memory Slots:
+
+  ECC:	Disabled
+  Upgradeable Memory:	Yes
+
+BANK 0/DIMM0:
+
+  Size:	4 GB
+  Type:	DDR3
+  Speed:	1600 MHz
+  Status:	OK
+  Manufacturer:	0x80CE
+  Part Number:	0x4D34373142353237334448302D594B302020
+  Serial Number:	0x1300C038
+
+BANK 1/DIMM0:
+
+  Size:	4 GB
+  Type:	DDR3
+  Speed:	1600 MHz
+  Status:	OK
+  Manufacturer:	0x80CE
+  Part Number:	0x4D34373142353237334448302D594B302020
+  Serial Number:	0x1300C038
+
+
+- NVME EXPRESS
+
+This computer doesn’t contain any NVMExpress devices. If you installed NVMExpress devices, make sure they are connected properly and powered on.
+
+
+- PCI
+
+This computer doesn’t contain any PCI cards or devices. If you installed or connected a PCI card or device, make sure it is properly installed.
+
+
+- PARALLEL SCSI
+
+This computer doesn't contain any Parallel SCSI devices. If you installed Parallel SCSI adapters, make sure they're seated properly and that any devices connected are powered on, connected properly, and correctly terminated.
+
+- BATTERY
+
+Battery Information:
+
+  Model Information:
+  Serial Number:	W020551V4D3BA
+  Manufacturer:	SMP
+  Device Name:	bq20z451
+  Pack Lot Code:	0
+  PCB Lot Code:	0
+  Firmware Version:	201
+  Hardware Revision:	000a
+  Cell Revision:	158
+  Charge Information:
+  Charge Remaining (mAh):	2573
+  Fully Charged:	No
+  Charging:	No
+  Full Charge Capacity (mAh):	5027
+  Health Information:
+  Cycle Count:	324
+  Condition:	Normal
+  Battery Installed:	Yes
+  Amperage (mA):	-945
+  Voltage (mV):	11205
+
+System Power Settings:
+
+  AC Power:
+  System Sleep Timer (Minutes):	10
+  Disk Sleep Timer (Minutes):	10
+  Display Sleep Timer (Minutes):	10
+  Wake on AC Change:	No
+  Wake on Clamshell Open:	Yes
+  Wake on LAN:	Yes
+  Display Sleep Uses Dim:	Yes
+  Hibernate Mode:	3
+  PrioritizeNetworkReachabilityOverSleep:	0
+  Standby Delay:	4200
+  Standby Enabled:	0
+  Battery Power:
+  System Sleep Timer (Minutes):	10
+  Disk Sleep Timer (Minutes):	10
+  Display Sleep Timer (Minutes):	2
+  Wake on AC Change:	No
+  Wake on Clamshell Open:	Yes
+  Current Power Source:	Yes
+  Display Sleep Uses Dim:	Yes
+  Hibernate Mode:	3
+  Reduce Brightness:	Yes
+  Standby Delay:	4200
+  Standby Enabled:	0
+
+Hardware Configuration:
+
+  UPS Installed:	No
+
+AC Charger Information:
+
+  Connected:	No
+  Charging:	No
+
+
+- PRINTER
+
+  Status:	The printers list is empty. To add printers, choose Apple menu > System Preferences…, click Printers & Scanners, and then click Add (+).
+  CUPS Version:	2.2.5 (cups-462.2.4)
+
+
+- SAS
+
+This computer doesn't contain any SAS devices. If you installed SAS devices, make sure they are connected properly and powered on.
+
+- SATA / SATA EXPRESS
+
+Intel 6 Series Chipset:
+
+  Vendor:	Intel
+  Product:	6 Series Chipset
+  Link Speed:	6 Gigabit
+  Negotiated Link Speed:	3 Gigabit
+  Physical Interconnect:	SATA
+  Description:	AHCI Version 1.30 Supported
+
+TOSHIBA MK5065GSXF:
+
+  Capacity:	500.11 GB (5,00,10,78,62,016 bytes)
+  Model:	TOSHIBA MK5065GSXF                      
+  Revision:	GV108B  
+  Serial Number:	Z1CEPC5ST
+  Native Command Queuing:	Yes
+  Queue Depth:	32
+  Removable Media:	No
+  Detachable Drive:	No
+  BSD Name:	disk0
+  Rotational Rate:	5400
+  Medium Type:	Rotational
+  Partition Map Type:	GPT (GUID Partition Table)
+  S.M.A.R.T. status:	Verified
+  Volumes:
+EFI:
+  Capacity:	209.7 MB (20,97,15,200 bytes)
+  File System:	MS-DOS FAT32
+  BSD Name:	disk0s1
+  Content:	EFI
+  Volume UUID:	85D67001-D93E-3687-A1C2-79D677F0C2E0
+disk0s2:
+  Capacity:	499.25 GB (4,99,24,81,03,424 bytes)
+  BSD Name:	disk0s2
+  Content:	Apple_CoreStorage
+Recovery HD:
+  Capacity:	650 MB (65,00,02,432 bytes)
+  BSD Name:	disk0s3
+  Content:	Apple_Boot
+  Volume UUID:	A91DF559-BAF1-3A11-BD9C-EC7D7C0FF366
+
+
+- SPI
+
+This computer doesn't contain any SPI devices.
+
+
+- STORAGE
+
+Untitled:
+
+  Available:	467.83 GB (4,67,82,88,75,264 bytes)
+  Capacity:	498.88 GB (4,98,87,68,09,216 bytes)
+  Mount Point:	/
+  File System:	Journaled HFS+
+  Writable:	Yes
+  Ignore Ownership:	No
+  BSD Name:	disk1
+  Volume UUID:	F6C710C4-98FF-30E9-B2A8-E11C18F8D3F8
+  Logical Volume:
+  Revertible:	Yes (no decryption required)
+  Encrypted:	No
+  LV UUID:	C8D52B92-2F52-42BF-906B-1F333A83E58C
+  Logical Volume Group:
+  Name:	Untitled
+  Size:	499.25 GB (4,99,24,81,03,424 bytes)
+  Free Space:	19 MB (1,89,72,672 bytes)
+  LVG UUID:	60509EC5-21EA-467F-B460-08012FD7BCFC
+  Physical Volumes:
+disk0s2:
+  Device Name:	TOSHIBA MK5065GSXF
+  Media Name:	TOSHIBA MK5065GSXF Media
+  Size:	499.25 GB (4,99,24,81,03,424 bytes)
+  Medium Type:	Rotational
+  Protocol:	SATA
+  Internal:	Yes
+  Partition Map Type:	GPT (GUID Partition Table)
+  Status:	Online
+  S.M.A.R.T. Status:	Verified
+  PV UUID:	5CE07133-D2A6-4A5D-B618-82D0A54A3687
+
+
+- THUNDERBOLT
+
+Thunderbolt Bus:
+
+  Vendor Name:	Apple Inc.
+  Device Name:	MacBook Pro
+  UID:	0x0001000A1C37D240
+  Route String:	0
+  Firmware Version:	25.1
+  Domain UUID:	22CB32CB-FF0E-535F-A1D3-DB779425FE40
+  Port:
+  Status:	No device connected
+  Link Status:	0x101
+  Speed:	Up to 10 Gb/s x2
+  Receptacle:	1
+  Port Micro Firmware Version:	2.1.1
+
+
+- USB
+
+USB 2.0 Bus:
+
+  Host Controller Driver:	AppleUSBEHCIPCI
+  PCI Device ID:	0x1c2d 
+  PCI Revision ID:	0x0005 
+  PCI Vendor ID:	0x8086 
+
+FaceTime HD Camera (Built-in):
+
+  Product ID:	0x8509
+  Vendor ID:	0x05ac (Apple Inc.)
+  Version:	5.16
+  Serial Number:	CC2C1L01TADG6LL0
+  Speed:	Up to 480 Mb/sec
+  Manufacturer:	Apple Inc.
+  Location ID:	0xfa200000 / 1
+  Current Available (mA):	500
+  Current Required (mA):	500
+  Extra Operating Current (mA):	0
+  Built-In:	Yes
+
+Hub:
+
+  Product ID:	0x2513
+  Vendor ID:	0x0424  (SMSC)
+  Version:	b.b3
+  Speed:	Up to 480 Mb/sec
+  Location ID:	0xfa100000 / 2
+  Current Available (mA):	500
+  Current Required (mA):	2
+  Extra Operating Current (mA):	0
+  Built-In:	Yes
+
+Apple Internal Keyboard / Trackpad:
+
+  Product ID:	0x0252
+  Vendor ID:	0x05ac (Apple Inc.)
+  Version:	1.18
+  Speed:	Up to 12 Mb/sec
+  Manufacturer:	Apple Inc.
+  Location ID:	0xfa120000 / 4
+  Current Available (mA):	500
+  Current Required (mA):	40
+  Extra Operating Current (mA):	0
+  Built-In:	Yes
+
+BRCM2070 Hub:
+
+  Product ID:	0x4500
+  Vendor ID:	0x0a5c  (Broadcom Corp.)
+  Version:	1.00
+  Speed:	Up to 12 Mb/sec
+  Manufacturer:	Apple Inc.
+  Location ID:	0xfa110000 / 3
+  Current Available (mA):	500
+  Current Required (mA):	94
+  Extra Operating Current (mA):	0
+  Built-In:	Yes
+
+Bluetooth USB Host Controller:
+
+  Product ID:	0x821a
+  Vendor ID:	0x05ac (Apple Inc.)
+  Version:	0.42
+  Speed:	Up to 12 Mb/sec
+  Manufacturer:	Apple Inc.
+  Location ID:	0xfa113000 / 6
+  Current Available (mA):	500
+  Current Required (mA):	0
+  Extra Operating Current (mA):	0
+  Built-In:	Yes
+
+
+- NETWORK
+
+Bluetooth PAN:
+
+  Type:	Ethernet
+  Hardware:	Ethernet
+  BSD Device Name:	en3
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+  Service Order:	3
+
+- FIREWALL
+
+Firewall Settings:
+
+  Mode:	Allow all incoming connections
+  Firewall Logging:	Yes
+  Stealth Mode:	No
+
+- LOCATIONS
+
+Automatic:
+
+  Active Location:	Yes
+  Services:
+Ethernet:
+  Type:	Ethernet
+  BSD Device Name:	en0
+  Hardware (MAC) Address:	68:5b:35:9d:75:ae
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+FireWire:
+  Type:	FireWire
+  BSD Device Name:	fw0
+  Hardware (MAC) Address:	44:fb:42:ff:fe:c3:7d:24
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+Wi-Fi:
+  Type:	IEEE80211
+  BSD Device Name:	en1
+  Hardware (MAC) Address:	10:40:f3:99:03:6a
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+  IEEE80211:
+  JoinModeFallback:	DoNothing
+  PowerEnabled:	1
+  RememberJoinedNetworks:	1
+  Version:	2300
+Bluetooth PAN:
+  Type:	Ethernet
+  BSD Device Name:	en3
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+Thunderbolt Bridge:
+  Type:	Bridge
+  BSD Device Name:	bridge0
+  Hardware (MAC) Address:	d2:00:1c:37:d2:40
+  IPv4:
+  Configuration Method:	DHCP
+  IPv6:
+  Configuration Method:	Automatic
+  Proxies:
+  Exceptions List:	*.local, 169.254/16
+  FTP Passive Mode:	Yes
+
+
+- VOLUMES
+
+home:
+
+  Type:	autofs
+  Mount Point:	/home
+  Mounted From:	map auto_home
+  Automounted:	Yes
+
+
+- WWAN
+
+No Wireless Wide Area Network could be obtained for this system. WWAN is wireless connectivity through cellular tower technology. Please connect a WWAN device and try again.
+
+
+- WI-FI
+
+  Software Versions:
+  CoreWLAN:	13.0 (1350.1)
+  CoreWLANKit:	13.0 (1350.1)
+  Menu Extra:	13.0 (1361.7)
+  System Information:	12.0 (1300.1)
+  IO80211 Family:	12.0 (1200.12.2)
+  Diagnostics:	1.0 (805)
+  AirPort Utility:	6.3.8 (638.9)
+  Interfaces:
+en1:
+  Card Type:	AirPort Extreme  (0x14E4, 0xD6)
+  Firmware Version:	Broadcom BCM43xx 1.0 (5.106.98.102.30)
+  MAC Address:	10:40:f3:99:03:6a
+  Locale:	APAC
+  Country Code:	IN
+  Supported PHY Modes:	802.11 a/b/g/n
+  Supported Channels:	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 36, 40, 44, 48, 52, 56, 60, 64, 149, 153, 157, 161, 165
+  Wake On Wireless:	Supported
+  AirDrop:	Supported
+  Status:	Connected
+  Current Network Information:
+PRIADI_5G:
+  PHY Mode:	802.11n
+  BSSID:	04:25:e0:df:66:1d
+  Channel:	36,1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA/WPA2 Personal
+  Signal / Noise:	-50 dBm / -90 dBm
+  Transmit Rate:	300
+  MCS Index:	15
+  Other Local Wi-Fi Networks:
+Airtel_9999737927_5GHz:
+  PHY Mode:	802.11n
+  BSSID:	a0:9b:17:a0:cd:cd
+  Channel:	161,-1
+  Network Type:	Infrastructure
+  Security:	WPA/WPA2 Personal
+  Signal / Noise:	-80 dBm / -90 dBm
+Airtel_DipeshG:
+  PHY Mode:	802.11n
+  BSSID:	50:3d:7f:8e:ac:e9
+  Channel:	6
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA/WPA2 Personal
+  Signal / Noise:	-64 dBm / -81 dBm
+Jio_2:
+  PHY Mode:	802.11n
+  BSSID:	8e:a3:99:a4:8a:a8
+  Channel:	11
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-51 dBm / -87 dBm
+Jio_2:
+  PHY Mode:	802.11n
+  BSSID:	8e:a3:99:a4:8a:a9
+  Channel:	153,-1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-63 dBm / -90 dBm
+PRIADI:
+  PHY Mode:	802.11n
+  BSSID:	04:25:e0:df:66:19
+  Channel:	11
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA/WPA2 Personal
+  Signal / Noise:	-49 dBm / -92 dBm
+PRIADI_EXT:
+  PHY Mode:	802.11n
+  BSSID:	ac:15:a2:3e:a4:a8
+  Channel:	11
+  Network Type:	Infrastructure
+  Security:	WPA/WPA2 Personal
+  Signal / Noise:	-59 dBm / -87 dBm
+Parul:
+  PHY Mode:	802.11n
+  BSSID:	f4:f6:47:41:6b:96
+  Channel:	1,+1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-80 dBm / -92 dBm
+Vaibhav_Home_4G:
+  PHY Mode:	802.11n
+  BSSID:	8c:a3:99:94:8a:a8
+  Channel:	11
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-50 dBm / -87 dBm
+Vaibhav_Home_5G:
+  PHY Mode:	802.11n
+  BSSID:	8c:a3:99:94:8a:a9
+  Channel:	153,-1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-63 dBm / -90 dBm
+Vijay:
+  PHY Mode:	802.11n
+  BSSID:	f4:27:56:56:54:a8
+  Channel:	2,+1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-56 dBm / -88 dBm
+Vijay_5G:
+  PHY Mode:	802.11n
+  BSSID:	f4:27:56:56:54:a9
+  Channel:	40,-1
+  Country Code:	IN
+  Network Type:	Infrastructure
+  Security:	WPA2 Personal
+  Signal / Noise:	-74 dBm / -90 dBm
+
+
+- SOFTWARE
+
+System Software Overview:
+
+  System Version:	macOS 10.13.6 (17G66)
+  Kernel Version:	Darwin 17.7.0
+  Boot Volume:	Untitled
+  Boot Mode:	Normal
+  Computer Name:	Aditya’s MacBook Pro
+  User Name:	Aditya Gautam (adityagautam)
+  Secure Virtual Memory:	Enabled
+  System Integrity Protection:	Enabled
+  Time since boot:	16 minutes
