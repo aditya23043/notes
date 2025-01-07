@@ -1,0 +1,39 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../fft_tb.c in debug mode
+INFO: [HLS 200-10] Running '/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adi' on host 'archlinux' (Linux_x86_64 version 6.6.65-1-lts) on Mon Dec 16 11:35:57 IST 2024
+INFO: [HLS 200-10] In directory '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project/solution1/csim/build'
+In file included from ../../fft_tb.c:1:
+../../fft.c:25:18: error: redefinition of 'i'
+        for (int i = 0; i < N; i=i+4){
+                 ^
+../../fft.c:19:18: note: previous definition is here
+        for (int i = 0; i < N; i=i+2){
+                 ^
+../../fft.c:33:18: error: redefinition of 'i'
+        for (int i = 0; i < N / 2; i++) {
+                 ^
+../../fft.c:19:18: note: previous definition is here
+        for (int i = 0; i < N; i=i+2){
+                 ^
+../../fft_tb.c:19:14: warning: passing 'const _Complex float [8]' to parameter of type '_Complex float *' discards qualifiers [-Wincompatible-pointer-types]
+  bitreverse(FFT_input, FFT_rev);
+             ^~~~~~~~~
+../../fft.c:8:31: note: passing argument to parameter 'dataIn' here
+void bitreverse(float complex dataIn[N], float complex dataOut[N]){
+                              ^
+../../fft_tb.c:27:12: error: redefinition of 'i'
+  for (int i = 0; i < N; i++) {
+           ^
+../../fft_tb.c:23:12: note: previous definition is here
+  for (int i = 0; i < N; i++) {
+           ^
+1 warning and 3 errors generated.
+ERROR: [APCC 202-10] clang compile failed: child process exited abnormally
+ERROR: [APCC 202-1] ProcessSources failed
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_adi/491201734329157335824
+ERROR: [APCC 202-1] APCC failed.
+make: *** [csim.mk:77: obj/fft_tb.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

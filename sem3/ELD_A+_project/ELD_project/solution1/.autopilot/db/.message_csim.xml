@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SIM 211-2]" key="SIM_2_1569" tag="" content="*************** CSIM start ***************"/>
+	<Message severity="INFO" prefix="[SIM 211-4]" key="SIM_4_1577" tag="" content="CSIM will launch GCC as the compiler."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/apcc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;adi&apos; on host &apos;archlinux&apos; (Linux_x86_64 version 6.6.65-1-lts) on Mon Dec 16 22:43:10 IST 2024"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project/solution1/csim/build&apos;"/>
+	<Message severity="ERROR" prefix="[APCC 202-3]" key="APCC_3_1597" tag="" content="Gcc Compile failed:"/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /tmp/apcc_db_adi/348581734369190298312"/>
+	<Message severity="ERROR" prefix="[APCC 202-1]" key="APCC_1_1612" tag="" content="APCC failed."/>
+	<Message severity="ERROR" prefix="[SIM 211-100]" key="SIM_100_1589" tag="" content="&apos;csim_design&apos; failed: compilation error(s)."/>
+	<Message severity="INFO" prefix="[SIM 211-3]" key="SIM_3_1588" tag="" content="*************** CSIM finish ***************"/>
+</Messages>

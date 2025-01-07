@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:43:12.951+0530"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xA;make: *** [csim.mk:77: obj/fft_tb.o] Error 1" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:43:12.949+0530"/>
+        <logs message="ERROR: [APCC 202-3] Gcc Compile failed: &#xA;/tmp/apcc_db_adi/348581734369190298312/fft_tb.c: In function ‘main’:&#xA;/tmp/apcc_db_adi/348581734369190298312/fft_tb.c:2830:37: error: incompatible type for argument 1 of ‘cabs’&#xA;   llvm_cbe_tmp__214 = (double )cabs(llvm_cbe_tmp__199);&#xA;                                     ^~~~~~~~~~~~~~~~~&#xA;/tmp/apcc_db_adi/348581734369190298312/fft_tb.c:2830:37: note: expected ‘complex double’ but argument is of type ‘l_unnamed_0 {aka struct l_unnamed_0}’" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:43:12.936+0530"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:41:34.298+0530"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xA;make: *** [csim.mk:77: obj/fft_tb.o] Error 1" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:41:34.297+0530"/>
+        <logs message="ERROR: [APCC 202-3] Gcc Compile failed: &#xA;/tmp/apcc_db_adi/343941734369091656188/fft_tb.c: In function ‘main’:&#xA;/tmp/apcc_db_adi/343941734369091656188/fft_tb.c:2850:37: error: incompatible type for argument 1 of ‘cabs’&#xA;   llvm_cbe_tmp__216 = (double )cabs(llvm_cbe_tmp__199);&#xA;                                     ^~~~~~~~~~~~~~~~~&#xA;/tmp/apcc_db_adi/343941734369091656188/fft_tb.c:2850:37: note: expected ‘complex double’ but argument is of type ‘l_unnamed_1 {aka struct l_unnamed_1}’" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:41:34.284+0530"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:40:48.692+0530"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xA;make: *** [csim.mk:77: obj/fft_tb.o] Error 1" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:40:48.691+0530"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:40:48.681+0530"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:40:48.679+0530"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:39:09.910+0530"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xA;make: *** [csim.mk:77: obj/fft_tb.o] Error 1" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:39:09.908+0530"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:39:09.897+0530"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:39:09.895+0530"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:38:52.796+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement." projectName="ELD_project" solutionName="solution1" date="2024-12-16T22:38:52.789+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

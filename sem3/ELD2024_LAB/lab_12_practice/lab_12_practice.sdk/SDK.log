@@ -1,0 +1,8 @@
+09:25:18 INFO  : Registering command handlers for SDK TCF services
+09:25:19 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_12_practice/lab_12_practice.sdk/temp_xsdb_launch_script.tcl
+09:25:21 INFO  : XSCT server has started successfully.
+09:25:21 INFO  : Successfully done setting XSCT server connection channel  
+09:25:21 INFO  : Successfully done setting SDK workspace  
+09:25:21 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_12_practice/lab_12_practice.sdk/design_1_wrapper.hdf.
+09:32:08 ERROR : (XSDB Server)Terminated
+

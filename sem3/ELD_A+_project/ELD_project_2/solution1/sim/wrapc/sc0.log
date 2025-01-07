@@ -1,0 +1,5 @@
+   Build using "/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_fft_8point.cpp
+   Compiling fft.cpp_pre.cpp.tb.cpp
+   Compiling fft_tb.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

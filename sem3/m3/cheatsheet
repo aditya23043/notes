@@ -1,0 +1,47 @@
+---------------------------------------------------------------
+
+CHAPTER 13 FROM KREYSZIG
+
+theta = arg = argument = multi-valued
+Arg = principle Argument = theta E (-pi, pi] = general form of arg
+so, (y) theta is always periodic
+
+Limit at z0 = Lim: z -> z0: f(z)
+
+Deriative at z0 = lim dz -> 0: (f(z + dz) - f(z)) / dz
+
+Cauchy Riemann Equation
+du/dx =  dv/dy
+du/dy = -dv/dx
+- Then a function is analytic -> and hence differentiable
+
+Derivative formulas
+f'(z) = u_x + iv_x = v_y - iv_y
+
+Laplace's Equation: u_xx + u_yy = 0 and v_xx + v_yy = 0
+If a function is harmonic -> then it passes laplace's equation
+Harmonic Conjugate of a function 'u' is the 'v' from CR eqn
+
+Exponential Complex Function
+e^z = e^x (cosy + isiny)
+Properties (nothing imp, just remember the above stuff)
+	e^(z1+z2) = e^z1 * e^z2
+	e^z = e^x * e^iy
+	z = re^i(theta)
+	e^iy = cosy + i siny
+
+	if space is there, write all the exp forumlas
+
+Function analytic for entire z is entire function
+
+Trignometric Complex Function
+Show trig complex function  in terms of real and complex trig and hyperbolic trig functions
+
+|cos z|^2 + |sin z|^2 >= 1
+|cos z|^2 + |sin z|^2 = 1 + 2*sinh(y)^2
+if x is periodic, then cos z and sin z are also periodic
+(cos z)^2 + (sin z)^2 = 1
+
+cos z and sin z formulas
+
+---------------------------------------------------------------

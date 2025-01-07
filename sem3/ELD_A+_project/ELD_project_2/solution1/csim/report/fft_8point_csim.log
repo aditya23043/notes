@@ -1,0 +1,31 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../fft_tb.cpp in debug mode
+   Generating csim.exe
+
+INPUT: 
+
+(1, 0)
+(2, 0)
+(3, 0)
+(4, 0)
+(5, 1)
+(6, 2)
+(7, 3)
+(8, 4)
+
+
+OUTPUT: 
+
+(36, 10)
+(-11.2426, 10.0711)
+(-6, 2)
+(-5.24264, -0.75736)
+(-4, -2)
+(-2.75736, -4.07107)
+(-2, -6)
+(3.24264, -9.24264)
+
+PASS
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

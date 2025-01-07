@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vivado HLS Report for 'FFT'
+================================================================
+* Date:           Mon Dec 16 22:38:56 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        ELD_project
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.400|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  197|  197|  197|  197|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- bit_reversal  |   24|   24|         3|          -|          -|     8|    no    |
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 5 
+3 --> 4 
+4 --> 2 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_input_real), !map !9"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_input_imag), !map !15"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_output_real), !map !19"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_output_imag), !map !23"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @FFT_str) nounwind"   --->   Operation 10 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%FFT_rev_real = alloca [8 x float], align 4" [ELD_project/solution1/fft.c:49]   --->   Operation 11 'alloca' 'FFT_rev_real' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%FFT_rev_imag = alloca [8 x float], align 4" [ELD_project/solution1/fft.c:49]   --->   Operation 12 'alloca' 'FFT_rev_imag' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 13 [1/1] (1.76ns)   --->   "br label %1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 13 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%i_0_i = phi i4 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 14 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (1.30ns)   --->   "%icmp_ln17 = icmp eq i4 %i_0_i, -8" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 15 'icmp' 'icmp_ln17' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 16 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (1.73ns)   --->   "%i = add i4 %i_0_i, 1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 17 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %icmp_ln17, label %bitreverse.exit, label %2" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%zext_ln18 = zext i4 %i_0_i to i64" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 19 'zext' 'zext_ln18' <Predicate = (!icmp_ln17)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%rev8_addr = getelementptr [8 x i3]* @rev8, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 20 'getelementptr' 'rev8_addr' <Predicate = (!icmp_ln17)> <Delay = 0.00>
+ST_2 : Operation 21 [2/2] (3.25ns)   --->   "%rev8_load = load i3* %rev8_addr, align 1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 21 'load' 'rev8_load' <Predicate = (!icmp_ln17)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 3> <Depth = 8> <ROM>
+ST_2 : Operation 22 [2/2] (0.00ns)   --->   "call fastcc void @FFT_stages([8 x float]* %FFT_rev_real, [8 x float]* %FFT_rev_imag, [8 x float]* %FFT_output_real, [8 x float]* %FFT_output_imag)" [ELD_project/solution1/fft.c:51]   --->   Operation 22 'call' <Predicate = (icmp_ln17)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 23 [1/2] (3.25ns)   --->   "%rev8_load = load i3* %rev8_addr, align 1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 23 'load' 'rev8_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 3> <Depth = 8> <ROM>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln18_1 = zext i3 %rev8_load to i64" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 24 'zext' 'zext_ln18_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%FFT_input_real_addr = getelementptr [8 x float]* %FFT_input_real, i64 0, i64 %zext_ln18_1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 25 'getelementptr' 'FFT_input_real_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [2/2] (2.32ns)   --->   "%FFT_input_real_load = load float* %FFT_input_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 26 'load' 'FFT_input_real_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%FFT_input_imag_addr = getelementptr [8 x float]* %FFT_input_imag, i64 0, i64 %zext_ln18_1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 27 'getelementptr' 'FFT_input_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [2/2] (2.32ns)   --->   "%FFT_input_imag_load = load float* %FFT_input_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 28 'load' 'FFT_input_imag_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 4 <SV = 3> <Delay = 4.64>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str) nounwind" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 29 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/2] (2.32ns)   --->   "%FFT_input_real_load = load float* %FFT_input_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 30 'load' 'FFT_input_real_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 31 [1/2] (2.32ns)   --->   "%FFT_input_imag_load = load float* %FFT_input_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 31 'load' 'FFT_input_imag_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%FFT_rev_real_addr = getelementptr [8 x float]* %FFT_rev_real, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 32 'getelementptr' 'FFT_rev_real_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%FFT_rev_imag_addr = getelementptr [8 x float]* %FFT_rev_imag, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 33 'getelementptr' 'FFT_rev_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (2.32ns)   --->   "store float %FFT_input_real_load, float* %FFT_rev_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 34 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 35 [1/1] (2.32ns)   --->   "store float %FFT_input_imag_load, float* %FFT_rev_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 35 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "br label %1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 36 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.00>
+ST_5 : Operation 37 [1/2] (0.00ns)   --->   "call fastcc void @FFT_stages([8 x float]* %FFT_rev_real, [8 x float]* %FFT_rev_imag, [8 x float]* %FFT_output_real, [8 x float]* %FFT_output_imag)" [ELD_project/solution1/fft.c:51]   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "ret void" [ELD_project/solution1/fft.c:52]   --->   Operation 38 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50) [15]  (1.77 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50) [15]  (0 ns)
+	'getelementptr' operation ('rev8_addr', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) [23]  (0 ns)
+	'load' operation ('rev8_load', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) on array 'rev8' [24]  (3.25 ns)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('rev8_load', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) on array 'rev8' [24]  (3.25 ns)
+	'getelementptr' operation ('FFT_input_real_addr', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) [26]  (0 ns)
+	'load' operation ('FFT_input_real_load', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) on array 'FFT_input_real' [27]  (2.32 ns)
+
+ <State 4>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('FFT_input_real_load', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) on array 'FFT_input_real' [27]  (2.32 ns)
+	'store' operation ('store_ln18', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50) of variable 'FFT_input_real_load', ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50 on array 'FFT_rev.real', ELD_project/solution1/fft.c:49 [32]  (2.32 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

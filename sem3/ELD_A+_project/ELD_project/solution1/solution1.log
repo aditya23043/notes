@@ -1,0 +1,170 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'ELD_project/solution1/fft.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ELD_project/solution1/fft.c:1:
+ELD_project/solution1/fft.c:19:15: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+2){
+              ^
+ELD_project/solution1/fft.c:19:22: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+2){
+                     ^
+ELD_project/solution1/fft.c:19:29: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+2){
+                            ^
+ELD_project/solution1/fft.c:19:31: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+2){
+                              ^
+ELD_project/solution1/fft.c:20:19: error: use of undeclared identifier 'i'
+            temp1[i] = FFT_input[i] + FFT_input[i+1];
+                  ^
+ELD_project/solution1/fft.c:20:34: error: use of undeclared identifier 'i'
+            temp1[i] = FFT_input[i] + FFT_input[i+1];
+                                 ^
+ELD_project/solution1/fft.c:20:49: error: use of undeclared identifier 'i'
+            temp1[i] = FFT_input[i] + FFT_input[i+1];
+                                                ^
+ELD_project/solution1/fft.c:21:19: error: use of undeclared identifier 'i'
+            temp1[i+1] = FFT_input[i] - FFT_input[i+1];
+                  ^
+ELD_project/solution1/fft.c:21:36: error: use of undeclared identifier 'i'
+            temp1[i+1] = FFT_input[i] - FFT_input[i+1];
+                                   ^
+ELD_project/solution1/fft.c:21:51: error: use of undeclared identifier 'i'
+            temp1[i+1] = FFT_input[i] - FFT_input[i+1];
+                                                  ^
+ELD_project/solution1/fft.c:25:15: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+4){
+              ^
+ELD_project/solution1/fft.c:25:22: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+4){
+                     ^
+ELD_project/solution1/fft.c:25:29: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+4){
+                            ^
+ELD_project/solution1/fft.c:25:31: error: use of undeclared identifier 'i'
+        for ( i = 0; i < 8; i=i+4){
+                              ^
+ELD_project/solution1/fft.c:27:23: error: use of undeclared identifier 'i'
+                temp2[i+j] = temp1[i+j] + W[2*j]*temp1[i+j+2];
+                      ^
+ELD_project/solution1/fft.c:27:36: error: use of undeclared identifier 'i'
+                temp2[i+j] = temp1[i+j] + W[2*j]*temp1[i+j+2];
+                                   ^
+ELD_project/solution1/fft.c:27:56: error: use of undeclared identifier 'i'
+                temp2[i+j] = temp1[i+j] + W[2*j]*temp1[i+j+2];
+                                                       ^
+ELD_project/solution1/fft.c:28:23: error: use of undeclared identifier 'i'
+                temp2[i+2+j] = temp1[i+j] - W[2*j]*temp1[i+j+2];
+                      ^
+ELD_project/solution1/fft.c:28:38: error: use of undeclared identifier 'i'
+                temp2[i+2+j] = temp1[i+j] - W[2*j]*temp1[i+j+2];
+                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================

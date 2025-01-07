@@ -1,0 +1,335 @@
+21:49:41 INFO  : Registering command handlers for SDK TCF services
+21:49:41 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/temp_xsdb_launch_script.tcl
+21:49:43 INFO  : XSCT server has started successfully.
+21:49:43 INFO  : Successfully done setting XSCT server connection channel  
+21:49:43 INFO  : Successfully done setting SDK workspace  
+21:49:43 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper.hdf.
+22:14:02 INFO  : Refreshed build settings on project lab_11
+22:17:12 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:17:21 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:17:33 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+----------------End of Script----------------
+
+22:18:11 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:18:11 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:18:12 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+22:18:12 INFO  : 'jtag frequency' command is executed.
+22:18:12 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:18:12 INFO  : Context for 'APU' is selected.
+22:18:13 INFO  : System reset is completed.
+22:18:16 INFO  : 'after 3000' command is executed.
+22:18:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+22:18:18 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+22:18:19 INFO  : Context for 'APU' is selected.
+22:18:19 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:18:19 INFO  : 'configparams force-mem-access 1' command is executed.
+22:18:19 INFO  : Context for 'APU' is selected.
+22:18:31 INFO  : 'ps7_init' command is executed.
+22:18:31 INFO  : 'ps7_post_config' command is executed.
+22:18:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:18:32 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:18:32 INFO  : 'configparams force-mem-access 0' command is executed.
+22:18:32 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:18:33 INFO  : Memory regions updated for context APU
+22:18:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:18:33 INFO  : 'con' command is executed.
+22:18:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+22:18:33 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+22:20:59 INFO  : Disconnected from the channel tcfchan#1.
+22:21:00 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:21:02 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:21:03 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+22:21:03 INFO  : 'jtag frequency' command is executed.
+22:21:03 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:21:03 INFO  : Context for 'APU' is selected.
+22:21:04 INFO  : System reset is completed.
+22:21:07 INFO  : 'after 3000' command is executed.
+22:21:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+22:21:09 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+22:21:09 INFO  : Context for 'APU' is selected.
+22:21:11 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:21:11 INFO  : 'configparams force-mem-access 1' command is executed.
+22:21:11 INFO  : Context for 'APU' is selected.
+22:21:23 INFO  : 'ps7_init' command is executed.
+22:21:24 INFO  : 'ps7_post_config' command is executed.
+22:21:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:21:24 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:21:24 INFO  : 'configparams force-mem-access 0' command is executed.
+22:21:24 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:21:25 INFO  : Memory regions updated for context APU
+22:21:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:21:25 INFO  : 'con' command is executed.
+22:21:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+22:21:25 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+22:22:40 INFO  : Disconnected from the channel tcfchan#2.
+22:22:41 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:22:41 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:22:52 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+----------------End of Script----------------
+
+22:26:38 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:26:38 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:26:39 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+22:26:39 INFO  : 'jtag frequency' command is executed.
+22:26:39 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:26:39 INFO  : Context for 'APU' is selected.
+22:26:40 INFO  : System reset is completed.
+22:26:43 INFO  : 'after 3000' command is executed.
+22:26:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+22:26:45 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+22:26:45 INFO  : Context for 'APU' is selected.
+22:26:47 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:26:47 INFO  : 'configparams force-mem-access 1' command is executed.
+22:26:48 INFO  : Context for 'APU' is selected.
+22:26:59 INFO  : 'ps7_init' command is executed.
+22:27:00 INFO  : 'ps7_post_config' command is executed.
+22:27:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:27:00 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:27:00 INFO  : 'configparams force-mem-access 0' command is executed.
+22:27:00 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:27:01 INFO  : Memory regions updated for context APU
+22:27:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:27:01 INFO  : 'con' command is executed.
+22:27:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+22:27:01 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+22:28:29 INFO  : Disconnected from the channel tcfchan#3.
+22:28:30 INFO  : Connected through redirection to target on host '192.168.226.142' and port '50425'.
+22:28:30 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+22:28:32 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+22:28:32 INFO  : 'jtag frequency' command is executed.
+22:28:32 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:28:32 INFO  : Context for 'APU' is selected.
+22:28:33 INFO  : System reset is completed.
+22:28:36 INFO  : 'after 3000' command is executed.
+22:28:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+22:28:38 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+22:28:38 INFO  : Context for 'APU' is selected.
+22:28:40 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:28:40 INFO  : 'configparams force-mem-access 1' command is executed.
+22:28:40 INFO  : Context for 'APU' is selected.
+22:28:52 INFO  : 'ps7_init' command is executed.
+22:28:53 INFO  : 'ps7_post_config' command is executed.
+22:28:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:28:53 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:28:53 INFO  : 'configparams force-mem-access 0' command is executed.
+22:28:53 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:50425]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:28:54 INFO  : Memory regions updated for context APU
+22:28:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:28:54 INFO  : 'con' command is executed.
+22:28:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+22:28:54 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+22:30:17 WARN  : channel "tcfchan#4" closed
+22:47:46 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/temp_xsdb_launch_script.tcl
+22:47:46 INFO  : Registering command handlers for SDK TCF services
+22:47:48 INFO  : XSCT server has started successfully.
+22:47:48 INFO  : Successfully done setting XSCT server connection channel  
+22:47:48 INFO  : Successfully done setting SDK workspace  
+22:47:48 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper.hdf.
+22:47:48 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+12:36:45 INFO  : Registering command handlers for SDK TCF services
+12:36:47 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/temp_xsdb_launch_script.tcl
+12:36:49 INFO  : XSCT server has started successfully.
+12:36:49 INFO  : Successfully done setting XSCT server connection channel  
+12:36:49 INFO  : Successfully done setting SDK workspace  
+12:36:49 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper.hdf.
+12:36:49 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+12:38:22 INFO  : Connected through redirection to target on host '192.168.226.142' and port '51161'.
+12:38:24 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+12:38:25 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+12:38:25 INFO  : 'jtag frequency' command is executed.
+12:38:25 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:38:25 INFO  : Context for 'APU' is selected.
+12:38:26 INFO  : System reset is completed.
+12:38:29 INFO  : 'after 3000' command is executed.
+12:38:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+12:38:31 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:38:32 INFO  : Context for 'APU' is selected.
+12:38:32 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:38:32 INFO  : 'configparams force-mem-access 1' command is executed.
+12:38:32 INFO  : Context for 'APU' is selected.
+12:38:35 INFO  : 'ps7_init' command is executed.
+12:38:35 INFO  : 'ps7_post_config' command is executed.
+12:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:38:37 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:38:37 INFO  : 'configparams force-mem-access 0' command is executed.
+12:38:37 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:51161]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:38:37 INFO  : Memory regions updated for context APU
+12:38:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:38:38 INFO  : 'con' command is executed.
+12:38:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+12:38:38 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+12:40:40 INFO  : Disconnected from the channel tcfchan#1.
+12:40:41 INFO  : Connected through redirection to target on host '192.168.226.142' and port '51161'.
+12:40:44 WARN  : SDK version '2019.1' doesn't match hw_server version '2024.1.0'. Some debug features may not work.
+12:40:53 INFO  : Jtag cable 'Digilent Zybo Z7 210351A77B93A' is selected.
+12:40:53 INFO  : 'jtag frequency' command is executed.
+12:40:53 INFO  : Sourcing of '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:40:54 INFO  : Context for 'APU' is selected.
+12:40:54 INFO  : System reset is completed.
+12:40:57 INFO  : 'after 3000' command is executed.
+12:40:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1' command is executed.
+12:40:58 INFO  : FPGA configured successfully with bitstream "/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:40:58 INFO  : Context for 'APU' is selected.
+12:41:01 INFO  : Hardware design information is loaded from '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+12:41:01 INFO  : 'configparams force-mem-access 1' command is executed.
+12:41:01 INFO  : Context for 'APU' is selected.
+12:41:03 INFO  : 'ps7_init' command is executed.
+12:41:03 INFO  : 'ps7_post_config' command is executed.
+12:41:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:41:03 INFO  : The application '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:41:03 INFO  : 'configparams force-mem-access 0' command is executed.
+12:41:03 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:192.168.226.142:51161]
+source /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A" && level==0} -index 1
+fpga -file /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+loadhw -hw /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+dow /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/lab_11/Debug/lab_11.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:41:03 INFO  : Memory regions updated for context APU
+12:41:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:41:04 INFO  : 'con' command is executed.
+12:41:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351A77B93A"} -index 0
+con
+----------------End of Script----------------
+
+12:41:04 INFO  : Launch script is exported to file '/home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_lab_11.elf_on_local.tcl'
+12:45:02 WARN  : channel "tcfchan#2" closed
+10:10:02 INFO  : Registering command handlers for SDK TCF services
+10:10:02 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/temp_xsdb_launch_script.tcl
+10:10:04 INFO  : XSCT server has started successfully.
+10:10:04 INFO  : Successfully done setting XSCT server connection channel  
+10:10:04 INFO  : Successfully done setting SDK workspace  
+10:10:04 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper.hdf.
+10:10:04 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:31:21 INFO  : Registering command handlers for SDK TCF services
+09:31:22 INFO  : Launching XSCT server: xsct -n -interactive /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/temp_xsdb_launch_script.tcl
+09:31:24 INFO  : XSCT server has started successfully.
+09:31:24 INFO  : Successfully done setting XSCT server connection channel  
+09:31:24 INFO  : Successfully done setting SDK workspace  
+09:31:24 INFO  : Processing command line option -hwspec /home/adi/repo/notes/sem3/ELD2024_LAB/lab_11/lab_11.sdk/design_1_wrapper.hdf.
+09:31:24 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.

@@ -1,0 +1,834 @@
+
+
+================================================================
+== Vivado HLS Report for 'FFT'
+================================================================
+* Date:           Mon Dec 16 22:38:56 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        ELD_project
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.400|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  197|  197|  197|  197|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+        |                       |            |  Latency  |  Interval | Pipeline|
+        |        Instance       |   Module   | min | max | min | max |   Type  |
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+        |grp_FFT_stages_fu_120  |FFT_stages  |  171|  171|  171|  171|   none  |
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- bit_reversal  |   24|   24|         3|          -|          -|     8|    no    |
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 5 
+3 --> 4 
+4 --> 2 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_input_real), !map !9"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_input_imag), !map !15"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_output_real), !map !19"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x float]* %FFT_output_imag), !map !23"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @FFT_str) nounwind"   --->   Operation 10 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (2.32ns)   --->   "%FFT_rev_real = alloca [8 x float], align 4" [ELD_project/solution1/fft.c:49]   --->   Operation 11 'alloca' 'FFT_rev_real' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 12 [1/1] (2.32ns)   --->   "%FFT_rev_imag = alloca [8 x float], align 4" [ELD_project/solution1/fft.c:49]   --->   Operation 12 'alloca' 'FFT_rev_imag' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 13 [1/1] (1.76ns)   --->   "br label %1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 13 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%i_0_i = phi i4 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 14 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (1.30ns)   --->   "%icmp_ln17 = icmp eq i4 %i_0_i, -8" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 15 'icmp' 'icmp_ln17' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 16 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (1.73ns)   --->   "%i = add i4 %i_0_i, 1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 17 'add' 'i' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %icmp_ln17, label %bitreverse.exit, label %2" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%zext_ln18 = zext i4 %i_0_i to i64" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 19 'zext' 'zext_ln18' <Predicate = (!icmp_ln17)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%rev8_addr = getelementptr [8 x i3]* @rev8, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 20 'getelementptr' 'rev8_addr' <Predicate = (!icmp_ln17)> <Delay = 0.00>
+ST_2 : Operation 21 [2/2] (3.25ns)   --->   "%rev8_load = load i3* %rev8_addr, align 1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 21 'load' 'rev8_load' <Predicate = (!icmp_ln17)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 3> <Depth = 8> <ROM>
+ST_2 : Operation 22 [2/2] (0.00ns)   --->   "call fastcc void @FFT_stages([8 x float]* %FFT_rev_real, [8 x float]* %FFT_rev_imag, [8 x float]* %FFT_output_real, [8 x float]* %FFT_output_imag)" [ELD_project/solution1/fft.c:51]   --->   Operation 22 'call' <Predicate = (icmp_ln17)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 23 [1/2] (3.25ns)   --->   "%rev8_load = load i3* %rev8_addr, align 1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 23 'load' 'rev8_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 3> <Depth = 8> <ROM>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln18_1 = zext i3 %rev8_load to i64" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 24 'zext' 'zext_ln18_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%FFT_input_real_addr = getelementptr [8 x float]* %FFT_input_real, i64 0, i64 %zext_ln18_1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 25 'getelementptr' 'FFT_input_real_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [2/2] (2.32ns)   --->   "%FFT_input_real_load = load float* %FFT_input_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 26 'load' 'FFT_input_real_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%FFT_input_imag_addr = getelementptr [8 x float]* %FFT_input_imag, i64 0, i64 %zext_ln18_1" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 27 'getelementptr' 'FFT_input_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [2/2] (2.32ns)   --->   "%FFT_input_imag_load = load float* %FFT_input_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 28 'load' 'FFT_input_imag_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 4 <SV = 3> <Delay = 4.64>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str) nounwind" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 29 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/2] (2.32ns)   --->   "%FFT_input_real_load = load float* %FFT_input_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 30 'load' 'FFT_input_real_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 31 [1/2] (2.32ns)   --->   "%FFT_input_imag_load = load float* %FFT_input_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 31 'load' 'FFT_input_imag_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%FFT_rev_real_addr = getelementptr [8 x float]* %FFT_rev_real, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 32 'getelementptr' 'FFT_rev_real_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%FFT_rev_imag_addr = getelementptr [8 x float]* %FFT_rev_imag, i64 0, i64 %zext_ln18" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 33 'getelementptr' 'FFT_rev_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (2.32ns)   --->   "store float %FFT_input_real_load, float* %FFT_rev_real_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 34 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 35 [1/1] (2.32ns)   --->   "store float %FFT_input_imag_load, float* %FFT_rev_imag_addr, align 4" [ELD_project/solution1/fft.c:18->ELD_project/solution1/fft.c:50]   --->   Operation 35 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "br label %1" [ELD_project/solution1/fft.c:17->ELD_project/solution1/fft.c:50]   --->   Operation 36 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 0.00>
+ST_5 : Operation 37 [1/2] (0.00ns)   --->   "call fastcc void @FFT_stages([8 x float]* %FFT_rev_real, [8 x float]* %FFT_rev_imag, [8 x float]* %FFT_output_real, [8 x float]* %FFT_output_imag)" [ELD_project/solution1/fft.c:51]   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "ret void" [ELD_project/solution1/fft.c:52]   --->   Operation 38 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ FFT_input_real]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ FFT_input_imag]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ FFT_output_real]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[00]; IO mode=ap_memory:ce=0
+Port [ FFT_output_imag]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[00]; IO mode=ap_memory:ce=0
+Port [ rev8]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+specbitsmap_ln0     (specbitsmap      ) [ 000000]
+specbitsmap_ln0     (specbitsmap      ) [ 000000]
+specbitsmap_ln0     (specbitsmap      ) [ 000000]
+specbitsmap_ln0     (specbitsmap      ) [ 000000]
+spectopmodule_ln0   (spectopmodule    ) [ 000000]
+FFT_rev_real        (alloca           ) [ 001111]
+FFT_rev_imag        (alloca           ) [ 001111]
+br_ln17             (br               ) [ 011110]
+i_0_i               (phi              ) [ 001000]
+icmp_ln17           (icmp             ) [ 001110]
+empty               (speclooptripcount) [ 000000]
+i                   (add              ) [ 011110]
+br_ln17             (br               ) [ 000000]
+zext_ln18           (zext             ) [ 000110]
+rev8_addr           (getelementptr    ) [ 000100]
+rev8_load           (load             ) [ 000000]
+zext_ln18_1         (zext             ) [ 000000]
+FFT_input_real_addr (getelementptr    ) [ 000010]
+FFT_input_imag_addr (getelementptr    ) [ 000010]
+specloopname_ln17   (specloopname     ) [ 000000]
+FFT_input_real_load (load             ) [ 000000]
+FFT_input_imag_load (load             ) [ 000000]
+FFT_rev_real_addr   (getelementptr    ) [ 000000]
+FFT_rev_imag_addr   (getelementptr    ) [ 000000]
+store_ln18          (store            ) [ 000000]
+store_ln18          (store            ) [ 000000]
+br_ln17             (br               ) [ 011110]
+call_ln51           (call             ) [ 000000]
+ret_ln52            (ret              ) [ 000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="FFT_input_real">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_input_real"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="FFT_input_imag">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_input_imag"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="FFT_output_real">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_output_real"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="FFT_output_imag">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_output_imag"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="rev8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rev8"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="FFT_stages"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1004" name="FFT_rev_real_alloca_fu_36">
+<pin_list>
+<pin id="37" dir="0" index="0" bw="1" slack="0"/>
+<pin id="38" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="FFT_rev_real/1 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="FFT_rev_imag_alloca_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="1" slack="0"/>
+<pin id="42" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="FFT_rev_imag/1 "/>
+</bind>
+</comp>
+
+<comp id="44" class="1004" name="rev8_addr_gep_fu_44">
+<pin_list>
+<pin id="45" dir="0" index="0" bw="3" slack="0"/>
+<pin id="46" dir="0" index="1" bw="1" slack="0"/>
+<pin id="47" dir="0" index="2" bw="4" slack="0"/>
+<pin id="48" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="rev8_addr/2 "/>
+</bind>
+</comp>
+
+<comp id="51" class="1004" name="grp_access_fu_51">
+<pin_list>
+<pin id="52" dir="0" index="0" bw="3" slack="0"/>
+<pin id="53" dir="0" index="1" bw="3" slack="2147483647"/>
+<pin id="54" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="55" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="rev8_load/2 "/>
+</bind>
+</comp>
+
+<comp id="57" class="1004" name="FFT_input_real_addr_gep_fu_57">
+<pin_list>
+<pin id="58" dir="0" index="0" bw="32" slack="0"/>
+<pin id="59" dir="0" index="1" bw="1" slack="0"/>
+<pin id="60" dir="0" index="2" bw="3" slack="0"/>
+<pin id="61" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="FFT_input_real_addr/3 "/>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="grp_access_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="3" slack="0"/>
+<pin id="66" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="67" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="68" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="FFT_input_real_load/3 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="FFT_input_imag_addr_gep_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="32" slack="0"/>
+<pin id="72" dir="0" index="1" bw="1" slack="0"/>
+<pin id="73" dir="0" index="2" bw="3" slack="0"/>
+<pin id="74" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="FFT_input_imag_addr/3 "/>
+</bind>
+</comp>
+
+<comp id="77" class="1004" name="grp_access_fu_77">
+<pin_list>
+<pin id="78" dir="0" index="0" bw="3" slack="0"/>
+<pin id="79" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="80" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="81" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="FFT_input_imag_load/3 "/>
+</bind>
+</comp>
+
+<comp id="83" class="1004" name="FFT_rev_real_addr_gep_fu_83">
+<pin_list>
+<pin id="84" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="85" dir="0" index="1" bw="1" slack="0"/>
+<pin id="86" dir="0" index="2" bw="4" slack="2"/>
+<pin id="87" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="FFT_rev_real_addr/4 "/>
+</bind>
+</comp>
+
+<comp id="89" class="1004" name="FFT_rev_imag_addr_gep_fu_89">
+<pin_list>
+<pin id="90" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="91" dir="0" index="1" bw="1" slack="0"/>
+<pin id="92" dir="0" index="2" bw="4" slack="2"/>
+<pin id="93" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="FFT_rev_imag_addr/4 "/>
+</bind>
+</comp>
+
+<comp id="95" class="1004" name="store_ln18_access_fu_95">
+<pin_list>
+<pin id="96" dir="0" index="0" bw="3" slack="0"/>
+<pin id="97" dir="0" index="1" bw="32" slack="0"/>
+<pin id="98" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="99" dir="1" index="3" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln18/4 "/>
+</bind>
+</comp>
+
+<comp id="102" class="1004" name="store_ln18_access_fu_102">
+<pin_list>
+<pin id="103" dir="0" index="0" bw="3" slack="0"/>
+<pin id="104" dir="0" index="1" bw="32" slack="0"/>
+<pin id="105" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="106" dir="1" index="3" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln18/4 "/>
+</bind>
+</comp>
+
+<comp id="109" class="1005" name="i_0_i_reg_109">
+<pin_list>
+<pin id="110" dir="0" index="0" bw="4" slack="1"/>
+<pin id="111" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="i_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="113" class="1004" name="i_0_i_phi_fu_113">
+<pin_list>
+<pin id="114" dir="0" index="0" bw="1" slack="1"/>
+<pin id="115" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="116" dir="0" index="2" bw="4" slack="0"/>
+<pin id="117" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="118" dir="1" index="4" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i_0_i/2 "/>
+</bind>
+</comp>
+
+<comp id="120" class="1004" name="grp_FFT_stages_fu_120">
+<pin_list>
+<pin id="121" dir="0" index="0" bw="0" slack="0"/>
+<pin id="122" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="123" dir="0" index="2" bw="32" slack="2147483647"/>
+<pin id="124" dir="0" index="3" bw="32" slack="0"/>
+<pin id="125" dir="0" index="4" bw="32" slack="0"/>
+<pin id="126" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln51/2 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="icmp_ln17_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="4" slack="0"/>
+<pin id="132" dir="0" index="1" bw="4" slack="0"/>
+<pin id="133" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln17/2 "/>
+</bind>
+</comp>
+
+<comp id="136" class="1004" name="i_fu_136">
+<pin_list>
+<pin id="137" dir="0" index="0" bw="4" slack="0"/>
+<pin id="138" dir="0" index="1" bw="1" slack="0"/>
+<pin id="139" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="i/2 "/>
+</bind>
+</comp>
+
+<comp id="142" class="1004" name="zext_ln18_fu_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="4" slack="0"/>
+<pin id="144" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln18/2 "/>
+</bind>
+</comp>
+
+<comp id="147" class="1004" name="zext_ln18_1_fu_147">
+<pin_list>
+<pin id="148" dir="0" index="0" bw="3" slack="0"/>
+<pin id="149" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln18_1/3 "/>
+</bind>
+</comp>
+
+<comp id="156" class="1005" name="i_reg_156">
+<pin_list>
+<pin id="157" dir="0" index="0" bw="4" slack="0"/>
+<pin id="158" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opset="i "/>
+</bind>
+</comp>
+
+<comp id="161" class="1005" name="zext_ln18_reg_161">
+<pin_list>
+<pin id="162" dir="0" index="0" bw="64" slack="2"/>
+<pin id="163" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opset="zext_ln18 "/>
+</bind>
+</comp>
+
+<comp id="167" class="1005" name="rev8_addr_reg_167">
+<pin_list>
+<pin id="168" dir="0" index="0" bw="3" slack="1"/>
+<pin id="169" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="rev8_addr "/>
+</bind>
+</comp>
+
+<comp id="172" class="1005" name="FFT_input_real_addr_reg_172">
+<pin_list>
+<pin id="173" dir="0" index="0" bw="3" slack="1"/>
+<pin id="174" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="FFT_input_real_addr "/>
+</bind>
+</comp>
+
+<comp id="177" class="1005" name="FFT_input_imag_addr_reg_177">
+<pin_list>
+<pin id="178" dir="0" index="0" bw="3" slack="1"/>
+<pin id="179" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="FFT_input_imag_addr "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="39"><net_src comp="16" pin="0"/><net_sink comp="36" pin=0"/></net>
+
+<net id="43"><net_src comp="16" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="49"><net_src comp="8" pin="0"/><net_sink comp="44" pin=0"/></net>
+
+<net id="50"><net_src comp="28" pin="0"/><net_sink comp="44" pin=1"/></net>
+
+<net id="56"><net_src comp="44" pin="3"/><net_sink comp="51" pin=0"/></net>
+
+<net id="62"><net_src comp="0" pin="0"/><net_sink comp="57" pin=0"/></net>
+
+<net id="63"><net_src comp="28" pin="0"/><net_sink comp="57" pin=1"/></net>
+
+<net id="69"><net_src comp="57" pin="3"/><net_sink comp="64" pin=0"/></net>
+
+<net id="75"><net_src comp="2" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="76"><net_src comp="28" pin="0"/><net_sink comp="70" pin=1"/></net>
+
+<net id="82"><net_src comp="70" pin="3"/><net_sink comp="77" pin=0"/></net>
+
+<net id="88"><net_src comp="28" pin="0"/><net_sink comp="83" pin=1"/></net>
+
+<net id="94"><net_src comp="28" pin="0"/><net_sink comp="89" pin=1"/></net>
+
+<net id="100"><net_src comp="64" pin="3"/><net_sink comp="95" pin=1"/></net>
+
+<net id="101"><net_src comp="83" pin="3"/><net_sink comp="95" pin=0"/></net>
+
+<net id="107"><net_src comp="77" pin="3"/><net_sink comp="102" pin=1"/></net>
+
+<net id="108"><net_src comp="89" pin="3"/><net_sink comp="102" pin=0"/></net>
+
+<net id="112"><net_src comp="18" pin="0"/><net_sink comp="109" pin=0"/></net>
+
+<net id="119"><net_src comp="109" pin="1"/><net_sink comp="113" pin=0"/></net>
+
+<net id="127"><net_src comp="30" pin="0"/><net_sink comp="120" pin=0"/></net>
+
+<net id="128"><net_src comp="4" pin="0"/><net_sink comp="120" pin=3"/></net>
+
+<net id="129"><net_src comp="6" pin="0"/><net_sink comp="120" pin=4"/></net>
+
+<net id="134"><net_src comp="113" pin="4"/><net_sink comp="130" pin=0"/></net>
+
+<net id="135"><net_src comp="20" pin="0"/><net_sink comp="130" pin=1"/></net>
+
+<net id="140"><net_src comp="113" pin="4"/><net_sink comp="136" pin=0"/></net>
+
+<net id="141"><net_src comp="26" pin="0"/><net_sink comp="136" pin=1"/></net>
+
+<net id="145"><net_src comp="113" pin="4"/><net_sink comp="142" pin=0"/></net>
+
+<net id="146"><net_src comp="142" pin="1"/><net_sink comp="44" pin=2"/></net>
+
+<net id="150"><net_src comp="51" pin="3"/><net_sink comp="147" pin=0"/></net>
+
+<net id="151"><net_src comp="147" pin="1"/><net_sink comp="57" pin=2"/></net>
+
+<net id="152"><net_src comp="147" pin="1"/><net_sink comp="70" pin=2"/></net>
+
+<net id="159"><net_src comp="136" pin="2"/><net_sink comp="156" pin=0"/></net>
+
+<net id="160"><net_src comp="156" pin="1"/><net_sink comp="113" pin=2"/></net>
+
+<net id="164"><net_src comp="142" pin="1"/><net_sink comp="161" pin=0"/></net>
+
+<net id="165"><net_src comp="161" pin="1"/><net_sink comp="83" pin=2"/></net>
+
+<net id="166"><net_src comp="161" pin="1"/><net_sink comp="89" pin=2"/></net>
+
+<net id="170"><net_src comp="44" pin="3"/><net_sink comp="167" pin=0"/></net>
+
+<net id="171"><net_src comp="167" pin="1"/><net_sink comp="51" pin=0"/></net>
+
+<net id="175"><net_src comp="57" pin="3"/><net_sink comp="172" pin=0"/></net>
+
+<net id="176"><net_src comp="172" pin="1"/><net_sink comp="64" pin=0"/></net>
+
+<net id="180"><net_src comp="70" pin="3"/><net_sink comp="177" pin=0"/></net>
+
+<net id="181"><net_src comp="177" pin="1"/><net_sink comp="77" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: FFT_output_real | {2 5 }
+	Port: FFT_output_imag | {2 5 }
+ - Input state : 
+	Port: FFT : FFT_input_real | {3 4 }
+	Port: FFT : FFT_input_imag | {3 4 }
+	Port: FFT : rev8 | {2 3 }
+  - Chain level:
+	State 1
+	State 2
+		icmp_ln17 : 1
+		i : 1
+		br_ln17 : 2
+		zext_ln18 : 1
+		rev8_addr : 2
+		rev8_load : 3
+	State 3
+		zext_ln18_1 : 1
+		FFT_input_real_addr : 2
+		FFT_input_real_load : 3
+		FFT_input_imag_addr : 2
+		FFT_input_imag_load : 3
+	State 4
+		store_ln18 : 1
+		store_ln18 : 1
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+| Operation|    Functional Unit    |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+|   call   | grp_FFT_stages_fu_120 |    4    |    20   |  60.024 |   2612  |   3551  |    0    |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+|    add   |        i_fu_136       |    0    |    0    |    0    |    0    |    13   |    0    |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+|   icmp   |    icmp_ln17_fu_130   |    0    |    0    |    0    |    0    |    9    |    0    |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+|   zext   |    zext_ln18_fu_142   |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |   zext_ln18_1_fu_147  |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                       |    4    |    20   |  60.024 |   2612  |   3573  |    0    |
+|----------|-----------------------|---------|---------|---------|---------|---------|---------|
+
+Memories:
++------------+--------+--------+--------+--------+
+|            |  BRAM  |   FF   |   LUT  |  URAM  |
++------------+--------+--------+--------+--------+
+|FFT_rev_imag|    0   |   64   |    4   |    0   |
+|FFT_rev_real|    0   |   64   |    4   |    0   |
+|    rev8    |    0   |    3   |    1   |    -   |
++------------+--------+--------+--------+--------+
+|    Total   |    0   |   131  |    9   |    0   |
++------------+--------+--------+--------+--------+
+
+* Register list:
++---------------------------+--------+
+|                           |   FF   |
++---------------------------+--------+
+|FFT_input_imag_addr_reg_177|    3   |
+|FFT_input_real_addr_reg_172|    3   |
+|       i_0_i_reg_109       |    4   |
+|         i_reg_156         |    4   |
+|     rev8_addr_reg_167     |    3   |
+|     zext_ln18_reg_161     |   64   |
++---------------------------+--------+
+|           Total           |   81   |
++---------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_51 |  p0  |   2  |   3  |    6   ||    9    |
+| grp_access_fu_64 |  p0  |   2  |   3  |    6   ||    9    |
+| grp_access_fu_77 |  p0  |   2  |   3  |    6   ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   18   ||  5.307  ||    27   |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    4   |   20   |   60   |  2612  |  3573  |    0   |
+|   Memory  |    0   |    -   |    -   |   131  |    9   |    0   |
+|Multiplexer|    -   |    -   |    5   |    -   |   27   |    -   |
+|  Register |    -   |    -   |    -   |   81   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    4   |   20   |   65   |  2824  |  3609  |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

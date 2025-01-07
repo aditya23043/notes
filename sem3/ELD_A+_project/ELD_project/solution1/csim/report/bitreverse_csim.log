@@ -1,0 +1,50 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../fft_tb.c in debug mode
+INFO: [HLS 200-10] Running '/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adi' on host 'archlinux' (Linux_x86_64 version 6.6.65-1-lts) on Mon Dec 16 22:26:13 IST 2024
+INFO: [HLS 200-10] In directory '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project/solution1/csim/build'
+../../fft_tb.c:25:14: warning: passing 'const _Complex float [8]' to parameter of type '_Complex float *' discards qualifiers [-Wincompatible-pointer-types]
+  bitreverse(FFT_input, FFT_rev);
+             ^~~~~~~~~
+../../fft.c:8:31: note: passing argument to parameter 'dataIn' here
+void bitreverse(float complex dataIn[N], float complex dataOut[N]){
+                              ^
+1 warning generated.
+../../fft_tb.c:25:14: warning: passing 'const _Complex float [8]' to parameter of type '_Complex float *' discards qualifiers [-Wincompatible-pointer-types]
+  bitreverse(FFT_input, FFT_rev);
+             ^~~~~~~~~
+../../fft.c:8:31: note: passing argument to parameter 'dataIn' here
+void bitreverse(float complex dataIn[N], float complex dataOut[N]){
+                              ^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_adi/316421734368173877071
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../fft.c in debug mode
+INFO: [HLS 200-10] Running '/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adi' on host 'archlinux' (Linux_x86_64 version 6.6.65-1-lts) on Mon Dec 16 22:26:17 IST 2024
+INFO: [HLS 200-10] In directory '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_adi/317011734368177825204
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+obj/fft.o:(.data+0x0): multiple definition of `W'
+obj/fft_tb.o:(.data+0x0): first defined here
+obj/fft.o: In function `bitreverse':
+/tmp/apcc_db_adi/317011734368177825204/fft.c:172: multiple definition of `rev8'
+obj/fft_tb.o:/tmp/apcc_db_adi/316421734368173877071/fft_tb.c:163: first defined here
+obj/fft.o: In function `bitreverse':
+/tmp/apcc_db_adi/317011734368177825204/fft.c:172: multiple definition of `bitreverse'
+obj/fft_tb.o:/tmp/apcc_db_adi/316421734368173877071/fft_tb.c:175: first defined here
+obj/fft.o: In function `FFT_stages':
+/tmp/apcc_db_adi/317011734368177825204/fft.c:665: multiple definition of `FFT_stages'
+obj/fft_tb.o:/tmp/apcc_db_adi/316421734368173877071/fft_tb.c:668: first defined here
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: /usr/lib/libm.so.6: don't know how to handle section `.relr.dyn' [0x      13]
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: skipping incompatible /usr/lib/libm.so.6 when searching for /usr/lib/libm.so.6
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: cannot find /usr/lib/libm.so.6
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: /usr/lib/libmvec.so.1: don't know how to handle section `.relr.dyn' [0x      13]
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: skipping incompatible /usr/lib/libmvec.so.1 when searching for /usr/lib/libmvec.so.1
+/home/adi/hdd/Xilinx/Vivado/2019.1/tps/lnx64/binutils-2.26/bin/ld: cannot find /usr/lib/libmvec.so.1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile.rules:402: csim.exe] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

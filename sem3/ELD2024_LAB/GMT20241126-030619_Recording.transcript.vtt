@@ -1,0 +1,2602 @@
+WEBVTT
+
+1
+00:00:22.840 --> 00:00:26.870
+Sumit Darak: Okay, so let's get started.
+
+2
+00:00:26.940 --> 00:00:35.169
+Sumit Darak: So I believe this is our second last lap. And next week, Tuesday is our last lap.
+
+3
+00:00:35.870 --> 00:00:41.419
+Sumit Darak: So we are going to continue with our previous lab.
+
+4
+00:00:42.140 --> 00:00:49.090
+Sumit Darak: and we will do some modification in the previous lab to get some additional functionality.
+
+5
+00:00:50.200 --> 00:00:56.829
+Sumit Darak: And you can see that your N same paper will be very similar to the today's lab.
+
+6
+00:00:56.880 --> 00:01:03.958
+Sumit Darak: So whatever we'll be doing in the today's lab, you will see that the your n same lab exam will be
+
+7
+00:01:04.794 --> 00:01:11.589
+Sumit Darak: quite similar to this one, with a certain verification, a certain variation based upon in your
+
+8
+00:01:12.105 --> 00:01:20.150
+Sumit Darak: design example. Okay? So that's why in the today's lab, majority of the things you have to do on your own.
+
+9
+00:01:20.520 --> 00:01:26.500
+Sumit Darak: I'll be only telling you what changes you need to make.
+
+10
+00:01:26.840 --> 00:01:31.349
+Sumit Darak: and I'll give you some of the hints about how to make the changes.
+
+11
+00:01:31.490 --> 00:01:43.760
+Sumit Darak: Okay. But I would like you to do all the changes. Debug your code modify your code and get the design working, so we will not be sharing any
+
+12
+00:01:44.690 --> 00:01:53.170
+Sumit Darak: course, especially the SDK, course, you will have to modify your previous code to get the desired functionality.
+
+13
+00:01:53.340 --> 00:02:01.900
+Sumit Darak: Okay, so that is what we will be doing again, I have started recording the today's session. So you will have the
+
+14
+00:02:02.354 --> 00:02:15.430
+Sumit Darak: recorded version. But again, the recorded version will only help you to get started. You have to do the modification on your own as per your design to get the correct output
+
+15
+00:02:17.474 --> 00:02:22.310
+Sumit Darak: just to just to revise few things.
+
+16
+00:02:23.050 --> 00:02:25.596
+Sumit Darak: Oh, we have,
+
+17
+00:02:27.230 --> 00:02:36.770
+Sumit Darak: discuss this zinc architecture in detail, and we are discussing in the lecture session. We'll discuss it in more detailed level.
+
+18
+00:02:37.050 --> 00:02:42.079
+Sumit Darak: But to revise few things. As you know, we are having the
+
+19
+00:02:42.210 --> 00:02:44.489
+Sumit Darak: 2 part. One is the Ps.
+
+20
+00:02:44.650 --> 00:02:49.870
+Sumit Darak: Second is the pl, okay. So in case of the
+
+21
+00:02:51.180 --> 00:02:54.509
+Sumit Darak: so I'm just trying to get my laptop.
+
+22
+00:03:10.470 --> 00:03:14.520
+Sumit Darak: So, and this is your Ps. This is your Pl.
+
+23
+00:03:14.740 --> 00:03:22.599
+Sumit Darak: As we discuss. There are 9 Axi interface. 4 are the HP, one is the Acp
+
+24
+00:03:22.610 --> 00:03:26.659
+Sumit Darak: for our Gp. Out of which, on 7 interface
+
+25
+00:03:27.150 --> 00:03:33.869
+Sumit Darak: a PGA, that is, pl is a master and 1, 2 interface processor, that is, arm processor. Ps is up
+
+26
+00:03:33.980 --> 00:03:40.500
+Sumit Darak: a master we are in our lab, we are using the Acp port.
+
+27
+00:03:41.580 --> 00:03:47.009
+Sumit Darak: Then we discuss about the multiplex multiplex input output.
+
+28
+00:03:47.320 --> 00:03:50.760
+Sumit Darak: And we also discussed about the extended muo
+
+29
+00:03:51.280 --> 00:03:57.560
+Sumit Darak: we discuss about the external memory I have shown you on the board, also, where these memories are located.
+
+30
+00:03:59.910 --> 00:04:03.289
+Sumit Darak: And then we discuss about the core 0 core one
+
+31
+00:04:03.810 --> 00:04:19.430
+Sumit Darak: l, 1 l, 2 cache loop control unit. We are using the timers we discuss about the gic Dma. In our theory session. We also discuss about the boot process and the use of the on chip memory during the
+
+32
+00:04:19.480 --> 00:04:20.930
+Sumit Darak: board process.
+
+33
+00:04:21.536 --> 00:04:38.689
+Sumit Darak: Then we discuss about the simp coprocessor and the floating point unit coprocessor, and then the debugging unit. So all these points we have discussed, and you should be comfortable with all these different units
+
+34
+00:04:39.860 --> 00:04:42.229
+Sumit Darak: in the previous lab session.
+
+35
+00:04:42.540 --> 00:04:44.260
+Sumit Darak: What we did
+
+36
+00:04:52.810 --> 00:04:55.040
+Sumit Darak: so in the previous lab session.
+
+37
+00:04:55.550 --> 00:04:59.330
+Sumit Darak: we develop the F 50 base accelerators.
+
+38
+00:05:00.430 --> 00:05:03.750
+Sumit Darak: So we had the Bs.
+
+39
+00:05:04.130 --> 00:05:07.720
+Sumit Darak: Then it was the Ddr memory.
+
+40
+00:05:07.910 --> 00:05:10.939
+Sumit Darak: and then it was the U. Odd.
+
+41
+00:05:13.560 --> 00:05:16.249
+Sumit Darak: Then we had the Ff. Team.
+
+42
+00:05:19.990 --> 00:05:25.440
+Sumit Darak: We had some point started for the configuration.
+
+43
+00:05:25.840 --> 00:05:29.209
+Sumit Darak: David, we had the DM. Net.
+
+44
+00:05:30.670 --> 00:05:33.880
+Sumit Darak: This is the stream interface.
+
+45
+00:05:35.090 --> 00:05:42.110
+Sumit Darak: Then we have the light interface to configure the do you admit.
+
+46
+00:05:42.290 --> 00:05:50.920
+Sumit Darak: And then we had the interconnect which is connected to the A Cp port.
+
+47
+00:05:51.340 --> 00:05:55.549
+Sumit Darak: And this Internet is connected to the or be a group.
+
+48
+00:05:55.820 --> 00:06:01.660
+Sumit Darak: And this is the memory mapped. Exci interface. Okay.
+
+49
+00:06:01.960 --> 00:06:08.459
+Sumit Darak: so this is what we did in the last lab, and we compared the execution time
+
+50
+00:06:12.160 --> 00:06:15.570
+Sumit Darak: time with the between.
+
+51
+00:06:16.580 --> 00:06:19.320
+Sumit Darak: Yes, Sir Peter, okay.
+
+52
+00:06:20.440 --> 00:06:27.369
+Sumit Darak: But before you calculate the exhibition time, you need to make sure that you are, functionality is correct
+
+53
+00:06:27.510 --> 00:06:37.090
+Sumit Darak: many times what happens, especially during the exam. You display the exhibition time, but your functionality that is the output of
+
+54
+00:06:37.390 --> 00:06:38.419
+Sumit Darak: BS.
+
+55
+00:06:38.460 --> 00:06:39.780
+Sumit Darak: And Pl.
+
+56
+00:06:39.850 --> 00:06:41.069
+Sumit Darak: Do not match.
+
+57
+00:06:43.750 --> 00:06:47.719
+Sumit Darak: So if this happened, you directly get the 0 months.
+
+58
+00:06:47.990 --> 00:06:53.340
+Sumit Darak: because if your output of the Ps and Pl is not matching, this is useless.
+
+59
+00:06:55.300 --> 00:07:06.299
+Sumit Darak: Okay, so in your nsame exam, first, st make sure that the output of yes, yes, correct.
+
+60
+00:07:08.090 --> 00:07:15.079
+Sumit Darak: How to ensure you can, as I discussed before you can ensure using the Matlab or the
+
+61
+00:07:15.705 --> 00:07:19.160
+Sumit Darak: Python code for the corresponding functionality.
+
+62
+00:07:19.730 --> 00:07:26.580
+Sumit Darak: Second, ensure that the I'll put off PS.
+
+63
+00:07:26.630 --> 00:07:27.850
+Sumit Darak: And Pl.
+
+64
+00:07:28.230 --> 00:07:35.700
+Sumit Darak: Are seem for or limits.
+
+65
+00:07:36.790 --> 00:07:44.820
+Sumit Darak: Okay, don't bypass the code, and then only compare them.
+
+66
+00:07:46.340 --> 00:07:48.630
+Sumit Darak: Execution done.
+
+67
+00:07:50.370 --> 00:07:56.650
+Sumit Darak: Okay, so if this part is not correct, you will directly get the 0 box.
+
+68
+00:07:57.500 --> 00:08:00.789
+Sumit Darak: Okay, even if you are calculating the execution time.
+
+69
+00:08:00.810 --> 00:08:16.409
+Sumit Darak: If this part is not correct, you will get the 0 try. So execution time is important, or it's useful only when the output of the Ps. And pl are matching. If they are not matching, you will directly get the 0.
+
+70
+00:08:16.860 --> 00:08:17.730
+Sumit Darak: Okay?
+
+71
+00:08:17.940 --> 00:08:19.150
+Sumit Darak: Any question.
+
+72
+00:08:28.540 --> 00:08:29.866
+Sumit Darak: Okay. So
+
+73
+00:08:32.760 --> 00:08:35.260
+Sumit Darak: Now, in the today's lab.
+
+74
+00:08:40.870 --> 00:08:47.499
+Sumit Darak: we are going to do certain modification. Again, the lab is very similar with the certain modification.
+
+75
+00:08:50.250 --> 00:08:51.780
+Sumit Darak: What we are going to do.
+
+76
+00:08:51.980 --> 00:09:02.049
+Sumit Darak: So last time we implement the for we implemented fft off, we'll put eggs
+
+77
+00:09:02.350 --> 00:09:04.240
+Sumit Darak: and to find out the why.
+
+78
+00:09:04.780 --> 00:09:07.620
+Sumit Darak: This time we are going to do the
+
+79
+00:09:07.680 --> 00:09:11.210
+Sumit Darak: additional operation. So we are our wife.
+
+80
+00:09:11.500 --> 00:09:20.650
+Sumit Darak: So I'll write this as a Y hat is equal to one by fft of thanks.
+
+81
+00:09:21.080 --> 00:09:22.679
+Sumit Darak: So what we are going to do
+
+82
+00:09:22.850 --> 00:09:35.660
+Sumit Darak: we are going to implement the fft followed goodbye in worse operation.
+
+83
+00:09:37.870 --> 00:09:39.970
+Sumit Darak: So we are going to do the fft
+
+84
+00:09:40.020 --> 00:09:51.930
+Sumit Darak: and output of the Sst. We are going to do the inverse operation that with each output we are taking, we are going to take the reciprocal or one by corresponding output. Okay.
+
+85
+00:09:52.040 --> 00:09:55.920
+Sumit Darak: so few things you need to understand in case of the fft.
+
+86
+00:09:58.870 --> 00:10:10.480
+Sumit Darak: Your input is complex complex means it is real plus imaginary component.
+
+87
+00:10:10.830 --> 00:10:16.449
+Sumit Darak: And this one is 32 bit floating point number.
+
+88
+00:10:16.970 --> 00:10:19.769
+Sumit Darak: This is also 32 bit
+
+89
+00:10:20.390 --> 00:10:29.270
+Sumit Darak: floating point. So both are the floating. For example, even a fft output
+
+90
+00:10:33.430 --> 00:10:34.810
+Sumit Darak: is also safe.
+
+91
+00:10:34.850 --> 00:10:43.040
+Sumit Darak: Fft output is also total. Output is 64 bit input is 64 bit, okay.
+
+92
+00:10:43.140 --> 00:10:48.319
+Sumit Darak: and out of which 32 bit is for real 32 bit is for the complex.
+
+93
+00:10:49.190 --> 00:10:50.140
+Sumit Darak: Now.
+
+94
+00:10:51.650 --> 00:10:55.180
+Sumit Darak: So if you get the value, say for you, plus
+
+95
+00:10:55.480 --> 00:10:58.679
+Sumit Darak: 6 J. Which is the fft output
+
+96
+00:10:59.050 --> 00:11:03.560
+Sumit Darak: what you need to do. You need to take the inverse of file.
+
+97
+00:11:04.060 --> 00:11:11.860
+Sumit Darak: plus. You need to take the inverse of the 6. And this is what operation you need to do after the Ff, 2.
+
+98
+00:11:12.510 --> 00:11:20.130
+Sumit Darak: So this is the fft output, and then you need to modify it, the reciprocal operation.
+
+99
+00:11:21.410 --> 00:11:23.359
+Sumit Darak: So to do this.
+
+100
+00:11:23.660 --> 00:11:31.280
+Sumit Darak: Obviously, you know that you have this floating point. IP, this floating point, IP,
+
+101
+00:11:31.650 --> 00:11:35.499
+Sumit Darak: which you can use. And it does the inverse operation.
+
+102
+00:11:35.900 --> 00:11:42.540
+Sumit Darak: Okay, so basically, you need to make use of the 2 Ips, one is the fft.
+
+103
+00:11:42.570 --> 00:11:49.680
+Sumit Darak: Second is the floating point. IP, is this clear? Any question?
+
+104
+00:11:56.940 --> 00:11:59.480
+Sumit Darak: Now there is one problem.
+
+105
+00:12:00.250 --> 00:12:06.880
+Sumit Darak: The fft IP has output, which is 64 bit.
+
+106
+00:12:07.400 --> 00:12:09.689
+Sumit Darak: But the floating point IP
+
+107
+00:12:09.740 --> 00:12:16.190
+Sumit Darak: has the input, which is 32 bit, because it can takes the only 32 bit IP,
+
+108
+00:12:16.650 --> 00:12:17.450
+Sumit Darak: it's cool.
+
+109
+00:12:17.560 --> 00:12:23.429
+Sumit Darak: We cannot connect directly the 50 I put
+
+110
+00:12:23.690 --> 00:12:27.630
+Sumit Darak: I 50 output to the floating point, input
+
+111
+00:12:28.090 --> 00:12:31.519
+Sumit Darak: so to address this, we need to use sound
+
+112
+00:12:33.320 --> 00:12:38.460
+Sumit Darak: additional IP, which is called, which is some steam based IP,
+
+113
+00:12:38.640 --> 00:12:44.939
+Sumit Darak: which takes the 64 bit input and break down into the
+
+114
+00:12:45.520 --> 00:12:49.789
+Sumit Darak: 32 bit input, so basically, if the input is 5
+
+115
+00:12:49.880 --> 00:12:54.060
+Sumit Darak: plus 6 j, it will break down into the file
+
+116
+00:12:54.070 --> 00:12:58.340
+Sumit Darak: and 6, and it will sequentialize that output.
+
+117
+00:12:59.240 --> 00:13:13.180
+Sumit Darak: Okay, so this is the stream. IP, we need to use. It takes the 64 built input and broke breaks down into the 2 32 bit output which can be passed to the floating point. Input
+
+118
+00:13:13.190 --> 00:13:18.020
+Sumit Darak: okay, so these are the things we need to take care in the
+
+119
+00:13:18.506 --> 00:13:23.780
+Sumit Darak: today's lab. So you can see that there is a certain modifications are needed
+
+120
+00:13:23.810 --> 00:13:29.909
+Sumit Darak: in the block diagram and certain modifications are needed in the viewer.
+
+121
+00:13:30.090 --> 00:13:34.080
+Sumit Darak: Our the secret.
+
+122
+00:13:34.160 --> 00:13:38.380
+Sumit Darak: So I'll be showing the modification which are needed in the blog diagram.
+
+123
+00:13:38.420 --> 00:13:43.139
+Sumit Darak: But for the modification in the C code. That is your task. You need to
+
+124
+00:13:43.190 --> 00:13:47.750
+Sumit Darak: do the modification and then get the design working.
+
+125
+00:13:49.020 --> 00:13:51.960
+Sumit Darak: So how your diagram gets modified
+
+126
+00:13:52.190 --> 00:13:54.799
+Sumit Darak: again, you will have the Ps.
+
+127
+00:13:55.870 --> 00:14:02.850
+Sumit Darak: You have the media, you have the you what?
+
+128
+00:14:03.810 --> 00:14:04.710
+Sumit Darak: Then?
+
+129
+00:14:05.770 --> 00:14:09.609
+Sumit Darak: You will have the A. 50.
+
+130
+00:14:10.140 --> 00:14:13.029
+Sumit Darak: Then we will have the stream. IP.
+
+131
+00:14:14.510 --> 00:14:18.519
+Sumit Darak: Then you will have the FLIP.
+
+132
+00:14:18.930 --> 00:14:21.540
+Sumit Darak: And the Dma.
+
+133
+00:14:22.070 --> 00:14:26.280
+Sumit Darak: We'll pass the input to the fft, IP,
+
+134
+00:14:26.370 --> 00:14:30.599
+Sumit Darak: and take the output from the floating point. IP.
+
+135
+00:14:31.250 --> 00:14:34.899
+Sumit Darak: This will be the interconnect for the Acp.
+
+136
+00:14:35.580 --> 00:14:43.150
+Sumit Darak: This will remain the same, this will remain the same, this constant will remain same.
+
+137
+00:14:43.210 --> 00:14:46.360
+Sumit Darak: So the new part is this one you need to
+
+138
+00:14:46.380 --> 00:14:57.360
+Sumit Darak: split the complex output into the separate, real and imaginary, and pass it to the floating point. IP and output of the floating point IP should be passed to the DM,
+
+139
+00:14:58.760 --> 00:15:01.430
+Sumit Darak: okay, any questions.
+
+140
+00:15:10.550 --> 00:15:11.230
+Madhav Maheshwari: Okay.
+
+141
+00:15:11.680 --> 00:15:12.450
+Sumit Darak: Yes.
+
+142
+00:15:13.080 --> 00:15:24.259
+Madhav Maheshwari: So when we use the stream IP for to split the data from 64 bit to 32 bits, so is it like a parallel connection between 2 floating point IP. Or is it like only one floating point? IP.
+
+143
+00:15:24.260 --> 00:15:29.049
+Sumit Darak: Only one floating point. IP. You will. You will serialize it. You are getting 64 data
+
+144
+00:15:29.060 --> 00:15:35.740
+Sumit Darak: in the next clock cycle. You will send 1st 32 bit data in the next clock cycle. You will send next 30 two-bit data.
+
+145
+00:15:36.980 --> 00:15:41.829
+Sumit Darak: Then we'll have to also, modify the code to collect it collected in that manner also.
+
+146
+00:15:41.830 --> 00:15:45.730
+Sumit Darak: Yes, yes. Now you will be collecting twice the amount of data.
+
+147
+00:15:45.730 --> 00:15:47.840
+Madhav Maheshwari: Why is that book.
+
+148
+00:15:49.890 --> 00:15:57.530
+Sumit Darak: So now I'll be for the attendance purpose. I'll be sharing the poll for next 1 min.
+
+149
+00:15:59.820 --> 00:16:02.429
+Sumit Darak: I hope the poll is visible to you.
+
+150
+00:16:19.750 --> 00:16:22.849
+Sumit Darak: so it will be there for 1 min.
+
+151
+00:17:19.579 --> 00:17:22.739
+Sumit Darak: Okay, so next 10 seconds the poll will be.
+
+152
+00:17:50.480 --> 00:17:55.109
+Sumit Darak: The question was, which driver is used to configure the Dma. Or, again.
+
+153
+00:17:55.370 --> 00:17:58.099
+Sumit Darak: many people have wrongly answered it.
+
+154
+00:17:58.410 --> 00:18:05.259
+Sumit Darak: It is the simple transfer. If you see our C code, we have used the simple transfer function.
+
+155
+00:18:05.940 --> 00:18:08.079
+Sumit Darak: not the Dmi transfer function?
+
+156
+00:18:08.180 --> 00:18:13.159
+Sumit Darak: Okay? So again, don't blindly copy paste the code.
+
+157
+00:18:13.370 --> 00:18:16.569
+Sumit Darak: use your natural intelligence and the brain.
+
+158
+00:18:17.370 --> 00:18:22.230
+Sumit Darak: Oh, the code given to you while answering it.
+
+159
+00:18:27.840 --> 00:18:28.510
+Sumit Darak: But
+
+160
+00:18:43.980 --> 00:18:49.700
+Sumit Darak: so now, coming back to the lab part.
+
+161
+00:18:52.850 --> 00:18:58.839
+Sumit Darak: So we'll be again trying playing around with the 8.5 in the lab session.
+
+162
+00:18:58.930 --> 00:19:07.709
+Sumit Darak: But what we will be doing, we will be doing the inverse operation, followed by the means after the F 50, we'll be doing the inverse operation.
+
+163
+00:19:08.000 --> 00:19:13.629
+Sumit Darak: and then, we will be also learning about the island. Okay?
+
+164
+00:19:13.790 --> 00:19:18.180
+Sumit Darak: So this week lab homework is very critical.
+
+165
+00:19:18.480 --> 00:19:23.229
+Sumit Darak: And again, it's a challenging homework again, I'm telling you, and this is
+
+166
+00:19:23.620 --> 00:19:28.059
+Sumit Darak: related to your lab exam, and you will see the exactly similar
+
+167
+00:19:28.434 --> 00:19:42.270
+Sumit Darak: kind of question in the lab exam. You need to complete the C code. We will not be providing the C code. I'll be telling you what are the changes you need to make. But I'll not be providing the C code.
+
+168
+00:19:43.130 --> 00:19:46.819
+Sumit Darak: You need to 1st make sure that the output of the Ps. Is correct.
+
+169
+00:19:47.610 --> 00:19:53.249
+Sumit Darak: Then you need to make sure that the output of the Pl. Is matching with the output of the Ps.
+
+170
+00:19:53.330 --> 00:19:54.910
+Sumit Darak: That you need to ensure.
+
+171
+00:19:55.320 --> 00:19:59.949
+Sumit Darak: Then you need to compare the execution time between the Ps. And Ps.
+
+172
+00:20:00.460 --> 00:20:07.729
+Sumit Darak: And then you need to apply the trigger on the island and show the output on the Il as well.
+
+173
+00:20:07.770 --> 00:20:11.330
+Sumit Darak: Okay, I'll be demonstrating you some of the things, but
+
+174
+00:20:11.590 --> 00:20:14.769
+Sumit Darak: don't expect me to share the code with you.
+
+175
+00:20:14.840 --> 00:20:27.800
+Sumit Darak: Okay, that code. I will not be sure. It is the challenge for you to write the code. It's a minor modification need to be done. 3 modification need to be done in your SDK code, but you have to do it.
+
+176
+00:20:28.150 --> 00:20:36.879
+Sumit Darak: And then, as a self study, you can extend that for the 64 point again, this is for self study, not for evaluation.
+
+177
+00:20:37.000 --> 00:20:41.180
+Sumit Darak: Work is basically you need to complete the today's lab on your own.
+
+178
+00:20:42.010 --> 00:20:52.209
+Sumit Darak: Okay, so let me go through the blog design, and then we will start with the lab session
+
+179
+00:20:55.130 --> 00:20:56.779
+Sumit Darak: so as you can see
+
+180
+00:20:57.484 --> 00:21:03.000
+Sumit Darak: our block design will be similar to the last lab. So you can see that this part.
+
+181
+00:21:03.400 --> 00:21:10.250
+Sumit Darak: a Dma part again, zinc part will be similar to Lab lab previous lab.
+
+182
+00:21:10.360 --> 00:21:13.720
+Sumit Darak: What are the changes is that you will be adding
+
+183
+00:21:13.760 --> 00:21:17.979
+Sumit Darak: these 2 IP. And again, these are the critical changes you need to make.
+
+184
+00:21:18.170 --> 00:21:24.199
+Sumit Darak: Okay, as I've highlighted here we are today, we'll be focusing on the
+
+185
+00:21:26.010 --> 00:21:29.059
+Sumit Darak: these 2 parts, which is the new part. Is that good.
+
+186
+00:21:29.410 --> 00:21:34.020
+Sumit Darak: So you can see that these are the Ips. We will be adding today.
+
+187
+00:21:34.170 --> 00:21:36.140
+Sumit Darak: And what are this IP does?
+
+188
+00:21:36.370 --> 00:21:38.710
+Sumit Darak: So let me resuming.
+
+189
+00:21:42.260 --> 00:21:48.830
+Sumit Darak: So this IP takes the output of the sft, which is the 64 bit. So you can see that the
+
+190
+00:21:48.990 --> 00:21:54.039
+Sumit Darak: 63 and down to 0, and this converts into the
+
+191
+00:21:54.400 --> 00:22:08.369
+Sumit Darak: 31 down to the 32 bit. So it takes the 64 bit number and then sequential it, serialize it to the 2 32 bit number and pass it to the floating point. I think
+
+192
+00:22:08.560 --> 00:22:15.660
+Sumit Darak: floating point IP. You have used it in the past. You use that IP to do the inverse and send it to the DM,
+
+193
+00:22:16.030 --> 00:22:20.240
+Sumit Darak: okay, so what is the change here, Dma.
+
+194
+00:22:20.320 --> 00:22:25.250
+Sumit Darak: while sending it to the fft? IP send the 64 bit data
+
+195
+00:22:25.500 --> 00:22:33.819
+Sumit Darak: while it accepts the 32 bit data. So you need to make sure that you make that change in your
+
+196
+00:22:34.424 --> 00:22:42.069
+Sumit Darak: Dma IP, as well as in your SDK code, you should be aware about the change you are.
+
+197
+00:22:43.270 --> 00:22:44.590
+Sumit Darak: Is this clear?
+
+198
+00:22:44.730 --> 00:22:48.640
+Sumit Darak: The what are the changes? You need to make any question?
+
+199
+00:22:53.500 --> 00:22:54.020
+Sumit Darak: Okay.
+
+200
+00:22:54.020 --> 00:22:57.779
+Abhinav Maurya: So in the Dma, we also have to change the data type.
+
+201
+00:22:58.330 --> 00:23:01.429
+Sumit Darak: Yes, exactly. Stream data size, not the memory map.
+
+202
+00:23:03.500 --> 00:23:04.260
+Abhinav Maurya: Okay, sir.
+
+203
+00:23:04.730 --> 00:23:08.200
+Sumit Darak: Okay, so that you need to make sure.
+
+204
+00:23:08.330 --> 00:23:15.950
+Sumit Darak: Now, you can see that this is the IP we need to add, it is called as a Xi S. That is, Axi stream
+
+205
+00:23:16.020 --> 00:23:19.349
+Sumit Darak: width, converter. It takes the 64 bit data
+
+206
+00:23:19.380 --> 00:23:25.720
+Sumit Darak: and split it into the 2 32 bit data that is called the Axi stream.
+
+207
+00:23:25.830 --> 00:23:26.960
+Sumit Darak: get through the water.
+
+208
+00:23:28.420 --> 00:23:31.039
+Sumit Darak: So if you look at the Dma.
+
+209
+00:23:32.710 --> 00:23:34.900
+Sumit Darak: okay, so you can see that the
+
+210
+00:23:35.190 --> 00:23:42.669
+Sumit Darak: this part we are not using scattered gather. So this part is disabled. This is same as before. This is same as before.
+
+211
+00:23:43.820 --> 00:24:01.329
+Sumit Darak: Read channel where you are reading from the memory, and sending it to the data to the fft. There is no change, because that part is, say, still same. You are reading from the memory and sending it to the F. 50. So this part is same.
+
+212
+00:24:01.660 --> 00:24:14.360
+Sumit Darak: What part will change is this part? And again, it should be automatically taken care because this stream width is automatic, so it will be automatically taken care to 32.
+
+213
+00:24:14.420 --> 00:24:18.689
+Sumit Darak: So whenever your block diagram is complete, make sure that
+
+214
+00:24:19.330 --> 00:24:26.959
+Sumit Darak: your this value is set to 32. Okay, you need to ensure that automatically it will set. But you need to
+
+215
+00:24:27.840 --> 00:24:30.020
+Sumit Darak: ensure that this value is set to.
+
+216
+00:24:31.800 --> 00:24:35.669
+Sumit Darak: Okay, is this is the one thing you need to take care.
+
+217
+00:24:36.520 --> 00:24:41.560
+Sumit Darak: Second thing, you need to understand that for the Dma to work
+
+218
+00:24:42.100 --> 00:24:44.389
+Sumit Darak: okay for the Dma to work.
+
+219
+00:24:46.310 --> 00:24:49.430
+Sumit Darak: the Dma should receive the last signal.
+
+220
+00:24:49.980 --> 00:24:58.830
+Sumit Darak: Okay, if you see the stream interface stream interface has the data signal valid signal radio signals.
+
+221
+00:24:59.050 --> 00:25:05.230
+Sumit Darak: and then the last signal for Dma to work. This last signal is
+
+222
+00:25:05.380 --> 00:25:12.790
+Sumit Darak: mandatory. You need to keep it in mind that the last signal is mandatory for the Dma to work.
+
+223
+00:25:13.070 --> 00:25:24.209
+Sumit Darak: If your last signal is not there, you will stuck in the in the SDK. You might have written the while loop for the busy something right to check whether the Dma is busy.
+
+224
+00:25:24.410 --> 00:25:30.219
+Sumit Darak: If you have not generated the white last signal correctly, you will be stuck in the this while.
+
+225
+00:25:30.300 --> 00:25:38.160
+Sumit Darak: Okay, so please ensure that the your last signal is generated properly for the DNA to work.
+
+226
+00:25:41.040 --> 00:25:47.970
+Sumit Darak: No how. This stream again. This Axi stream with converter is an ib
+
+227
+00:25:47.980 --> 00:25:52.370
+Sumit Darak: again available inside the Vivaro IP catalog.
+
+228
+00:25:52.760 --> 00:26:05.249
+Sumit Darak: Now, what this IP does, it takes us. We will be designing it to takes the 64 bit of data, 64 bit of data. That means we need to set this to the 8 Byte.
+
+229
+00:26:05.500 --> 00:26:12.650
+Sumit Darak: Okay, so the slave interface here, we will get the 64 bit of data
+
+230
+00:26:12.890 --> 00:26:18.650
+Sumit Darak: and master interface. That is here, we need to convert into the
+
+231
+00:26:18.770 --> 00:26:22.120
+Sumit Darak: for 32 bits of data, 4 Byte of data.
+
+232
+00:26:22.520 --> 00:26:28.080
+Sumit Darak: Okay? So that means so this will receive. So 1st it will receive 5 plus
+
+233
+00:26:28.250 --> 00:26:33.250
+Sumit Darak: 6. I. Then it will receive, say, 9 plus 2
+
+234
+00:26:33.970 --> 00:26:39.779
+Sumit Darak: I. So this is what sequentially it will receive what it will output. It will 1st output
+
+235
+00:26:40.030 --> 00:26:48.870
+Sumit Darak: 5, then 6, then 2, then 9. So this is how each one is 32 bit. It will output.
+
+236
+00:26:49.860 --> 00:26:51.920
+Sumit Darak: Is this clear? Any question?
+
+237
+00:26:55.400 --> 00:27:02.519
+Sumit Darak: So one of the thing you need to take care is that you need to make sure that this last signal is set to. Yes.
+
+238
+00:27:02.550 --> 00:27:13.200
+Sumit Darak: many times you make this mistake. You don't set the last, and then you don't generate the last signal. So if this because this IP is connected to the DM. Because you have the
+
+239
+00:27:13.270 --> 00:27:14.850
+Sumit Darak: fft. IP.
+
+240
+00:27:15.030 --> 00:27:20.490
+Sumit Darak: Then fft IP is connected to the the stream database converter.
+
+241
+00:27:20.550 --> 00:27:23.159
+Sumit Darak: and then to the floating point, IP.
+
+242
+00:27:23.220 --> 00:27:26.019
+Sumit Darak: So a 50 IP generates the last single.
+
+243
+00:27:26.030 --> 00:27:32.979
+Sumit Darak: You need to make sure that this IP also generates the last signal, and this IP also generates the last signal.
+
+244
+00:27:32.990 --> 00:27:39.360
+Sumit Darak: So that's why you need to make sure that you make this enable last signal is equal to yes.
+
+245
+00:27:41.410 --> 00:27:42.720
+Sumit Darak: Is this clear.
+
+246
+00:27:44.290 --> 00:27:45.339
+Arnav Gupta: Excuse me, sir.
+
+247
+00:27:45.770 --> 00:27:46.400
+Sumit Darak: Yeah.
+
+248
+00:27:47.420 --> 00:27:53.089
+Arnav Gupta: So what will happen if, like in between, like SW. Doesn't have last signal.
+
+249
+00:27:53.670 --> 00:27:56.440
+Sumit Darak: Yeah, if you don't generate the last signal here.
+
+250
+00:27:56.980 --> 00:28:01.849
+Sumit Darak: this will not generate the last signal, and you will see that your Dma
+
+251
+00:28:03.120 --> 00:28:10.780
+Sumit Darak: will be in the busy state all the time, and you will be stuck in the while. Loop in your C code in the C code. You have written the while loop
+
+252
+00:28:10.950 --> 00:28:14.460
+Sumit Darak: for the busy checking. You will be stuck inside this.
+
+253
+00:28:16.600 --> 00:28:21.019
+Sumit Darak: because for the Dma to work properly, it should receive the last seat.
+
+254
+00:28:21.390 --> 00:28:25.510
+Sumit Darak: because then only Dma knows that the I have received the entire data.
+
+255
+00:28:29.060 --> 00:28:29.860
+Arnav Gupta: Okay, sir.
+
+256
+00:28:36.780 --> 00:28:38.150
+Sumit Darak: Any other question.
+
+257
+00:28:47.580 --> 00:28:49.330
+Sumit Darak: So you can see that the
+
+258
+00:28:49.730 --> 00:28:53.930
+Sumit Darak: this is the output of the A 50.
+
+259
+00:28:54.650 --> 00:29:02.149
+Sumit Darak: You have the data, which is 64 bit last signal ready, signal and valid signal.
+
+260
+00:29:02.740 --> 00:29:09.540
+Sumit Darak: This stream width, converter, except these 4 signals and generates
+
+261
+00:29:09.920 --> 00:29:12.879
+Sumit Darak: another 4 signal with the data is.
+
+262
+00:29:13.490 --> 00:29:16.609
+Sumit Darak: modify from 64 bit to 32 bit.
+
+263
+00:29:16.880 --> 00:29:19.030
+Sumit Darak: Again. It generates the last signal.
+
+264
+00:29:19.440 --> 00:29:25.049
+Sumit Darak: this floating point. IP, again, it accepts the 32 bit data
+
+265
+00:29:25.170 --> 00:29:33.030
+Sumit Darak: and generate the 32 bit output. So if the input is said Z, the output is
+
+266
+00:29:33.200 --> 00:29:41.270
+Sumit Darak: one by Z, you need to. Sorry one by that. You need to configure it for the
+
+267
+00:29:41.370 --> 00:29:44.310
+Sumit Darak: registered for work operation.
+
+268
+00:29:44.560 --> 00:29:48.869
+Sumit Darak: Okay? And this one you connected to the
+
+269
+00:29:49.690 --> 00:30:00.519
+Sumit Darak: Dma, and you can see that the Dma you have the last you can ignore the keep signal. You don't need it, but at least you need to ensure that there is a last signal here.
+
+270
+00:30:01.580 --> 00:30:04.600
+Sumit Darak: Okay, this is a connection you need to.
+
+271
+00:30:05.480 --> 00:30:08.320
+Sumit Darak: Then we will be using the ilf
+
+272
+00:30:08.370 --> 00:30:17.710
+Sumit Darak: for Ila. You can configure the output of the fft output of the width converter
+
+273
+00:30:17.940 --> 00:30:20.090
+Sumit Darak: input of the floating point
+
+274
+00:30:20.100 --> 00:30:37.399
+Sumit Darak: output of the floating part. You can pass it to the I. Okay, these are the few signals you can, or pass it to the Id. How you make it. You select the signal and make it as a debug. I will show you again. I've shown you in the last one. I'll show you all that.
+
+275
+00:30:38.760 --> 00:30:43.110
+Sumit Darak: Okay, so at the end, you need to compare the output.
+
+276
+00:30:44.600 --> 00:30:51.235
+Sumit Darak: And you need to compare the execution time between the Ps. And Ps, okay.
+
+277
+00:30:52.530 --> 00:31:01.299
+Sumit Darak: then you need to put the trigger in the Ila, and you need to show that the transaction I'll show you as a demo in the
+
+278
+00:31:01.350 --> 00:31:02.480
+Sumit Darak: today's session.
+
+279
+00:31:03.030 --> 00:31:09.320
+Sumit Darak: Okay? So these are the things you need to demonstrate. All these things are a part of your
+
+280
+00:31:09.450 --> 00:31:14.840
+Sumit Darak: homework. I'll be only showing you the block diagram design.
+
+281
+00:31:15.070 --> 00:31:22.510
+Sumit Darak: I'll not show you the C code, but I'll show you. I'll give you the demo any question.
+
+282
+00:31:24.330 --> 00:31:25.200
+Anirudh Singh: Sir.
+
+283
+00:31:25.630 --> 00:31:26.360
+Sumit Darak: Yes.
+
+284
+00:31:26.660 --> 00:31:31.710
+Anirudh Singh: The stream IP and floating point IP. Do we have to manually connect the ports, or will that?
+
+285
+00:31:31.710 --> 00:31:32.910
+Anirudh Singh: Yes, bottom line.
+
+286
+00:31:33.280 --> 00:31:36.639
+Sumit Darak: We need to manually do it, because the these Ips are
+
+287
+00:31:36.700 --> 00:31:40.269
+Sumit Darak: stream IP, so the order may not be able to connect it.
+
+288
+00:31:41.100 --> 00:31:46.840
+Anirudh Singh: Okay? And, sir, there's a change in the Dma also from the last lab. I guess.
+
+289
+00:31:47.260 --> 00:31:57.280
+Sumit Darak: There is no, not a significant change. Only the input of the Dma from the steam IP is 32 bit, but it should be done automatically by the tool.
+
+290
+00:31:58.190 --> 00:31:58.900
+Anirudh Singh: Okay.
+
+291
+00:31:59.060 --> 00:31:59.830
+Anirudh Singh: Thank you.
+
+292
+00:32:00.950 --> 00:32:06.669
+Sumit Darak: So now I'll open the vivaro. I'll start the today's lab from the scratch
+
+293
+00:32:06.750 --> 00:32:10.589
+Sumit Darak: just to for you. Also, it is better to start from the scrap
+
+294
+00:32:10.640 --> 00:32:12.749
+Sumit Darak: so that you will get the practice.
+
+295
+00:32:12.780 --> 00:32:18.640
+Sumit Darak: and then we will complete the log diagram
+
+296
+00:32:19.040 --> 00:32:24.589
+Sumit Darak: followed by our your C code. You need to write on your own
+
+297
+00:32:24.860 --> 00:32:30.260
+Sumit Darak: again. It is better to keep your this one on the mobile device
+
+298
+00:32:30.430 --> 00:32:36.410
+Sumit Darak: so that you can do your lab on your laptop so that you can simultaneously watch my steps and
+
+299
+00:32:36.640 --> 00:32:37.869
+Sumit Darak: do it on yours.
+
+300
+00:32:38.040 --> 00:32:38.859
+Sumit Darak: It's great.
+
+301
+00:32:41.650 --> 00:32:45.750
+Abhinav Maurya: Sir. Why, we are changing only the right channel of the Dma.
+
+302
+00:32:47.610 --> 00:32:53.859
+Sumit Darak: Because the changes is happening only on the right channel, right? The in the previous lab.
+
+303
+00:32:54.070 --> 00:33:01.369
+Sumit Darak: you are connecting the output of the Dma to the input of the Sft and output of the Sft to the input of the Dma.
+
+304
+00:33:01.660 --> 00:33:07.890
+Sumit Darak: So right now, the input of the fft is still coming from the Dma. There is no change there.
+
+305
+00:33:08.260 --> 00:33:15.360
+Sumit Darak: If you compare the previous lap where this is the
+
+306
+00:33:15.520 --> 00:33:17.370
+Sumit Darak: input and this is the output.
+
+307
+00:33:17.520 --> 00:33:22.060
+Sumit Darak: So this is still the same. The changes in the today's lab is happening here.
+
+308
+00:33:22.550 --> 00:33:27.820
+Sumit Darak: So that's what you can see that we are doing the changes here
+
+309
+00:33:28.840 --> 00:33:38.309
+Sumit Darak: in the next week, lab. We will do the changes here. We'll keep it as same here. So we'll do that opposite thing in the next week. Lab.
+
+310
+00:33:39.970 --> 00:33:40.870
+Abhinav Maurya: Okay, sir.
+
+311
+00:34:10.420 --> 00:34:13.449
+Sumit Darak: So I'm sharing the viewer screen. Is it visible.
+
+312
+00:34:16.080 --> 00:34:16.729
+Anirudh Singh: Yes, sir.
+
+313
+00:34:17.480 --> 00:34:18.389
+Arnav Gupta: Yes, sir.
+
+314
+00:34:21.270 --> 00:34:23.409
+Sumit Darak: So I'll start with the new project.
+
+315
+00:34:37.989 --> 00:34:39.889
+Sumit Darak: This is lab level.
+
+316
+00:34:48.980 --> 00:34:50.740
+Sumit Darak: I go forward for.
+
+317
+00:35:07.250 --> 00:35:14.449
+Sumit Darak: okay. So now I'll start the same process as last lab.
+
+318
+00:35:14.580 --> 00:35:16.959
+Sumit Darak: I'll start with the create design.
+
+319
+00:35:17.290 --> 00:35:21.629
+Sumit Darak: I'll be doing it slightly, quickly, because we have done it couple of times. Now
+
+320
+00:35:26.070 --> 00:35:28.380
+Sumit Darak: I'll be adding the zinc IP
+
+321
+00:35:34.190 --> 00:35:37.980
+Sumit Darak: for the zinc IP. The 1st step is to do the run automation
+
+322
+00:35:38.030 --> 00:35:41.049
+Sumit Darak: with the same setting click. Okay.
+
+323
+00:35:51.220 --> 00:35:53.529
+Sumit Darak: the Pspl configuration.
+
+324
+00:35:53.580 --> 00:35:59.490
+Sumit Darak: I need to enable the Acp ports. Make sure I click on the both the boxes
+
+325
+00:36:00.190 --> 00:36:03.340
+Sumit Darak: in terms of the peripherals.
+
+326
+00:36:03.380 --> 00:36:05.249
+Sumit Darak: I'll only keep the
+
+327
+00:36:09.040 --> 00:36:13.139
+Sumit Darak: Sd. Card Uart. Sorry not Sd. Card uart one.
+
+328
+00:36:13.350 --> 00:36:15.449
+Sumit Darak: And as we discuss in the
+
+329
+00:36:15.960 --> 00:36:20.040
+Sumit Darak: last lecture, you can see that there are 54 pins.
+
+330
+00:36:20.230 --> 00:36:24.130
+Sumit Darak: and your one is connected to the 48 and 49. B,
+
+331
+00:36:24.190 --> 00:36:30.749
+Sumit Darak: but you are, one can be connected to the any other PIN. And that's why it is called as a multiplex input output.
+
+332
+00:36:31.640 --> 00:36:34.720
+Sumit Darak: Okay? And you can see the extended new opinion as well.
+
+333
+00:36:35.160 --> 00:36:38.450
+Sumit Darak: So this is what we discuss in our previous lecture.
+
+334
+00:36:44.870 --> 00:36:49.330
+Sumit Darak: Okay, so I have enabled Gp port. I have enabled Acp.
+
+335
+00:36:49.500 --> 00:36:52.610
+Sumit Darak: Uart and the Ddr. Anything which is missing.
+
+336
+00:36:55.060 --> 00:36:57.529
+Sumit Darak: Okay, so it looks like you have done everything.
+
+337
+00:36:57.890 --> 00:37:01.320
+Sumit Darak: Then I'll add the Dma
+
+338
+00:37:07.410 --> 00:37:09.709
+Sumit Darak: in the Dma. I'll do the
+
+339
+00:37:09.890 --> 00:37:12.849
+Sumit Darak: configuration. I'll disable the scatter gathered mode
+
+340
+00:37:13.200 --> 00:37:15.869
+Sumit Darak: buffer length. I'll keep it as 23
+
+341
+00:37:16.120 --> 00:37:19.010
+Sumit Darak: memory map length. It is 64
+
+342
+00:37:19.848 --> 00:37:24.789
+Sumit Darak: steam database for the input to the F 50 for today's lab. It is 64
+
+343
+00:37:25.200 --> 00:37:27.900
+Sumit Darak: bus size. I'll keep it as a 64
+
+344
+00:37:29.535 --> 00:37:35.760
+Sumit Darak: memory map. That database. I'll make it as a 64 stream database, it will be automatically checked.
+
+345
+00:37:36.220 --> 00:37:38.709
+Sumit Darak: I'll allow the an online password.
+
+346
+00:37:38.800 --> 00:37:42.719
+Sumit Darak: Okay, these are the changes. It's again the same as the previous one.
+
+347
+00:37:43.470 --> 00:37:48.310
+Sumit Darak: I'll be doing it in the Ian.
+
+348
+00:37:48.430 --> 00:37:49.310
+Sumit Darak: Yes.
+
+349
+00:37:49.590 --> 00:37:52.769
+Madhav Maheshwari: So what does online transfer do.
+
+350
+00:37:53.600 --> 00:38:00.410
+Sumit Darak: These are some addresses which some addresses are aligned. Some address are unaligned. That is some one more theory
+
+351
+00:38:00.784 --> 00:38:05.330
+Sumit Darak: which we cover in the advance and eld course, for now please ignore it.
+
+352
+00:38:05.780 --> 00:38:06.410
+Madhav Maheshwari: Oog.
+
+353
+00:38:07.279 --> 00:38:07.750
+Sumit Darak: Please.
+
+354
+00:38:07.750 --> 00:38:08.700
+Adit Goel: Excuse me, sir.
+
+355
+00:38:08.900 --> 00:38:09.610
+Sumit Darak: Yeah.
+
+356
+00:38:10.090 --> 00:38:18.909
+Adit Goel: Sir, the memory map data with you have set as 64, which means it will write into the interface with 64 bits right?
+
+357
+00:38:18.910 --> 00:38:21.979
+Sumit Darak: In the memory, it will write it as a 64 bit.
+
+358
+00:38:22.820 --> 00:38:25.619
+Adit Goel: But it is getting 32 bits from the floating point.
+
+359
+00:38:25.740 --> 00:38:30.620
+Sumit Darak: So basically, we are asking the Dma you receive, you are receiving the 32 bit data
+
+360
+00:38:30.630 --> 00:38:34.069
+Sumit Darak: combined tools, consecutive 32 bit data.
+
+361
+00:38:34.100 --> 00:38:37.960
+Sumit Darak: Come, make it as a 64 bit, and send it to the memory.
+
+362
+00:38:40.130 --> 00:38:41.279
+Adit Goel: Oh, this is important.
+
+363
+00:38:55.870 --> 00:38:59.570
+Sumit Darak: Okay, so these are the changes again, same as the last lap.
+
+364
+00:39:01.120 --> 00:39:04.629
+Sumit Darak: I'll wait for 1 min for you to make those changes.
+
+365
+00:40:01.410 --> 00:40:05.600
+Sumit Darak: So now we'll do the run on the connection automation
+
+366
+00:40:06.200 --> 00:40:10.019
+Sumit Darak: where we'll be connecting this light port. It should be connected to the
+
+367
+00:40:10.558 --> 00:40:15.480
+Sumit Darak: Axi Gp port, so you can see that it is connecting the Axi Gp port.
+
+368
+00:40:16.410 --> 00:40:22.929
+Sumit Darak: Then click on. Okay. So you will see that the quite a few changes will be made to the blog diagram.
+
+369
+00:40:28.950 --> 00:40:35.340
+Sumit Darak: Then we will do the run connection again. Automation again. We now connect the Scp port to the
+
+370
+00:40:35.744 --> 00:40:42.299
+Sumit Darak: memory mapped Axi port of the Dma, and you will see that the now the interconnect will be
+
+371
+00:40:42.370 --> 00:40:46.390
+Sumit Darak: added inside the your blog diagram.
+
+372
+00:40:47.590 --> 00:40:57.019
+Sumit Darak: Okay? So you can see that the memory map port is connected to the your Xi Scp port.
+
+373
+00:40:57.870 --> 00:41:01.939
+Sumit Darak: Now we need this. I mean another memory map. Port is remaining.
+
+374
+00:41:01.950 --> 00:41:07.110
+Sumit Darak: What we will do. We'll run connection again and connect this to the A/C port again.
+
+375
+00:41:07.240 --> 00:41:10.110
+Sumit Darak: So you can see that the 2 memory map port
+
+376
+00:41:10.400 --> 00:41:12.829
+Sumit Darak: are connected to the basic portal.
+
+377
+00:41:14.040 --> 00:41:19.410
+Sumit Darak: Okay, I'll wait for 2 min for you to complete this part.
+
+378
+00:42:24.100 --> 00:42:27.259
+Sumit Darak: Okay, any question. Are you able to follow this?
+
+379
+00:42:36.680 --> 00:42:41.670
+Sumit Darak: So now we will be adding, What is the next step.
+
+380
+00:42:45.370 --> 00:42:46.090
+Abhinav Maurya: Vip!
+
+381
+00:42:46.480 --> 00:42:53.369
+Sumit Darak: Good, so we'll be adding the fft. IP. So fast courier comes from fft IP
+
+382
+00:43:04.440 --> 00:43:09.200
+Sumit Darak: the fft, IP. You need to configure the fft. IP,
+
+383
+00:43:20.220 --> 00:43:22.369
+Sumit Darak: the endpoint of a screen.
+
+384
+00:43:27.880 --> 00:43:31.720
+Sumit Darak: then, data point is floating point
+
+385
+00:43:42.360 --> 00:43:47.650
+Sumit Darak: enable the reset put should be in the natural order.
+
+386
+00:44:04.930 --> 00:44:07.850
+Sumit Darak: Okay, so output of the F. 50.
+
+387
+00:44:11.720 --> 00:44:18.690
+Sumit Darak: It's connected to the input of the Dma and
+
+388
+00:44:19.100 --> 00:44:21.360
+Sumit Darak: output of that. Oh, sorry. Sorry. Sorry.
+
+389
+00:44:22.760 --> 00:44:28.399
+Sumit Darak: This is not the connection, because right now we will be making some.
+
+390
+00:44:29.500 --> 00:44:37.060
+Sumit Darak: The output of the Dma should be connected to the input of the Dma. Then for the configuration
+
+391
+00:44:37.240 --> 00:44:40.010
+Sumit Darak: we need to add the constant IP
+
+392
+00:44:56.950 --> 00:44:58.499
+Sumit Darak: should be able to be true
+
+393
+00:44:58.690 --> 00:45:01.290
+Sumit Darak: and value one for the data.
+
+394
+00:45:03.970 --> 00:45:08.120
+Sumit Darak: Only one bit. Value one for the valid signal.
+
+395
+00:45:11.010 --> 00:45:11.969
+Sumit Darak: I'm listening.
+
+396
+00:45:12.220 --> 00:45:17.499
+Sumit Darak: We need to connect the clock signal to the rest of the clock signal.
+
+397
+00:45:19.370 --> 00:45:25.450
+Sumit Darak: We need to connect the reset signal to the A rest of the recessively.
+
+398
+00:45:26.950 --> 00:45:29.760
+Sumit Darak: Okay, so this is same as the last lap.
+
+399
+00:45:47.320 --> 00:45:48.400
+Sumit Darak: Any doubt?
+
+400
+00:45:55.310 --> 00:45:56.120
+Sumit Darak: Yes.
+
+401
+00:45:56.640 --> 00:46:02.940
+Arnav Gupta: So we send 1 1 in T data and T valid channel of Mft. IP,
+
+402
+00:46:03.281 --> 00:46:06.939
+Arnav Gupta: what does it mean for like, what does it mean for Mft? IP.
+
+403
+00:46:07.130 --> 00:46:12.780
+Sumit Darak: This fft. IP, right? It is designed to con perform fft as well as I. 50.
+
+404
+00:46:14.450 --> 00:46:18.200
+Sumit Darak: Also this I 50 IP can do a lot of other function.
+
+405
+00:46:18.240 --> 00:46:20.570
+Sumit Darak: So this is the 7 bit, input right?
+
+406
+00:46:20.650 --> 00:46:26.950
+Sumit Darak: So you, it's 8 bit input, so there are 2, 56 different value you can mention here.
+
+407
+00:46:27.350 --> 00:46:36.350
+Sumit Darak: So we are setting it to one to tell this fft. IP, that you need to perform the forward Fourier transform only Fourier transform and not the inverse Fourier transform.
+
+408
+00:46:40.030 --> 00:46:41.010
+Sumit Darak: Okay.
+
+409
+00:46:41.250 --> 00:46:42.059
+Arnav Gupta: Okay, sir.
+
+410
+00:46:48.310 --> 00:46:56.219
+Sumit Darak: So no, let's add the next IP, which is the our floating point. Id.
+
+411
+00:47:02.710 --> 00:47:05.380
+Sumit Darak: Now this floating point. Id.
+
+412
+00:47:07.340 --> 00:47:13.080
+Sumit Darak: What we need to do, the operation. We need to do the inverse or the reciprocal operation.
+
+413
+00:47:13.530 --> 00:47:23.830
+Sumit Darak: So you can see that there will be option called as a reciprocal. It does the input one by A is the input, the output is one by a
+
+414
+00:47:25.700 --> 00:47:33.599
+Sumit Darak: okay. Now, so you need to select the receipt protocol look operation, which we are doing.
+
+415
+00:47:36.470 --> 00:47:43.190
+Sumit Darak: Now, the input precision is again a single precision floating point. So you don't need to change anything.
+
+416
+00:47:47.930 --> 00:47:56.490
+Sumit Darak: Now in the interface. Also, we need to make sure that we add the last signal.
+
+417
+00:48:00.720 --> 00:48:04.749
+Sumit Darak: I'm we generate the last symbol
+
+418
+00:48:05.020 --> 00:48:07.300
+Sumit Darak: that you need to ensure that
+
+419
+00:48:07.380 --> 00:48:10.510
+Sumit Darak: you add the last signal at the input
+
+420
+00:48:10.650 --> 00:48:14.449
+Sumit Darak: and you generate the class, you know. So basically, you are seeing that
+
+421
+00:48:14.480 --> 00:48:21.649
+Sumit Darak: on the input, you have the last signal and you are generating the last signal so that you need to
+
+422
+00:48:21.770 --> 00:48:23.319
+Sumit Darak: make sure that you are.
+
+423
+00:48:24.021 --> 00:48:30.310
+Sumit Darak: You can always add the reset signal. Also, as you are using the reset signal for the other Ips.
+
+424
+00:48:37.620 --> 00:48:39.669
+Madhav Maheshwari: So okay, okay.
+
+425
+00:48:40.850 --> 00:48:41.220
+Sumit Darak: Yeah.
+
+426
+00:48:54.520 --> 00:48:58.960
+Sumit Darak: So in the floating point, IP, select the receipt local. Here.
+
+427
+00:48:59.520 --> 00:49:03.909
+Sumit Darak: then, input precision is single precision, floating point. So no change here.
+
+428
+00:49:04.220 --> 00:49:10.419
+Sumit Darak: optimization, no change in the interface interface at the reset signal.
+
+429
+00:49:11.830 --> 00:49:21.300
+Sumit Darak: and then the add the last signal in the in input A, and that will generate a last signal in the output results.
+
+430
+00:49:21.670 --> 00:49:22.999
+Sumit Darak: Click on. Okay.
+
+431
+00:49:25.330 --> 00:49:29.420
+Sumit Darak: So now, if you look at the IP,
+
+432
+00:49:29.720 --> 00:49:33.360
+Sumit Darak: you can see that the this IP has the 32 bit input.
+
+433
+00:49:33.560 --> 00:49:37.050
+Sumit Darak: and this IP has the 64th bidding code.
+
+434
+00:49:37.730 --> 00:49:44.099
+Sumit Darak: Now, we need to modify this 64 bit input into the 32 bit, input.
+
+435
+00:49:44.480 --> 00:49:51.970
+Sumit Darak: okay, so to do modification, we need to use the with converter.
+
+436
+00:49:55.670 --> 00:50:08.579
+Sumit Darak: Okay, so there are 2 width converter. One is the axi, one is the axi speed. So we need to use the Axi stream width converter because we are working on the stream interface here.
+
+437
+00:50:09.050 --> 00:50:11.500
+Sumit Darak: So you need to add this team. IP,
+
+438
+00:50:20.860 --> 00:50:29.460
+Sumit Darak: okay, so find out the Axi screen with converter in your IP catalog in R dot. IP.
+
+439
+00:50:32.390 --> 00:50:33.370
+Sumit Darak: No.
+
+440
+00:50:33.810 --> 00:50:37.150
+Sumit Darak: In the steam width. Converter. Your input is
+
+441
+00:50:37.600 --> 00:50:44.840
+Sumit Darak: 64 bit, that is 8 Byte, and the output is 4 bits, dashes.
+
+442
+00:50:46.290 --> 00:50:48.709
+Sumit Darak: 4 Byte. That is, 32 bit.
+
+443
+00:50:49.010 --> 00:50:54.690
+Sumit Darak: and you need to make sure that we generate the lost.
+
+444
+00:51:05.040 --> 00:51:08.129
+Sumit Darak: So you can see that you have 64 bit data.
+
+445
+00:51:11.490 --> 00:51:15.910
+Sumit Darak: The output is 32 bit when it generates the last signal.
+
+446
+00:51:42.570 --> 00:51:43.430
+Sumit Darak: Okay?
+
+447
+00:52:01.000 --> 00:52:04.470
+Sumit Darak: So now I'll connect the output of the
+
+448
+00:52:04.990 --> 00:52:07.879
+Sumit Darak: stream to the input of the
+
+449
+00:52:08.040 --> 00:52:12.730
+Sumit Darak: width. Convert output of the F 50 to the input of the width converter
+
+450
+00:52:22.380 --> 00:52:26.669
+Sumit Darak: output of the width converter to the input of the floating point IP,
+
+451
+00:52:31.390 --> 00:52:34.619
+Sumit Darak: and where should I connect the output of the floating point, IP.
+
+452
+00:52:37.850 --> 00:52:39.850
+Sumit Darak: Where it should be connected to.
+
+453
+00:52:41.720 --> 00:52:43.200
+Madhav Maheshwari: Into the.
+
+454
+00:52:43.710 --> 00:52:44.440
+Madhav Maheshwari: It's been good.
+
+455
+00:52:44.720 --> 00:52:45.459
+Rahul IIITD: What do you mean?
+
+456
+00:52:45.460 --> 00:52:48.210
+Sumit Darak: Should be the input of the do you?
+
+457
+00:52:56.670 --> 00:53:02.980
+Sumit Darak: Okay? So Ssp, width, converter floating point, and
+
+458
+00:53:04.260 --> 00:53:09.409
+Sumit Darak: only a simple minor modification we have on that now what is remaining.
+
+459
+00:53:12.650 --> 00:53:15.680
+Madhav Maheshwari: So we are still not going into the clocks, and the razor changes.
+
+460
+00:53:16.430 --> 00:53:18.769
+Sumit Darak: Don't forget the cloth and the
+
+461
+00:53:18.820 --> 00:53:26.010
+Sumit Darak: reset signal. Connect the clock signal to the rest of the clock signal. Don't connect the clock to reset and reset the clock
+
+462
+00:53:27.230 --> 00:53:33.570
+Sumit Darak: to call o'clock and reset to where is it?
+
+463
+00:54:29.350 --> 00:54:31.840
+Sumit Darak: Okay? Now save the design.
+
+464
+00:54:34.020 --> 00:54:38.940
+Sumit Darak: Then validate the design, so you can see the exhaustion called
+
+465
+00:54:39.180 --> 00:54:43.709
+Sumit Darak: validate design, or you can press F. 6. Function 6.
+
+466
+00:54:44.140 --> 00:54:46.119
+Sumit Darak: So validate the design.
+
+467
+00:54:48.830 --> 00:54:50.480
+Ishi Agrawal: Excuse me, sir.
+
+468
+00:54:50.820 --> 00:54:51.580
+Sumit Darak: Yes.
+
+469
+00:54:51.900 --> 00:54:55.869
+Ishi Agrawal: So we didn't do anything after connecting clock and reset right.
+
+470
+00:54:56.920 --> 00:54:57.660
+Sumit Darak: No.
+
+471
+00:54:58.340 --> 00:54:59.389
+Ishi Agrawal: Oh, gosh!
+
+472
+00:55:00.580 --> 00:55:03.849
+Sumit Darak: Save the design, or validate the design.
+
+473
+00:55:03.850 --> 00:55:05.010
+Arnav Gupta: Excuse me, sir.
+
+474
+00:55:05.270 --> 00:55:06.010
+Sumit Darak: Yes.
+
+475
+00:55:06.820 --> 00:55:09.009
+Arnav Gupta: After after the floating point. IP,
+
+476
+00:55:09.130 --> 00:55:14.660
+Arnav Gupta: can we not connect another converter convert it back to 64, and then connect to Pm.
+
+477
+00:55:15.549 --> 00:55:18.139
+Sumit Darak: No, what we did that the Dma
+
+478
+00:55:18.620 --> 00:55:24.299
+Sumit Darak: you can see the Dme. Is that accepting the 32 bit, and it is converting it to the 64.
+
+479
+00:55:26.950 --> 00:55:30.960
+Sumit Darak: So you can do that also, or you can make use of the Dme.
+
+480
+00:55:31.950 --> 00:55:33.139
+Arnav Gupta: Both are fine.
+
+481
+00:55:33.380 --> 00:55:34.429
+Sumit Darak: Yeah, both.
+
+482
+00:55:35.150 --> 00:55:35.595
+Arnav Gupta: Focus.
+
+483
+00:55:38.140 --> 00:55:38.880
+Sumit Darak: Okay?
+
+484
+00:55:47.000 --> 00:55:53.139
+Sumit Darak: So we did the validate design. Then next step is to
+
+485
+00:55:53.810 --> 00:55:59.580
+Sumit Darak: do the 3 step 1st is the generate output products.
+
+486
+00:56:02.060 --> 00:56:03.850
+Anirudh Singh: So what about Iv.
+
+487
+00:56:03.850 --> 00:56:04.970
+Arjun Chetan Pandya: What about Oily?
+
+488
+00:56:05.350 --> 00:56:06.150
+Sumit Darak: Oh, no.
+
+489
+00:56:10.350 --> 00:56:12.009
+Sumit Darak: wait for this one.
+
+490
+00:56:24.210 --> 00:56:28.489
+Sumit Darak: So for the Ila, you need to right click on each case
+
+491
+00:56:28.540 --> 00:56:31.717
+Sumit Darak: and do the debug. But I'll wait for this
+
+492
+00:56:32.280 --> 00:56:38.010
+Sumit Darak: how to product generation to be completed part of the before I add the aisle.
+
+493
+00:57:21.310 --> 00:57:25.099
+Sumit Darak: So output of the 50, I'm adding it to the debug
+
+494
+00:57:28.910 --> 00:57:33.859
+Sumit Darak: output of the screen convert with converter and adding it to the debug.
+
+495
+00:57:35.707 --> 00:57:37.020
+Jai Mangal (IIITD): Excuse me, sir.
+
+496
+00:57:37.180 --> 00:57:37.890
+Sumit Darak: Yes.
+
+497
+00:57:38.250 --> 00:57:43.770
+Jai Mangal (IIITD): Sir, it looks looks like the process is still running, sir. If you see the top right corner.
+
+498
+00:57:43.770 --> 00:57:48.240
+Sumit Darak: I'm just. I'm just adding the debug, and then I'll run it again.
+
+499
+00:59:08.170 --> 00:59:11.059
+Sumit Darak: So I'm adding the ilf for all the hard work.
+
+500
+00:59:35.820 --> 00:59:39.330
+Sumit Darak: So, after adding the Ilia, I have to repeat all the 5 steps.
+
+501
+00:59:54.820 --> 00:59:59.200
+Anirudh Singh: So don't we need to. Debug input of the 50 this time.
+
+502
+01:00:00.060 --> 01:00:01.440
+Sumit Darak: That also you can do it.
+
+503
+01:01:49.230 --> 01:01:57.319
+Sumit Darak: Okay, so I'll make the validation again after adding the no, don't cancel the process.
+
+504
+01:01:58.000 --> 01:02:00.479
+Sumit Darak: It's better to let it complete. And then
+
+505
+01:03:15.820 --> 01:03:20.020
+Sumit Darak: so after this, you generate the udl wrapper
+
+506
+01:03:20.490 --> 01:03:23.339
+Sumit Darak: and then generate the bit stream.
+
+507
+01:06:10.270 --> 01:06:16.769
+Sumit Darak: Okay, so food can be product is completed. So I'll create the spo paper
+
+508
+01:06:48.130 --> 01:06:50.440
+Sumit Darak: and now generates the bits here.
+
+509
+01:06:57.075 --> 01:07:02.729
+Sumit Darak: Okay, now, coming back to your previous code.
+
+510
+01:07:02.810 --> 01:07:05.669
+Sumit Darak: let me share your previous quote.
+
+511
+01:07:05.740 --> 01:07:08.570
+Sumit Darak: So everybody started generating the midstream.
+
+512
+01:07:13.950 --> 01:07:14.900
+Abhinav Maurya: No, sir.
+
+513
+01:07:16.680 --> 01:07:25.649
+Sumit Darak: Okay, so I'll wait for a couple of minutes, and then, because my job is almost done, I'll just need a 4 or 5 min to
+
+514
+01:07:25.710 --> 01:07:31.890
+Sumit Darak: discuss the changes in the C code. Apparently only one change is needed in the C code
+
+515
+01:07:32.540 --> 01:07:35.269
+Sumit Darak: that I'll discuss, and then I'll be meeting.
+
+516
+01:07:38.370 --> 01:07:39.080
+Sumit Darak: But
+
+517
+01:07:56.830 --> 01:08:04.610
+Sumit Darak: so I'm launching the poll for attendance. So you please answer it. In the next 2 min.
+
+518
+01:10:29.813 --> 01:10:30.780
+Arpit Raj: Hello sir!
+
+519
+01:10:31.060 --> 01:10:31.830
+Sumit Darak: Yes.
+
+520
+01:10:32.838 --> 01:10:38.589
+Arpit Raj: Sir, I have missed the 1st quiz, and like there was an Internet issue from my side.
+
+521
+01:10:38.810 --> 01:10:47.359
+Arpit Raj: I tried switching on and off the Internet, but it didn't work so, and when I came the quiz already happened. But I attended this quiz.
+
+522
+01:10:47.360 --> 01:10:54.120
+Sumit Darak: So it will be a one of the 2 polls. So if you have attended one of the 2, you're you'll be marked as a.
+
+523
+01:10:55.690 --> 01:10:57.219
+Arpit Raj: So, okay, thank you.
+
+524
+01:11:01.010 --> 01:11:04.810
+Shiv Chopra: Sir, is it attended correctly, or like just ending.
+
+525
+01:11:05.610 --> 01:11:07.470
+Sumit Darak: Right now it is attending.
+
+526
+01:11:27.110 --> 01:11:30.630
+Sumit Darak: so excuse me. Yes.
+
+527
+01:11:34.830 --> 01:11:41.630
+Abhishek Jha: So while tending the quiz like it, while submitting, it is showing me error. Code 3. What is this error.
+
+528
+01:11:42.890 --> 01:11:45.379
+Sumit Darak: You might have submitted after the quiz itself.
+
+529
+01:11:46.190 --> 01:11:47.520
+Abhishek Jha: Sir, after the.
+
+530
+01:11:48.160 --> 01:11:49.369
+Sumit Darak: Quizzes closed.
+
+531
+01:11:49.920 --> 01:11:54.639
+Abhishek Jha: Sir, I have submitted like I'm submitting, trying it from like last 1 min.
+
+532
+01:11:54.660 --> 01:11:57.030
+Abhishek Jha: It is still showing me the pop up window.
+
+533
+01:11:57.030 --> 01:12:01.430
+Sumit Darak: Yeah. Yeah. The squeeze was finished after 2 weeks. At the moment.
+
+534
+01:12:01.920 --> 01:12:02.970
+Sumit Darak: We don't deal.
+
+535
+01:12:02.970 --> 01:12:08.799
+Abhishek Jha: But, sir, when you told like, when the pop up came, I submitted like after 40 40 seconds maximum.
+
+536
+01:12:09.020 --> 01:12:12.560
+Sumit Darak: I don't know. It's a Zoom One. It's the same for everyone.
+
+537
+01:12:13.840 --> 01:12:14.779
+Abhishek Jha: Okay, sir.
+
+538
+01:12:33.850 --> 01:12:37.780
+Sumit Darak: Okay, so I'm sharing the previous code.
+
+539
+01:12:38.300 --> 01:12:43.330
+Sumit Darak: and then I'll let's discuss, what are the modification to be done?
+
+540
+01:13:52.200 --> 01:13:53.750
+Sumit Darak: Can you see the screen.
+
+541
+01:13:57.660 --> 01:13:58.100
+Kartikay Singh Jagirdar: Yes, sir.
+
+542
+01:13:58.100 --> 01:13:58.620
+Arnav Gupta: Yes, sir.
+
+543
+01:13:59.730 --> 01:14:01.299
+Sumit Darak: Yes. So
+
+544
+01:14:14.810 --> 01:14:15.860
+Sumit Darak: so
+
+545
+01:14:21.720 --> 01:14:24.540
+Sumit Darak: as we discussed in the last part.
+
+546
+01:14:25.100 --> 01:14:29.160
+Sumit Darak: we 1st implement the 8 point legacy in the software.
+
+547
+01:14:29.740 --> 01:14:38.710
+Sumit Darak: Okay, this function which I have implemented may be same for your case, or different. It depends upon how you write the code for the enterprise.
+
+548
+01:14:39.080 --> 01:14:44.820
+Sumit Darak: and you start the timer so you can see that the except time is to set the timer to the particular value.
+
+549
+01:14:46.074 --> 01:14:48.010
+Sumit Darak: and you get the
+
+550
+01:14:48.140 --> 01:14:52.819
+Sumit Darak: value of the timer at the start of the function value of the timer at the end of the
+
+551
+01:14:54.480 --> 01:14:59.230
+Sumit Darak: then in the hardware part, you initialize the Dma
+
+552
+01:14:59.960 --> 01:15:06.740
+Sumit Darak: to get all the data which you have configured in the log diagram inside your structure, which is a side me.
+
+553
+01:15:07.380 --> 01:15:11.330
+Sumit Darak: then you ask the Dma to do the 2 transfer
+
+554
+01:15:11.570 --> 01:15:14.829
+Sumit Darak: one transfer from memory to the Sfp.
+
+555
+01:15:15.120 --> 01:15:22.209
+Sumit Darak: That is, device dmmetrical device, and another transfer is from a 50 to the memory.
+
+556
+01:15:23.090 --> 01:15:29.610
+Sumit Darak: and the size is not size of the sft into the size of the each element, which is the
+
+557
+01:15:30.530 --> 01:15:35.069
+Sumit Darak: complex number, and each part of the complex number is a float value.
+
+558
+01:15:35.810 --> 01:15:45.829
+Sumit Darak: Then you wait for the Dma to complete all the transfer, that is, whether the Dma is busy or not, that is using the while loop, and then you get the time.
+
+559
+01:15:47.940 --> 01:15:48.830
+Sumit Darak: No.
+
+560
+01:15:48.940 --> 01:15:56.319
+Sumit Darak: this part of the code is important where you compare the output of the Ps. And output of the Pn. And then you verify it.
+
+561
+01:15:57.860 --> 01:16:01.509
+Sumit Darak: Now you can see that the. What
+
+562
+01:16:01.530 --> 01:16:09.060
+Sumit Darak: change we have made to compared to the previous code is that the output of the fft
+
+563
+01:16:09.470 --> 01:16:17.450
+Sumit Darak: should be the one by X of the you need to take the reciprocal of the Sfp.
+
+564
+01:16:17.690 --> 01:16:18.510
+Sumit Darak: Okay.
+
+565
+01:16:18.840 --> 01:16:29.490
+Sumit Darak: in terms of the hardware part. There is no change in the code is needed because hardware part is communicating with the Dma, which remains the same. So there is no change in the hardware part.
+
+566
+01:16:29.810 --> 01:16:42.279
+Sumit Darak: But what is the software part software part you need to ensure that the output of the sft you do take the reciprocal, and then you compare with the corresponding your
+
+567
+01:16:42.880 --> 01:16:48.420
+Sumit Darak: output of the your hardware, etc. Okay.
+
+568
+01:16:48.680 --> 01:16:53.910
+Sumit Darak: I leave it to you how you make that changes and get the desired outcome.
+
+569
+01:16:54.680 --> 01:16:56.739
+Sumit Darak: Okay, is this clear?
+
+570
+01:16:57.870 --> 01:16:59.110
+Sumit Darak: Any question.
+
+571
+01:17:00.190 --> 01:17:00.890
+Arnav Gupta: No, sir.
+
+572
+01:17:02.140 --> 01:17:03.769
+Anirudh Singh: Excuse me, sir.
+
+573
+01:17:03.770 --> 01:17:04.480
+Sumit Darak: Yes.
+
+574
+01:17:04.670 --> 01:17:10.139
+Anirudh Singh: So in the Nfa. Lab we won't know what operation will come. So once we have to generate the bit stream again.
+
+575
+01:17:10.970 --> 01:17:20.729
+Sumit Darak: You can keep the bit, SIM generator for 3 for operation, and let's hope that that come. Otherwise you should be able to quickly generate the bit, Simi, you can see that it takes less than 20 min.
+
+576
+01:17:22.460 --> 01:17:23.040
+Anirudh Singh: Okay.
+
+577
+01:17:23.620 --> 01:17:24.330
+Sumit Darak: Right.
+
+578
+01:17:25.420 --> 01:17:26.210
+Anirudh Singh: Okay, sir.
+
+579
+01:17:26.210 --> 01:17:28.820
+Sumit Darak: What are the operation? Yeah.
+
+580
+01:17:29.330 --> 01:17:31.760
+Madhav Maheshwari: So the enzyme lab will be of 2 h right.
+
+581
+01:17:32.300 --> 01:17:33.840
+Sumit Darak: Yeah, around 2 h.
+
+582
+01:17:37.290 --> 01:17:43.550
+Sumit Darak: Okay, so one thing is guaranteed that Msm, lab, you have to use the F 50 IP and the floating point, IP,
+
+583
+01:17:46.280 --> 01:17:50.290
+Sumit Darak: so you should be. Keep the bit stream ready
+
+584
+01:17:50.400 --> 01:17:59.179
+Sumit Darak: for the different one, or even if it is not nearly, you should be able to quickly do it, so that within 1st 20 min you are done with your bit simulation.
+
+585
+01:18:03.240 --> 01:18:08.340
+Sumit Darak: Okay? So now I'll pause the recording and I'll show you the
+
+586
+01:18:09.900 --> 01:18:15.870
+Sumit Darak: you can. Do it on your own again. This will be shared as a recording.
+
+587
+01:18:17.370 --> 01:18:20.860
+Sumit Darak: I hope my screen is visible right? SDK, screen.
+
+588
+01:18:22.610 --> 01:18:23.760
+Nishita Bharat Lohana: Yes, sir.
+
+589
+01:18:24.240 --> 01:18:34.409
+Sumit Darak: Okay? So the 1st thing is that go to the debug configuration. Assuming that you have changed the Ur setting in the system, dot Mss.
+
+590
+01:18:34.780 --> 01:18:41.020
+Sumit Darak: Reset, the entire one programmer feature. Make sure all the check boxes are clicked
+
+591
+01:18:41.270 --> 01:18:43.340
+Sumit Darak: here you select the remote board
+
+592
+01:18:44.210 --> 01:18:46.049
+Sumit Darak: and go to the debug mode.
+
+593
+01:18:58.890 --> 01:19:01.889
+Sumit Darak: Okay, your code will stop at the 1st line.
+
+594
+01:19:02.050 --> 01:19:08.530
+Sumit Darak: then go to the Xcs. Xsct console type, the jetac terminal.
+
+595
+01:19:10.120 --> 01:19:12.099
+Sumit Darak: and once you run the code
+
+596
+01:19:12.850 --> 01:19:15.180
+Sumit Darak: couple of things you need to ensure that
+
+597
+01:19:15.200 --> 01:19:20.589
+Sumit Darak: your output of the Ps. And Ps. Should exactly match you should display both the output
+
+598
+01:19:20.660 --> 01:19:33.389
+Sumit Darak: and below is the time, so you can see that the here also the Fpga is slower than the processor processor. Take 5 microsecond Fpj, take 8 microsecond. So if for smaller operation.
+
+599
+01:19:33.590 --> 01:19:37.970
+Sumit Darak: processor is faster. But if you repeat this for 32 point fft.
+
+600
+01:19:38.000 --> 01:19:41.629
+Sumit Darak: Fpga will be faster. Processor will be slower
+
+601
+01:19:42.020 --> 01:19:46.209
+Sumit Darak: now you also need to see how the Ila works.
+
+602
+01:19:46.260 --> 01:19:52.130
+Sumit Darak: So now look at this carefully. I'll show you how the how you test it for the ironing
+
+603
+01:19:53.310 --> 01:19:56.490
+Sumit Darak: again. I'll go to the debug configuration.
+
+604
+01:19:57.010 --> 01:19:59.670
+Sumit Darak: I click on debug.
+
+605
+01:19:59.890 --> 01:20:02.659
+Sumit Darak: It will configure the board again.
+
+606
+01:20:02.860 --> 01:20:05.300
+Sumit Darak: We have already discussed the board process.
+
+607
+01:20:11.070 --> 01:20:14.449
+Sumit Darak: Okay, so now the code is stopped at the 1st line of the code.
+
+608
+01:20:15.179 --> 01:20:25.669
+Sumit Darak: Now you go to the vivado, open the hardware manager and do the same process, and you will see this screen where all the signals which are connected to the
+
+609
+01:20:26.537 --> 01:20:32.890
+Sumit Darak: your which are connected to the Ila will be up here. Look, will be available here.
+
+610
+01:20:34.520 --> 01:20:40.889
+Sumit Darak: So what I'll do. I'll put the trigger on the last signal of the Dma output F 50 output.
+
+611
+01:20:41.140 --> 01:20:44.300
+Sumit Darak: so you can see that the fft output is
+
+612
+01:20:44.520 --> 01:20:49.590
+Sumit Darak: this one. So I'll put the trigger on the last signal
+
+613
+01:20:50.230 --> 01:20:55.110
+Sumit Darak: 0 to one transition of the last signal on the Ssp output.
+
+614
+01:20:55.190 --> 01:20:59.300
+Sumit Darak: So I'll make it as a 0 to one trying to show.
+
+615
+01:21:01.460 --> 01:21:06.480
+Sumit Darak: Okay? And in the setting, instead of
+
+616
+01:21:06.650 --> 01:21:15.609
+Sumit Darak: starting the trigger position, I'll start that at the 10, so that I'll get the most of the data after the trigger. Okay.
+
+617
+01:21:16.220 --> 01:21:22.069
+Sumit Darak: that now my trigger is waiting, so you can see that my code is waiting for the trigger.
+
+618
+01:21:22.340 --> 01:21:26.430
+Sumit Darak: Now I'll go to the SDK, while again
+
+619
+01:21:27.020 --> 01:21:31.149
+Sumit Darak: type the Jtac calendar here to see the screen.
+
+620
+01:21:31.730 --> 01:21:36.549
+Sumit Darak: And now I'll again click on the run option here.
+
+621
+01:21:37.010 --> 01:21:40.419
+Sumit Darak: So now, if you see here. If you go to the view auto.
+
+622
+01:21:40.560 --> 01:21:44.799
+Sumit Darak: you will see that the trigger has happened and you have collected the data.
+
+623
+01:21:45.110 --> 01:21:47.680
+Sumit Darak: Now you can zoom in the data.
+
+624
+01:21:48.020 --> 01:21:51.590
+Sumit Darak: Now I'll show you the each of the transaction carefully.
+
+625
+01:21:52.710 --> 01:21:55.339
+Sumit Darak: Now this is the output of the fft
+
+626
+01:21:55.660 --> 01:21:59.240
+Sumit Darak: output of the fft is passed to the width converter.
+
+627
+01:21:59.740 --> 01:22:24.170
+Sumit Darak: and the output of the width converter is plus to the floating point IP. And floating point of the IP is passed to the is passed to the Dma. So we have. Yeah, it is, this is the input of the Dma, this is the and also output of the floating point. This is the input output of the your width converter. And this is the output of the.
+
+628
+01:22:24.770 --> 01:22:28.400
+Sumit Darak: So now let's look at the output of the sft
+
+629
+01:22:28.990 --> 01:22:33.609
+Sumit Darak: output of the fft. You can see that. This is the valid signal.
+
+630
+01:22:33.810 --> 01:22:42.389
+Sumit Darak: This is the ready signal, and these are the different outputs. Okay, you can see that this is the last signal. Our trigger was placed on this last signal.
+
+631
+01:22:42.730 --> 01:22:44.800
+Sumit Darak: Now, output of the fft is
+
+632
+01:22:44.810 --> 01:22:48.179
+Sumit Darak: 64 bit. Okay, each data is 64 bit.
+
+633
+01:22:48.300 --> 01:22:56.789
+Sumit Darak: Now it goes to the width, converter and width converter converts that into the 32 bit.
+
+634
+01:22:56.890 --> 01:22:59.470
+Sumit Darak: So if you go to the weight, converter output.
+
+635
+01:22:59.480 --> 01:23:09.879
+Sumit Darak: So you can see that the bit converter output converts into the 32 bit data. Okay? So you can see that the output is 32 bit, and it's a last signal.
+
+636
+01:23:10.490 --> 01:23:13.109
+Sumit Darak: Okay? So this is the output of the width converter.
+
+637
+01:23:13.500 --> 01:23:24.320
+Sumit Darak: Then the width converter output is passed to the inverse operation, and this inverse operation perform the inverse of each element, and then generate the output.
+
+638
+01:23:24.550 --> 01:23:27.389
+Sumit Darak: So again, you can see that the last signal is
+
+639
+01:23:29.310 --> 01:23:36.240
+Sumit Darak: so. This is how you need to show your all the transition inside your block diagram. Using the
+
+640
+01:23:36.370 --> 01:23:40.520
+Sumit Darak: you are, I'll know.
+
+641
+01:23:40.890 --> 01:23:47.960
+Sumit Darak: Then you can see that the this is the S. 2 that is, from Dma to the
+
+642
+01:23:48.275 --> 01:23:55.990
+Sumit Darak: memory, and this is the right transaction, so we will look it into the right channel. So you can see that this is the right channel
+
+643
+01:23:56.450 --> 01:24:03.820
+Sumit Darak: on the right channel. You can see that the there are 8 data that are being sent, and each data is back to 64 point.
+
+644
+01:24:04.120 --> 01:24:10.490
+Sumit Darak: So the Dma takes the 32 bit data from the floating point. IP
+
+645
+01:24:10.610 --> 01:24:16.760
+Sumit Darak: plug into the 64 bit data and send it to the memory over the right channel.
+
+646
+01:24:18.420 --> 01:24:19.680
+Sumit Darak: Is this clear?
+
+647
+01:24:21.120 --> 01:24:22.520
+Sumit Darak: Any question here?
+
+648
+01:24:31.840 --> 01:24:45.630
+Sumit Darak: Okay, so you need to be you need to be comfortable with the Ila, and there will be substantial wettage to the Ila. You should be able to show the output on the Ila for the different interfaces.
+
+649
+01:24:48.230 --> 01:24:51.800
+Sumit Darak: So with this I'll stop the recording.
+
+650
+01:24:52.980 --> 01:24:57.070
+Sumit Darak: Then I'll share that recording me, too.
+

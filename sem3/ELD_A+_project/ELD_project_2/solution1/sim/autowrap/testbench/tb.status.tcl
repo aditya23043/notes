@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/adi/repo/notes/sem3/ELD_A+_project/ELD_project_2/solution1/./sim/autowrap/testbench/fft.cpp_pre.cpp.tb.cpp

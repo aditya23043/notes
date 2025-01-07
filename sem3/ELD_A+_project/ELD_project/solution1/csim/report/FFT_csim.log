@@ -1,0 +1,31 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../fft_tb.c in debug mode
+INFO: [HLS 200-10] Running '/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adi' on host 'archlinux' (Linux_x86_64 version 6.6.65-1-lts) on Mon Dec 16 22:43:10 IST 2024
+INFO: [HLS 200-10] In directory '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project/solution1/csim/build'
+../../fft_tb.c:25:7: warning: passing 'const _Complex double [8]' to parameter of type '_Complex double *' discards qualifiers [-Wincompatible-pointer-types]
+  FFT(FFT_input, FFT_output);
+      ^~~~~~~~~
+../../fft.c:48:25: note: passing argument to parameter 'FFT_input' here
+void FFT(double complex FFT_input[N], double complex FFT_output[N]){
+                        ^
+1 warning generated.
+../../fft_tb.c:25:7: warning: passing 'const _Complex double [8]' to parameter of type '_Complex double *' discards qualifiers [-Wincompatible-pointer-types]
+  FFT(FFT_input, FFT_output);
+      ^~~~~~~~~
+../../fft.c:48:25: note: passing argument to parameter 'FFT_input' here
+void FFT(double complex FFT_input[N], double complex FFT_output[N]){
+                        ^
+1 warning generated.
+ERROR: [APCC 202-3] Gcc Compile failed: 
+/tmp/apcc_db_adi/348581734369190298312/fft_tb.c: In function ‘main’:
+/tmp/apcc_db_adi/348581734369190298312/fft_tb.c:2830:37: error: incompatible type for argument 1 of ‘cabs’
+   llvm_cbe_tmp__214 = (double )cabs(llvm_cbe_tmp__199);
+                                     ^~~~~~~~~~~~~~~~~
+/tmp/apcc_db_adi/348581734369190298312/fft_tb.c:2830:37: note: expected ‘complex double’ but argument is of type ‘l_unnamed_0 {aka struct l_unnamed_0}’
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_adi/348581734369190298312
+ERROR: [APCC 202-1] APCC failed.
+make: *** [csim.mk:77: obj/fft_tb.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,40 @@
+INFO: [HLS 200-10] Running '/home/adi/hdd/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'adi' on host 'archlinux' (Linux_x86_64 version 6.6.65-1-lts) on Tue Dec 17 22:41:49 IST 2024
+INFO: [HLS 200-10] In directory '/home/adi/repo/notes/sem3/ELD_A+_project'
+Sourcing Tcl script '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project_2/solution1/csim.tcl'
+INFO: [HLS 200-10] Opening project '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project_2'.
+INFO: [HLS 200-10] Opening solution '/home/adi/repo/notes/sem3/ELD_A+_project/ELD_project_2/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../fft_tb.cpp in debug mode
+   Generating csim.exe
+
+INPUT: 
+
+(1, 0)
+(2, 0)
+(3, 0)
+(4, 0)
+(5, 1)
+(6, 2)
+(7, 3)
+(8, 4)
+
+
+OUTPUT: 
+
+(36, 10)
+(-11.2426, 10.0711)
+(-6, 2)
+(-5.24264, -0.75736)
+(-4, -2)
+(-2.75736, -4.07107)
+(-2, -6)
+(3.24264, -9.24264)
+
+PASS
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

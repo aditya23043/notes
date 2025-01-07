@@ -1,0 +1,467 @@
+[
+	[
+		{
+			"id": 2000883,
+			"syllabusCourse": {
+				"id": 2000818,
+				"maxMark": 100.0,
+				"internalMarks": 0.0,
+				"internalPassMarks": 0.0,
+				"externalMarks": 0.0,
+				"externalPassMarks": 0.0,
+				"passMark": 0.0,
+				"credit": 4.0,
+				"durationInHours": 0.0,
+				"courseClassType": {
+					"id": 19496961,
+					"credits": 0.0,
+					"course": {
+						"id": 19464193,
+						"code": "CSE201",
+						"name": "Advanced Programming",
+						"credit": 0.0,
+						"tutorialHours": 0.0,
+						"labHours": 0.0,
+						"classHours": 0.0,
+						"selfDirectedHours": 0.0,
+						"totLearningHours": 0.0,
+						"sequenceOrder": 0,
+						"coverPage": false
+					},
+					"classType": {
+						"code": "Lect-Tut-Lab",
+						"name": "Lecture-Tutorial-Lab"
+					}
+				},
+				"courseType": {
+					"name": "Mandatory (Core Elective)",
+					"isMandatory": 0
+				},
+				"feedBackOnline": false,
+				"classHours": 0.0,
+				"tutorialHours": 0.0,
+				"labHours": 0.0,
+				"workHours": 0.0,
+				"concentration": 0.0,
+				"capacity": 0
+			},
+			"admission": {
+				"id": 443254002,
+				"entranceScore": 0.0,
+				"entranceRank": 0,
+				"totalMark": 0.0,
+				"cgpa": 0.0,
+				"feeAmount": 0.0,
+				"rollNo": 0,
+				"student": {
+					"id": 443811046,
+					"pinNo": 0,
+					"parentAnnualIncome": 0.0,
+					"age": 0,
+					"workExperince": 0
+				},
+				"studentCurrentTerm": 0.0
+			},
+			"level": {
+				"id": 2000009,
+				"syllabusFreeze": false,
+				"startDate": "Aug 9, 2024, 12:00:00 AM",
+				"endDate": "Dec 25, 2024, 11:59:59 PM",
+				"resultApplicable": false,
+				"resultDeclared": true
+			},
+			"courseType": 0,
+			"feedBack": 2,
+			"forcedGrade": {
+				"id": 16908290,
+				"code": "A-",
+				"weightage": 9.0,
+				"hierarchyId": 0,
+				"fromPR": 0.0,
+				"toPR": 0.0,
+				"fromMR": 0,
+				"toMR": 0
+			},
+			"totalMark": 0.0,
+			"internalMark": 0.0,
+			"externalMark": 0.0,
+			"passAudit": false,
+			"otherStatus": 0,
+			"modifiedGroup": "campus"
+		},
+		[],
+		false
+	],
+	[
+		{
+			"id": 2000886,
+			"syllabusCourse": {
+				"id": 2000819,
+				"maxMark": 100.0,
+				"internalMarks": 0.0,
+				"internalPassMarks": 0.0,
+				"externalMarks": 0.0,
+				"externalPassMarks": 0.0,
+				"passMark": 0.0,
+				"credit": 4.0,
+				"durationInHours": 0.0,
+				"courseClassType": {
+					"id": 224526344,
+					"credits": 0.0,
+					"course": {
+						"id": 224493576,
+						"code": "ECE215",
+						"name": "Circuit Theory and Devices",
+						"credit": 0.0,
+						"tutorialHours": 0.0,
+						"labHours": 0.0,
+						"classHours": 0.0,
+						"selfDirectedHours": 0.0,
+						"totLearningHours": 0.0,
+						"sequenceOrder": 0,
+						"coverPage": false
+					},
+					"classType": {
+						"code": "Lect-Tut-Lab",
+						"name": "Lecture-Tutorial-Lab"
+					}
+				},
+				"courseType": {
+					"name": "Mandatory (Core)",
+					"isMandatory": 0
+				},
+				"feedBackOnline": false,
+				"classHours": 0.0,
+				"tutorialHours": 0.0,
+				"labHours": 0.0,
+				"workHours": 0.0,
+				"concentration": 0.0,
+				"capacity": 0
+			},
+			"admission": {
+				"id": 443254002,
+				"entranceScore": 0.0,
+				"entranceRank": 0,
+				"totalMark": 0.0,
+				"cgpa": 0.0,
+				"feeAmount": 0.0,
+				"rollNo": 0,
+				"student": {
+					"id": 443811046,
+					"pinNo": 0,
+					"parentAnnualIncome": 0.0,
+					"age": 0,
+					"workExperince": 0
+				},
+				"studentCurrentTerm": 0.0
+			},
+			"level": {
+				"id": 2000009,
+				"syllabusFreeze": false,
+				"startDate": "Aug 9, 2024, 12:00:00 AM",
+				"endDate": "Dec 25, 2024, 11:59:59 PM",
+				"resultApplicable": false,
+				"resultDeclared": true
+			},
+			"courseType": 0,
+			"feedBack": 2,
+			"forcedGrade": {
+				"id": 16908291,
+				"code": "B",
+				"weightage": 8.0,
+				"hierarchyId": 0,
+				"fromPR": 0.0,
+				"toPR": 0.0,
+				"fromMR": 0,
+				"toMR": 0
+			},
+			"totalMark": 0.0,
+			"internalMark": 0.0,
+			"externalMark": 0.0,
+			"passAudit": false,
+			"otherStatus": 0,
+			"modifiedGroup": "campus"
+		},
+		[],
+		false
+	],
+	[
+		{
+			"id": 2000887,
+			"syllabusCourse": {
+				"id": 2000820,
+				"maxMark": 100.0,
+				"internalMarks": 0.0,
+				"internalPassMarks": 0.0,
+				"externalMarks": 0.0,
+				"externalPassMarks": 0.0,
+				"passMark": 0.0,
+				"credit": 4.0,
+				"durationInHours": 0.0,
+				"courseClassType": {
+					"id": 109084674,
+					"credits": 0.0,
+					"course": {
+						"id": 109051906,
+						"code": "ECE250",
+						"name": "Signals \u0026 Systems",
+						"credit": 0.0,
+						"tutorialHours": 0.0,
+						"labHours": 0.0,
+						"classHours": 0.0,
+						"selfDirectedHours": 0.0,
+						"totLearningHours": 0.0,
+						"sequenceOrder": 0,
+						"coverPage": false
+					},
+					"classType": {
+						"code": "Lect",
+						"name": "Lecture"
+					}
+				},
+				"courseType": {
+					"name": "Mandatory (Core)",
+					"isMandatory": 0
+				},
+				"feedBackOnline": false,
+				"classHours": 0.0,
+				"tutorialHours": 0.0,
+				"labHours": 0.0,
+				"workHours": 0.0,
+				"concentration": 0.0,
+				"capacity": 0
+			},
+			"admission": {
+				"id": 443254002,
+				"entranceScore": 0.0,
+				"entranceRank": 0,
+				"totalMark": 0.0,
+				"cgpa": 0.0,
+				"feeAmount": 0.0,
+				"rollNo": 0,
+				"student": {
+					"id": 443811046,
+					"pinNo": 0,
+					"parentAnnualIncome": 0.0,
+					"age": 0,
+					"workExperince": 0
+				},
+				"studentCurrentTerm": 0.0
+			},
+			"level": {
+				"id": 2000009,
+				"syllabusFreeze": false,
+				"startDate": "Aug 9, 2024, 12:00:00 AM",
+				"endDate": "Dec 25, 2024, 11:59:59 PM",
+				"resultApplicable": false,
+				"resultDeclared": true
+			},
+			"courseType": 0,
+			"feedBack": 2,
+			"forcedGrade": {
+				"id": 16908292,
+				"code": "B-",
+				"weightage": 7.0,
+				"hierarchyId": 0,
+				"fromPR": 0.0,
+				"toPR": 0.0,
+				"fromMR": 0,
+				"toMR": 0
+			},
+			"totalMark": 0.0,
+			"internalMark": 0.0,
+			"externalMark": 0.0,
+			"passAudit": false,
+			"otherStatus": 0,
+			"modifiedGroup": "campus"
+		},
+		[],
+		false
+	],
+	[
+		{
+			"id": 2000889,
+			"syllabusCourse": {
+				"id": 2000821,
+				"maxMark": 100.0,
+				"internalMarks": 0.0,
+				"internalPassMarks": 0.0,
+				"externalMarks": 0.0,
+				"externalPassMarks": 0.0,
+				"passMark": 0.0,
+				"credit": 4.0,
+				"durationInHours": 0.0,
+				"courseClassType": {
+					"id": 109084672,
+					"credits": 0.0,
+					"course": {
+						"id": 109051904,
+						"code": "ECE270",
+						"name": "Embedded Logic Design",
+						"credit": 0.0,
+						"tutorialHours": 0.0,
+						"labHours": 0.0,
+						"classHours": 0.0,
+						"selfDirectedHours": 0.0,
+						"totLearningHours": 0.0,
+						"sequenceOrder": 0,
+						"coverPage": false
+					},
+					"classType": {
+						"code": "Lect",
+						"name": "Lecture"
+					}
+				},
+				"courseType": {
+					"name": "Mandatory (Core)",
+					"isMandatory": 0
+				},
+				"feedBackOnline": false,
+				"classHours": 0.0,
+				"tutorialHours": 0.0,
+				"labHours": 0.0,
+				"workHours": 0.0,
+				"concentration": 0.0,
+				"capacity": 0
+			},
+			"admission": {
+				"id": 443254002,
+				"entranceScore": 0.0,
+				"entranceRank": 0,
+				"totalMark": 0.0,
+				"cgpa": 0.0,
+				"feeAmount": 0.0,
+				"rollNo": 0,
+				"student": {
+					"id": 443811046,
+					"pinNo": 0,
+					"parentAnnualIncome": 0.0,
+					"age": 0,
+					"workExperince": 0
+				},
+				"studentCurrentTerm": 0.0
+			},
+			"level": {
+				"id": 2000009,
+				"syllabusFreeze": false,
+				"startDate": "Aug 9, 2024, 12:00:00 AM",
+				"endDate": "Dec 25, 2024, 11:59:59 PM",
+				"resultApplicable": false,
+				"resultDeclared": true
+			},
+			"courseType": 0,
+			"feedBack": 2,
+			"forcedGrade": {
+				"id": 16908288,
+				"code": "A+",
+				"weightage": 10.0,
+				"hierarchyId": 0,
+				"fromPR": 0.0,
+				"toPR": 0.0,
+				"fromMR": 0,
+				"toMR": 0
+			},
+			"totalMark": 0.0,
+			"internalMark": 0.0,
+			"externalMark": 0.0,
+			"passAudit": false,
+			"otherStatus": 0,
+			"modifiedGroup": "campus"
+		},
+		[],
+		false
+	],
+	[
+		{
+			"id": 2000891,
+			"syllabusCourse": {
+				"id": 2000827,
+				"maxMark": 100.0,
+				"internalMarks": 0.0,
+				"internalPassMarks": 0.0,
+				"externalMarks": 0.0,
+				"externalPassMarks": 0.0,
+				"passMark": 0.0,
+				"credit": 4.0,
+				"durationInHours": 0.0,
+				"courseClassType": {
+					"id": 109084675,
+					"credits": 0.0,
+					"course": {
+						"id": 109051907,
+						"code": "MTH203",
+						"name": "Maths III",
+						"credit": 0.0,
+						"tutorialHours": 0.0,
+						"labHours": 0.0,
+						"classHours": 0.0,
+						"selfDirectedHours": 0.0,
+						"totLearningHours": 0.0,
+						"sequenceOrder": 0,
+						"coverPage": false
+					},
+					"classType": {
+						"code": "Lect",
+						"name": "Lecture"
+					}
+				},
+				"courseType": {
+					"name": "Mandatory (Core Elective)",
+					"isMandatory": 0
+				},
+				"feedBackOnline": false,
+				"classHours": 0.0,
+				"tutorialHours": 0.0,
+				"labHours": 0.0,
+				"workHours": 0.0,
+				"concentration": 0.0,
+				"capacity": 0
+			},
+			"admission": {
+				"id": 443254002,
+				"entranceScore": 0.0,
+				"entranceRank": 0,
+				"totalMark": 0.0,
+				"cgpa": 0.0,
+				"feeAmount": 0.0,
+				"rollNo": 0,
+				"student": {
+					"id": 443811046,
+					"pinNo": 0,
+					"parentAnnualIncome": 0.0,
+					"age": 0,
+					"workExperince": 0
+				},
+				"studentCurrentTerm": 0.0
+			},
+			"level": {
+				"id": 2000009,
+				"syllabusFreeze": false,
+				"startDate": "Aug 9, 2024, 12:00:00 AM",
+				"endDate": "Dec 25, 2024, 11:59:59 PM",
+				"resultApplicable": false,
+				"resultDeclared": true
+			},
+			"courseType": 0,
+			"feedBack": 2,
+			"forcedGrade": {
+				"id": 16908291,
+				"code": "B",
+				"weightage": 8.0,
+				"hierarchyId": 0,
+				"fromPR": 0.0,
+				"toPR": 0.0,
+				"fromMR": 0,
+				"toMR": 0
+			},
+			"totalMark": 0.0,
+			"internalMark": 0.0,
+			"externalMark": 0.0,
+			"passAudit": false,
+			"otherStatus": 0,
+			"modifiedGroup": "campus"
+		},
+		[],
+		false
+	]
+]

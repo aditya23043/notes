@@ -1,0 +1,180 @@
+
+
+================================================================
+== Vivado HLS Report for 'FFT'
+================================================================
+* Date:           Mon Dec 16 22:38:56 2024
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        ELD_project
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.400|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  197|  197|  197|  197|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+        |                       |            |  Latency  |  Interval | Pipeline|
+        |        Instance       |   Module   | min | max | min | max |   Type  |
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+        |grp_FFT_stages_fu_120  |FFT_stages  |  171|  171|  171|  171|   none  |
+        +-----------------------+------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- bit_reversal  |   24|   24|         3|          -|          -|     8|    no    |
+        +----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     24|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        4|     20|    2121|   3739|    0|
+|Memory           |        0|      -|     131|      9|    0|
+|Multiplexer      |        -|      -|       -|    120|    -|
+|Register         |        -|      -|      18|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        4|     20|    2270|   3892|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        1|      9|       2|      7|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------+------------+---------+-------+------+------+-----+
+    |        Instance       |   Module   | BRAM_18K| DSP48E|  FF  |  LUT | URAM|
+    +-----------------------+------------+---------+-------+------+------+-----+
+    |grp_FFT_stages_fu_120  |FFT_stages  |        4|     20|  2121|  3739|    0|
+    +-----------------------+------------+---------+-------+------+------+-----+
+    |Total                  |            |        4|     20|  2121|  3739|    0|
+    +-----------------------+------------+---------+-------+------+------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +----------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |     Memory     |      Module      | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |FFT_rev_real_U  |FFT_FFT_rev_real  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |FFT_rev_imag_U  |FFT_FFT_rev_real  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |rev8_U          |FFT_rev8          |        0|   3|   1|    0|     8|    3|     1|           24|
+    +----------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total           |                  |        0| 131|   9|    0|    24|   67|     3|          536|
+    +----------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |i_fu_136_p2          |     +    |      0|  0|  13|           4|           1|
+    |icmp_ln17_fu_130_p2  |   icmp   |      0|  0|  11|           4|           5|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  24|           8|           6|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |FFT_rev_imag_address0  |  15|          3|    3|          9|
+    |FFT_rev_imag_ce0       |  15|          3|    1|          3|
+    |FFT_rev_imag_ce1       |   9|          2|    1|          2|
+    |FFT_rev_real_address0  |  15|          3|    3|          9|
+    |FFT_rev_real_ce0       |  15|          3|    1|          3|
+    |FFT_rev_real_ce1       |   9|          2|    1|          2|
+    |ap_NS_fsm              |  33|          6|    1|          6|
+    |i_0_i_reg_109          |   9|          2|    4|          8|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 120|         24|   15|         42|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------+---+----+-----+-----------+
+    |                Name                | FF| LUT| Bits| Const Bits|
+    +------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                           |  5|   0|    5|          0|
+    |grp_FFT_stages_fu_120_ap_start_reg  |  1|   0|    1|          0|
+    |i_0_i_reg_109                       |  4|   0|    4|          0|
+    |i_reg_156                           |  4|   0|    4|          0|
+    |zext_ln18_reg_161                   |  4|   0|   64|         60|
+    +------------------------------------+---+----+-----+-----------+
+    |Total                               | 18|   0|   78|         60|
+    +------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-----------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk                    |  in |    1| ap_ctrl_hs |       FFT       | return value |
+|ap_rst                    |  in |    1| ap_ctrl_hs |       FFT       | return value |
+|ap_start                  |  in |    1| ap_ctrl_hs |       FFT       | return value |
+|ap_done                   | out |    1| ap_ctrl_hs |       FFT       | return value |
+|ap_idle                   | out |    1| ap_ctrl_hs |       FFT       | return value |
+|ap_ready                  | out |    1| ap_ctrl_hs |       FFT       | return value |
+|FFT_input_real_address0   | out |    3|  ap_memory |  FFT_input_real |     array    |
+|FFT_input_real_ce0        | out |    1|  ap_memory |  FFT_input_real |     array    |
+|FFT_input_real_q0         |  in |   32|  ap_memory |  FFT_input_real |     array    |
+|FFT_input_imag_address0   | out |    3|  ap_memory |  FFT_input_imag |     array    |
+|FFT_input_imag_ce0        | out |    1|  ap_memory |  FFT_input_imag |     array    |
+|FFT_input_imag_q0         |  in |   32|  ap_memory |  FFT_input_imag |     array    |
+|FFT_output_real_address0  | out |    3|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_ce0       | out |    1|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_we0       | out |    1|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_d0        | out |   32|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_address1  | out |    3|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_ce1       | out |    1|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_we1       | out |    1|  ap_memory | FFT_output_real |     array    |
+|FFT_output_real_d1        | out |   32|  ap_memory | FFT_output_real |     array    |
+|FFT_output_imag_address0  | out |    3|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_ce0       | out |    1|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_we0       | out |    1|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_d0        | out |   32|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_address1  | out |    3|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_ce1       | out |    1|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_we1       | out |    1|  ap_memory | FFT_output_imag |     array    |
+|FFT_output_imag_d1        | out |   32|  ap_memory | FFT_output_imag |     array    |
++--------------------------+-----+-----+------------+-----------------+--------------+
+

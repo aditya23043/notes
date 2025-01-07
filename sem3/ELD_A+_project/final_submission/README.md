@@ -1,0 +1,2 @@
+- IP zip files are inside the ip/ directory
+- All code files are inside the src/ directory
